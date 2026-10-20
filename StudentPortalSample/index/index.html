@@ -104,6 +104,20 @@
             </div>
         </section>
 
+        <!-- DEVELOPMENT / TESTING ONLY -->
+        <details class="demo-panel" id="demo-panel">
+            <summary><i class="fa-solid fa-flask" aria-hidden="true"></i> Development &amp; testing only — demo accounts</summary>
+            <p class="demo-note">Fictional sample accounts stored in this browser for front-end demonstration. Not real credentials and not a production login feature.</p>
+            <div class="demo-scroll">
+                <table class="demo-table">
+                    <thead>
+                        <tr><th>Role</th><th>ID / Username / Email</th><th>Password</th><th>Status</th><th></th></tr>
+                    </thead>
+                    <tbody id="demo-rows"></tbody>
+                </table>
+            </div>
+        </details>
+
     </main>
 
     </div>
@@ -115,15 +129,9 @@
         <p>Be part of EASTERNIAN Community, where QUALITY EDUCATION is LESS EXPENSIVE</p>
     </footer>
 
+    <script src="../js/auth.js"></script>
     <script>
         (function () {
-            var dashboards = {
-                admin: "../admin/pages/dashboard/admin.html",
-                faculty: "../faculty/pages/dashboard/faculty-dashboard.html",
-                registrar: "../registrar/pages/dashboard/registrar.html",
-                student: "../student-portal/pages/dashboard/student-dashboard.html"
-            };
-
             var roles = {
                 admin: { label: "Admin", icon: "fa-gear", cls: "is-admin" },
                 faculty: { label: "Faculty", icon: "fa-chalkboard-user", cls: "is-faculty" },
@@ -141,12 +149,16 @@
 
             var form = document.getElementById("login-form");
             var idInput = document.getElementById("login-id");
+            var pwInput = document.getElementById("login-password");
+            var rememberInput = form.querySelector('input[name="remember"]');
+            var submitBtn = form.querySelector('button[type="submit"]');
             var indicator = document.getElementById("id-indicator");
             var indicatorIcon = document.getElementById("id-indicator-icon");
             var indicatorText = document.getElementById("id-indicator-text");
             var alertBox = document.getElementById("login-alert");
             var alertText = document.getElementById("login-alert-text");
             var alertIcon = document.getElementById("login-alert-icon");
+            var Auth = window.CECAuth;
 
             function showAlert(type, message) {
                 alertBox.hidden = false;
@@ -189,11 +201,74 @@
             idInput.addEventListener("input", renderIndicator);
             renderIndicator();
 
+            function setLoading(on) {
+                submitBtn.disabled = on;
+                if (on) {
+                    submitBtn.dataset.label = submitBtn.textContent;
+                    submitBtn.textContent = "Signing in...";
+                } else {
+                    submitBtn.textContent = submitBtn.dataset.label || "Log in";
+                }
+            }
+
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
-                var role = detectRole(idInput.value);
-                window.location.href = dashboards[role];
+                hideAlert();
+
+                var id = idInput.value.trim();
+                var password = pwInput.value;
+
+                if (!id || !password) {
+                    showAlert("error", "Fill in the required fields to sign in.");
+                    return;
+                }
+
+                setLoading(true);
+
+                setTimeout(function () {
+                    var result = Auth.login(id, password, rememberInput.checked);
+                    setLoading(false);
+
+                    if (!result.ok) {
+                        showAlert("error", result.message);
+                        return;
+                    }
+
+                    showAlert("success", "Welcome, " + result.user.name + ". Opening your portal...");
+                    setTimeout(function () {
+                        window.location.href = new URL("../" + result.destination, window.location.href).href;
+                    }, 450);
+                }, 650);
             });
+
+            /* ---- Demo account table (development/testing only) ---- */
+            var roleNames = {
+                student: "Student", faculty: "Faculty", registrar: "Registrar", admin: "Admin"
+            };
+
+            if (Auth && document.getElementById("demo-rows")) {
+                var rows = Auth.DEMO_ACCOUNTS().map(function (acc) {
+                    var identifier = acc.id + ' <span class="demo-dim">/ ' + acc.username + "</span>";
+                    return "<tr>" +
+                        "<td>" + roleNames[acc.role] + "</td>" +
+                        "<td><code>" + identifier + "</code></td>" +
+                        "<td><code>" + acc.password + "</code></td>" +
+                        "<td>" + (acc.status === "Active" ? "Active" : '<span class="demo-warn">Inactive</span>') + "</td>" +
+                        '<td><button type="button" class="demo-use" data-user="' + acc.username + '" data-pass="' + acc.password + '">Use</button></td>' +
+                        "</tr>";
+                }).join("");
+
+                document.getElementById("demo-rows").innerHTML = rows;
+
+                document.getElementById("demo-rows").addEventListener("click", function (event) {
+                    var btn = event.target.closest(".demo-use");
+                    if (!btn) return;
+                    idInput.value = btn.getAttribute("data-user");
+                    pwInput.value = btn.getAttribute("data-pass");
+                    hideAlert();
+                    idInput.focus();
+                });
+            }
         })();
     </script>
 
