@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cebu Eastern College | School Portal</title>
+
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="landingPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="logo-area">
+            <img src="../images/cec-logo.png" alt="Cebu Eastern College logo" class="logo">
+
+            <div>
+                <h1>CEBU EASTERN COLLEGE</h1>
+                <p>LEARN • GROW • SERVE</p>
+            </div>
+        </div>
+
+       
+    </header>
+
+
+    <!-- HERO + AUTH (split screen on desktop) -->
+    <div class="split">
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="line"></div>
+
+            <p class="welcome">Welcome to the</p>
+
+            <h2>
+                Cebu Eastern College
+                <br class="hero-break">
+                School Portal
+            </h2>
+
+            <p class="description">
+                Your one-stop access to academic,
+                administrative, and campus services.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- AUTH CARD -->
+    <main class="portal-section">
+
+        <section class="auth-card" aria-labelledby="login-title">
+            <div class="form-panel">
+                <h2 id="login-title">Log in</h2>
+                <p class="form-intro">Enter your school ID and password to access your portal.</p>
+
+                <form id="login-form" action="../student-portal/pages/dashboard/student-dashboard.html" method="get">
+                    <div class="field">
+                        <label for="login-id">School ID</label>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-id-card" aria-hidden="true"></i>
+                            <input type="text" id="login-id" name="id" placeholder="e.g. ADMIN-12345, FAC-12345, REG-12345, 2024-12345" autocomplete="username" required>
+                        </div>
+                        <p class="id-indicator is-neutral" id="id-indicator" aria-live="polite">
+                            <i class="fa-solid fa-circle-info" id="id-indicator-icon" aria-hidden="true"></i>
+                            <span id="id-indicator-text">Enter your ID to continue</span>
+                        </p>
+                        
+
+                    </div>
+
+                    <div class="field">
+                        <div class="field-top">
+                            <label for="login-password">Password</label>
+                            <a href="recovery.html">Forgot Password?</a>
+                        </div>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <input type="password" id="login-password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+                        </div>
+                    </div>
+
+                    <label class="remember-row">
+                        <input type="checkbox" name="remember">
+                        <span>Remember me</span>
+                    </label>
+
+                    <button type="submit" class="btn-primary">Log in</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Cebu Eastern College | School Portal</h3>
+        <p>Be part of EASTERNIAN Community, where QUALITY EDUCATION is LESS EXPENSIVE</p>
+    </footer>
+
+    <script>
+        (function () {
+            var dashboards = {
+                admin: "../admin/pages/dashboard/admin.html",
+                faculty: "../faculty/pages/dashboard/faculty-dashboard.html",
+                registrar: "../registrar/pages/dashboard/registrar.html",
+                student: "../student-portal/pages/dashboard/student-dashboard.html"
+            };
+
+            var roles = {
+                admin: { label: "Admin", icon: "fa-gear", cls: "is-admin" },
+                faculty: { label: "Faculty", icon: "fa-chalkboard-user", cls: "is-faculty" },
+                registrar: { label: "Registrar", icon: "fa-file-lines", cls: "is-registrar" },
+                student: { label: "Student", icon: "fa-graduation-cap", cls: "is-student" }
+            };
+
+            function detectRole(id) {
+                var value = (id || "").trim().toUpperCase();
+                if (value.indexOf("ADMIN") === 0) return "admin";
+                if (value.indexOf("FAC") === 0) return "faculty";
+                if (value.indexOf("REG") === 0) return "registrar";
+                return "student";
+            }
+
+            var form = document.getElementById("login-form");
+            var idInput = document.getElementById("login-id");
+            var indicator = document.getElementById("id-indicator");
+            var indicatorIcon = document.getElementById("id-indicator-icon");
+            var indicatorText = document.getElementById("id-indicator-text");
+
+            function renderIndicator() {
+                var value = idInput.value.trim();
+
+                indicator.className = "id-indicator";
+
+                if (!value) {
+                    indicator.classList.add("is-neutral");
+                    indicatorIcon.className = "fa-solid fa-circle-info";
+                    indicatorText.textContent = "Enter your ID to continue";
+                    return;
+                }
+
+                var role = roles[detectRole(value)];
+                indicator.classList.add(role.cls);
+                indicatorIcon.className = "fa-solid " + role.icon;
+                indicatorText.textContent = "Signing in as " + role.label;
+            }
+
+            idInput.addEventListener("input", renderIndicator);
+            renderIndicator();
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                var role = detectRole(idInput.value);
+                window.location.href = dashboards[role];
+            });
+        })();
+    </script>
+
+</body>
+</html>
