@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Management | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/settings.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <span class="crumb"><a href="settings.html">Settings</a> &rsaquo; Session Management</span>
+                <div class="head-row">
+                    <div>
+                        <h1>Session Management</h1>
+                        <p class="page-desc">Review the devices currently signed in to your CEC student account.</p>
+                    </div>
+                    <div class="head-actions">
+                        <button class="btn-outline" type="button" data-confirm="Sign out every device except this one? You will stay signed in here." data-confirm-success="All other sessions have been signed out">
+                            <i class="fa-solid fa-right-from-bracket"></i> Sign Out Other Devices
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                <nav class="settings-nav" aria-label="Settings">
+                    <a href="settings.html"><i class="fa-solid fa-user"></i> Account Settings</a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
+                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> Preferences</a>
+                    <a href="sessions.html" class="active"><i class="fa-solid fa-desktop"></i> Session Management</a>
+                    <a href="login-history.html"><i class="fa-solid fa-list"></i> Login History</a>
+                </nav>
+
+                <div class="settings-content">
+                    <div class="card spaced-bottom">
+                        <div class="card-head">
+                            <h2>Active Sessions</h2>
+                            <span class="status-badge status-green">2 active</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="session-block spaced-bottom">
+                                <span class="session-icon"><i class="fa-solid fa-laptop"></i></span>
+                                <div class="session-info">
+                                    <strong>Chrome on Windows 11</strong>
+                                    <span>Cebu City, Philippines &middot; 120.34.18.77</span>
+                                </div>
+                                <span class="pill-green">This device</span>
+                            </div>
+
+                            <div class="session-block spaced-bottom">
+                                <span class="session-icon"><i class="fa-solid fa-mobile-screen"></i></span>
+                                <div class="session-info">
+                                    <strong>Safari on iPhone 15</strong>
+                                    <span>Cebu City, Philippines &middot; 120.34.18.91 &middot; Active 2 hours ago</span>
+                                </div>
+                                <button class="btn-outline" type="button" data-confirm="Sign out the iPhone 15 session?" data-confirm-success="iPhone 15 session signed out">
+                                    Sign Out
+                                </button>
+                            </div>
+
+                            <div class="session-meta">
+                                <div class="session-block">
+                                    <span class="session-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <div class="session-info">
+                                        <strong>Current session started</strong>
+                                        <span>Today, September 28, 2026 at 7:12 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-foot">
+                            <p>Review your full sign-in record in the <a href="login-history.html">login history</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>Session Options</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="pref-list">
+                                <div class="pref-row">
+                                    <span class="pref-icon"><i class="fa-solid fa-hourglass-half"></i></span>
+                                    <div class="pref-info">
+                                        <strong>Automatic Sign-Out</strong>
+                                        <span>Sign out after a period of inactivity</span>
+                                    </div>
+                                    <select class="pref-select" data-persist="cec:prefs:timeout">
+                                        <option>5 minutes</option>
+                                        <option selected>15 minutes</option>
+                                        <option>30 minutes</option>
+                                        <option>Never</option>
+                                    </select>
+                                </div>
+                                <div class="pref-row">
+                                    <span class="pref-icon"><i class="fa-solid fa-plug-circle-check"></i></span>
+                                    <div class="pref-info">
+                                        <strong>Remember This Device</strong>
+                                        <span>Skip two-step verification on this device for 30 days</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="pref-row">
+                                    <span class="pref-icon"><i class="fa-solid fa-wifi"></i></span>
+                                    <div class="pref-info">
+                                        <strong>Only Sign In on CEC Networks</strong>
+                                        <span>Restrict access to campus Wi-Fi and mobile data</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-foot">
+                                <button type="button" class="btn-primary" data-toast-onclick="Session options saved">
+                                    <i class="fa-solid fa-floppy-disk"></i> Save Options
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

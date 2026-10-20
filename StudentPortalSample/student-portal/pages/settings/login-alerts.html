@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Alerts | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/settings.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <a class="back-link" href="security.html"><i class="fa-solid fa-arrow-left"></i> Back to Security</a>
+                <span class="crumb"><a href="settings.html">Settings</a> &rsaquo; Security &rsaquo; Login Alerts</span>
+                <div class="head-row">
+                    <div>
+                        <h1>Login Alerts</h1>
+                        <p class="page-desc">Choose when CEC notifies you about sign-in activity on your account.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                <nav class="settings-nav" aria-label="Settings">
+                    <a href="settings.html"><i class="fa-solid fa-user"></i> Account Settings</a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
+                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> Preferences</a>
+                    <a href="sessions.html"><i class="fa-solid fa-desktop"></i> Session Management</a>
+                    <a href="login-history.html"><i class="fa-solid fa-list"></i> Login History</a>
+                </nav>
+
+                <div class="settings-content">
+                    <div class="card spaced-bottom">
+                        <div class="card-head">
+                            <h2>Alert Preferences</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="toggle-list">
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-mobile-screen"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>New device sign-in</strong>
+                                        <span>Alert me when my account is accessed from a device I have not used before</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Unusual location</strong>
+                                        <span>Alert me when a sign-in comes from outside Cebu City</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Failed sign-in attempts</strong>
+                                        <span>Alert me after three or more incorrect password attempts</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-user-slash"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Account locked</strong>
+                                        <span>Alert me if the portal locks my account for security reasons</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-key"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Password changed</strong>
+                                        <span>Alert me when my portal password is updated</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-gear"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Profile and settings changes</strong>
+                                        <span>Alert me when account details, email, or settings are modified</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-foot">
+                                <button type="button" class="btn-outline" data-toast-onclick="Alert settings reset to defaults" data-toast-type="info">
+                                    Reset to Default
+                                </button>
+                                <button type="button" class="btn-primary" data-toast-onclick="Login alert preferences saved">
+                                    <i class="fa-solid fa-floppy-disk"></i> Save Preferences
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>Alert Delivery</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-field">
+                                <label class="form-label" for="alert-email">Alert Email Address</label>
+                                <div class="input-row">
+                                    <input type="email" id="alert-email" class="form-input" value="juan.delacruz@cec.edu.ph">
+                                    <button type="button" class="btn-verify" data-toast-onclick="Test alert sent to your email" data-toast-type="info">
+                                        Send Test
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label" for="alert-mobile">Alert Mobile Number</label>
+                                <div class="input-row">
+                                    <input type="text" id="alert-mobile" class="form-input" value="0917 555 0142">
+                                    <button type="button" class="btn-verify" data-toast-onclick="Test alert sent to your mobile number" data-toast-type="info">
+                                        Send Test
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="caption-note">
+                                Alerts are limited to five per day. Review every sign-in in your
+                                <a href="login-history.html">login history</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

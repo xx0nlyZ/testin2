@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Announcement | CEC Registrar Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/reg-dashboard.css">
+    <link rel="stylesheet" href="../../css/reg-analytics.css">
+    <link rel="stylesheet" href="../../css/reg-enrollment.css">
+    <link rel="stylesheet" href="../../css/reg-edit.css">
+    <link rel="stylesheet" href="../../css/reg-announcements.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="registrar">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>REGISTRAR PORTAL SYSTEM</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Registrar navigation">
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../student-record/student-records.html"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
+            <a href="index.html" class="active"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="app-header">
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search">
+            </label>
+
+            <select class="semester-select" aria-label="Semester">
+                <option selected>1st Semester</option>
+                <option>2nd Semester</option>
+            </select>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Registrar</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="announce-content">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Announcements</a>
+
+            <div class="page-head">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../../pages/dashboard/registrar.html">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="index.html">Announcements</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Create Announcement</span>
+                </nav>
+                <div class="page-title">
+                    <span class="page-title-icon"><i class="fa-solid fa-bullhorn"></i></span>
+                    <div>
+                        <h1>Create Announcement</h1>
+                        <p class="page-desc">Create a new announcement for faculty and students.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="announcement-form" novalidate>
+                <div class="card">
+                    <h2 class="card-title"><i class="fa-regular fa-pen-to-square" aria-hidden="true"></i> Announcement Details</h2>
+
+                    <div class="form-grid">
+                        <div class="field full">
+                            <label for="announcement-title">Title <em>*</em></label>
+                            <input type="text" id="announcement-title" placeholder="e.g. Enrollment Schedule for 2nd Semester">
+                        </div>
+
+                        <div class="field full">
+                            <label for="announcement-message">Message <em>*</em></label>
+                            <textarea id="announcement-message" rows="5" placeholder="Write your announcement here..."></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label for="announcement-audience">Target Audience <em>*</em></label>
+                            <select id="announcement-audience">
+                                <option value="" selected disabled>Select target audience</option>
+                                <option value="Faculty">Faculty</option>
+                                <option value="Students">Students</option>
+                                <option value="Faculty &amp; Students">Faculty &amp; Students</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="announcement-priority">Priority</label>
+                            <select id="announcement-priority">
+                                <option value="Normal" selected>Normal</option>
+                                <option value="High">High</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a href="index.html" class="btn btn-outline">Cancel</a>
+                    <button type="submit" class="btn btn-primary" id="post-btn"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i> Post Announcement</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="../../../js/announcement-store.js"></script>
+    <script src="../../js/announcement-create.js"></script>
+    <script>
+        (function () {
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                document.body.classList.toggle('sidebar-collapsed');
+            });
+        })();
+    </script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

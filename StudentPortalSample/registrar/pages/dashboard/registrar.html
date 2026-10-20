@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Dashboard | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/reg-dashboard.css">
+    <link rel="stylesheet" href="../../css/reg-analytics.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="registrar">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>REGISTRAR PORTAL SYSTEM</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Registrar navigation">
+            <a href="registrar.html" class="active"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../student-record/student-records.html"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="app-header">
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search">
+            </label>
+
+            <select class="semester-select" aria-label="Semester">
+                <option selected>1st Semester</option>
+                <option>2nd Semester</option>
+            </select>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Registrar</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="analytics-content">
+            <section class="welcome-banner">
+                <h1>Welcome back!</h1>
+                <p>Manage enrollment, records, and students services.</p>
+            </section>
+
+            <section class="kpis" aria-label="Key performance indicators">
+                <article class="kpi-card">
+                    <i class="fa-solid fa-user-graduate kpi-icon"></i>
+                    <div>
+                        <span class="kpi-label">Total Students</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">Currently Enrolled</small>
+                    </div>
+                </article>
+                <article class="kpi-card">
+                    <i class="fa-solid fa-circle-check kpi-icon green"></i>
+                    <div>
+                        <span class="kpi-label">Active Enrollment</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">This Semester</small>
+                    </div>
+                </article>
+                <article class="kpi-card">
+                    <i class="fa-regular fa-clock kpi-icon amber"></i>
+                    <div>
+                        <span class="kpi-label">Document Request</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">Pending</small>
+                    </div>
+                </article>
+                <article class="kpi-card">
+                    <i class="fa-solid fa-file-circle-check kpi-icon green"></i>
+                    <div>
+                        <span class="kpi-label">Document Released</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">This Month</small>
+                    </div>
+                </article>
+                <article class="kpi-card">
+                    <i class="fa-solid fa-user-plus kpi-icon"></i>
+                    <div>
+                        <span class="kpi-label">New Student</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">This Semester</small>
+                    </div>
+                </article>
+            </section>
+
+            <section class="analytics-grid">
+                <div class="analytics-main">
+                    <div class="chart-row">
+                        <article class="chart-card">
+                            <h3>Student Status Summary</h3>
+                            <div class="donut-wrap">
+                                <div class="donut" style="background: conic-gradient(#1D4E9B 0 0%, #2C7BE5 0 0%, #4CAF8D 0 0%, #F2A93B 0 0%);">
+                                    <div class="donut-center">
+                                        <strong>0</strong>
+                                        <span>Students</span>
+                                    </div>
+                                </div>
+                                <ul class="legend">
+                                    <li><i style="background:#1D4E9B"></i>Regular <b>0</b></li>
+                                    <li><i style="background:#2C7BE5"></i>Irregular <b>0</b></li>
+                                    <li><i style="background:#4CAF8D"></i>Returnee <b>0</b></li>
+                                    <li><i style="background:#F2A93B"></i>Others <b>0</b></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="chart-card">
+                            <h3>Enrollment By Program</h3>
+                            <div class="donut-wrap">
+                                <div class="donut" style="background: conic-gradient(#1D4E9B 0 0%, #2C7BE5 0 0%, #4CAF8D 0 0%, #F2A93B 0 0%, #AFC5E2 0 0%);">
+                                    <div class="donut-center">
+                                        <strong>0</strong>
+                                        <span>Students</span>
+                                    </div>
+                                </div>
+                                <ul class="legend">
+                                    <li><i style="background:#1D4E9B"></i>BSIT <b>0</b></li>
+                                    <li><i style="background:#2C7BE5"></i>BSBA <b>0</b></li>
+                                    <li><i style="background:#4CAF8D"></i>BSED <b>0</b></li>
+                                    <li><i style="background:#F2A93B"></i>BEED <b>0</b></li>
+                                    <li><i style="background:#AFC5E2"></i>Others <b>0</b></li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+
+                    <article class="chart-card bar-card">
+                        <h3>Students Per Level</h3>
+                        <div class="bar-chart">
+                            <div class="bar-col">
+                                <small>0</small>
+                                <div class="bar" style="height:0"></div>
+                                <span>1st Year</span>
+                            </div>
+                            <div class="bar-col">
+                                <small>0</small>
+                                <div class="bar" style="height:0"></div>
+                                <span>2nd Year</span>
+                            </div>
+                            <div class="bar-col">
+                                <small>0</small>
+                                <div class="bar" style="height:0"></div>
+                                <span>3rd Year</span>
+                            </div>
+                            <div class="bar-col">
+                                <small>0</small>
+                                <div class="bar" style="height:0"></div>
+                                <span>4th Year</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="analytics-rail">
+                    <article class="chart-card">
+                        <div class="calendar-head">
+                            <h3>Calendar</h3>
+                            <button type="button" disabled aria-label="Calendar month"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                        <div class="calendar" role="grid" aria-label="Calendar">
+                            <span class="dow">Mon</span><span class="dow">Tue</span><span class="dow">Wed</span><span class="dow">Thu</span><span class="dow">Fri</span><span class="dow">Sat</span><span class="dow">Sun</span>
+                            <span class="day empty"></span><span class="day empty"></span>
+                            <span class="day">1</span><span class="day">2</span><span class="day">3</span><span class="day">4</span><span class="day">5</span>
+                            <span class="day">6</span><span class="day">7</span><span class="day">8</span><span class="day">9</span><span class="day">10</span><span class="day">11</span><span class="day">12</span>
+                            <span class="day">13</span><span class="day">14</span><span class="day">15</span><span class="day">16</span><span class="day">17</span><span class="day">18</span><span class="day">19</span>
+                            <span class="day">20</span><span class="day">21</span><span class="day">22</span><span class="day">23</span><span class="day">24</span><span class="day">25</span><span class="day">26</span>
+                            <span class="day">27</span><span class="day">28</span><span class="day">29</span><span class="day">30</span><span class="day">31</span><span class="day empty"></span><span class="day empty"></span>
+                        </div>
+                    </article>
+
+                    <article class="chart-card">
+                        <h3>Upcoming Events</h3>
+                        <ul class="events-list">
+                        </ul>
+                    </article>
+                </aside>
+            </section>
+
+            <footer class="app-footer">
+                &copy; 2024 Cebu Eastern College. All rights reserved.
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle');
+            toggle.addEventListener('click', function () {
+                document.body.classList.toggle('sidebar-collapsed');
+            });
+        })();
+    </script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

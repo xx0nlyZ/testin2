@@ -1,0 +1,76 @@
+/* ==========================================================================
+   CEC SCHOOL PORTAL - SHARED REGISTER STYLES
+   Used by the shared account registration page (index/register.html).
+   Builds on the shared auth base in login.css.
+   ========================================================================== */
+
+@import url("login.css");
+@import url("recovery.css");
+
+.reg-title {
+    margin: 0 0 6px;
+    color: #0B2C5E;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+.reg-sub {
+    margin: 0 0 22px;
+    color: #60728B;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* ---------------- Policy notices ---------------- */
+
+.notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 12px;
+    padding: 11px 12px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    line-height: 1.55;
+}
+
+.notice i {
+    margin-top: 2px;
+    font-size: 13px;
+}
+
+.notice p {
+    margin: 0;
+}
+
+.notice-info {
+    color: #16305C;
+    background: #EEF3FA;
+    border: 1px solid #D3E0F2;
+}
+
+.notice-warn {
+    color: #6B4A00;
+    background: #FDF4E0;
+    border: 1px solid #F0DDB4;
+}
+
+.form-section-label {
+    margin: 4px 0 14px;
+    color: #60728B;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.field label em {
+    color: #B3261E;
+    font-style: normal;
+}
+
+@media (max-width: 480px) {
+    .notice {
+        font-size: 12px;
+    }
+}

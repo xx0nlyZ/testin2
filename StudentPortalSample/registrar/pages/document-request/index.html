@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Requests | CEC Registrar Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/reg-dashboard.css">
+    <link rel="stylesheet" href="../../css/reg-analytics.css">
+    <link rel="stylesheet" href="../../css/reg-enrollment.css">
+    <link rel="stylesheet" href="../../css/reg-document.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="registrar">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>REGISTRAR PORTAL SYSTEM</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Registrar navigation">
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../student-record/student-records.html"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
+            <a href="index.html" class="active"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="app-header">
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search">
+            </label>
+
+            <select class="semester-select" aria-label="Semester">
+                <option selected>1st Semester</option>
+                <option>2nd Semester</option>
+            </select>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Registrar</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="doc-content">
+            <div class="page-head">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../../pages/dashboard/registrar.html">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Document Requests</span>
+                </nav>
+            </div>
+
+            <div class="doc-head-row">
+                <h1>Document Requests</h1>
+                <a class="doc-view-all" href="pending.html">
+                    View All <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <section class="summary-card" aria-label="Document request summary">
+                <div class="summary-head">
+                    <h3><i class="fa-regular fa-folder-open" aria-hidden="true"></i> Request Summary</h3>
+                    <span class="count-pill blue">0 request types</span>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Request Type</th>
+                                <th>Students</th>
+                                <th>Date Requested</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle');
+            toggle.addEventListener('click', function () {
+                document.body.classList.toggle('sidebar-collapsed');
+            });
+        })();
+    </script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

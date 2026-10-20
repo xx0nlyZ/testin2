@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | CEC Faculty Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="profile.html" class="active"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head profile-head-row">
+                <a class="back-btn" href="profile.html" aria-label="Back to Profile"><i class="fa-solid fa-arrow-left"></i></a>
+                <div>
+                    <h1>Edit Profile</h1>
+                    <p class="page-desc">Update your personal information and account details.</p>
+                </div>
+            </div>
+
+            <section class="edit-layout" aria-label="Edit profile form">
+                <aside class="edit-left">
+                    <article class="profile-card photo-card">
+                        <div class="photo-upload">
+                            <span class="photo-img" data-avatar-preview>MS</span>
+                            <span class="camera-badge"><i class="fa-solid fa-camera"></i></span>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-outline" data-avatar-trigger data-avatar-target="#photo-input">Change Photo</button>
+                            <input type="file" id="photo-input" data-avatar-input accept="image/*" hidden>
+                        </div>
+                    </article>
+
+                    <article class="profile-card">
+                        <div class="profile-card-head">
+                            <i class="fa-regular fa-user"></i>
+                            <h3>Account Summary</h3>
+                        </div>
+                        <div class="summary-rows">
+                            <div class="summary-row">
+                                <span class="label">Full Name</span>
+                                <span class="value">Prof. Maria Santos</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Role</span>
+                                <span class="value">Faculty</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Email</span>
+                                <span class="value">mariasantos@gmail.com</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Employee ID</span>
+                                <span class="value">FAC - 0013</span>
+                            </div>
+                        </div>
+                    </article>
+                </aside>
+
+                <form class="profile-card form-card" action="#" method="post" id="edit-profile-form" data-faculty-form data-success-message="Profile updated successfully" novalidate>
+                    <div class="form-section">
+                        <h4>Personal Information</h4>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="first-name">Name <span class="req">*</span></label>
+                                <input type="text" id="first-name" name="first-name" value="Maria" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="middle-name">Middle Name <span class="req">*</span></label>
+                                <input type="text" id="middle-name" name="middle-name" value="Clara" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="last-name">Last Name <span class="req">*</span></label>
+                                <input type="text" id="last-name" name="last-name" value="Santos" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="gender">Gender <span class="req">*</span></label>
+                                <select id="gender" name="gender">
+                                    <option>Male</option>
+                                    <option selected>Female</option>
+                                    <option>Prefer not to say</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="birth-date">Date of Birth <span class="req">*</span></label>
+                                <input type="date" id="birth-date" name="birth-date" value="1990-05-14" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Contact Information</h4>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" value="0952 575 6789">
+                            </div>
+                            <div class="form-field">
+                                <label for="username">Username <span class="req">*</span></label>
+                                <input type="text" id="username" name="username" value="maria.santos" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email Address <span class="req">*</span></label>
+                                <input type="email" id="email" name="email" value="mariasantos@gmail.com" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Address</h4>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="street">Street Address <span class="req">*</span></label>
+                                <input type="text" id="street" name="street" value="123 San Vicente St.," required>
+                            </div>
+                            <div class="form-field">
+                                <label for="province">Province <span class="req">*</span></label>
+                                <input type="text" id="province" name="province" value="Cebu" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="city">City <span class="req">*</span></label>
+                                <input type="text" id="city" name="city" value="Cebu City" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="zip">Zip Code <span class="req">*</span></label>
+                                <input type="text" id="zip" name="zip" value="6000" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="profile.html" class="btn btn-outline">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </main>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

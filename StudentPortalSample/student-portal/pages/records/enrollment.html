@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Enrollment | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/student-section.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="enrollment.html" class="active"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <div class="head-row">
+                    <div>
+                        <h1>Online Enrollment</h1>
+                        <p class="page-desc">Enrolled subjects, unit load, and enrollment requests for the current term.</p>
+                    </div>
+                    <div class="head-actions">
+                        <button class="btn btn-outline" type="button" data-toast-onclick="Enrollment assessment downloaded" data-toast-type="success">
+                            <i class="fa-solid fa-download"></i> Assessment
+                        </button>
+                        <button class="btn btn-primary" type="button" data-toast-onclick="Add/drop request forwarded to the Registrar" data-toast-type="success">
+                            <i class="fa-solid fa-pen-to-square"></i> Request Add/Drop
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="summary-strip" aria-label="Enrollment summary">
+                <div class="summary-item">
+                    <p>Enrollment Status</p>
+                    <strong>Confirmed</strong>
+                    <small class="green">Approved by the Registrar</small>
+                </div>
+                <div class="summary-item">
+                    <p>Enrolled Units</p>
+                    <strong>18</strong>
+                    <small>of 24 units allowed</small>
+                </div>
+                <div class="summary-item">
+                    <p>Subjects Enrolled</p>
+                    <strong>6</strong>
+                    <small>BSIT-1A section</small>
+                </div>
+                <div class="summary-item">
+                    <p>Schedule Conflicts</p>
+                    <strong>0</strong>
+                    <small class="green">No overlapping subjects</small>
+                </div>
+            </section>
+
+            <div class="section-toolbar">
+                <div class="filter-row">
+                    <div class="filter-box">
+                        <label for="semester">Semester</label>
+                        <select id="semester">
+                            <option selected>1st Semester</option>
+                            <option>2nd Semester</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label for="academic-year">Academic Year</label>
+                        <select id="academic-year">
+                            <option selected>2026 - 2027</option>
+                            <option>2025 - 2026</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label for="subject-status">Subject Status</label>
+                        <select id="subject-status">
+                            <option selected>All Statuses</option>
+                            <option>Enrolled</option>
+                            <option>Pending</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card spaced-bottom">
+                <div class="table-heading">
+                    <h3>Enrolled Subjects &middot; 1st Semester</h3>
+                    <div class="heading-actions">
+                        <span class="status-badge status-green">Assessment confirmed</span>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Title</th>
+                                <th>Units</th>
+                                <th>Section</th>
+                                <th>Schedule</th>
+                                <th>Room</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="code-cell">ITC 101</td>
+                                <td>Introduction to Information Technology</td>
+                                <td class="numeric">3</td>
+                                <td class="muted-cell">BSIT-1A</td>
+                                <td class="cell-time">M/W 7:30 - 9:00</td>
+                                <td class="muted-cell">Room 204</td>
+                                <td><span class="status-badge status-green">Enrolled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">MTH 101</td>
+                                <td>Mathematics in the Modern World</td>
+                                <td class="numeric">3</td>
+                                <td class="muted-cell">BSIT-1A</td>
+                                <td class="cell-time">M/W 9:00 - 10:30</td>
+                                <td class="muted-cell">Room 108</td>
+                                <td><span class="status-badge status-green">Enrolled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">ENG 101</td>
+                                <td>Purposive Communication</td>
+                                <td class="numeric">3</td>
+                                <td class="muted-cell">BSIT-1A</td>
+                                <td class="cell-time">T/Th 7:30 - 9:00</td>
+                                <td class="muted-cell">Room 112</td>
+                                <td><span class="status-badge status-green">Enrolled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">ACC 101</td>
+                                <td>Financial Accounting</td>
+                                <td class="numeric">3</td>
+                                <td class="muted-cell">BSIT-1A</td>
+                                <td class="cell-time">T/Th 10:30 - 12:00</td>
+                                <td class="muted-cell">Room 105</td>
+                                <td><span class="status-badge status-green">Enrolled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">ITC 102</td>
+                                <td>Computer Hardware &amp; Maintenance</td>
+                                <td class="numeric">4</td>
+                                <td class="muted-cell">BSIT-1A</td>
+                                <td class="cell-time">F 1:00 - 2:30</td>
+                                <td class="muted-cell">Lab 3</td>
+                                <td><span class="status-badge status-green">Enrolled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">PE 101</td>
+                                <td>Physical Education</td>
+                                <td class="numeric">2</td>
+                                <td class="muted-cell">BSIT-1A</td>
+                                <td class="cell-time">F 3:00 - 5:00</td>
+                                <td class="muted-cell">Gymnasium</td>
+                                <td><span class="status-badge status-green">Enrolled</span></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Total Load</td>
+                                <td class="numeric">18</td>
+                                <td colspan="4">Regular load &middot; 6 meeting days</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="two-col spaced-bottom">
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Enrollment Details</h2>
+                        <span class="status-badge status-green">Regular</span>
+                    </div>
+                    <div class="card-body card-body-tight">
+                        <div class="detail-list">
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+                                <div class="detail-info">
+                                    <strong>Assessment Reference</strong>
+                                    <span>Tuition and fees for 18 units</span>
+                                </div>
+                                <span class="detail-value">ASM-2026-0118</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-user-tie"></i></span>
+                                <div class="detail-info">
+                                    <strong>Course Adviser</strong>
+                                    <span>BSIT-1A section adviser</span>
+                                </div>
+                                <span class="detail-value">Mr. Charles Bacus</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-calendar-days"></i></span>
+                                <div class="detail-info">
+                                    <strong>Enrollment Period</strong>
+                                    <span>Online and on-site enrollment</span>
+                                </div>
+                                <span class="detail-value">Aug 04 &ndash; Aug 15, 2026</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                <div class="detail-info">
+                                    <strong>Confirmed On</strong>
+                                    <span>Approved by the Registrar</span>
+                                </div>
+                                <span class="detail-value">Aug 18, 2026</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-magnifying-glass-dollar"></i></span>
+                                <div class="detail-info">
+                                    <strong>Late Enrollment Fee</strong>
+                                    <span>Filed within the enrollment window</span>
+                                </div>
+                                <span class="detail-value">&#8369;0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-foot">
+                        <p>Questions about your load? Visit the Registrar's Office or check your <a href="financial.html">account assessment</a>.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Unit Load</h2>
+                        <span class="status-badge status-blue">1st Year</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="meter-block">
+                            <div class="meter-head">
+                                <strong>Semester unit load</strong>
+                                <span>18 of 24 units</span>
+                            </div>
+                            <div class="meter green"><span style="width: 75%;"></span></div>
+                        </div>
+                        <div class="meter-block">
+                            <div class="meter-head">
+                                <strong>Curriculum progress</strong>
+                                <span>18 of 160 units taken</span>
+                            </div>
+                            <div class="meter"><span style="width: 11%;"></span></div>
+                        </div>
+                        <p class="page-desc spaced-top">You may still add up to 6 units. Subjects with laboratory components (ITC 102) count as 4 units each.</p>
+                    </div>
+                    <div class="card-foot">
+                        <p>Maximum load for first-year students is 24 units per semester.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card spaced-bottom">
+                <div class="table-heading">
+                    <h3>Pending Requests</h3>
+                    <div class="heading-actions">
+                        <button class="btn btn-outline" type="button" data-toast-onclick="Request form opened" data-toast-type="info">
+                            <i class="fa-solid fa-plus"></i> New Request
+                        </button>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Request</th>
+                                <th>Type</th>
+                                <th>Subject</th>
+                                <th>Filed On</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="code-cell">REQ-2026-0042</td>
+                                <td class="muted-cell">Add</td>
+                                <td>ITC 103 &mdash; Computer Programming 1</td>
+                                <td class="muted-cell">Aug 20, 2026</td>
+                                <td><span class="status-badge status-amber">For review</span></td>
+                                <td>
+                                    <button class="btn btn-outline" type="button" data-confirm="Withdraw the add request for ITC 103?" data-confirm-success="Withdrawal request submitted">
+                                        Withdraw
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">REQ-2026-0039</td>
+                                <td class="muted-cell">Shift</td>
+                                <td>PE 101 &mdash; Schedule to F 1:00 - 2:30</td>
+                                <td class="muted-cell">Aug 12, 2026</td>
+                                <td><span class="status-badge status-green">Approved</span></td>
+                                <td>
+                                    <button class="btn btn-outline" type="button" data-toast-onclick="Shift request details opened" data-toast-type="info">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="note-bar">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                Add, drop, or shift subjects through the registrar during the enrollment window. Late enrollment is subject to
+                <a href="financial.html">late fees</a>.
+            </p>
+        </section>
+    </main>
+
+    <script src="../../js/showToast.js"></script>
+    <script src="../../js/copyToClipboard.js"></script>
+    <script src="../../js/confirmAction.js"></script>
+    <script src="../../js/avatarUpload.js"></script>
+    <script src="../../js/validateForm.js"></script>
+    <script src="../../js/persistSelect.js"></script>
+    <script src="../../js/setYear.js"></script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

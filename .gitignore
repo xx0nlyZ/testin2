@@ -1,0 +1,12 @@
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Agent tooling (local only)
+.agents/
+skills-lock.json
+
+# Temporary scratch
+*.log
+*.tmp

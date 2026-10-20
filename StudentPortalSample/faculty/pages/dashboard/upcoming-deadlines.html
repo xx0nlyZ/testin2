@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Deadlines | CEC Faculty Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/deadlines.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="upcoming-deadlines.html" class="active"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">CB</span>
+                <span class="profile-info">
+                    <strong>Mr. Charles Bacus</strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="subnav">
+                <a href="faculty-dashboard.html" class="back-button" aria-label="Back to dashboard"><i class="fa-solid fa-arrow-left"></i></a>
+                <h1><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> View All: Upcoming Deadlines</h1>
+            </div>
+
+            <div class="filter-bar">
+                <label class="search-input" style="flex:1 1 260px;">
+                    <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search deadlines</span>
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input type="search" id="deadline-search" placeholder="Search...">
+                </label>
+                <select class="filter-select" id="subject-filter" aria-label="Filter by subject/class">
+                    <option value="">All Subjects/Classes</option>
+                    <option>All Section</option>
+                    <option>BSIT 1 - G4</option>
+                    <option>BSIT 2 - G2</option>
+                    <option>BSIT 3</option>
+                </select>
+            </div>
+
+            <section class="deadline-grid" id="deadline-grid" aria-label="Upcoming deadlines">
+                <article class="deadline-card">
+                    <div class="deadline-date"><small>SEPT</small><strong>18</strong></div>
+                    <div class="deadline-info">
+                        <h3>Final Grade Submission</h3>
+                        <span class="class-tag">All Section</span>
+                    </div>
+                    <span class="status-badge status-red">Due Soon</span>
+                </article>
+
+                <article class="deadline-card">
+                    <div class="deadline-date"><small>SEPT</small><strong>19</strong></div>
+                    <div class="deadline-info">
+                        <h3>Project Report BSIT 3</h3>
+                        <span class="class-tag">BSIT 3</span>
+                    </div>
+                    <span class="status-badge status-amber">In 3 Days</span>
+                </article>
+
+                <article class="deadline-card">
+                    <div class="deadline-date"><small>SEPT</small><strong>22</strong></div>
+                    <div class="deadline-info">
+                        <h3>Quiz 2 BSIT 2</h3>
+                        <span class="class-tag">BSIT 2 - G2</span>
+                    </div>
+                    <span class="status-badge status-amber">In 7 Days</span>
+                </article>
+
+                <article class="deadline-card">
+                    <div class="deadline-date"><small>SEPT</small><strong>29</strong></div>
+                    <div class="deadline-info">
+                        <h3>Attendance Report</h3>
+                        <span class="class-tag">All Section</span>
+                    </div>
+                    <span class="status-badge status-blue">In 14 Days</span>
+                </article>
+
+                <article class="deadline-card">
+                    <div class="deadline-date"><small>OCT</small><strong>06</strong></div>
+                    <div class="deadline-info">
+                        <h3>Grade Encoding Phase 1</h3>
+                        <span class="class-tag">All Section</span>
+                    </div>
+                    <span class="status-badge status-blue">In 21 Days</span>
+                </article>
+
+                <article class="deadline-card">
+                    <div class="deadline-date"><small>OCT</small><strong>09</strong></div>
+                    <div class="deadline-info">
+                        <h3>Curriculum Review</h3>
+                        <span class="class-tag">BSIT 1 - G4</span>
+                    </div>
+                    <span class="status-badge status-blue">In 21 Days</span>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var grid = document.getElementById('deadline-grid');
+            var search = document.getElementById('deadline-search');
+            var subjectFilter = document.getElementById('subject-filter');
+
+            function applyFilters() {
+                var query = search.value.toLowerCase().trim();
+                var subject = subjectFilter.value;
+                var cards = grid.querySelectorAll('.deadline-card');
+
+                cards.forEach(function (card) {
+                    var text = card.textContent.toLowerCase();
+                    var tag = card.querySelector('.class-tag');
+                    var matchesQuery = query === '' || text.indexOf(query) !== -1;
+                    var matchesSubject = subject === '' || (tag && tag.textContent === subject);
+                    card.style.display = matchesQuery && matchesSubject ? '' : 'none';
+                });
+            }
+
+            search.addEventListener('input', applyFilters);
+            subjectFilter.addEventListener('change', applyFilters);
+        })();
+    </script>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

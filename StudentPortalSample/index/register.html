@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request an Account | Cebu Eastern College</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="auth-bg" aria-hidden="true"></div>
+
+        <a href="index.html" class="auth-back" aria-label="Back to school portal">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </a>
+
+        <header class="auth-header">
+            <img src="../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <h1>CEBU EASTERN COLLEGE</h1>
+        </header>
+
+        <section class="auth-card auth-card-padded" aria-labelledby="register-title">
+            <h2 class="reg-title" id="register-title">Request a Student Account</h2>
+            <p class="reg-sub">Accounts are issued by school staff, not by public registration.</p>
+
+            <div class="notice notice-info">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <p><strong>Student accounts are created by the Registrar's Office.</strong>
+                Please contact the Registrar if you need an account.</p>
+            </div>
+
+            <div class="notice notice-warn">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <p>Faculty, Registrar, Finance, IT, and Admin accounts cannot be requested here.
+                Those accounts are created inside the portal by an Administrator or the Registrar.</p>
+            </div>
+
+            <div class="form-alert" id="request-alert" role="alert" hidden>
+                <i class="fa-solid fa-circle-exclamation" id="request-alert-icon" aria-hidden="true"></i>
+                <span id="request-alert-text"></span>
+            </div>
+
+            <form id="request-form" novalidate>
+                <p class="form-section-label">Optional: submit a request for review</p>
+
+                <div class="field">
+                    <label for="req-name">Full Name <em>*</em></label>
+                    <div class="input-icon">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        <input type="text" id="req-name" placeholder="e.g. Juan Dela Cruz" autocomplete="name" required>
+                    </div>
+                    <p class="field-error" id="req-name-error" hidden></p>
+                </div>
+
+                <div class="field">
+                    <label for="req-email">Email <em>*</em></label>
+                    <div class="input-icon">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <input type="email" id="req-email" placeholder="e.g. juan.delacruz@student.cec.edu.ph" autocomplete="email" required>
+                    </div>
+                    <p class="field-error" id="req-email-error" hidden></p>
+                </div>
+
+                <div class="field">
+                    <label for="req-id">Student ID (if you have one)</label>
+                    <div class="input-icon">
+                        <i class="fa-solid fa-id-badge" aria-hidden="true"></i>
+                        <input type="text" id="req-id" placeholder="e.g. 2025-11111" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="req-course">Course</label>
+                    <select id="req-course">
+                        <option value="">Select course</option>
+                        <option>BS Information Technology</option>
+                        <option>BS Hospitality Management</option>
+                        <option>BS Tourism Management</option>
+                        <option>BS Secondary Education</option>
+                        <option>BS Criminology</option>
+                        <option>Bachelor of Elementary Education</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="req-year">Year Level</label>
+                    <select id="req-year">
+                        <option value="">Select year</option>
+                        <option>1st Year</option>
+                        <option>2nd Year</option>
+                        <option>3rd Year</option>
+                        <option>4th Year</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary" id="req-submit">Submit Request</button>
+            </form>
+
+            <div id="request-done" hidden>
+                <div class="recovery-done-icon" aria-hidden="true">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <p class="recovery-done-msg">Your request has been recorded for review by the Registrar's Office.</p>
+                <p class="recovery-simulated">No account, login, or role has been granted. A front-end demo cannot create accounts automatically — the Registrar must create your account from the Registrar Portal.</p>
+                <a class="btn-primary recovery-done-link" href="index.html">Back to Sign In</a>
+            </div>
+
+            <p class="auth-switch">Already have an account? <a href="index.html">Sign In</a></p>
+        </section>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            var Auth = window.CECAuth;
+            var form = document.getElementById('request-form');
+            var alertBox = document.getElementById('request-alert');
+            var alertText = document.getElementById('request-alert-text');
+            var alertIcon = document.getElementById('request-alert-icon');
+            var submitBtn = document.getElementById('req-submit');
+
+            var nameField = document.getElementById('req-name');
+            var emailField = document.getElementById('req-email');
+
+            function showAlert(type, message) {
+                alertBox.hidden = false;
+                alertBox.className = 'form-alert is-' + type;
+                alertIcon.className = type === 'success'
+                    ? 'fa-solid fa-circle-check'
+                    : 'fa-solid fa-circle-exclamation';
+                alertText.textContent = message;
+            }
+
+            function fieldError(field, node, message) {
+                if (message) {
+                    node.textContent = message;
+                    node.hidden = false;
+                    field.setAttribute('aria-invalid', 'true');
+                } else {
+                    node.hidden = true;
+                    node.textContent = '';
+                    field.removeAttribute('aria-invalid');
+                }
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var result = Auth.submitStudentRequest({
+                    fullName: nameField.value,
+                    email: emailField.value,
+                    studentId: document.getElementById('req-id').value,
+                    course: document.getElementById('req-course').value,
+                    year: document.getElementById('req-year').value
+                });
+
+                if (!result.ok) {
+                    if (result.code === 'required') {
+                        fieldError(nameField, document.getElementById('req-name-error'), 'Enter your full name.');
+                    } else if (result.code === 'email') {
+                        fieldError(emailField, document.getElementById('req-email-error'), 'Enter a valid email address.');
+                    }
+                    showAlert('error', result.message);
+                    return;
+                }
+
+                fieldError(nameField, document.getElementById('req-name-error'), null);
+                fieldError(emailField, document.getElementById('req-email-error'), null);
+                alertBox.hidden = true;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+
+                setTimeout(function () {
+                    form.hidden = true;
+                    document.getElementById('request-done').hidden = false;
+                }, 500);
+            });
+        })();
+    </script>
+</body>
+</html>

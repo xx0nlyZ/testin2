@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/settings.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <span class="crumb"><a href="settings.html">Settings</a> &rsaquo; Security</span>
+                <div class="head-row">
+                    <div>
+                        <h1>Security</h1>
+                        <p class="page-desc">Protect your account with a strong password and active verification layers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                <nav class="settings-nav" aria-label="Settings">
+                    <a href="settings.html"><i class="fa-solid fa-user"></i> Account Settings</a>
+                    <a href="security.html" class="active"><i class="fa-solid fa-shield-halved"></i> Security</a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
+                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> Preferences</a>
+                    <a href="sessions.html"><i class="fa-solid fa-desktop"></i> Session Management</a>
+                    <a href="login-history.html"><i class="fa-solid fa-list"></i> Login History</a>
+                </nav>
+
+                <div class="settings-content">
+                    <div class="card spaced-bottom">
+                        <div class="card-head">
+                            <h2>Security Status</h2>
+                            <span class="status-badge status-green">Protected</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="security-list">
+                                <div class="security-row">
+                                    <span class="security-icon"><i class="fa-solid fa-key"></i></span>
+                                    <div class="security-info">
+                                        <strong>Password</strong>
+                                        <span>Last changed 42 days ago &middot; <a href="change-password.html">Change password</a></span>
+                                    </div>
+                                    <span class="security-status"><i class="fa-solid fa-circle-check"></i> Strong</span>
+                                </div>
+                                <div class="security-row">
+                                    <span class="security-icon"><i class="fa-solid fa-mobile-screen"></i></span>
+                                    <div class="security-info">
+                                        <strong>Two-Factor Authentication</strong>
+                                        <span>An extra code is sent to your registered mobile number</span>
+                                    </div>
+                                    <span class="security-status"><i class="fa-solid fa-circle-check"></i> Enabled</span>
+                                </div>
+                                <div class="security-row">
+                                    <span class="security-icon"><i class="fa-solid fa-bell"></i></span>
+                                    <div class="security-info">
+                                        <strong>Login Alerts</strong>
+                                        <span>Get notified whenever your account is accessed from a new device</span>
+                                    </div>
+                                    <span class="security-status"><i class="fa-solid fa-circle-check"></i> Enabled</span>
+                                </div>
+                                <div class="security-row">
+                                    <span class="security-icon"><i class="fa-solid fa-envelope"></i></span>
+                                    <div class="security-info">
+                                        <strong>Email Verification</strong>
+                                        <span>juan.delacruz@cec.edu.ph verified on Aug 18, 2026</span>
+                                    </div>
+                                    <span class="security-status"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                </div>
+                                <div class="security-row">
+                                    <span class="security-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <div class="security-info">
+                                        <strong>Automatic Sign-Out</strong>
+                                        <span>You are signed out after 15 minutes of inactivity</span>
+                                    </div>
+                                    <span class="security-status off"><i class="fa-solid fa-circle-xmark"></i> Off</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-foot">
+                            <p>Security activity for the last 30 days is recorded in your login history.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

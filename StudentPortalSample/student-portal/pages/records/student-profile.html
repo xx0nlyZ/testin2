@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/student-profile.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>    
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="student-profile.html" class="active"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <div class="head-row">
+                    <div>
+                        <h1>My Profile</h1>
+                        <p class="page-desc">Personal records, contacts, and submitted documents.</p>
+                    </div>
+                    <a class="btn btn-outline" href="../settings/settings.html">
+                        <i class="fa-solid fa-gear"></i> Account Settings
+                    </a>
+                </div>
+            </div>
+
+            <section class="profile-banner">
+                <div class="profile-summary">
+                    <span class="profile-photo" data-avatar-preview>JD</span>
+                    <div>
+                        <h2>Juan Dela Cruz</h2>
+                        <p class="profile-meta">
+                            Bachelor of Science in Information Technology &middot;
+                            <strong>Student ID 2024-12345</strong>
+                        </p>
+                        <div class="profile-tags">
+                            <span class="chip chip-green"><i class="fa-solid fa-circle-check"></i> Enrolled</span>
+                            <span class="chip"><i class="fa-solid fa-layer-group"></i> 1st Year &middot; BSIT-1A</span>
+                            <span class="chip"><i class="fa-solid fa-calendar"></i> 1st Semester</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-banner-actions">
+                    <button class="btn btn-outline" type="button" data-avatar-trigger data-avatar-target="#photo-input">
+                        <i class="fa-solid fa-camera"></i> Change Photo
+                    </button>
+                    <input type="file" id="photo-input" data-avatar-input accept="image/*" hidden>
+                </div>
+            </section>
+
+            <nav class="profile-tabs" aria-label="Profile sections">
+                <a href="#personal" class="active" data-note="For changes in personal data, please submit a request to the Registrar's Office.">
+                    <i class="fa-regular fa-user"></i> Personal Information
+                </a>
+                <a href="#emergency" data-note="For changes in emergency contact details, please submit a request to the Registrar's Office.">
+                    <i class="fa-solid fa-people-arrows"></i> Emergency Contact
+                </a>
+                <a href="#guardian" data-note="For changes in guardian information, please submit a request to the Registrar's Office.">
+                    <i class="fa-solid fa-user-tie"></i> Guardian Information
+                </a>
+                <a href="#documents" data-note="Please submit a request to the Registrar's Office for document assistance.">
+                    <i class="fa-regular fa-folder-open"></i> Documents
+                </a>
+            </nav>
+
+            <section class="profile-tab-content" id="personal" aria-label="Personal information">
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Personal Information</h2>
+                        <span class="status-badge status-green">Verified</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-grid">
+                            <div class="info-field">
+                                <label>Full Name</label>
+                                <strong>Juan A. Dela Cruz</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Date of Birth</label>
+                                <strong>March 14, 2006</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Gender</label>
+                                <strong>Male</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Civil Status</label>
+                                <strong>Single</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Email Address</label>
+                                <strong>juan.delacruz@cec.edu.ph</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Phone Number</label>
+                                <strong>0917 555 0142</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Address</label>
+                                <strong>126 Junquera Ext., Cebu City, Cebu</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Religion</label>
+                                <strong>Roman Catholic</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Program</label>
+                                <strong class="blue">BSIT &mdash; Information Technology</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Year Level &amp; Section</label>
+                                <strong>1st Year &middot; BSIT-1A</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Enrollment Status</label>
+                                <strong class="green">Enrolled</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>General Weighted Average</label>
+                                <strong>1.59 &mdash; Very Good</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-tab-content" id="emergency" aria-label="Emergency contact" hidden>
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Emergency Contact</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-grid">
+                            <div class="info-field">
+                                <label>Full Name</label>
+                                <strong>Maria L. Dela Cruz</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Relationship</label>
+                                <strong>Mother</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Phone Number</label>
+                                <strong>0917 555 0198</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Email Address</label>
+                                <strong>maria.delacruz@email.com</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Address</label>
+                                <strong>126 Junquera Ext., Cebu City, Cebu</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Date of Birth</label>
+                                <strong>August 2, 1978</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-tab-content" id="guardian" aria-label="Guardian information" hidden>
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Guardian Information</h2>
+                        <span class="status-badge status-blue">On file</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-grid">
+                            <div class="info-field">
+                                <label>Full Name</label>
+                                <strong>Ramon P. Dela Cruz</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Relationship</label>
+                                <strong>Father</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Occupation</label>
+                                <strong>Tricycle Driver</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Date of Birth</label>
+                                <strong>January 19, 1975</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Phone Number</label>
+                                <strong>0918 555 0117</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Email Address</label>
+                                <strong>ramon.delacruz@email.com</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Address</label>
+                                <strong>126 Junquera Ext., Cebu City, Cebu</strong>
+                            </div>
+                            <div class="info-field">
+                                <label>Emergency Priority</label>
+                                <strong>First contact</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-tab-content" id="documents" aria-label="Documents" hidden>
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Submitted Documents</h2>
+                        <a class="btn btn-outline" href="documents.html">
+                            <i class="fa-solid fa-folder-open"></i> Manage Documents
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="document-row">
+                            <span class="document-icon"><i class="fa-regular fa-file-lines"></i></span>
+                            <div class="document-info">
+                                <strong>Certificate of Registration (COR)</strong>
+                                <span>COR-2026-4412 &middot; Submitted Aug 18, 2026</span>
+                            </div>
+                            <div class="document-actions">
+                                <span class="status-badge status-green">Verified</span>
+                                <button class="btn btn-outline" type="button" data-copy="COR-2026-4412">View</button>
+                            </div>
+                        </div>
+                        <div class="document-row">
+                            <span class="document-icon"><i class="fa-regular fa-file-lines"></i></span>
+                            <div class="document-info">
+                                <strong>Certificate of Good Moral</strong>
+                                <span>CGM-2026-2210 &middot; Submitted Aug 05, 2026</span>
+                            </div>
+                            <div class="document-actions">
+                                <span class="status-badge status-green">Verified</span>
+                                <button class="btn btn-outline" type="button" data-copy="CGM-2026-2210">View</button>
+                            </div>
+                        </div>
+                        <div class="document-row">
+                            <span class="document-icon"><i class="fa-solid fa-file-circle-check"></i></span>
+                            <div class="document-info">
+                                <strong>Medical Certificate</strong>
+                                <span>MED-2026-0775 &middot; Expires Nov 14, 2026</span>
+                            </div>
+                            <div class="document-actions">
+                                <span class="status-badge status-amber">Expiring</span>
+                                <button class="btn btn-primary" type="button" data-toast-onclick="Choose a file to upload" data-toast-type="info">Replace</button>
+                            </div>
+                        </div>
+                        <div class="document-row">
+                            <span class="document-icon"><i class="fa-regular fa-image"></i></span>
+                            <div class="document-info">
+                                <strong>2x2 ID Picture</strong>
+                                <span>IDP-2026-3301 &middot; Submitted Jul 28, 2026</span>
+                            </div>
+                            <div class="document-actions">
+                                <span class="status-badge status-green">Verified</span>
+                                <button class="btn btn-outline" type="button" data-copy="IDP-2026-3301">View</button>
+                            </div>
+                        </div>
+                        <div class="document-row">
+                            <span class="document-icon"><i class="fa-solid fa-id-card"></i></span>
+                            <div class="document-info">
+                                <strong>Student ID</strong>
+                                <span>SID-2024-12345 &middot; Issued Aug 21, 2026</span>
+                            </div>
+                            <div class="document-actions">
+                                <span class="status-badge status-blue">Active</span>
+                                <a class="btn btn-outline" href="documents.html#request">Request</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-foot">
+                        <p>Record changes are processed by the Registrar&apos;s Office within five working days.</p>
+                    </div>
+                </div>
+            </section>
+
+            <p class="note-bar">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <span id="profile-note">For changes in personal data, please submit a request to the Registrar's Office.</span>
+            </p>
+        </section>
+    </main>
+
+    <script src="../../js/student-profile.js"></script>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

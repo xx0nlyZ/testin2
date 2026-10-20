@@ -1,0 +1,571 @@
+/* ==========================================================================
+   CEC STUDENT PORTAL - DOCUMENT REQUEST
+   Online document request form, request tracking table, detail/cancel modals.
+   Depends on student-dashboard.css tokens via student-section.css import.
+   ========================================================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---------- Request form ---------- */
+
+.request-form {
+    padding: 20px;
+}
+
+.form-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.form-hint i {
+    color: var(--blue);
+}
+
+.form-hint em {
+    color: #B3261E;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.request-form .form-hint {
+    margin: 0 0 14px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-field {
+    display: grid;
+    gap: 6px;
+}
+
+.form-span-2 {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    color: var(--navy);
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.form-label .required {
+    color: #B3261E;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #D5DEE9;
+    border-radius: 6px;
+    outline: none;
+    color: var(--navy);
+    background: #FFFFFF;
+    font-size: 13px;
+    font-family: inherit;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(29, 78, 155, 0.12);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 84px;
+}
+
+.form-control.is-invalid {
+    border-color: #C0392B;
+    background: #FFF5F5;
+}
+
+.field-error {
+    min-height: 14px;
+    color: #B3261E;
+    font-size: 11.5px;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #EEF2F8;
+}
+
+/* ---------- Combined modal tabs ---------- */
+
+.doc-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px 20px 0;
+}
+
+.tab-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 15px;
+    border: 1px solid #D5DEE9;
+    border-radius: 20px;
+    color: var(--muted);
+    background: #FFFFFF;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.tab-pill:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.tab-pill.active {
+    border-color: var(--navy);
+    color: #FFFFFF;
+    background: var(--navy);
+}
+
+.doc-panel[hidden] {
+    display: none;
+}
+
+/* ---------- Upload dropzone ---------- */
+
+.dropzone {
+    display: grid;
+    justify-items: center;
+    gap: 4px;
+    padding: 26px 16px;
+    border: 2px dashed #C7D4E6;
+    border-radius: 8px;
+    color: var(--muted);
+    background: #FBFCFE;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible {
+    border-color: var(--blue);
+    background: #F1F6FD;
+    outline: none;
+}
+
+.dropzone.dragover {
+    border-color: var(--blue);
+    background: #E8F1FD;
+}
+
+.dropzone.has-file {
+    border-color: #7BC29A;
+    background: #E3F4EA;
+}
+
+.dropzone i {
+    color: var(--blue);
+    font-size: 22px;
+}
+
+.dropzone.has-file i {
+    color: #1D9E5B;
+}
+
+.dropzone strong {
+    color: var(--navy);
+    font-size: 13px;
+}
+
+.dropzone small {
+    color: var(--muted);
+    font-size: 11.5px;
+}
+
+/* ---------- Toolbar search + count ---------- */
+
+.dr-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 38px;
+    min-width: 240px;
+    padding: 0 12px;
+    border: 1px solid #D5DEE9;
+    border-radius: 6px;
+    color: var(--muted);
+    background: #FFFFFF;
+}
+
+.dr-search:focus-within {
+    border-color: var(--blue);
+}
+
+.dr-search input {
+    width: 100%;
+    border: 0;
+    outline: none;
+    color: var(--navy);
+    background: transparent;
+    font-size: 13px;
+}
+
+.count-pill {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    color: #1D4E9B;
+    background: #E2ECFA;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.btn-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border: 1px solid #B3261E;
+    border-radius: 6px;
+    color: #FFFFFF;
+    background: #B3261E;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background: #94200F;
+    border-color: #94200F;
+}
+
+.status-muted {
+    color: #5B6B80;
+    background: #EAEEF4;
+}
+
+.empty-row td {
+    padding: 34px 16px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ---------- Modal ---------- */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+    background: rgba(11, 44, 94, 0.55);
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal {
+    width: 100%;
+    max-width: 560px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 20px 50px rgba(11, 44, 94, 0.35);
+    animation: modalIn 0.18s ease;
+}
+
+.modal-sm {
+    max-width: 420px;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #EEF2F8;
+}
+
+.modal-head .modal-heading {
+    margin: 0;
+}
+
+.modal-close {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border: 0;
+    border-radius: 6px;
+    color: var(--muted);
+    background: transparent;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--navy);
+    background: #F1F5FB;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-confirm {
+    text-align: center;
+}
+
+.modal-heading {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.modal-text {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.55;
+}
+
+.modal-warning-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 14px;
+    place-items: center;
+    border-radius: 50%;
+    color: #B3261E;
+    background: #FBE4E4;
+    font-size: 22px;
+}
+
+.modal-details {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 14px 16px;
+    border: 1px solid #EEF2F8;
+    border-radius: 8px;
+    background: #FBFCFE;
+    text-align: left;
+}
+
+.modal-detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    font-size: 13px;
+}
+
+.modal-detail-row span {
+    color: var(--muted);
+}
+
+.modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid #EEF2F8;
+}
+
+.modal-confirm + .modal-actions,
+.modal-body.modal-confirm + .modal-actions {
+    justify-content: center;
+}
+
+/* ---------- Detail modal content ---------- */
+
+.detail-hero {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #EEF2F8;
+}
+
+.detail-hero-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    place-items: center;
+    border-radius: 8px;
+    color: var(--blue);
+    background: var(--pale-blue);
+    font-size: 20px;
+}
+
+.detail-hero-title {
+    margin: 0;
+    font-size: 16px;
+}
+
+.detail-hero-sub {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 12.5px;
+}
+
+.detail-hero-sub strong {
+    color: var(--blue);
+}
+
+.kv-list {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.kv-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid #EEF2F8;
+    font-size: 13px;
+}
+
+.kv-list dt {
+    color: var(--muted);
+}
+
+.kv-list dd {
+    margin: 0;
+    font-weight: 700;
+    text-align: right;
+}
+
+.kv-list dd.muted {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.timeline-title {
+    margin: 20px 0 12px;
+    font-size: 14px;
+}
+
+.timeline {
+    position: relative;
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0 0 0 24px;
+    list-style: none;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 6px;
+    width: 2px;
+    background: #E3E9F2;
+}
+
+.timeline li {
+    position: relative;
+    padding: 0 0 18px;
+}
+
+.timeline li:last-child {
+    padding-bottom: 0;
+}
+
+.timeline li::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -24px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #C7D4E6;
+    border-radius: 50%;
+    background: #FFFFFF;
+}
+
+.timeline li.is-done::before {
+    border-color: var(--blue);
+    background: var(--blue);
+}
+
+.timeline li strong {
+    display: block;
+    font-size: 13px;
+}
+
+.timeline li span {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 650px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dr-search {
+        min-width: 100%;
+    }
+
+    .toolbar-actions {
+        width: 100%;
+    }
+
+    .modal-overlay {
+        padding: 20px 12px;
+    }
+}

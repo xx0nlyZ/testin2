@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/student-section.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="grades.html" class="active"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <div class="head-row">
+                    <div>
+                        <h1>Grades</h1>
+                        <p class="page-desc">Term grades, running average, and academic standing.</p>
+                    </div>
+                    <div class="head-actions">
+                        <button class="btn btn-outline" type="button" data-toast-onclick="Report card downloaded as PDF" data-toast-type="success">
+                            <i class="fa-solid fa-download"></i> Download Report Card
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="summary-strip" aria-label="Grade summary">
+                <div class="summary-item">
+                    <p>General Weighted Average</p>
+                    <strong>1.59</strong>
+                    <small class="green">Very Good</small>
+                </div>
+                <div class="summary-item">
+                    <p>Units Taken</p>
+                    <strong>18</strong>
+                    <small>6 subjects</small>
+                </div>
+                <div class="summary-item">
+                    <p>Subjects Passed</p>
+                    <strong>6 of 6</strong>
+                    <small class="green">No failed subject</small>
+                </div>
+                <div class="summary-item">
+                    <p>Academic Standing</p>
+                    <strong>Very Good</strong>
+                    <small class="green">Dean's list qualified</small>
+                </div>
+            </section>
+
+            <div class="section-toolbar">
+                <div class="filter-row">
+                    <div class="filter-box">
+                        <label for="grade-term">Semester</label>
+                        <select id="grade-term">
+                            <option selected>1st Semester</option>
+                            <option>2nd Semester</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label for="grade-year">Year Level</label>
+                        <select id="grade-year">
+                            <option selected>1st Year</option>
+                            <option>2nd Year</option>
+                            <option>3rd Year</option>
+                            <option>4th Year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <div class="table-heading">
+                    <h3>1st Semester &middot; 1st Year</h3>
+                    <div class="heading-actions">
+                        <span class="status-badge status-blue">Released Sept. 25, 2026</span>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Title</th>
+                                <th>Units</th>
+                                <th>Midterm</th>
+                                <th>Final</th>
+                                <th>Grade</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="code-cell">ITC 101</td>
+                                <td>Introduction to Information Technology</td>
+                                <td class="numeric">3</td>
+                                <td class="numeric">88</td>
+                                <td class="numeric">91</td>
+                                <td class="numeric">1.50</td>
+                                <td><span class="status-badge status-green">Passed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">MTH 101</td>
+                                <td>Mathematics in the Modern World</td>
+                                <td class="numeric">3</td>
+                                <td class="numeric">79</td>
+                                <td class="numeric">84</td>
+                                <td class="numeric">2.10</td>
+                                <td><span class="status-badge status-green">Passed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">ENG 101</td>
+                                <td>Purposive Communication</td>
+                                <td class="numeric">3</td>
+                                <td class="numeric">92</td>
+                                <td class="numeric">95</td>
+                                <td class="numeric">1.20</td>
+                                <td><span class="status-badge status-green">Passed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">ACC 101</td>
+                                <td>Financial Accounting</td>
+                                <td class="numeric">3</td>
+                                <td class="numeric">81</td>
+                                <td class="numeric">86</td>
+                                <td class="numeric">1.80</td>
+                                <td><span class="status-badge status-green">Passed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">ITC 102</td>
+                                <td>Computer Hardware &amp; Maintenance</td>
+                                <td class="numeric">4</td>
+                                <td class="numeric">84</td>
+                                <td class="numeric">89</td>
+                                <td class="numeric">1.60</td>
+                                <td><span class="status-badge status-green">Passed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">PE 101</td>
+                                <td>Physical Education</td>
+                                <td class="numeric">2</td>
+                                <td class="numeric">95</td>
+                                <td class="numeric">93</td>
+                                <td class="numeric">1.25</td>
+                                <td><span class="status-badge status-green">Passed</span></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Term Average</td>
+                                <td class="numeric">18</td>
+                                <td class="numeric">&mdash;</td>
+                                <td class="numeric">&mdash;</td>
+                                <td class="numeric">1.59</td>
+                                <td>Very Good</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="two-col spaced-top">
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Grading Scale</h2>
+                    </div>
+                    <div class="card-body card-body-tight">
+
+                        <div class="detail-list">
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-award"></i></span>
+                                <div class="detail-info">
+                                    <strong>Outstanding</strong>
+                                    <span>1.00 &ndash; 1.49</span>
+                                </div>
+                                <span class="detail-value">1.00</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-thumbs-up"></i></span>
+                                <div class="detail-info">
+                                    <strong>Very Good</strong>
+                                    <span>1.50 &ndash; 1.99</span>
+                                </div>
+                                <span class="detail-value">1.59</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                <div class="detail-info">
+                                    <strong>Good</strong>
+                                    <span>2.00 &ndash; 2.49</span>
+                                </div>
+                                <span class="detail-value">&mdash;</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+                                <div class="detail-info">
+                                    <strong>Failed</strong>
+                                    <span>3.00 and above</span>
+                                </div>
+                                <span class="detail-value">&mdash;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Running Average</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="meter-block">
+                            <div class="meter-head">
+                                <strong>Cumulative GWA</strong>
+                                <span>1.59</span>
+                            </div>
+                            <div class="meter green"><span style="width: 11%;"></span></div>
+                        </div>
+                        <div class="meter-block">
+                            <div class="meter-head">
+                                <strong>Units completed toward the degree</strong>
+                                <span>18 of 160</span>
+                            </div>
+                            <div class="meter"><span style="width: 11%;"></span></div>
+                        </div>
+                        <div class="meter-block">
+                            <div class="meter-head">
+                                <strong>Scholarship GPA requirement</strong>
+                                <span>1.50 required</span>
+                            </div>
+                            <div class="meter green"><span style="width: 100%;"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="note-bar">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                Grade corrections are handled by your class adviser within 7 days of release. Request a review at the
+                <a href="../records/student-profile.html">registrar&apos;s office</a>.
+            </p>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login History | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/settings.css">
+    <style>
+        .btn-export {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            height: 40px;
+            padding: 0 18px;
+            border: 1.5px solid var(--blue);
+            border-radius: 6px;
+            color: var(--blue);
+            background: #FFFFFF;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-export:hover {
+            color: #FFFFFF;
+            background: var(--blue);
+        }
+
+        .page-head {
+            margin-bottom: 16px;
+        }
+    </style>
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search students, subjects, or anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">CB</span>
+                <span class="profile-info">
+                    <strong>Mr. Charles Bacus</strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <a href="login-history.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Login History</a>
+            <div class="page-head">
+                <h1>Login History</h1>
+                <p class="page-desc">All login attempts for your account.</p>
+            </div>
+
+            <div class="table-card">
+                <div class="table-heading">
+                    <div class="heading-actions">
+                        <select class="filter-select" aria-label="Date range">
+                            <option selected>All Dates</option>
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>This month</option>
+                        </select>
+                        <button type="button" class="btn-export" id="export-btn"><i class="fa-solid fa-upload"></i> Export</button>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date &amp; Time</th>
+                                <th>Device</th>
+                                <th>IP Address</th>
+                                <th>Status</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="muted-cell">1</td>
+                                <td>Sept. 08, 2026 09:12 AM</td>
+                                <td class="muted-cell">Windows - Chrome</td>
+                                <td class="muted-cell">192.168.1.10</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Cebu, Philippines</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">2</td>
+                                <td>Sept. 08, 2026 08:05 AM</td>
+                                <td class="muted-cell">MacOS - Safari</td>
+                                <td class="muted-cell">10.0.2.15</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Basa, Cebu, Phil</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">3</td>
+                                <td>Sept. 07, 2026 22:47 PM</td>
+                                <td class="muted-cell">Windows - Chrome</td>
+                                <td class="muted-cell">192.168.1.23</td>
+                                <td><span class="status-badge status-red">Failed</span></td>
+                                <td><span class="location-tag">Cebu, Philippines</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">4</td>
+                                <td>Sept. 07, 2026 18:30 PM</td>
+                                <td class="muted-cell">Android - Chrome</td>
+                                <td class="muted-cell">192.168.1.45</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Cebu, Philippines</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">5</td>
+                                <td>Sept. 07, 2026 07:55 AM</td>
+                                <td class="muted-cell">Windows - Chrome</td>
+                                <td class="muted-cell">192.168.1.10</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Cebu, Philippines</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">6</td>
+                                <td>Sept. 06, 2026 20:10 PM</td>
+                                <td class="muted-cell">Windows - Edge</td>
+                                <td class="muted-cell">192.168.1.23</td>
+                                <td><span class="status-badge status-red">Failed</span></td>
+                                <td><span class="location-tag">Basa, Cebu, Phil</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">7</td>
+                                <td>Sept. 06, 2026 18:00 PM</td>
+                                <td class="muted-cell">Windows - Edge</td>
+                                <td class="muted-cell">192.168.1.23</td>
+                                <td><span class="status-badge status-red">Failed</span></td>
+                                <td><span class="location-tag">Basa, Cebu, Phil</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">8</td>
+                                <td>Sept. 06, 2026 09:40 AM</td>
+                                <td class="muted-cell">Windows - Chrome</td>
+                                <td class="muted-cell">192.168.1.10</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Cebu, Philippines</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">9</td>
+                                <td>Sept. 05, 2026 13:15 PM</td>
+                                <td class="muted-cell">Windows - Chrome</td>
+                                <td class="muted-cell">192.168.1.10</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Cebu, Philippines</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">10</td>
+                                <td>Sept. 05, 2026 10:42 AM</td>
+                                <td class="muted-cell">Windows - Chrome</td>
+                                <td class="muted-cell">192.168.1.10</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Cebu, Philippines</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">11</td>
+                                <td>Sept. 05, 2026 08:22 AM</td>
+                                <td class="muted-cell">iPhone - Safari</td>
+                                <td class="muted-cell">192.168.1.50</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Cebu, Philippines</span></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">12</td>
+                                <td>Sept. 04, 2026 19:05 PM</td>
+                                <td class="muted-cell">MacOS - Chrome</td>
+                                <td class="muted-cell">10.0.2.16</td>
+                                <td><span class="status-badge status-green">Success</span></td>
+                                <td><span class="location-tag">Basa, Cebu, Phil</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer">
+                    <p class="pagination-info">Showing 1 to 12 of 12 entries</p>
+                    <div class="pagination">
+                        <button class="page-btn" type="button" aria-label="Previous page"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="page-btn active" type="button">1</button>
+                        <button class="page-btn" type="button">2</button>
+                        <button class="page-btn" type="button" aria-label="Next page"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('export-btn').addEventListener('click', function () {
+            this.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Exporting...';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fa-solid fa-upload"></i> Export';
+                alert('Login history exported successfully.');
+            }, 900);
+        });
+    </script>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

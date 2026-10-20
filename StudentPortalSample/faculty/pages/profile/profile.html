@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | CEC Faculty Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="profile.html" class="active"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <h1>Profile</h1>
+                <p class="page-desc">View and manage your faculty information.</p>
+            </div>
+
+            <section class="profile-grid" aria-label="Profile information">
+                <div class="profile-column">
+                    <article class="profile-card profile-summary">
+                        <span class="summary-avatar">MS</span>
+                        <h2>Prof. Maria Santos</h2>
+                        <p class="role-sub">Faculty</p>
+                        <a href="edit-profile.html" class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit Profile</a>
+                    </article>
+
+                    <article class="profile-card">
+                        <div class="profile-card-head">
+                            <i class="fa-solid fa-id-card"></i>
+                            <h3>Personal Information</h3>
+                        </div>
+                        <div class="info-body">
+                            <div class="info-grid">
+                                <div class="info-field">
+                                    <label>Full Name</label>
+                                    <p>Maria Clara Santos</p>
+                                </div>
+                                <div class="info-field">
+                                    <label>Employee ID</label>
+                                    <p>FAC - 0013 <button class="cec-copy-btn" type="button" data-copy="FAC - 0013" aria-label="Copy employee ID" title="Copy"><i class="fa-solid fa-copy"></i></button></p>
+                                </div>
+                                <div class="info-field">
+                                    <label>Email</label>
+                                    <p>maria.santos@cec.edu.com.ph <button class="cec-copy-btn" type="button" data-copy="maria.santos@cec.edu.com.ph" aria-label="Copy email" title="Copy"><i class="fa-solid fa-copy"></i></button></p>
+                                </div>
+                                <div class="info-field">
+                                    <label>Phone</label>
+                                    <p>0917 123 4567 <button class="cec-copy-btn" type="button" data-copy="0917 123 4567" aria-label="Copy phone number" title="Copy"><i class="fa-solid fa-copy"></i></button></p>
+                                </div>
+                                <div class="info-field">
+                                    <label>Department</label>
+                                    <p>Information Technology</p>
+                                </div>
+                                <div class="info-field">
+                                    <label>Designation</label>
+                                    <p>Faculty</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="profile-column">
+                    <article class="profile-card">
+                        <div class="profile-card-head">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <h3>Education</h3>
+                        </div>
+                        <ul class="edu-list">
+                            <li class="edu-item">
+                                <h4>Master of Science in Computer Science</h4>
+                                <p class="edu-school">University of Cebu</p>
+                                <p class="edu-years">2018 - 2020</p>
+                            </li>
+                            <li class="edu-item">
+                                <h4>Bachelor of Science in Information Technology</h4>
+                                <p class="edu-school">Cebu Normal University</p>
+                                <p class="edu-years">2014 - 2018</p>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="profile-card">
+                        <div class="profile-card-head">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h3>Contact Address</h3>
+                        </div>
+                        <div class="address-body">
+                            <p>123 San Vicente St., Cebu City</p>
+                            <p>Cebu, Philippines 6000</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

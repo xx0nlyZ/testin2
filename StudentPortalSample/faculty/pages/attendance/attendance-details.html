@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Details | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/attendance-details.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="attendance-dashboard.html" class="active"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">CB</span>
+                <span class="profile-info">
+                    <strong>Mr. Charles Bacus</strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <nav class="crumb-bar" aria-label="Breadcrumb">
+                <a href="attendance-dashboard.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Attendance</a>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                <span>Attendance Details</span>
+            </nav>
+
+            <div class="page-head">
+                <h1>Attendance Details</h1>
+                <p class="page-desc">View attendance records and statistics for this class.</p>
+            </div>
+
+            <div class="summary-bar">
+                <div class="class-summary">
+                    <span class="summary-icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
+                    <div>
+                        <strong>BSIT 1A - Web Development</strong>
+                        <span class="summary-meta">Section 1A | Session 1</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <section class="stats-grid" aria-label="Class attendance statistics">
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Total Students</p>
+                        <strong>28</strong>
+                        <small>Enrolled this term</small>
+                    </div>
+                    <span class="stat-icon"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Present</p>
+                        <strong>24</strong>
+                        <small class="stat-sub percent-green">87% attendance rate</small>
+                    </div>
+                    <span class="stat-icon"><i class="fa-regular fa-circle-check" aria-hidden="true"></i></span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Absent</p>
+                        <strong>2</strong>
+                        <small class="stat-sub percent-red">7% absence rate</small>
+                    </div>
+                    <span class="stat-icon"><i class="fa-regular fa-circle-xmark" aria-hidden="true"></i></span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Late</p>
+                        <strong>2</strong>
+                        <small class="stat-sub percent-amber">3.2% late rate</small>
+                    </div>
+                    <span class="stat-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+                </article>
+            </section>
+
+            <div class="table-card">
+                <div class="table-heading">
+                    <h3>Attendance Records</h3>
+                    <span class="date-tag"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Aug 11, 2025 &ndash; Aug 17, 2025</span>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Student Name</th>
+                                <th>Student ID</th>
+                                <th>Aug 11</th>
+                                <th>Aug 12</th>
+                                <th>Aug 13</th>
+                                <th>Aug 14</th>
+                                <th>Aug 15</th>
+                                <th>Aug 16</th>
+                                <th>Aug 17</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>John Marc Dela Cruz</td>
+                                <td>2024-0001</td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-amber" title="Late"><i class="fa-solid fa-clock" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="status-badge status-green">Present</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Rhea Gementiza</td>
+                                <td>2024-0002</td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="status-badge status-green">Present</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Carl Almonte</td>
+                                <td>2024-0003</td>
+                                <td><span class="cell-dot dot-amber" title="Late"><i class="fa-solid fa-clock" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-red" title="Absent"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="status-badge status-amber">Late</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sheena Mallari</td>
+                                <td>2024-0004</td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-amber" title="Late"><i class="fa-solid fa-clock" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="status-badge status-amber">Late</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Paolo Reyes</td>
+                                <td>2024-0005</td>
+                                <td><span class="cell-dot dot-amber" title="Late"><i class="fa-solid fa-clock" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-red" title="Absent"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-red" title="Absent"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="cell-dot dot-green" title="Present"><i class="fa-solid fa-check" aria-hidden="true"></i></span></td>
+                                <td><span class="status-badge status-red">Absent</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="analytics-grid">
+                <section class="table-card" aria-label="Attendance analytics">
+                    <div class="donut-row">
+                        <div class="donut">
+                            <svg viewBox="0 0 36 36" aria-hidden="true">
+                                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#E8EEF6" stroke-width="3.5"></circle>
+                                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#2E9E4F" stroke-width="3.5" stroke-dasharray="87 100" stroke-linecap="round" transform="rotate(-90 18 18)"></circle>
+                            </svg>
+                            <span class="donut-value">87%</span>
+                            <span class="donut-label">Present</span>
+                        </div>
+
+                        <div class="donut">
+                            <svg viewBox="0 0 36 36" aria-hidden="true">
+                                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#E8EEF6" stroke-width="3.5"></circle>
+                                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#B3261E" stroke-width="3.5" stroke-dasharray="7 100" stroke-linecap="round" transform="rotate(-90 18 18)"></circle>
+                            </svg>
+                            <span class="donut-value">7%</span>
+                            <span class="donut-label">Absent</span>
+                        </div>
+
+                        <div class="donut">
+                            <svg viewBox="0 0 36 36" aria-hidden="true">
+                                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#E8EEF6" stroke-width="3.5"></circle>
+                                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#E08A00" stroke-width="3.5" stroke-dasharray="3 100" stroke-linecap="round" transform="rotate(-90 18 18)"></circle>
+                            </svg>
+                            <span class="donut-value">3.2%</span>
+                            <span class="donut-label">Late</span>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="notes-panel">
+                    <p>Students are expected to arrive before the start of class. Attendance is recorded within the first 15 minutes of the session; late arrivals beyond this window are marked as Absent. Please coordinate with the registrar for any absences due to valid school activities.</p>
+                </aside>
+            </div>
+        </section>
+    </main>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

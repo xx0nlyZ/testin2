@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cebu Eastern College | School Portal</title>
+
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="landingPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="logo-area">
+            <img src="../images/cec-logo.png" alt="Cebu Eastern College logo" class="logo">
+
+            <div>
+                <h1>CEBU EASTERN COLLEGE</h1>
+                <p>LEARN • GROW • SERVE</p>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- HERO + AUTH (split screen on desktop) -->
+    <div class="split">
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="line"></div>
+
+            <p class="welcome">Welcome to the</p>
+
+            <h2>
+                Cebu Eastern College
+                <br class="hero-break">
+                School Portal
+            </h2>
+
+            <p class="description">
+                Your one-stop access to academic,
+                administrative, and campus services.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- AUTH CARD -->
+    <main class="portal-section">
+
+        <section class="auth-card" aria-labelledby="login-title">
+            <div class="form-panel">
+                <h2 id="login-title">Sign in</h2>
+                <p class="form-intro">Enter your Student ID, username, or email and password to open your portal.</p>
+
+                <div class="form-alert" id="login-alert" role="alert" hidden>
+                    <i class="fa-solid fa-circle-exclamation" id="login-alert-icon" aria-hidden="true"></i>
+                    <span id="login-alert-text"></span>
+                </div>
+
+                <form id="login-form" novalidate>
+                    <div class="field">
+                        <label for="login-id">Student ID, Username, or Email</label>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-id-card" aria-hidden="true"></i>
+                            <input type="text" id="login-id" name="id" placeholder="e.g. 2024-12345, juan.delacruz" autocomplete="username" required>
+                        </div>
+                        <p class="field-error" id="id-error" hidden></p>
+                    </div>
+
+                    <div class="field">
+                        <div class="field-top">
+                            <label for="login-password">Password</label>
+                            <a href="recovery.html">Forgot Password?</a>
+                        </div>
+                        <div class="input-icon with-toggle">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            <input type="password" id="login-password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+                            <button type="button" class="pw-toggle" id="pw-toggle" aria-label="Show password" aria-pressed="false">
+                                <i class="fa-solid fa-eye" id="pw-toggle-icon" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <p class="field-error" id="password-error" hidden></p>
+                    </div>
+
+                    <label class="remember-row">
+                        <input type="checkbox" name="remember" id="login-remember">
+                        <span>Remember me</span>
+                    </label>
+
+                    <button type="submit" class="btn-primary" id="login-submit">Sign In</button>
+                </form>
+
+                <p class="auth-switch">Student accounts are created by the Registrar's Office.
+                    <a href="register.html">Request an account</a></p>
+            </div>
+        </section>
+
+        <!-- DEVELOPMENT / TESTING ONLY -->
+        <details class="demo-panel" id="demo-panel">
+            <summary><i class="fa-solid fa-flask" aria-hidden="true"></i> Development &amp; testing only — demo accounts</summary>
+            <p class="demo-note">Fictional sample accounts stored in this browser for front-end demonstration. Not real credentials and not a production login feature.</p>
+            <div class="demo-scroll">
+                <table class="demo-table">
+                    <thead>
+                        <tr><th>Role</th><th>ID / Username / Email</th><th>Password</th><th>Status</th><th></th></tr>
+                    </thead>
+                    <tbody id="demo-rows"></tbody>
+                </table>
+            </div>
+        </details>
+
+    </main>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Cebu Eastern College | School Portal</h3>
+        <p>Be part of EASTERNIAN Community, where QUALITY EDUCATION is LESS EXPENSIVE</p>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            var Auth = window.CECAuth;
+            var form = document.getElementById('login-form');
+            var idInput = document.getElementById('login-id');
+            var pwInput = document.getElementById('login-password');
+            var remember = document.getElementById('login-remember');
+            var submitBtn = document.getElementById('login-submit');
+            var alertBox = document.getElementById('login-alert');
+            var alertText = document.getElementById('login-alert-text');
+            var alertIcon = document.getElementById('login-alert-icon');
+            var idError = document.getElementById('id-error');
+            var pwError = document.getElementById('password-error');
+
+            var params = new URLSearchParams(window.location.search);
+
+            /* ---- Password visibility toggle ---- */
+            var pwToggle = document.getElementById('pw-toggle');
+            var pwToggleIcon = document.getElementById('pw-toggle-icon');
+            pwToggle.addEventListener('click', function () {
+                var showing = pwInput.type === 'text';
+                pwInput.type = showing ? 'password' : 'text';
+                pwToggle.setAttribute('aria-pressed', String(!showing));
+                pwToggle.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+                pwToggleIcon.className = showing ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
+            });
+
+            /* ---- Alerts ---- */
+            function showAlert(type, message) {
+                alertBox.hidden = false;
+                alertBox.className = 'form-alert is-' + type;
+                alertIcon.className = type === 'success'
+                    ? 'fa-solid fa-circle-check'
+                    : 'fa-solid fa-circle-exclamation';
+                alertText.textContent = message;
+            }
+
+            function hideAlert() {
+                alertBox.hidden = true;
+            }
+
+            function fieldError(input, node, message) {
+                if (message) {
+                    node.textContent = message;
+                    node.hidden = false;
+                    input.setAttribute('aria-invalid', 'true');
+                } else {
+                    node.hidden = true;
+                    node.textContent = '';
+                    input.removeAttribute('aria-invalid');
+                }
+            }
+
+            /* ---- Messages from the session guard ---- */
+            if (params.get('expired') === '1') {
+                showAlert('error', 'Please sign in to continue. Your demo session has ended or was never started.');
+            } else if (params.get('denied') === '1') {
+                showAlert('error', 'That portal belongs to a different role. Sign in with your own account to open your portal.');
+            }
+
+            /* ---- Loading state ---- */
+            function setLoading(on) {
+                submitBtn.disabled = on;
+                if (on) {
+                    submitBtn.dataset.label = submitBtn.textContent;
+                    submitBtn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span> Signing in...';
+                } else {
+                    submitBtn.textContent = submitBtn.dataset.label || 'Sign In';
+                }
+            }
+
+            /* ---- Submit ---- */
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                hideAlert();
+
+                var id = idInput.value.trim();
+                var password = pwInput.value;
+                var valid = true;
+
+                if (!id) {
+                    fieldError(idInput, idError, 'Enter your Student ID, username, or email.');
+                    valid = false;
+                } else {
+                    fieldError(idInput, idError, null);
+                }
+
+                if (!password) {
+                    fieldError(pwInput, pwError, 'Enter your password.');
+                    valid = false;
+                } else {
+                    fieldError(pwInput, pwError, null);
+                }
+
+                if (!valid) {
+                    showAlert('error', 'Fill in the required fields to sign in.');
+                    return;
+                }
+
+                setLoading(true);
+
+                setTimeout(function () {
+                    var result = Auth.login(id, password, remember.checked);
+                    setLoading(false);
+
+                    if (!result.ok) {
+                        showAlert('error', result.message);
+                        return;
+                    }
+
+                    showAlert('success', 'Welcome, ' + result.user.name + '. Opening your portal...');
+                    setTimeout(function () {
+                        window.location.href = new URL('../' + result.destination, window.location.href).href;
+                    }, 450);
+                }, 650);
+            });
+
+            /* ---- Demo account table (development/testing only) ---- */
+            var roleNames = {
+                student: 'Student', faculty: 'Faculty', registrar: 'Registrar', admin: 'Admin'
+            };
+
+            var rows = Auth.DEMO_ACCOUNTS().map(function (acc) {
+                var identifier = acc.id + ' <span class="demo-dim">/ ' + acc.username + '</span>';
+                return '<tr>' +
+                    '<td>' + roleNames[acc.role] + '</td>' +
+                    '<td><code>' + identifier + '</code></td>' +
+                    '<td><code>' + acc.password + '</code></td>' +
+                    '<td>' + (acc.status === 'Active' ? 'Active' : '<span class="demo-warn">Inactive</span>') + '</td>' +
+                    '<td><button type="button" class="demo-use" data-user="' + acc.username + '" data-pass="' + acc.password + '">Use</button></td>' +
+                    '</tr>';
+            }).join('');
+
+            document.getElementById('demo-rows').innerHTML = rows;
+
+            document.getElementById('demo-rows').addEventListener('click', function (event) {
+                var btn = event.target.closest('.demo-use');
+                if (!btn) return;
+                idInput.value = btn.getAttribute('data-user');
+                pwInput.value = btn.getAttribute('data-pass');
+                fieldError(idInput, idError, null);
+                fieldError(pwInput, pwError, null);
+                hideAlert();
+                idInput.focus();
+            });
+        })();
+    </script>
+
+</body>
+</html>

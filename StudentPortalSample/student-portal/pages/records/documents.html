@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/student-section.css">
+    <link rel="stylesheet" href="../../css/document-request.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="documents.html" class="active"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <div class="head-row">
+                    <div>
+                        <h1>Documents</h1>
+                        <p class="page-desc">Submitted requirements, verified clearances, and online document requests.</p>
+                    </div>
+                    <div class="head-actions">
+                        <button class="btn btn-primary" type="button" id="new-request-btn">
+                            <i class="fa-regular fa-file-circle-plus"></i> New Document
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="summary-strip" aria-label="Document summary">
+                <div class="summary-item">
+                    <p>Total Documents</p>
+                    <strong>8</strong>
+                    <small>On file with the registrar</small>
+                </div>
+                <div class="summary-item">
+                    <p>Verified</p>
+                    <strong>6</strong>
+                    <small class="green">Cleared and accepted</small>
+                </div>
+                <div class="summary-item">
+                    <p>Expiring Soon</p>
+                    <strong>1</strong>
+                    <small class="red">Medical certificate</small>
+                </div>
+                <div class="summary-item">
+                    <p>Open Requests</p>
+                    <strong id="summary-open">0</strong>
+                    <small>Pending, in review, or for pick up</small>
+                </div>
+            </section>
+
+            <div class="section-toolbar">
+                <div class="filter-row">
+                    <div class="filter-box">
+                        <label for="doc-status">Status</label>
+                        <select id="doc-status">
+                            <option selected>All Statuses</option>
+                            <option>Verified</option>
+                            <option>Expiring</option>
+                            <option>On Request</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label for="doc-category">Category</label>
+                        <select id="doc-category">
+                            <option selected>All Categories</option>
+                            <option>Enrollment</option>
+                            <option>Clearance</option>
+                            <option>Identification</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card spaced-bottom">
+                <div class="table-heading">
+                    <h3>Document Vault</h3>
+                    <div class="heading-actions">
+                        <button class="btn btn-outline" type="button" data-toast-onclick="All documents downloaded as ZIP" data-toast-type="success">
+                            <i class="fa-solid fa-download"></i> Download All
+                        </button>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Document</th>
+                                <th>Category</th>
+                                <th>Date Submitted</th>
+                                <th>Reference</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Certificate of Registration (COR)</td>
+                                <td class="muted-cell">Enrollment</td>
+                                <td class="muted-cell">Aug 18, 2026</td>
+                                <td class="code-cell">COR-2026-4412</td>
+                                <td><span class="status-badge status-green">Verified</span></td>
+                                <td><button class="btn btn-outline" type="button" data-copy="COR-2026-4412">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Certificate of Enrollment</td>
+                                <td class="muted-cell">Enrollment</td>
+                                <td class="muted-cell">Aug 18, 2026</td>
+                                <td class="code-cell">COE-2026-4413</td>
+                                <td><span class="status-badge status-green">Verified</span></td>
+                                <td><button class="btn btn-outline" type="button" data-copy="COE-2026-4413">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Birth Certificate (PSA)</td>
+                                <td class="muted-cell">Identification</td>
+                                <td class="muted-cell">Jul 28, 2026</td>
+                                <td class="code-cell">DOC-2026-1180</td>
+                                <td><span class="status-badge status-green">Verified</span></td>
+                                <td><button class="btn btn-outline" type="button" data-copy="DOC-2026-1180">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Certificate of Good Moral</td>
+                                <td class="muted-cell">Clearance</td>
+                                <td class="muted-cell">Aug 05, 2026</td>
+                                <td class="code-cell">CGM-2026-2210</td>
+                                <td><span class="status-badge status-green">Verified</span></td>
+                                <td><button class="btn btn-outline" type="button" data-copy="CGM-2026-2210">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Medical Certificate</td>
+                                <td class="muted-cell">Clearance</td>
+                                <td class="muted-cell">Jun 14, 2026</td>
+                                <td class="code-cell">MED-2026-0775</td>
+                                <td><span class="status-badge status-amber">Expiring Nov 14, 2026</span></td>
+                                <td><button class="btn btn-primary" type="button" data-toast-onclick="Choose a file to upload" data-toast-type="info">Replace</button></td>
+                            </tr>
+                            <tr>
+                                <td>2x2 ID Picture</td>
+                                <td class="muted-cell">Identification</td>
+                                <td class="muted-cell">Jul 28, 2026</td>
+                                <td class="code-cell">IDP-2026-3301</td>
+                                <td><span class="status-badge status-green">Verified</span></td>
+                                <td><button class="btn btn-outline" type="button" data-copy="IDP-2026-3301">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Student ID</td>
+                                <td class="muted-cell">Identification</td>
+                                <td class="muted-cell">Aug 21, 2026</td>
+                                <td class="code-cell">SID-2024-12345</td>
+                                <td><span class="status-badge status-blue">Active</span></td>
+                                <td><button class="btn btn-outline" type="button" data-request-open>Request</button></td>
+                            </tr>
+                            <tr>
+                                <td>Form 137 / Transcript of Records</td>
+                                <td class="muted-cell">Enrollment</td>
+                                <td class="muted-cell">&mdash;</td>
+                                <td class="muted-cell">&mdash;</td>
+                                <td><span class="status-badge status-amber">On Request</span></td>
+                                <td><button class="btn btn-primary" type="button" data-request-open>Request</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer">
+                    <p class="pagination-info">Showing 8 of 8 documents</p>
+                    <div class="pagination">
+                        <button class="page-btn active" type="button">1</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-toolbar">
+                <div class="filter-row">
+                    <div class="filter-box">
+                        <label for="dr-status">Request Status</label>
+                        <select id="dr-status">
+                            <option value="all" selected>All Statuses</option>
+                            <option value="Pending">Pending</option>
+                            <option value="In Review">In Review</option>
+                            <option value="Ready for Pick Up">Ready for Pick Up</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="toolbar-actions">
+                    <label class="dr-search">
+                        <span class="sr-only">Search requests</span>
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="search" id="dr-search" placeholder="Search by type or reference...">
+                    </label>
+                    <button class="btn btn-outline" type="button" id="dr-refresh">
+                        <i class="fa-solid fa-rotate-right"></i> Refresh
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <div class="table-heading">
+                    <h3>My Requests <span class="count-pill" id="requests-count">0</span></h3>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Request Type</th>
+                                <th>Reference No</th>
+                                <th>Date Requested</th>
+                                <th>Purpose</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requests-tbody"></tbody>
+                    </table>
+                </div>
+                <div class="table-footer">
+                    <p class="pagination-info" id="requests-pagination-info">Showing 0 of 0 requests</p>
+                </div>
+            </div>
+
+            <p class="note-bar">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                Uploads are reviewed by the registrar within three working days. Submit certified copy requests using the
+                <a href="#" data-request-open>Online Document Request</a> form.
+            </p>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="request-modal" role="dialog" aria-modal="true" aria-labelledby="request-heading" hidden>
+        <div class="modal">
+            <div class="modal-head">
+                <h2 class="modal-heading" id="request-heading">New Document</h2>
+                <button class="modal-close" type="button" data-close-modal aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="doc-tabs" role="tablist" aria-label="Choose an action">
+                <button class="tab-pill active" type="button" role="tab" id="tab-request" data-doc-tab="request" aria-selected="true" aria-controls="panel-request">
+                    <i class="fa-regular fa-file-lines" aria-hidden="true"></i> Request a Document
+                </button>
+                <button class="tab-pill" type="button" role="tab" id="tab-upload" data-doc-tab="upload" aria-selected="false" aria-controls="panel-upload">
+                    <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> Upload Document
+                </button>
+            </div>
+
+            <div class="doc-panel" id="panel-request" role="tabpanel" aria-labelledby="tab-request">
+                <form class="request-form" id="request-form">
+                    <p class="form-hint"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Fields marked <em>*</em> are required.</p>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label class="form-label" for="dr-type">Document Type <span class="required">*</span></label>
+                            <select class="form-control" id="dr-type" required>
+                                <option value="" selected disabled>Select a document</option>
+                                <option>Transcript of Records / Form 137</option>
+                                <option>Certificate of Registration (COR)</option>
+                                <option>Certificate of Enrollment (COE)</option>
+                                <option>Certificate of Good Moral</option>
+                                <option>Diploma / Certificate of Graduation</option>
+                                <option>Certificate of General Weighted Average</option>
+                                <option>Authentication / CAV</option>
+                            </select>
+                            <span class="field-error" data-error-for="dr-type"></span>
+                        </div>
+
+                        <div class="form-field">
+                            <label class="form-label" for="dr-copies">Number of Copies <span class="required">*</span></label>
+                            <input class="form-control" id="dr-copies" type="number" min="1" max="5" value="1" required>
+                            <span class="field-error" data-error-for="dr-copies"></span>
+                        </div>
+
+                        <div class="form-field">
+                            <label class="form-label" for="dr-purpose">Purpose <span class="required">*</span></label>
+                            <select class="form-control" id="dr-purpose" required>
+                                <option value="" selected disabled>Select a purpose</option>
+                                <option>Employment</option>
+                                <option>Further Studies</option>
+                                <option>Scholarship</option>
+                                <option>Board Examination</option>
+                                <option>Other</option>
+                            </select>
+                            <span class="field-error" data-error-for="dr-purpose"></span>
+                        </div>
+
+                        <div class="form-field">
+                            <label class="form-label" for="dr-delivery">Delivery Method <span class="required">*</span></label>
+                            <select class="form-control" id="dr-delivery" required>
+                                <option value="" selected disabled>Select a delivery method</option>
+                                <option>Pick up at Registrar</option>
+                                <option>Courier Delivery</option>
+                            </select>
+                            <span class="field-error" data-error-for="dr-delivery"></span>
+                        </div>
+
+                        <div class="form-field form-span-2">
+                            <label class="form-label" for="dr-notes">Additional Notes</label>
+                            <textarea class="form-control" id="dr-notes" rows="3" placeholder="Optional. Add any special instructions or remarks for the registrar."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" type="reset" id="dr-reset">
+                            <i class="fa-solid fa-rotate-left"></i> Clear
+                        </button>
+                        <button class="btn btn-outline" type="button" data-close-modal>Cancel</button>
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="doc-panel" id="panel-upload" role="tabpanel" aria-labelledby="tab-upload" hidden>
+                <form class="request-form" id="upload-form">
+                    <p class="form-hint"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Upload a scanned copy. Fields marked <em>*</em> are required.</p>
+                    <div class="form-grid">
+                        <div class="form-field form-span-2">
+                            <label class="form-label" for="upload-type">Document Type <span class="required">*</span></label>
+                            <select class="form-control" id="upload-type" required>
+                                <option value="" selected disabled>Select a document</option>
+                                <option>Transcript of Records / Form 137</option>
+                                <option>Certificate of Registration (COR)</option>
+                                <option>Certificate of Enrollment (COE)</option>
+                                <option>Certificate of Good Moral</option>
+                                <option>Diploma / Certificate of Graduation</option>
+                                <option>Certificate of General Weighted Average</option>
+                                <option>Authentication / CAV</option>
+                            </select>
+                            <span class="field-error" data-error-for="upload-type"></span>
+                        </div>
+
+                        <div class="form-field form-span-2">
+                            <label class="form-label">File <span class="required">*</span></label>
+                            <div class="dropzone" id="doc-dropzone" role="button" tabindex="0" aria-label="Click to upload or drag and drop a file">
+                                <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                                <strong>Click to upload or drag &amp; drop</strong>
+                                <small>PDF or image, max 5MB</small>
+                                <input type="file" id="doc-file" accept=".pdf,image/*" hidden>
+                            </div>
+                            <span class="field-error" data-error-for="doc-file"></span>
+                        </div>
+
+                        <div class="form-field form-span-2">
+                            <label class="form-label" for="upload-notes">Additional Notes</label>
+                            <textarea class="form-control" id="upload-notes" rows="3" placeholder="Optional. Add any special instructions or remarks for the registrar."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" type="reset" id="upload-reset">
+                            <i class="fa-solid fa-rotate-left"></i> Clear
+                        </button>
+                        <button class="btn btn-outline" type="button" data-close-modal>Cancel</button>
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Document
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-heading" hidden>
+        <div class="modal">
+            <div class="modal-head">
+                <h2 class="modal-heading" id="detail-heading">Request Details</h2>
+                <button class="modal-close" type="button" data-close-modal aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="detail-hero">
+                    <span class="detail-hero-icon"><i class="fa-regular fa-file-lines" aria-hidden="true"></i></span>
+                    <div>
+                        <h3 class="detail-hero-title" id="detail-type"></h3>
+                        <div class="detail-hero-sub">
+                            <span>Reference No: <strong id="detail-ref"></strong></span>
+                            <span class="status-badge" id="detail-status"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <dl class="kv-list">
+                    <li><dt>Purpose</dt><dd id="detail-purpose"></dd></li>
+                    <li><dt>Number of Copies</dt><dd id="detail-copies"></dd></li>
+                    <li><dt>Delivery Method</dt><dd id="detail-delivery"></dd></li>
+                    <li><dt>Additional Notes</dt><dd class="muted" id="detail-notes"></dd></li>
+                </dl>
+
+                <h4 class="timeline-title">Status Update</h4>
+                <ol class="timeline" id="detail-timeline"></ol>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" type="button" data-close-modal>Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="cancel-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-heading" hidden>
+        <div class="modal modal-sm">
+            <div class="modal-body modal-confirm">
+                <span class="modal-warning-icon" aria-hidden="true"><i class="fa-solid fa-exclamation"></i></span>
+                <h2 class="modal-heading" id="cancel-heading">Cancel Document Request</h2>
+                <p class="modal-text">Are you sure you want to cancel this request? This action cannot be undone.</p>
+                <div class="modal-details">
+                    <div class="modal-detail-row">
+                        <span>Request Type</span>
+                        <strong id="cancel-type"></strong>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span>Reference Number</span>
+                        <strong id="cancel-ref"></strong>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" type="button" data-close-modal>No, Keep It</button>
+                <button class="btn btn-danger" type="button" id="cancel-confirm-btn"><i class="fa-solid fa-trash-can"></i> Yes, Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/showToast.js"></script>
+    <script src="../../js/copyToClipboard.js"></script>
+    <script src="../../js/confirmAction.js"></script>
+    <script src="../../js/avatarUpload.js"></script>
+    <script src="../../js/validateForm.js"></script>
+    <script src="../../js/persistSelect.js"></script>
+    <script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../js/documentRequest.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

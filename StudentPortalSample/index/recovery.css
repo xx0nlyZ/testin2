@@ -1,0 +1,125 @@
+/* ==========================================================================
+   CEC SCHOOL PORTAL - SHARED RECOVERY STYLES
+   Used by the shared password recovery page (index/recovery.html).
+   Builds on the shared auth base in login.css.
+   ========================================================================== */
+
+@import url("login.css");
+
+.recovery-icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 86px;
+    height: 86px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    color: #1D4E9B;
+    background: #DCE7F5;
+}
+
+.recovery-icon .envelope {
+    font-size: 34px;
+}
+
+.recovery-icon .key {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #AFC5E2;
+    border-radius: 50%;
+    color: #0B2C5E;
+    background: #FFFFFF;
+    font-size: 12px;
+}
+
+.recovery-title {
+    margin: 0 0 10px;
+    color: #0B2C5E;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+.recovery-msg {
+    margin: 0 auto 22px;
+    max-width: 320px;
+    color: #60728B;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.recovery-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.recovery-divider::before,
+.recovery-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #DCE7F5;
+}
+
+.recovery-divider a {
+    color: #0B2C5E;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ---------------- Recovery confirmation ---------------- */
+
+.recovery-done-icon {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    background: #0F7B5A;
+    font-size: 22px;
+}
+
+.recovery-done-msg {
+    margin: 0 auto 10px;
+    max-width: 330px;
+    color: #0B2C5E;
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.55;
+    text-align: center;
+}
+
+.recovery-simulated {
+    margin: 0 auto 18px;
+    max-width: 330px;
+    padding: 9px 11px;
+    border: 1px dashed #AFC5E2;
+    border-radius: 6px;
+    color: #60728B;
+    background: #F6F9FE;
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: center;
+}
+
+.recovery-done-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 46px;
+}
+
+.recovery-done-link:hover {
+    text-decoration: none;
+}

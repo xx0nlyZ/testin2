@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Classes | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/all-classes.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="attendance-dashboard.html" class="active"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">CB</span>
+                <span class="profile-info">
+                    <strong>Mr. Charles Bacus</strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="back-head">
+                <a class="back-icon-btn" href="attendance-dashboard.html" aria-label="Back to attendance">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                </a>
+                <div class="page-head">
+                    <h1>All Classes</h1>
+                    <p class="page-desc">View all your classes and manage attendance quickly and easily.</p>
+                </div>
+            </div>
+
+            <div class="filter-bar">
+                <select class="filter-select" aria-label="Semester">
+                    <option selected>1st Semester AY 2025 - 2026</option>
+                    <option>2nd Semester AY 2025 - 2026</option>
+                </select>
+
+                <select class="filter-select" id="sectionFilter" aria-label="Filter by section">
+                    <option value="">All Sections</option>
+                    <option value="1A">Section 1A</option>
+                    <option value="2A">Section 2A</option>
+                </select>
+            </div>
+
+            <div class="table-card">
+                <div class="table-heading">
+                    <h3>Class Directory</h3>
+                    <div class="heading-search">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="search" id="searchInput" placeholder="Search for classes...">
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="data-table" id="classDirectoryTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Subject Code</th>
+                                <th>Subject Title</th>
+                                <th>Section</th>
+                                <th>Schedule</th>
+                                <th>Room</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-section="1A">
+                                <td class="muted-cell">1</td>
+                                <td><span class="subject-badge badge-blue"><i class="fa-solid fa-book" aria-hidden="true"></i> BSIT 1A</span></td>
+                                <td>Web Development</td>
+                                <td>1A</td>
+                                <td>Mon, Wed, Fri &middot; 8:00 - 9:30 AM</td>
+                                <td class="muted-cell">302</td>
+                                <td><a class="btn-action" href="attendance-details.html">View Class</a></td>
+                            </tr>
+                            <tr data-section="2A">
+                                <td class="muted-cell">2</td>
+                                <td><span class="subject-badge badge-green"><i class="fa-solid fa-book" aria-hidden="true"></i> BSIT 2A</span></td>
+                                <td>Data Structures</td>
+                                <td>2A</td>
+                                <td>Tue, Thu &middot; 9:30 - 11:00 AM</td>
+                                <td class="muted-cell">204</td>
+                                <td><a class="btn-action" href="attendance-details.html">View Class</a></td>
+                            </tr>
+                            <tr data-section="2A">
+                                <td class="muted-cell">3</td>
+                                <td><span class="subject-badge badge-green"><i class="fa-solid fa-book" aria-hidden="true"></i> BSIT 2A</span></td>
+                                <td>Operating Systems</td>
+                                <td>2A</td>
+                                <td>Mon, Wed &middot; 1:00 - 2:30 PM</td>
+                                <td class="muted-cell">Lab 3</td>
+                                <td><a class="btn-action" href="attendance-details.html">View Class</a></td>
+                            </tr>
+                            <tr data-section="1A">
+                                <td class="muted-cell">4</td>
+                                <td><span class="subject-badge badge-yellow"><i class="fa-solid fa-book" aria-hidden="true"></i> ITEC 1A</span></td>
+                                <td>Multimedia Systems</td>
+                                <td>1A</td>
+                                <td>Fri &middot; 1:00 - 3:00 PM</td>
+                                <td class="muted-cell">Media Lab</td>
+                                <td><a class="btn-action" href="attendance-details.html">View Class</a></td>
+                            </tr>
+                            <tr data-section="1A">
+                                <td class="muted-cell">5</td>
+                                <td><span class="subject-badge badge-light-green"><i class="fa-solid fa-book" aria-hidden="true"></i> CS 1A</span></td>
+                                <td>Computer Programming 1</td>
+                                <td>1A</td>
+                                <td>Tue, Thu, Sat &middot; 8:00 - 9:30 AM</td>
+                                <td class="muted-cell">Lab 2</td>
+                                <td><a class="btn-action" href="attendance-details.html">View Class</a></td>
+                            </tr>
+                            <tr data-section="1A">
+                                <td class="muted-cell">6</td>
+                                <td><span class="subject-badge badge-light-green"><i class="fa-solid fa-book" aria-hidden="true"></i> CS 1A</span></td>
+                                <td>Discrete Mathematics</td>
+                                <td>1A</td>
+                                <td>Fri &middot; 8:00 - 10:00 AM</td>
+                                <td class="muted-cell">108</td>
+                                <td><a class="btn-action" href="attendance-details.html">View Class</a></td>
+                            </tr>
+                            <tr data-section="2A">
+                                <td class="muted-cell">7</td>
+                                <td><span class="subject-badge badge-blue"><i class="fa-solid fa-book" aria-hidden="true"></i> BSIT 2A</span></td>
+                                <td>Software Engineering</td>
+                                <td>2A</td>
+                                <td>Mon, Wed &middot; 9:30 - 11:00 AM</td>
+                                <td class="muted-cell">206</td>
+                                <td><a class="btn-action" href="attendance-details.html">View Class</a></td>
+                            </tr>
+                            <tr data-section="2A">
+                                <td class="muted-cell">8</td>
+                                <td><span class="subject-badge badge-green"><i class="fa-solid fa-book" aria-hidden="true"></i> BSIT 2A</span></td>
+                                <td>Database Management</td>
+                                <td>2A</td>
+                                <td>Thu &middot; 1:00 - 3:00 PM</td>
+                                <td class="muted-cell">Lab 1</td>
+                                <td><a class="btn-action" href="attendance-details.html">View Class</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <p class="pagination-info" id="paginationInfo">Showing 1-8 of 8 classes</p>
+                    <div class="pagination">
+                        <button class="page-btn" type="button" aria-label="Previous">&lt;</button>
+                        <button class="page-btn active" type="button">1</button>
+                        <button class="page-btn" type="button" aria-label="Next">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const sectionFilter = document.getElementById('sectionFilter');
+        const paginationInfo = document.getElementById('paginationInfo');
+        const rows = document.querySelectorAll('#classDirectoryTable tbody tr');
+
+        function applyFilters() {
+            const query = searchInput.value.trim().toLowerCase();
+            const section = sectionFilter.value;
+            let visible = 0;
+
+            rows.forEach(function (row) {
+                const text = row.textContent.toLowerCase();
+                const matchQuery = !query || text.includes(query);
+                const matchSection = !section || row.dataset.section === section;
+                row.style.display = matchQuery && matchSection ? '' : 'none';
+                if (matchQuery && matchSection) visible++;
+            });
+
+            paginationInfo.textContent = visible
+                ? 'Showing 1-' + visible + ' of ' + visible + (visible === 1 ? ' class' : ' classes')
+                : 'No classes found';
+        }
+
+        searchInput.addEventListener('input', applyFilters);
+        sectionFilter.addEventListener('change', applyFilters);
+    </script>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

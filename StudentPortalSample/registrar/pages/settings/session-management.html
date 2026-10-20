@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Management | CEC Registrar Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/reg-dashboard.css">
+    <link rel="stylesheet" href="../../css/reg-analytics.css">
+    <link rel="stylesheet" href="../../css/reg-enrollment.css">
+    <link rel="stylesheet" href="../../css/reg-settings.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="registrar">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>REGISTRAR PORTAL SYSTEM</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Registrar navigation">
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../student-record/student-records.html"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="app-header">
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search">
+            </label>
+
+            <select class="semester-select" aria-label="Semester">
+                <option selected>1st Semester</option>
+                <option>2nd Semester</option>
+            </select>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Registrar</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="settings-content">
+            <div class="page-head">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../../pages/dashboard/registrar.html">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="settings.html">Settings</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Session Management</span>
+                </nav>
+                <div class="page-title">
+                    <span class="page-title-icon"><i class="fa-solid fa-laptop"></i></span>
+                    <div>
+                        <h1>Session Management</h1>
+                        <p class="page-desc">Control session timeout and review your active session.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                <nav class="settings-nav" aria-label="Settings categories">
+                    <a href="settings.html"><i class="fa-regular fa-user"></i> Account Settings</a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
+                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> Preferences</a>
+                    <a href="session-management.html" class="active"><i class="fa-solid fa-laptop"></i> Session Management</a>
+                    <a href="login-history.html"><i class="fa-solid fa-clock-rotate-left"></i> Login History</a>
+                </nav>
+
+                <div class="settings-panel active">
+                    <section class="setting-card" aria-label="Session management">
+                        <div class="setting-title">
+                            <h3><i class="fa-solid fa-laptop" aria-hidden="true"></i> Session Management</h3>
+                            <span class="session-status" id="session-status">Active</span>
+                        </div>
+
+                        <div class="pref-list">
+                            <div class="pref-row">
+                                <span class="row-icon"><i class="fa-solid fa-desktop" aria-hidden="true"></i></span>
+                                <div class="row-text">
+                                    <strong>Windows &middot; Chrome</strong>
+                                    <small>Current session on this device</small>
+                                </div>
+                                <span class="badge-this-device">This Device</span>
+                            </div>
+
+                            <div class="pref-row">
+                                <span class="row-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+                                <div class="row-text">
+                                    <strong>Last Active</strong>
+                                    <small id="last-active-time">Just now</small>
+                                </div>
+                            </div>
+
+                            <div class="pref-row">
+                                <span class="row-icon"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></span>
+                                <div class="row-text">
+                                    <strong>Session Timeout</strong>
+                                    <small>You will be automatically logged out after a period of inactivity.</small>
+                                </div>
+                                <div class="pref-control">
+                                    <select class="filter-select" id="timeout-select" aria-label="Select timeout duration">
+                                        <option value="15">15 minutes</option>
+                                        <option value="30">30 minutes</option>
+                                        <option value="60">60 minutes</option>
+                                        <option value="never">Never</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../js/sessions.js"></script>
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle');
+            toggle.addEventListener('click', function () {
+                document.body.classList.toggle('sidebar-collapsed');
+            });
+        })();
+    </script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

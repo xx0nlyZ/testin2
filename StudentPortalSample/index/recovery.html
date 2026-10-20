@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Recovery | Cebu Eastern College</title>
+    <link rel="stylesheet" href="recovery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="auth-bg" aria-hidden="true"></div>
+
+        <a href="index.html" class="auth-back" aria-label="Back to school portal">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </a>
+
+        <header class="auth-header">
+            <img src="../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <h1>CEBU EASTERN COLLEGE</h1>
+        </header>
+
+        <section class="auth-card auth-card-padded" aria-labelledby="recovery-title">
+            <div class="recovery-icon" aria-hidden="true">
+                <i class="fa-solid fa-envelope envelope"></i>
+                <i class="fa-solid fa-key key"></i>
+            </div>
+
+            <h2 class="recovery-title" id="recovery-title">Forgot Password?</h2>
+            <p class="recovery-msg">Enter your Student ID, username, or registered email and submit a password recovery request.</p>
+
+            <div class="form-alert" id="recovery-alert" role="alert" hidden>
+                <i class="fa-solid fa-circle-exclamation" id="recovery-alert-icon" aria-hidden="true"></i>
+                <span id="recovery-alert-text"></span>
+            </div>
+
+            <form id="recovery-form" novalidate>
+                <div class="field">
+                    <label for="recovery-input">Student ID, Username, or Email</label>
+                    <div class="input-icon">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <input type="text" id="recovery-input" name="recovery" placeholder="Enter your Student ID, username, or email" autocomplete="username" required>
+                    </div>
+                    <p class="field-error" id="recovery-error" hidden></p>
+                </div>
+
+                <button type="submit" class="btn-primary" id="recovery-submit">Submit Request</button>
+            </form>
+
+            <div id="recovery-done" hidden>
+                <div class="recovery-done-icon" aria-hidden="true">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <p class="recovery-done-msg" id="recovery-done-msg"></p>
+                <p class="recovery-simulated">This is a front-end demonstration. No email was sent — this project has no backend or mail service.</p>
+                <a class="btn-primary recovery-done-link" id="recovery-reset-link" href="reset-password.html">Open the demo reset page</a>
+            </div>
+
+            <div class="recovery-divider">
+                <a href="index.html">Back to Sign In</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            var Auth = window.CECAuth;
+            var form = document.getElementById('recovery-form');
+            var input = document.getElementById('recovery-input');
+            var errorNode = document.getElementById('recovery-error');
+            var alertBox = document.getElementById('recovery-alert');
+            var alertText = document.getElementById('recovery-alert-text');
+            var alertIcon = document.getElementById('recovery-alert-icon');
+            var submitBtn = document.getElementById('recovery-submit');
+            var done = document.getElementById('recovery-done');
+
+            function showAlert(type, message) {
+                alertBox.hidden = false;
+                alertBox.className = 'form-alert is-' + type;
+                alertIcon.className = type === 'success'
+                    ? 'fa-solid fa-circle-check'
+                    : 'fa-solid fa-circle-exclamation';
+                alertText.textContent = message;
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var value = input.value.trim();
+                if (!value) {
+                    errorNode.textContent = 'Enter your Student ID, username, or email.';
+                    errorNode.hidden = false;
+                    input.setAttribute('aria-invalid', 'true');
+                    showAlert('error', 'Fill in the field to submit a recovery request.');
+                    return;
+                }
+
+                errorNode.hidden = true;
+                input.removeAttribute('aria-invalid');
+                alertBox.hidden = true;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+
+                setTimeout(function () {
+                    var result = Auth.requestPasswordReset(value);
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Request';
+
+                    if (!result.ok) {
+                        showAlert('error', result.message);
+                        return;
+                    }
+
+                    var message = result.account
+                        ? 'Recovery request recorded for ' + result.account.name + ' (' + result.account.username + ').'
+                        : 'If that ID, username, or email matches a demo account, a recovery request has been recorded.';
+                    document.getElementById('recovery-done-msg').textContent = message;
+                    document.getElementById('recovery-reset-link').href =
+                        'reset-password.html?id=' + encodeURIComponent(value);
+
+                    form.hidden = true;
+                    done.hidden = false;
+                }, 500);
+            });
+        })();
+    </script>
+</body>
+</html>

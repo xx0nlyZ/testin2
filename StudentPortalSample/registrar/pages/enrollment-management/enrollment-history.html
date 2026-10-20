@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Enrollment | CEC Registrar Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/reg-dashboard.css">
+    <link rel="stylesheet" href="../../css/reg-analytics.css">
+    <link rel="stylesheet" href="../../css/reg-enroll-view.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="registrar">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>REGISTRAR PORTAL SYSTEM</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Registrar navigation">
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../student-record/student-records.html"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
+            <a href="enrollment-management.html" class="active"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
+            <a href="enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="app-header">
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search">
+            </label>
+
+            <select class="semester-select" aria-label="Semester">
+                <option selected>1st Semester</option>
+                <option>2nd Semester</option>
+            </select>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Registrar</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="view-content">
+            <div class="page-head">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../../pages/dashboard/registrar.html">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="active-enrollments.html">Active Enrollments</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>View Enrollment</span>
+                </nav>
+                <h1>View Enrollment</h1>
+                <p class="page-desc">View your complete enrollment history and details.</p>
+            </div>
+
+            <section class="stats-grid" aria-label="Enrollment summary">
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Total Enrollments</p>
+                        <strong>0</strong>
+                        <small>Across all school years</small>
+                    </div>
+                    <span class="stat-icon blue"><i class="fa-solid fa-user-graduate"></i></span>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Active Enrollments</p>
+                        <strong>0</strong>
+                        <small>Current semester</small>
+                    </div>
+                    <span class="stat-icon green"><i class="fa-solid fa-circle-check"></i></span>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Complete Enrollments</p>
+                        <strong>0</strong>
+                        <small>Successfully finished</small>
+                    </div>
+                    <span class="stat-icon amber"><i class="fa-solid fa-calendar-check"></i></span>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Dropped Enrollments</p>
+                        <strong>0</strong>
+                        <small>None on record</small>
+                    </div>
+                    <span class="stat-icon red"><i class="fa-solid fa-user-slash"></i></span>
+                </article>
+            </section>
+
+            <div class="filter-bar">
+                <label class="search-input" style="flex:1 1 260px;">
+                    <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search</span>
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input type="search" placeholder="Search by school year, semester, program or course...">
+                </label>
+                <select class="filter-select" aria-label="Filter by school year">
+                    <option>All Years</option>
+                    <option>2024 - 2025</option>
+                    <option>2023 - 2024</option>
+                    <option>2022 - 2023</option>
+                    <option>2021 - 2022</option>
+                    <option>2020 - 2021</option>
+                </select>
+                <select class="filter-select" aria-label="Filter by program">
+                    <option>All Programs</option>
+                    <option>BS Information Technology</option>
+                    <option>BS Business Administration</option>
+                    <option>BS Education</option>
+                </select>
+            </div>
+
+            <section class="table-card" aria-label="Enrollment history">
+                <div class="table-card-head">
+                    <h3><i class="fa-solid fa-clock-rotate-left"></i> Enrolment History</h3>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>School Year</th>
+                                <th>Semester</th>
+                                <th>Program</th>
+                                <th>Year Level</th>
+                                <th>Status</th>
+                                <th>Enrollment Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <p class="pagination-info">0 enrollment records</p>
+                    <div class="pagination">
+                        <button type="button" disabled>&lt;</button>
+                        <button type="button" class="active">1</button>
+                        <button type="button" disabled>&gt;</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-alert" aria-label="History notice">
+                <i class="fa-solid fa-circle-info"></i>
+                <p><strong>Enrollment Information:</strong> Your enrollment history includes all the terms you have been registered in from your first semester up to the present.</p>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                document.body.classList.toggle('sidebar-collapsed');
+            });
+        })();
+    </script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

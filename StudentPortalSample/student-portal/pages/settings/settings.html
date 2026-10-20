@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/settings.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <span class="crumb"><a href="../dashboard/student-dashboard.html">Dashboard</a> &rsaquo; Settings</span>
+                <div class="head-row">
+                    <div>
+                        <h1>Account Settings</h1>
+                        <p class="page-desc">View your portal identity, sign-in details, and profile photo.</p>
+                    </div>
+                    <div class="head-actions">
+                        <button class="btn-export" type="button" data-toast-onclick="Profile summary downloaded" data-toast-type="info">
+                            <i class="fa-solid fa-download"></i> Export Summary
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                <nav class="settings-nav" aria-label="Settings">
+                    <a href="settings.html" class="active"><i class="fa-solid fa-user"></i> Account Settings</a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
+                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> Preferences</a>
+                    <a href="sessions.html"><i class="fa-solid fa-desktop"></i> Session Management</a>
+                    <a href="login-history.html"><i class="fa-solid fa-list"></i> Login History</a>
+                </nav>
+
+                <div class="settings-content">
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>Account Setting</h2>
+                            <span class="status-badge status-green">Active</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="account-grid">
+                                <div>
+                                    <form id="account-form" data-student-form data-success-message="Your account details have been updated" novalidate>
+                                        <div class="form-field">
+                                            <label class="form-label" for="full-name">Full Name</label>
+                                            <input type="text" id="full-name" class="form-input" value="Juan A. Dela Cruz" readonly>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="form-label" for="email">Email Address</label>
+                                            <input type="email" id="email" class="form-input" value="juan.delacruz@cec.edu.ph" readonly>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="form-label" for="phone">Mobile Number</label>
+                                            <input type="text" id="phone" class="form-input" value="0917 555 0142" readonly>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="form-label" for="student-id">Student ID</label>
+                                            <input type="text" id="student-id" class="form-input" value="2024-12345" readonly>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="form-label" for="program">Program &amp; Section</label>
+                                            <input type="text" id="program" class="form-input" value="BSIT-1A &middot; 1st Year" readonly>
+                                        </div>
+                                        <div class="form-field">
+                                            <label class="form-label" for="address">Address</label>
+                                            <input type="text" id="address" class="form-input" value="126 Junquera Ext., Cebu City, Cebu" readonly>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="profile-photo-panel">
+                                    <h3>Profile Photo</h3>
+                                    <div class="avatar-photo" data-avatar-preview>
+                                        JD
+                                    </div>
+                                    <p class="caption-note">Profile photo is managed by the Registrar's Office.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-foot">
+                            <p>Account details are managed by the Registrar's Office and cannot be edited here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

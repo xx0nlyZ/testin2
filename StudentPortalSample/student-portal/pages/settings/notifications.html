@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/settings.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <span class="crumb"><a href="settings.html">Settings</a> &rsaquo; Notifications</span>
+                <div class="head-row">
+                    <div>
+                        <h1>Notifications</h1>
+                        <p class="page-desc">Decide which portal updates reach you by email, SMS, or in-app alert.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                <nav class="settings-nav" aria-label="Settings">
+                    <a href="settings.html"><i class="fa-solid fa-user"></i> Account Settings</a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
+                    <a href="notifications.html" class="active"><i class="fa-regular fa-bell"></i> Notifications</a>
+                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> Preferences</a>
+                    <a href="sessions.html"><i class="fa-solid fa-desktop"></i> Session Management</a>
+                    <a href="login-history.html"><i class="fa-solid fa-list"></i> Login History</a>
+                </nav>
+
+                <div class="settings-content">
+                    <div class="card spaced-bottom">
+                        <div class="card-head">
+                            <h2>Academic Notifications</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="toggle-list">
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-chart-simple"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Grade posting</strong>
+                                        <span>Notify me when a midterm, pre-final, or final grade is posted</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-bullhorn"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Announcements</strong>
+                                        <span>New posts from the Registrar, Academic Affairs, and Student Affairs</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-regular fa-calendar"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Schedule changes</strong>
+                                        <span>Room assignments, class suspensions, and makeup classes</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-file-lines"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Enrollment updates</strong>
+                                        <span>Enrollment confirmations, blocked enlistment, and subject status</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-user-tie"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Adviser messages</strong>
+                                        <span>Notes and reminders sent by your class adviser</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card spaced-bottom">
+                        <div class="card-head">
+                            <h2>Account &amp; Campus Notifications</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="toggle-list">
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-regular fa-credit-card"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Payment reminders</strong>
+                                        <span>Installment due dates, surcharges, and account receipts</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-folder-open"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Document status</strong>
+                                        <span>Verification results, expiring requirements, and rejections</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Deadlines</strong>
+                                        <span>Examination, submission, and clearance deadlines within 7 days</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-comment-dots"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>In-app chat</strong>
+                                        <span>Messages from the Registrar, Accounting, and your adviser</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <span class="toggle-icon"><i class="fa-solid fa-martini-glass"></i></span>
+                                    <div class="toggle-info">
+                                        <strong>Campus events</strong>
+                                        <span>Intramurals, club activities, and orientation programs</span>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="toggle-foot">
+                                <button type="button" class="btn-outline" data-toast-onclick="Notification settings reset to defaults" data-toast-type="info">
+                                    Reset to Default
+                                </button>
+                                <button type="button" class="btn-primary" data-toast-onclick="Notification preferences saved">
+                                    <i class="fa-solid fa-floppy-disk"></i> Save Preferences
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>Delivery Channel</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="checkbox-list">
+                                <label><input type="checkbox" checked> Email &mdash; juan.delacruz@cec.edu.ph</label>
+                                <label><input type="checkbox" checked> SMS &mdash; 0917 555 0142</label>
+                                <label><input type="checkbox" checked> In-app alerts</label>
+                            </div>
+                            <p class="caption-note">
+                                Critical security notices always reach your registered email even if other channels are disabled.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

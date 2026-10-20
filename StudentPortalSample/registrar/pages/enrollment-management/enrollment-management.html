@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Management | CEC Registrar Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/reg-dashboard.css">
+    <link rel="stylesheet" href="../../css/reg-analytics.css">
+    <link rel="stylesheet" href="../../css/reg-enrollment.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="registrar">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>REGISTRAR PORTAL SYSTEM</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Registrar navigation">
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../student-record/student-records.html"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
+            <a href="enrollment-management.html" class="active"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
+            <a href="enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="app-header">
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search">
+            </label>
+
+            <select class="semester-select" aria-label="Semester">
+                <option selected>1st Semester</option>
+                <option>2nd Semester</option>
+            </select>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Registrar</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="enroll-content">
+            <div class="page-head">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../../pages/dashboard/registrar.html">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Enrollment Management</span>
+                </nav>
+                <div class="page-title">
+                    <span class="page-title-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <div>
+                        <h1>Enrollment Management</h1>
+                        <p class="page-desc">Process and monitor student enrollments, approvals, and registration activities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="enroll-filters">
+                <select class="filter-select" aria-label="Select school year">
+                    <option>2026 - 2027</option>
+                    <option>2025 - 2026</option>
+                    <option>2024 - 2025</option>
+                </select>
+                <select class="filter-select" aria-label="Select semester">
+                    <option>1st Semester</option>
+                    <option>2nd Semester</option>
+                    <option>Summer</option>
+                </select>
+            </div>
+
+            <section class="kpis" aria-label="Enrollment summary">
+                <article class="kpi-card">
+                    <i class="fa-solid fa-user-graduate kpi-icon"></i>
+                    <div>
+                        <span class="kpi-label">Total Enrollments</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">vs last semester</small>
+                    </div>
+                </article>
+                <article class="kpi-card">
+                    <i class="fa-solid fa-circle-check kpi-icon green"></i>
+                    <div>
+                        <span class="kpi-label">Approved</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">of total</small>
+                    </div>
+                </article>
+                <article class="kpi-card">
+                    <i class="fa-regular fa-clock kpi-icon amber"></i>
+                    <div>
+                        <span class="kpi-label">Pending</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">of total</small>
+                    </div>
+                </article>
+                <article class="kpi-card">
+                    <i class="fa-solid fa-circle-xmark kpi-icon red"></i>
+                    <div>
+                        <span class="kpi-label">Rejected</span>
+                        <strong class="kpi-value">0</strong>
+                        <small class="kpi-sub">of total</small>
+                    </div>
+                </article>
+            </section>
+
+            <section class="breakdown-grid">
+                <article class="breakdown-card pending">
+                    <div class="breakdown-head">
+                        <h3>Pending Enrollments <span class="count-pill amber">0</span></h3>
+                        <a href="pending-enrollees.html">View all</a>
+                    </div>
+                    <ul class="breakdown-list">
+                    </ul>
+                </article>
+
+                <article class="breakdown-card active">
+                    <div class="breakdown-head">
+                        <h3>Active Enrollments <span class="count-pill green">0</span></h3>
+                        <a href="active-enrollees.html">View all</a>
+                    </div>
+                    <ul class="breakdown-list">
+                    </ul>
+                </article>
+            </section>
+
+            <section class="table-card" aria-label="Enrollment requests">
+                <div class="table-toolbar">
+                    <h3>Enrollment Requests</h3>
+                    <div class="bulk-actions">
+                        <button type="button" class="btn btn-success"><i class="fa-solid fa-check"></i> Approve</button>
+                        <button type="button" class="btn btn-danger"><i class="fa-solid fa-xmark"></i> Reject</button>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" aria-label="Select all"></th>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Program</th>
+                                <th>Year Level</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <p class="pagination-info">0 enrollment requests</p>
+                    <div class="pagination">
+                        <button type="button" disabled>&lt;</button>
+                        <button type="button" class="active">1</button>
+                        <button type="button">2</button>
+                        <button type="button">3</button>
+                        <button type="button">4</button>
+                        <span class="pagination-ellipsis">...</span>
+                        <button type="button">&gt;</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle');
+            toggle.addEventListener('click', function () {
+                document.body.classList.toggle('sidebar-collapsed');
+            });
+        })();
+    </script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

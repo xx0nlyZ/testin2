@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Login History | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/settings.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <a class="back-link" href="login-history.html"><i class="fa-solid fa-arrow-left"></i> Back to Recent Activity</a>
+                <span class="crumb"><a href="settings.html">Settings</a> &rsaquo; Login History &rsaquo; Full History</span>
+                <div class="head-row">
+                    <div>
+                        <h1>Full Login History</h1>
+                        <p class="page-desc">Every recorded sign-in for A.Y. 2026 &ndash; 2027.</p>
+                    </div>
+                    <div class="head-actions">
+                        <button class="btn-export" type="button" data-toast-onclick="Full login history downloaded as CSV" data-toast-type="info">
+                            <i class="fa-solid fa-download"></i> Export CSV
+                        </button>
+                        <button class="btn-outline" type="button" data-confirm="Clear all login history records? This action cannot be undone." data-confirm-success="Login history cleared">
+                            <i class="fa-solid fa-trash"></i> Clear History
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+                <nav class="settings-nav" aria-label="Settings">
+                    <a href="settings.html"><i class="fa-solid fa-user"></i> Account Settings</a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
+                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> Preferences</a>
+                    <a href="sessions.html"><i class="fa-solid fa-desktop"></i> Session Management</a>
+                    <a href="login-history.html" class="active"><i class="fa-solid fa-list"></i> Login History</a>
+                </nav>
+
+                <div class="settings-content">
+                    <div class="table-card">
+                        <div class="table-heading">
+                            <h3>All Sign-In Records</h3>
+                            <div class="heading-actions">
+                                <select class="filter-select" data-persist="cec:prefs:history-month" aria-label="Filter by month">
+                                    <option selected>September 2026</option>
+                                    <option>August 2026</option>
+                                    <option>July 2026</option>
+                                </select>
+                                <select class="filter-select" data-persist="cec:prefs:history-status" aria-label="Filter by status">
+                                    <option selected>All Statuses</option>
+                                    <option>Successful</option>
+                                    <option>Failed</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date &amp; Time</th>
+                                        <th>Device</th>
+                                        <th>Location</th>
+                                        <th>IP Address</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sep 28, 2026 &middot; 7:12 AM</td>
+                                        <td>Chrome &middot; Windows 11</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.77</td>
+                                        <td><span class="status-badge status-green">Successful</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 28, 2026 &middot; 5:41 AM</td>
+                                        <td>Safari &middot; iPhone 15</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.91</td>
+                                        <td><span class="status-badge status-green">Successful</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 27, 2026 &middot; 9:03 PM</td>
+                                        <td>Chrome &middot; Windows 11</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.77</td>
+                                        <td><span class="status-badge status-red">Failed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 27, 2026 &middot; 8:58 PM</td>
+                                        <td>Chrome &middot; Windows 11</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.77</td>
+                                        <td><span class="status-badge status-red">Failed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 27, 2026 &middot; 3:20 PM</td>
+                                        <td>Edge &middot; Windows 10</td>
+                                        <td><span class="location-tag">Lapu-Lapu City, PH</span></td>
+                                        <td class="muted-cell">122.54.7.203</td>
+                                        <td><span class="status-badge status-green">Successful</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 26, 2026 &middot; 1:35 PM</td>
+                                        <td>Chrome &middot; Windows 11</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.77</td>
+                                        <td><span class="status-badge status-green">Successful</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 25, 2026 &middot; 6:48 PM</td>
+                                        <td>Chrome &middot; Windows 11</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.77</td>
+                                        <td><span class="status-badge status-green">Successful</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 25, 2026 &middot; 6:44 PM</td>
+                                        <td>Chrome &middot; Windows 11</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.77</td>
+                                        <td><span class="status-badge status-red">Failed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 24, 2026 &middot; 10:02 AM</td>
+                                        <td>Safari &middot; iPhone 15</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.91</td>
+                                        <td><span class="status-badge status-green">Successful</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sep 23, 2026 &middot; 8:15 PM</td>
+                                        <td>Chrome &middot; Windows 11</td>
+                                        <td><span class="location-tag">Cebu City, PH</span></td>
+                                        <td class="muted-cell">120.34.18.77</td>
+                                        <td><span class="status-badge status-green">Successful</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-footer">
+                            <p class="pagination-info">Showing 10 of 24 sign-in records</p>
+                            <div class="pagination">
+                                <button class="page-btn" type="button" aria-label="Previous page"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="page-btn active" type="button">1</button>
+                                <button class="page-btn" type="button">2</button>
+                                <button class="page-btn" type="button">3</button>
+                                <button class="page-btn" type="button" aria-label="Next page"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card spaced-top">
+                        <div class="card-head">
+                            <h2>History Retention</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="security-list">
+                                <div class="security-row">
+                                    <span class="security-icon"><i class="fa-solid fa-calendar-days"></i></span>
+                                    <div class="security-info">
+                                        <strong>Records retained</strong>
+                                        <span>Sign-in activity is kept for 24 months after the last entry</span>
+                                    </div>
+                                    <span class="security-status"><i class="fa-solid fa-circle-check"></i> Active</span>
+                                </div>
+                                <div class="security-row">
+                                    <span class="security-icon"><i class="fa-solid fa-file-lines"></i></span>
+                                    <div class="security-info">
+                                        <strong>Official request</strong>
+                                        <span>Submit a signed request to the Registrar's Office for a certified copy</span>
+                                    </div>
+                                    <a class="btn-outline" href="../records/documents.html">Request</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Details | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/class-details.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="class-list.html" class="active"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">CB</span>
+                <span class="profile-info">
+                    <strong>Mr. Charles Bacus</strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="detail-head">
+                <div class="page-head">
+                    <h1>Class Details: BSIT 1A &ndash; Web Development</h1>
+                    <p class="page-desc">Class metadata and enrolled student roster.</p>
+                </div>
+                <a class="back-link-btn" href="class-list.html">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Class list
+                </a>
+            </div>
+
+            <div class="meta-card">
+                <div class="meta-col">
+                    <div class="meta-item">
+                        <span class="meta-label">Course Code</span>
+                        <strong>BSIT</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Subject</span>
+                        <strong>Web Development</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Section</span>
+                        <strong>1A</strong>
+                    </div>
+                </div>
+                <div class="meta-col">
+                    <div class="meta-item">
+                        <span class="meta-label">Schedule</span>
+                        <strong>Mon, Wed, Fri &middot; 8:00 - 9:30 AM</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Room</span>
+                        <strong>302</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Assigned Faculty</span>
+                        <span class="faculty-chip">
+                            <span class="mini-avatar">MS</span> Prof. Maria Santos
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <div class="table-heading">
+                    <h3>Enrolled Students</h3>
+                    <span class="pagination-info">5 students</span>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Photo</th>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Program</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="student-avatar">JM</span></td>
+                                <td>2024-0001</td>
+                                <td><strong>John Marc Dela Cruz</strong></td>
+                                <td>BSIT</td>
+                                <td><a href="mailto:jm.delacruz@cec.edu.ph" class="muted-cell">jm.delacruz@cec.edu.ph</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="student-avatar">RG</span></td>
+                                <td>2024-0002</td>
+                                <td><strong>Rhea Gementiza</strong></td>
+                                <td>BSIT</td>
+                                <td><a href="mailto:rhea.gementiza@cec.edu.ph" class="muted-cell">rhea.gementiza@cec.edu.ph</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="student-avatar">CA</span></td>
+                                <td>2024-0003</td>
+                                <td><strong>Carl Almonte</strong></td>
+                                <td>BSIT</td>
+                                <td><a href="mailto:carl.almonte@cec.edu.ph" class="muted-cell">carl.almonte@cec.edu.ph</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="student-avatar">SM</span></td>
+                                <td>2024-0004</td>
+                                <td><strong>Sheena Mallari</strong></td>
+                                <td>BSIT</td>
+                                <td><a href="mailto:sheena.mallari@cec.edu.ph" class="muted-cell">sheena.mallari@cec.edu.ph</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="student-avatar">PR</span></td>
+                                <td>2024-0005</td>
+                                <td><strong>Paolo Reyes</strong></td>
+                                <td>BSIT</td>
+                                <td><a href="mailto:paolo.reyes@cec.edu.ph" class="muted-cell">paolo.reyes@cec.edu.ph</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <p class="pagination-info">Showing 1-5 of 5</p>
+                    <div class="pagination">
+                        <button class="page-btn" type="button" aria-label="Previous">&lt;</button>
+                        <button class="page-btn active" type="button">1</button>
+                        <button class="page-btn" type="button" aria-label="Next">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

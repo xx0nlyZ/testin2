@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/student-section.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="class-schedule.html" class="active"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <div class="head-row">
+                    <div>
+                        <h1>Class Schedule</h1>
+                        <p class="page-desc">Weekly timetable for the 1st Semester, A.Y. 2026 &ndash; 2027.</p>
+                    </div>
+                    <div class="head-actions">
+                        <button class="btn btn-outline" type="button" data-toast-onclick="Schedule downloaded as PDF" data-toast-type="success">
+                            <i class="fa-solid fa-download"></i> Download PDF
+                        </button>
+                        <button class="btn btn-primary" type="button" data-toast-onclick="Schedule copied to clipboard" data-toast-type="info">
+                            <i class="fa-regular fa-copy"></i> Copy Schedule
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="summary-strip" aria-label="Schedule summary">
+                <div class="summary-item">
+                    <p>Meeting Days</p>
+                    <strong>5</strong>
+                    <small>Monday to Friday</small>
+                </div>
+                <div class="summary-item">
+                    <p>Weekly Hours</p>
+                    <strong>18 hrs</strong>
+                    <small>Across 6 subjects</small>
+                </div>
+                <div class="summary-item">
+                    <p>First Class</p>
+                    <strong>7:30 AM</strong>
+                    <small>ITC 101 &middot; Room 204</small>
+                </div>
+                <div class="summary-item">
+                    <p>Conflicts</p>
+                    <strong>0</strong>
+                    <small class="green">No overlapping subjects</small>
+                </div>
+            </section>
+
+            <div class="section-toolbar">
+                <div class="filter-row">
+                    <div class="filter-box">
+                        <label for="schedule-term">Semester</label>
+                        <select id="schedule-term">
+                            <option selected>1st Semester</option>
+                            <option>2nd Semester</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label for="schedule-day">Day</label>
+                        <select id="schedule-day">
+                            <option selected>All Days</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <div class="table-heading">
+                    <h3>Weekly Timetable</h3>
+                    <div class="heading-actions">
+                        <span class="status-badge status-green">18 units enrolled</span>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Subject</th>
+                                <th>Subject Title</th>
+                                <th>Room</th>
+                                <th>Faculty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">Monday</td>
+                                <td class="cell-time">7:30 - 9:00</td>
+                                <td class="code-cell">ITC 101</td>
+                                <td>Introduction to Information Technology</td>
+                                <td class="muted-cell">Room 204</td>
+                                <td class="muted-cell">Mr. Charles Bacus</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-time">9:00 - 10:30</td>
+                                <td class="code-cell">MTH 101</td>
+                                <td>Mathematics in the Modern World</td>
+                                <td class="muted-cell">Room 108</td>
+                                <td class="muted-cell">Ms. Liza Mahayaya</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Tuesday</td>
+                                <td class="cell-time">7:30 - 9:00</td>
+                                <td class="code-cell">ENG 101</td>
+                                <td>Purposive Communication</td>
+                                <td class="muted-cell">Room 112</td>
+                                <td class="muted-cell">Ms. Ana Fernandez</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-time">10:30 - 12:00</td>
+                                <td class="code-cell">ACC 101</td>
+                                <td>Financial Accounting</td>
+                                <td class="muted-cell">Room 105</td>
+                                <td class="muted-cell">Mr. Ronald Ruiz</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Wednesday</td>
+                                <td class="cell-time">7:30 - 9:00</td>
+                                <td class="code-cell">ITC 101</td>
+                                <td>Introduction to Information Technology</td>
+                                <td class="muted-cell">Room 204</td>
+                                <td class="muted-cell">Mr. Charles Bacus</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-time">9:00 - 10:30</td>
+                                <td class="code-cell">MTH 101</td>
+                                <td>Mathematics in the Modern World</td>
+                                <td class="muted-cell">Room 108</td>
+                                <td class="muted-cell">Ms. Liza Mahayaya</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Thursday</td>
+                                <td class="cell-time">7:30 - 9:00</td>
+                                <td class="code-cell">ENG 101</td>
+                                <td>Purposive Communication</td>
+                                <td class="muted-cell">Room 112</td>
+                                <td class="muted-cell">Ms. Ana Fernandez</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-time">10:30 - 12:00</td>
+                                <td class="code-cell">ACC 101</td>
+                                <td>Financial Accounting</td>
+                                <td class="muted-cell">Room 105</td>
+                                <td class="muted-cell">Mr. Ronald Ruiz</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Friday</td>
+                                <td class="cell-time">1:00 - 2:30</td>
+                                <td class="code-cell">ITC 102</td>
+                                <td>Computer Hardware &amp; Maintenance</td>
+                                <td class="muted-cell">Lab 3</td>
+                                <td class="muted-cell">Mr. Charles Bacus</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-time">3:00 - 5:00</td>
+                                <td class="code-cell">PE 101</td>
+                                <td>Physical Education</td>
+                                <td class="muted-cell">Gymnasium</td>
+                                <td class="muted-cell">Mr. Marco Tan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer">
+                    <p class="pagination-info">Showing 10 of 10 class meetings</p>
+                    <div class="pagination">
+                        <button class="page-btn active" type="button">1</button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="note-bar">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                Schedule changes are posted by the Registrar&apos;s Office. Report conflicts at the registrar&apos;s counter or through your
+                <a href="../announcements/announcements.html">class adviser</a>.
+            </p>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

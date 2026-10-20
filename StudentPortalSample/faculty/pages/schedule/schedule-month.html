@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Schedule | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/schedule.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="schedule-day.html" class="active"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">CB</span>
+                <span class="profile-info">
+                    <strong>Mr. Charles Bacus</strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="schedule-head">
+                <div>
+                    <div class="page-head">
+                        <h1>My Schedule</h1>
+                        <p class="page-desc">Track your class schedule for the active term.</p>
+                    </div>
+                </div>
+                <div class="schedule-nav">
+                    <button class="date-nav-btn" type="button" aria-label="Previous"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                    <span class="date-nav-label">August 2025</span>
+                    <button class="date-nav-btn" type="button" aria-label="Next"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+
+                    <nav class="view-toggle" aria-label="Calendar view">
+                        <a href="schedule-day.html">Day</a>
+                        <a href="schedule-week.html">Week</a>
+                        <a href="schedule-month.html" class="active">Month</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="calendar-card">
+                <div class="calendar-grid">
+                    <span class="calendar-day-head">Sun</span>
+                    <span class="calendar-day-head">Mon</span>
+                    <span class="calendar-day-head">Tue</span>
+                    <span class="calendar-day-head">Wed</span>
+                    <span class="calendar-day-head">Thu</span>
+                    <span class="calendar-day-head">Fri</span>
+                    <span class="calendar-day-head">Sat</span>
+
+                    <div class="calendar-cell other-month"><span class="day-num">27</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">28</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">29</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">30</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">31</span></div>
+
+                    <div class="calendar-cell">
+                        <span class="day-num">1</span>
+                        <span class="event-pill theme-pink">ITEC 2A &middot; Multimedia</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Discrete Math</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">2</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                    </div>
+
+                    <div class="calendar-cell other-month"><span class="day-num">3</span></div>
+                    <div class="calendar-cell">
+                        <span class="day-num">4</span>
+                        <span class="event-pill theme-blue">BSIT 1A &middot; Web Dev</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Operating Sys</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">5</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Data Struct</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">6</span>
+                        <span class="event-pill theme-blue">BSIT 1A &middot; Web Dev</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Operating Sys</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">7</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Data Struct</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">8</span>
+                        <span class="event-pill theme-pink">ITEC 2A &middot; Multimedia</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Discrete Math</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">9</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                    </div>
+
+                    <div class="calendar-cell"><span class="day-num">10</span></div>
+                    <div class="calendar-cell">
+                        <span class="day-num">11</span>
+                        <span class="event-pill theme-blue">BSIT 1A &middot; Web Dev</span>
+                        <span class="event-pill theme-blue">BSIT 2A &middot; SW Eng</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Operating Sys</span>
+                    </div>
+                    <div class="calendar-cell today">
+                        <span class="day-num">12</span>
+                        <span class="today-tag">Today</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Data Struct</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">13</span>
+                        <span class="event-pill theme-blue">BSIT 1A &middot; Web Dev</span>
+                        <span class="event-pill theme-blue">BSIT 2A &middot; SW Eng</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Operating Sys</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">14</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Data Struct</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Database</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">15</span>
+                        <span class="event-pill theme-pink">ITEC 2A &middot; Multimedia</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Discrete Math</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">16</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                    </div>
+
+                    <div class="calendar-cell"><span class="day-num">17</span></div>
+                    <div class="calendar-cell">
+                        <span class="day-num">18</span>
+                        <span class="event-pill theme-blue">BSIT 1A &middot; Web Dev</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Operating Sys</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">19</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Data Struct</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">20</span>
+                        <span class="event-pill theme-blue">BSIT 1A &middot; Web Dev</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Operating Sys</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">21</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Data Struct</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">22</span>
+                        <span class="event-pill theme-pink">ITEC 2A &middot; Multimedia</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Discrete Math</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">23</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                    </div>
+
+                    <div class="calendar-cell"><span class="day-num">24</span></div>
+                    <div class="calendar-cell">
+                        <span class="day-num">25</span>
+                        <span class="event-pill theme-blue">BSIT 1A &middot; Web Dev</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Operating Sys</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">26</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Data Struct</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">27</span>
+                        <span class="event-pill theme-blue">BSIT 1A &middot; Web Dev</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Operating Sys</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">28</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                        <span class="event-pill theme-green">BSIT 2A &middot; Data Struct</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">29</span>
+                        <span class="event-pill theme-pink">ITEC 2A &middot; Multimedia</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Discrete Math</span>
+                    </div>
+                    <div class="calendar-cell">
+                        <span class="day-num">30</span>
+                        <span class="event-pill theme-orange">CS 1A &middot; Prog 1</span>
+                    </div>
+
+                    <div class="calendar-cell"><span class="day-num">31</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">1</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">2</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">3</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">4</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">5</span></div>
+                    <div class="calendar-cell other-month"><span class="day-num">6</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

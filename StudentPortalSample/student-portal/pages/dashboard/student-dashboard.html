@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/student-dashboard.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="student-dashboard.html" class="active"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <div class="head-row">
+                    <div>
+                        <h1>Welcome back, Juan</h1>
+                        <p class="page-desc">BSIT &middot; 1st Year &middot; Section BSIT-1A &middot; Student ID 2024-12345</p>
+                    </div>
+                    <div class="date-badges">
+                        <span class="date-badge"><i class="fa-regular fa-calendar" aria-hidden="true"></i> 1st Semester</span>
+                        <span class="date-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> A.Y. 2026 &ndash; 2027</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="stats-grid" aria-label="Student summary">
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>General Weighted Average</p>
+                        <strong>1.59</strong>
+                        <small class="stat-sub green">Very Good</small>
+                    </div>
+                    <span class="stat-icon"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i></span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Account Balance</p>
+                        <strong>&#8369;0.00</strong>
+                        <small class="stat-sub green">Fully paid</small>
+                    </div>
+                    <span class="stat-icon"><i class="fa-regular fa-credit-card" aria-hidden="true"></i></span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Enrolled Units</p>
+                        <strong>18</strong>
+                        <small>of 24 units allowed</small>
+                    </div>
+                    <span class="stat-icon"><i class="fa-regular fa-book-open" aria-hidden="true"></i></span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-info">
+                        <p>Unread Announcements</p>
+                        <strong>3</strong>
+                        <small class="stat-sub red">Requires review</small>
+                    </div>
+                    <span class="stat-icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
+                </article>
+            </section>
+
+            <section class="dash-grid" aria-label="Dashboard overview">
+                <article class="panel">
+                    <div class="panel-head">
+                        <h3>Today&apos;s Classes</h3>
+                        <a href="../classes/class-schedule.html" class="panel-link">See Full Schedule &#8594;</a>
+                    </div>
+                    <div class="panel-body">
+                        <table class="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Subject</th>
+                                    <th>Room</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="cell-time">7:30 - 9:00</td>
+                                    <td>ITC 101</td>
+                                    <td class="cell-room">Room 204</td>
+                                    <td><span class="status-badge status-green">Ongoing</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-time">9:00 - 10:30</td>
+                                    <td>MTH 101</td>
+                                    <td class="cell-room">Room 108</td>
+                                    <td><span class="status-badge status-blue">Upcoming</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-time">10:30 - 12:00</td>
+                                    <td>ENG 101</td>
+                                    <td class="cell-room">Room 112</td>
+                                    <td><span class="status-badge status-blue">Upcoming</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-time">1:00 - 2:30</td>
+                                    <td>ITC 102</td>
+                                    <td class="cell-room">Lab 3</td>
+                                    <td><span class="status-badge status-blue">Upcoming</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <div class="dash-stack">
+                    <article class="panel">
+                        <div class="panel-head">
+                            <h3>My Subjects</h3>
+                            <a href="../records/enrollment.html" class="panel-link">View All &#8594;</a>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="class-list">
+                                <li class="class-item">
+                                    <div>
+                                        <strong>ITC 101</strong>
+                                        <span class="class-meta">3 units &middot; Room 204</span>
+                                    </div>
+                                    <span class="status-badge status-green">Enrolled</span>
+                                </li>
+                                <li class="class-item">
+                                    <div>
+                                        <strong>MTH 101</strong>
+                                        <span class="class-meta">3 units &middot; Room 108</span>
+                                    </div>
+                                    <span class="status-badge status-green">Enrolled</span>
+                                </li>
+                                <li class="class-item">
+                                    <div>
+                                        <strong>ENG 101</strong>
+                                        <span class="class-meta">3 units &middot; Room 112</span>
+                                    </div>
+                                    <span class="status-badge status-green">Enrolled</span>
+                                </li>
+                                <li class="class-item">
+                                    <div>
+                                        <strong>ITC 102</strong>
+                                        <span class="class-meta">4 units &middot; Lab 3</span>
+                                    </div>
+                                    <span class="status-badge status-green">Enrolled</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="panel">
+                        <div class="panel-head">
+                            <h3>Upcoming Deadlines</h3>
+                            <a href="../classes/class-schedule.html" class="panel-link">See All &#8594;</a>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="deadline-list">
+                                <li class="deadline-item">
+                                    <span class="date-chip"><small>OCT</small><strong>06</strong></span>
+                                    <div class="deadline-info">
+                                        <strong>Midterm examination week</strong>
+                                        <span>Room assignments posted at the main lobby</span>
+                                    </div>
+                                </li>
+                                <li class="deadline-item">
+                                    <span class="date-chip"><small>OCT</small><strong>10</strong></span>
+                                    <div class="deadline-info">
+                                        <strong>ITC 102 case study submission</strong>
+                                        <span>Submit through the portal before 11:59 PM</span>
+                                    </div>
+                                </li>
+                                <li class="deadline-item">
+                                    <span class="date-chip"><small>OCT</small><strong>15</strong></span>
+                                    <div class="deadline-info">
+                                        <strong>2nd semester payment deadline</strong>
+                                        <span>Late fees apply after this date</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="panel">
+                    <div class="panel-head">
+                        <h3>Announcements</h3>
+                        <a href="../announcements/announcements.html" class="panel-link">View All &#8594;</a>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="news-list">
+                            <li class="news-item">
+                                <div>
+                                    <strong>Midterm exam schedule released</strong>
+                                    <span class="news-desc">Exams run October 6-10. Check the bulletin for room assignments.</span>
+                                    <span class="news-date">2 hours ago</span>
+                                </div>
+                                <span class="tag tag-red">High</span>
+                            </li>
+                            <li class="news-item">
+                                <div>
+                                    <strong>Library Week: extended hours</strong>
+                                    <span class="news-desc">The library opens 7:00 AM to 8:00 PM for the whole week.</span>
+                                    <span class="news-date">Yesterday</span>
+                                </div>
+                                <span class="tag tag-blue">Normal</span>
+                            </li>
+                            <li class="news-item">
+                                <div>
+                                    <strong>Scholarship application opens</strong>
+                                    <span class="news-desc">Academic scholarship renewals are open until October 20.</span>
+                                    <span class="news-date">3 days ago</span>
+                                </div>
+                                <span class="tag tag-blue">Normal</span>
+                            </li>
+                            <li class="news-item">
+                                <div>
+                                    <strong>Intramurals team registration</strong>
+                                    <span class="news-desc">Sign up for the CEC Intramurals until September 30.</span>
+                                    <span class="news-date">5 days ago</span>
+                                </div>
+                                <span class="tag tag-green">Event</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Information | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/student-section.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="student">
+    <aside class="sidebar">
+        <div class="sidebar-brand"> 
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Student navigation">
+            <div class="nav-section">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+            <div class="nav-section">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
+            <a href="enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+
+            <div class="nav-section">Records</div>
+            <a href="student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+            <a href="financial.html" class="active"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
+            <a href="documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+
+            <div class="nav-section">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything...">
+</label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">JD</span>
+                <span class="profile-info">
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Student</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <div class="head-row">
+                    <div>
+                        <h1>Financial Information</h1>
+                        <p class="page-desc">Assessment, payments, and account balance for the current term.</p>
+                    </div>
+                    <div class="head-actions">
+                        <button class="btn btn-outline" type="button" data-toast-onclick="Statement downloaded as PDF" data-toast-type="success">
+                            <i class="fa-solid fa-download"></i> Download Statement
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="summary-strip" aria-label="Financial summary">
+                <div class="summary-item">
+                    <p>Total Assessment</p>
+                    <strong>&#8369;19,000.00</strong>
+                    <small>1st Semester, A.Y. 2026 &ndash; 2027</small>
+                </div>
+                <div class="summary-item">
+                    <p>Scholarship Credit</p>
+                    <strong>&#8722;&#8369;1,000.00</strong>
+                    <small class="green">Academic merit grant</small>
+                </div>
+                <div class="summary-item">
+                    <p>Total Payments</p>
+                    <strong>&#8369;18,000.00</strong>
+                    <small>3 official receipts</small>
+                </div>
+                <div class="summary-item">
+                    <p>Outstanding Balance</p>
+                    <strong>&#8369;0.00</strong>
+                    <small class="green">Account fully paid</small>
+                </div>
+            </section>
+
+            <div class="section-toolbar">
+                <div class="filter-row">
+                    <div class="filter-box">
+                        <label for="finance-term">Semester</label>
+                        <select id="finance-term">
+                            <option selected>1st Semester</option>
+                            <option>2nd Semester</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label for="finance-type">Transaction Type</label>
+                        <select id="finance-type">
+                            <option selected>All Transactions</option>
+                            <option>Assessments</option>
+                            <option>Payments</option>
+                            <option>Credits</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card spaced-bottom">
+                <div class="table-heading">
+                    <h3>Account Ledger</h3>
+                    <div class="heading-actions">
+                        <span class="status-badge status-green">Cleared</span>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="code-cell">ASM-2026-0118</td>
+                                <td>Tuition &mdash; 18 units</td>
+                                <td class="muted-cell">Aug 05, 2026</td>
+                                <td class="muted-cell">Assessment</td>
+                                <td class="numeric">&#8369;16,200.00</td>
+                                <td><span class="status-badge status-blue">Charged</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">ASM-2026-0119</td>
+                                <td>Laboratory fee &mdash; ITC 102</td>
+                                <td class="muted-cell">Aug 05, 2026</td>
+                                <td class="muted-cell">Assessment</td>
+                                <td class="numeric">&#8369;1,800.00</td>
+                                <td><span class="status-badge status-blue">Charged</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">ASM-2026-0120</td>
+                                <td>Miscellaneous and student ID</td>
+                                <td class="muted-cell">Aug 05, 2026</td>
+                                <td class="muted-cell">Assessment</td>
+                                <td class="numeric">&#8369;1,000.00</td>
+                                <td><span class="status-badge status-blue">Charged</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">CR-2026-0231</td>
+                                <td>Academic merit scholarship</td>
+                                <td class="muted-cell">Aug 10, 2026</td>
+                                <td class="muted-cell">Credit</td>
+                                <td class="numeric">&minus;&#8369;1,000.00</td>
+                                <td><span class="status-badge status-green">Applied</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">OR-2026-0412</td>
+                                <td>Tuition payment &mdash; over-the-counter</td>
+                                <td class="muted-cell">Aug 18, 2026</td>
+                                <td class="muted-cell">Payment</td>
+                                <td class="numeric">&#8369;16,200.00</td>
+                                <td><span class="status-badge status-green">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">OR-2026-0419</td>
+                                <td>Laboratory fee payment</td>
+                                <td class="muted-cell">Aug 18, 2026</td>
+                                <td class="muted-cell">Payment</td>
+                                <td class="numeric">&#8369;1,800.00</td>
+                                <td><span class="status-badge status-green">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td class="code-cell">OR-2026-0633</td>
+                                <td>Miscellaneous and ID fee payment</td>
+                                <td class="muted-cell">Aug 20, 2026</td>
+                                <td class="muted-cell">Payment</td>
+                                <td class="numeric">&#8369;1,000.00</td>
+                                <td><span class="status-badge status-green">Paid</span></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">Outstanding Balance</td>
+                                <td class="numeric">&#8369;0.00</td>
+                                <td>Settled</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="table-footer">
+                    <p class="pagination-info">Showing 7 of 7 transactions</p>
+                    <div class="pagination">
+                        <button class="page-btn active" type="button">1</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="two-col">
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Installment Schedule</h2>
+                    </div>
+                    <div class="card-body card-body-tight">
+                        <div class="detail-list">
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                <div class="detail-info">
+                                    <strong>First installment</strong>
+                                    <span>Due Aug 15, 2026</span>
+                                </div>
+                                <span class="status-badge status-green">Paid</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-regular fa-clock"></i></span>
+                                <div class="detail-info">
+                                    <strong>Second installment</strong>
+                                    <span>Due on the 30th of the current month</span>
+                                </div>
+                                <span class="status-badge status-amber">Upcoming</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                                <div class="detail-info">
+                                    <strong>Late payment surcharge</strong>
+                                <span>2% of the unpaid amount per month</span>
+                                </div>
+                                <span class="status-badge status-red">Avoid</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-head">
+                        <h2>Payment Progress</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="meter-block">
+                            <div class="meter-head">
+                                <strong>Term assessment paid</strong>
+                                <span>100%</span>
+                            </div>
+                            <div class="meter green"><span style="width: 100%;"></span></div>
+                        </div>
+                        <div class="meter-block">
+                            <div class="meter-head">
+                                <strong>Scholarship credit applied</strong>
+                                <span>100%</span>
+                            </div>
+                            <div class="meter"><span style="width: 100%;"></span></div>
+                        </div>
+                        <div class="meter-block">
+                            <div class="meter-head">
+                                <strong>Paid to date</strong>
+                                <span>&#8369;18,000 of &#8369;19,000</span>
+                            </div>
+                            <div class="meter green"><span style="width: 95%;"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="note-bar">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                Payments are posted within three working days. For refunds or installment adjustments, visit the
+                <a href="documents.html">accounting office</a> with a valid ID.
+            </p>
+        </section>
+    </main>
+
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

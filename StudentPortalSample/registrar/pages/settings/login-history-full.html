@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Login History | CEC Registrar Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/reg-dashboard.css">
+    <link rel="stylesheet" href="../../css/reg-analytics.css">
+    <link rel="stylesheet" href="../../css/reg-enrollment.css">
+    <link rel="stylesheet" href="../../css/reg-settings.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="registrar">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>REGISTRAR PORTAL SYSTEM</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Registrar navigation">
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../student-record/student-records.html"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="app-header">
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search">
+            </label>
+
+            <select class="semester-select" aria-label="Semester">
+                <option selected>1st Semester</option>
+                <option>2nd Semester</option>
+            </select>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small>Registrar</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="settings-content">
+            <div class="back-bar">
+                <a class="back-btn" href="login-history.html" aria-label="Back to login history"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>
+                <div>
+                    <h1>Login History</h1>
+                    <p>View your complete login history for your account.</p>
+                </div>
+            </div>
+
+            <div class="login-filter-panel">
+                <div class="login-filter-title">
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                    <div>
+                        <strong>Login History</strong>
+                        <small>All login attempts for your account.</small>
+                    </div>
+                </div>
+                <div class="login-filter-actions">
+                    <div class="search-input">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="search" id="hist-search" placeholder="Search history...">
+                    </div>
+                    <select class="filter-select" id="hist-status-filter" aria-label="Filter by status">
+                        <option value="">All Status</option>
+                        <option value="success">Success</option>
+                        <option value="failed">Failed</option>
+                    </select>
+                    <select class="filter-select" id="hist-device-filter" aria-label="Filter by device">
+                        <option value="">All Devices</option>
+                        <option value="Windows - Chrome">Windows - Chrome</option>
+                        <option value="Windows - Edge">Windows - Edge</option>
+                        <option value="MacOS - Safari">MacOS - Safari</option>
+                        <option value="Android - Chrome">Android - Chrome</option>
+                    </select>
+                    <button type="button" class="btn btn-outline" id="btn-export-csv"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> Export CSV</button>
+                </div>
+            </div>
+
+            <section class="table-card" aria-label="Full login history data">
+                <div class="table-wrap">
+                    <table class="data-table login-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date &amp; Time</th>
+                                <th>Device</th>
+                                <th>IP Address</th>
+                                <th>Status</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody id="full-history-body"></tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <p class="pagination-info" id="hist-pagination-info">No entries</p>
+                    <div class="pagination" id="hist-pagination"></div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="../../js/login-history-full.js"></script>
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle');
+            toggle.addEventListener('click', function () {
+                document.body.classList.toggle('sidebar-collapsed');
+            });
+        })();
+    </script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

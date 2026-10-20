@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade | Cebu Eastern College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/grade-management.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="dashboard-page" data-portal="faculty">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span>FACULTY PORTAL</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Faculty navigation">
+            <div class="nav-section">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+
+            <div class="nav-section">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a href="grade-management.html" class="active"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+
+            <div class="nav-section">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+
+            <div class="nav-section">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search anything...">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">CB</span>
+                <span class="profile-info">
+                    <strong>Mr. Charles Bacus</strong>
+                    <small>Faculty</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head head-row">
+                <div>
+                    <h1>Grade</h1>
+                    <p class="page-desc">Record and manage grades for your classes.</p>
+                </div>
+                <span class="semester-badge"><i class="fa-solid fa-calendar-days"></i> 1st Semester AY 2025-2026</span>
+            </div>
+
+            <div class="filter-bar">
+                <select class="filter-select" aria-label="Filter by course">
+                    <option>All Courses</option>
+                    <option>BSIT</option>
+                    <option>BSCS</option>
+                </select>
+                <select class="filter-select" aria-label="Filter by section">
+                    <option>All Sections</option>
+                    <option>BSIT 1A</option>
+                    <option>BSIT 2A</option>
+                    <option>BSCS 1B</option>
+                </select>
+                <select class="filter-select" aria-label="Filter by subject">
+                    <option>All Subjects</option>
+                    <option>Web Development</option>
+                    <option>Data Structures</option>
+                    <option>Operating Systems</option>
+                    <option>Computer Programming 1</option>
+                    <option>Discrete Mathematics</option>
+                </select>
+                <button class="btn-search" type="button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+
+            <h2 style="margin:0 0 12px;font-size:16px;"><i class="fa-solid fa-table-list" style="color:var(--blue);margin-right:8px;"></i>My Classes</h2>
+            <div class="classes-grid">
+                <article class="class-card">
+                    <div class="class-top">
+                        <div class="class-icon"><i class="fa-solid fa-code"></i></div>
+                        <span class="status-badge status-green">35 Students</span>
+                    </div>
+                    <h3 class="class-code">BSIT 1A</h3>
+                    <span class="class-subject">Web Development</span>
+                    <div class="class-meta"><i class="fa-regular fa-clock"></i> Mon, Wed, Fri &middot; 8:00 AM</div>
+                    <a class="btn-manage" href="grade-sheet.html">Manage Grades</a>
+                </article>
+
+                <article class="class-card">
+                    <div class="class-top">
+                        <div class="class-icon"><i class="fa-solid fa-sitemap"></i></div>
+                        <span class="status-badge status-green">23 Students</span>
+                    </div>
+                    <h3 class="class-code">BSIT 2A</h3>
+                    <span class="class-subject">Data Structures</span>
+                    <div class="class-meta"><i class="fa-regular fa-clock"></i> Tue, Thu &middot; 9:30 AM</div>
+                    <a class="btn-manage" href="grade-sheet.html">Manage Grades</a>
+                </article>
+
+                <article class="class-card">
+                    <div class="class-top">
+                        <div class="class-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <span class="status-badge status-green">28 Students</span>
+                    </div>
+                    <h3 class="class-code">BSIT 2A</h3>
+                    <span class="class-subject">Operating Systems</span>
+                    <div class="class-meta"><i class="fa-regular fa-clock"></i> Mon, Wed &middot; 1:00 PM</div>
+                    <a class="btn-manage" href="grade-sheet.html">Manage Grades</a>
+                </article>
+
+                <article class="class-card">
+                    <div class="class-top">
+                        <div class="class-icon"><i class="fa-solid fa-calculator"></i></div>
+                        <span class="status-badge status-green">30 Students</span>
+                    </div>
+                    <h3 class="class-code">BSCS 1B</h3>
+                    <span class="class-subject">Computer Programming 1</span>
+                    <div class="class-meta"><i class="fa-regular fa-clock"></i> Tue, Thu, Sat &middot; 8:00 AM</div>
+                    <a class="btn-manage" href="grade-sheet.html">Manage Grades</a>
+                </article>
+            </div>
+
+            <section class="table-card">
+                <div class="table-heading">
+                    <h3><i class="fa-regular fa-clock"></i> Recent Grade Entries</h3>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Course</th>
+                                <th>Section</th>
+                                <th>Subject</th>
+                                <th>Total Students</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="muted-cell">Sep 15, 2025</td>
+                                <td>BSIT</td>
+                                <td>1A</td>
+                                <td>Web Development</td>
+                                <td class="muted-cell">35</td>
+                                <td><span class="status-badge status-green">Completed</span></td>
+                                <td><a class="btn-action" href="grade-sheet.html"><i class="fa-regular fa-eye"></i> View</a></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">Sep 12, 2025</td>
+                                <td>BSIT</td>
+                                <td>2A</td>
+                                <td>Data Structures</td>
+                                <td class="muted-cell">23</td>
+                                <td><span class="status-badge status-orange">In Progress</span></td>
+                                <td><a class="btn-action" href="grade-sheet.html"><i class="fa-regular fa-eye"></i> View</a></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">Sep 10, 2025</td>
+                                <td>BSIT</td>
+                                <td>2A</td>
+                                <td>Operating Systems</td>
+                                <td class="muted-cell">28</td>
+                                <td><span class="status-badge status-orange">In Progress</span></td>
+                                <td><a class="btn-action" href="grade-sheet.html"><i class="fa-regular fa-eye"></i> View</a></td>
+                            </tr>
+                            <tr>
+                                <td class="muted-cell">Sep 08, 2025</td>
+                                <td>BSCS</td>
+                                <td>1B</td>
+                                <td>Computer Programming 1</td>
+                                <td class="muted-cell">30</td>
+                                <td><span class="status-badge status-blue">Not Started</span></td>
+                                <td><a class="btn-action" href="grade-sheet.html"><i class="fa-regular fa-eye"></i> View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-head">
+                    <h3><i class="fa-solid fa-chart-column" style="color:var(--blue);margin-right:8px;"></i>Grade Distribution Analytics</h3>
+                    <select class="filter-select" aria-label="Choose class">
+                        <option>BSIT 1A - Web Development (Section 1A)</option>
+                        <option>BSIT 2A - Data Structures (Section 2A)</option>
+                        <option>BSIT 2A - Operating Systems (Section 2A)</option>
+                        <option>BSCS 1B - Computer Programming 1 (Section 1B)</option>
+                    </select>
+                </div>
+                <div class="chart-body">
+                    <div class="bar-chart">
+                        <div class="bar-col"><span class="bar-value">5</span><div class="bar" style="height:18%;"></div><span class="bar-label">95-100</span></div>
+                        <div class="bar-col"><span class="bar-value">8</span><div class="bar" style="height:28%;"></div><span class="bar-label">85-89</span></div>
+                        <div class="bar-col"><span class="bar-value">7</span><div class="bar" style="height:24%;"></div><span class="bar-label">80-84</span></div>
+                        <div class="bar-col"><span class="bar-value">10</span><div class="bar" style="height:34%;"></div><span class="bar-label">75-79</span></div>
+                        <div class="bar-col"><span class="bar-value">4</span><div class="bar" style="height:14%;"></div><span class="bar-label">70-74</span></div>
+                        <div class="bar-col"><span class="bar-value">2</span><div class="bar" style="height:8%;"></div><span class="bar-label">65-69</span></div>
+                        <div class="bar-col"><span class="bar-value">1</span><div class="bar" style="height:5%;"></div><span class="bar-label">Below 65</span></div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="fa-solid fa-square" style="color:var(--navy);"></i> Units / Students Count</span>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+<script src="../../js/showToast.js"></script>
+<script src="../../js/copyToClipboard.js"></script>
+<script src="../../js/confirmAction.js"></script>
+<script src="../../js/avatarUpload.js"></script>
+<script src="../../js/validateForm.js"></script>
+<script src="../../js/persistSelect.js"></script>
+<script src="../../js/setYear.js"></script>
+
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>
