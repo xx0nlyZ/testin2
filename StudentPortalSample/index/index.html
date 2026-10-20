@@ -63,6 +63,11 @@
                 <h2 id="login-title">Log in</h2>
                 <p class="form-intro">Enter your school ID and password to access your portal.</p>
 
+                <div class="form-alert" id="login-alert" role="alert" hidden>
+                    <i class="fa-solid fa-circle-exclamation" id="login-alert-icon" aria-hidden="true"></i>
+                    <span id="login-alert-text"></span>
+                </div>
+
                 <form id="login-form" action="../student-portal/pages/dashboard/student-dashboard.html" method="get">
                     <div class="field">
                         <label for="login-id">School ID</label>
@@ -139,6 +144,29 @@
             var indicator = document.getElementById("id-indicator");
             var indicatorIcon = document.getElementById("id-indicator-icon");
             var indicatorText = document.getElementById("id-indicator-text");
+            var alertBox = document.getElementById("login-alert");
+            var alertText = document.getElementById("login-alert-text");
+            var alertIcon = document.getElementById("login-alert-icon");
+
+            function showAlert(type, message) {
+                alertBox.hidden = false;
+                alertBox.className = "form-alert is-" + type;
+                alertIcon.className = type === "success"
+                    ? "fa-solid fa-circle-check"
+                    : "fa-solid fa-circle-exclamation";
+                alertText.textContent = message;
+            }
+
+            function hideAlert() {
+                alertBox.hidden = true;
+            }
+
+            var params = new URLSearchParams(window.location.search);
+            if (params.get("expired") === "1") {
+                showAlert("error", "Please sign in to continue. Your demo session has ended or was never started.");
+            } else if (params.get("denied") === "1") {
+                showAlert("error", "That portal belongs to a different role. Sign in with your own account to open your portal.");
+            }
 
             function renderIndicator() {
                 var value = idInput.value.trim();
