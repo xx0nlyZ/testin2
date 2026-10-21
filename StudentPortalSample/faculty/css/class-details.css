@@ -17,17 +17,17 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--primary);
     border-radius: 6px;
-    color: var(--blue);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--accent-text);
+    background: var(--card);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
 .back-link-btn:hover {
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
     text-decoration: none;
 }
 
@@ -40,9 +40,9 @@
     gap: 22px;
     margin-bottom: 18px;
     padding: 18px 22px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .meta-col {
@@ -57,21 +57,21 @@
 
 .meta-label {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
 
 .meta-item strong {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .faculty-chip {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 13.5px;
+    font-size: 0.84375rem;
     font-weight: 700;
 }
 
@@ -82,8 +82,8 @@
     place-items: center;
     border-radius: 50%;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 11px;
+    background: var(--primary);
+    font-size: 0.6875rem;
     font-weight: 700;
 }
 
@@ -91,9 +91,9 @@
    TABLE CARD
    ========================================================================== */
 .table-card {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -104,12 +104,12 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 15px 18px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .table-heading h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .table-wrap {
@@ -124,15 +124,15 @@
 .data-table th,
 .data-table td {
     padding: 13px 16px;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 13px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.8125rem;
     text-align: left;
 }
 
 .data-table th {
     color: var(--muted);
-    background: #FBFCFE;
-    font-size: 11px;
+    background: var(--surface-2);
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -143,7 +143,7 @@
 }
 
 .data-table tbody tr:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .data-table .muted-cell {
@@ -157,8 +157,8 @@
     place-items: center;
     border-radius: 50%;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 13px;
+    background: var(--primary);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
@@ -167,11 +167,11 @@
 .btn-action {
     display: inline-block;
     padding: 6px 16px;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--primary);
     border-radius: 5px;
-    color: var(--blue);
-    background: #FFFFFF;
-    font-size: 12px;
+    color: var(--accent-text);
+    background: var(--card);
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
@@ -181,7 +181,7 @@
 
 .btn-action:hover {
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
     text-decoration: none;
 }
 
@@ -194,13 +194,13 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 12px 16px;
-    border-top: 1px solid #EEF2F8;
+    border-top: 1px solid var(--border-soft);
 }
 
 .pagination-info {
     margin: 0;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .pagination {
@@ -215,18 +215,18 @@
     height: 30px;
     place-items: center;
     padding: 0 8px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 5px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.8125rem;
     cursor: pointer;
 }
 
 .page-btn.active {
-    border-color: var(--blue);
+    border-color: var(--primary);
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 /* ==========================================================================

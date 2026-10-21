@@ -28,19 +28,19 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #FFFFFF;
+    background: var(--card);
     text-align: center;
 }
 
 .donut-hole strong {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1;
 }
 
 .donut-hole span {
     margin-top: 3px;
     color: var(--muted);
-    font-size: 10.5px;
+    font-size: 0.65625rem;
     font-weight: 700;
     letter-spacing: 0.4px;
     text-transform: uppercase;
@@ -59,8 +59,8 @@
     align-items: center;
     gap: 9px;
     padding: 6px 0;
-    color: var(--navy);
-    font-size: 13px;
+    color: var(--text);
+    font-size: 0.8125rem;
 }
 
 .legend-swatch {
@@ -76,7 +76,7 @@
 
 .legend-pct {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .bar-chart.activity-chart .bar-label {
-    font-size: 11px;
+    font-size: 0.6875rem;
 }
 
 .log-filter-card {

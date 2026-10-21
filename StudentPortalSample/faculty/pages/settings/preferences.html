@@ -6,67 +6,38 @@
     <title>Preferences | Cebu Eastern College</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/settings.css">
-    <style>
-        .toast-wrap {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            pointer-events: none;
-        }
-
-        .toast {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 18px;
-            border-radius: 8px;
-            color: #FFFFFF;
-            background: #177245;
-            font-size: 13px;
-            font-weight: 600;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-            animation: toastIn 0.3s ease;
-            pointer-events: auto;
-        }
-
-        @keyframes toastIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-    </style>
     <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/faculty-theme.css">
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/preferences.js"></script>
 </head>
 <body class="dashboard-page" data-portal="faculty">
     <aside class="sidebar">
         <div class="sidebar-brand">
             <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
             <strong>CEC</strong>
-            <span>FACULTY PORTAL</span>
+            <span data-i18n="brand.portal">FACULTY PORTAL</span>
         </div>
 
         <nav class="sidebar-nav" aria-label="Faculty navigation">
-            <div class="nav-section">My Classes</div>
-            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
-            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
-            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
-            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+            <div class="nav-section" data-i18n="nav.section.classes">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span data-i18n="nav.schedule">My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span data-i18n="nav.classes">Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span data-i18n="nav.assignments">Assignments</span></a>
 
-            <div class="nav-section">Students</div>
-            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
-            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
-            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+            <div class="nav-section" data-i18n="nav.section.students">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span data-i18n="nav.students">Student List</span></a>
+            <a href="../grades/grade-management.html"><i class="fa-solid fa-file-pen"></i><span data-i18n="nav.grades">Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span data-i18n="nav.attendance">Attendance</span></a>
 
-            <div class="nav-section">Academic</div>
-            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
-            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+            <div class="nav-section" data-i18n="nav.section.academic">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span data-i18n="nav.announcements">Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span data-i18n="nav.deadlines">Upcoming Deadlines</span></a>
 
-            <div class="nav-section">Personal</div>
-            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
-            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            <div class="nav-section" data-i18n="nav.section.personal">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span data-i18n="nav.profile">Profile</span></a>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span data-i18n="nav.settings">Settings</span></a>
         </nav>
 
     </aside>
@@ -75,10 +46,10 @@
         <header class="dashboard-header">
             <label class="search-box">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input type="search" placeholder="Search students, subjects, or anything...">
+                <input type="search" data-i18n-placeholder="header.search" aria-label="Search" data-i18n-aria="header.search" placeholder="Search students, subjects, or anything...">
             </label>
 
-            <button class="header-icon" type="button" aria-label="Notifications">
+            <button class="header-icon" type="button" data-i18n-aria="header.notifications" aria-label="Notifications">
                 <i class="fa-regular fa-bell" aria-hidden="true"></i>
                 <span class="notif-dot"></span>
             </button>
@@ -87,55 +58,55 @@
                 <span class="profile-avatar">CB</span>
                 <span class="profile-info">
                     <strong>Mr. Charles Bacus</strong>
-                    <small>Faculty</small>
+                    <small data-i18n="header.role">Faculty</small>
                 </span>
             </button>
         </header>
 
         <section class="dashboard-content">
             <div class="page-head">
-                <h1>Settings</h1>
+                <h1><span data-i18n="page.settings.title">Settings</span></h1>
             </div>
 
             <div class="settings-layout">
                 <nav class="settings-nav" aria-label="Settings">
-                    <a href="settings.html"><i class="fa-solid fa-user"></i> Account Settings</a>
-                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
-                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
-                    <a href="preferences.html" class="active"><i class="fa-solid fa-sliders"></i> Preferences</a>
-                    <a href="sessions.html"><i class="fa-solid fa-desktop"></i> Session Management</a>
-                    <a href="login-history.html"><i class="fa-solid fa-list"></i> Login History</a>
+                    <a href="settings.html"><i class="fa-solid fa-user"></i> <span data-i18n="settings.nav.account">Account Settings</span></a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="settings.nav.security">Security</span></a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> <span data-i18n="settings.nav.notifications">Notifications</span></a>
+                    <a href="preferences.html" class="active"><i class="fa-solid fa-sliders"></i> <span data-i18n="settings.nav.preferences">Preferences</span></a>
+                    <a href="sessions.html"><i class="fa-solid fa-desktop"></i> <span data-i18n="settings.nav.sessions">Session Management</span></a>
+                    <a href="login-history.html"><i class="fa-solid fa-list"></i> <span data-i18n="settings.nav.history">Login History</span></a>
                 </nav>
 
                 <div class="settings-content">
                     <div class="card">
                         <div class="card-head">
-                            <h2>Preferences</h2>
+                            <h2 data-i18n="pref.section">Preferences</h2>
                         </div>
                         <div class="card-body stack">
                             <div class="pref-list">
                                 <div class="pref-row">
                                     <span class="pref-icon"><i class="fa-solid fa-globe"></i></span>
                                     <div class="pref-info">
-                                        <strong>Language</strong>
-                                        <span>Choose your preferred language.</span>
+                                        <strong data-i18n="pref.language">Language</strong>
+                                        <span data-i18n="pref.language.hint">Choose your preferred language.</span>
                                     </div>
-                                    <select class="pref-select" aria-label="Language">
-                                        <option selected>English</option>
-                                        <option>Tagalog</option>
-                                        <option>Chinese</option>
+                                    <select class="pref-select" id="language" aria-label="Language">
+                                        <option value="en" selected>English</option>
+                                        <option value="fil">Tagalog</option>
+                                        <option value="zh">Chinese</option>
                                     </select>
                                 </div>
                                 <div class="pref-row">
                                     <span class="pref-icon"><i class="fa-regular fa-calendar"></i></span>
                                     <div class="pref-info">
-                                        <strong>Date Format</strong>
-                                        <span>Choose your preferred date format.</span>
+                                        <strong data-i18n="pref.date">Date Format</strong>
+                                        <span data-i18n="pref.date.hint">Choose your preferred date format.</span>
                                     </div>
-                                    <select class="pref-select" aria-label="Date format">
-                                        <option selected>MM/DD/YYYY</option>
-                                        <option>DD/MM/YYYY</option>
-                                        <option>YYYY-MM-DD</option>
+                                    <select class="pref-select" id="date-format" aria-label="Date format">
+                                        <option value="MM/DD/YYYY" selected>MM/DD/YYYY</option>
+                                        <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
                                     </select>
                                 </div>
                             </div>
@@ -144,46 +115,51 @@
 
                     <div class="card">
                         <div class="card-head">
-                            <h2>Appearance</h2>
+                            <h2 data-i18n="pref.appearance">Appearance</h2>
                         </div>
                         <div class="card-body">
                             <div class="appearance-head">
-                                <strong>Customize the look and feel of your portal.</strong>
+                                <strong data-i18n="pref.appearance.hint">Customize the look and feel of your portal.</strong>
                             </div>
 
                             <div class="theme-cards" id="theme-cards">
-                                <div class="theme-card selected" data-theme="light">
+                                <div class="theme-card selected" data-theme="light" role="button" tabindex="0">
                                     <i class="fa-solid fa-sun"></i>
-                                    <strong>Light Mode</strong>
+                                    <strong data-i18n="pref.theme.light">Light Mode</strong>
                                 </div>
-                                <div class="theme-card" data-theme="dark">
+                                <div class="theme-card" data-theme="dark" role="button" tabindex="0">
                                     <i class="fa-solid fa-moon"></i>
-                                    <strong>Dark Mode</strong>
+                                    <strong data-i18n="pref.theme.dark">Dark Mode</strong>
                                 </div>
                             </div>
 
                             <div class="swatch-list" role="group" aria-label="Color scheme">
                                 <label class="swatch-label">
-                                    <span class="swatch swatch-blue selected"><i class="fa-solid fa-check"></i></span> Blue
+                                    <span class="swatch swatch-blue selected" data-color="blue"><i class="fa-solid fa-check"></i></span>
+                                    <span data-i18n="pref.color.blue">Blue</span>
                                 </label>
                                 <label class="swatch-label">
-                                    <span class="swatch swatch-purple"><i class="fa-solid fa-check"></i></span> Purple
+                                    <span class="swatch swatch-purple" data-color="purple"><i class="fa-solid fa-check"></i></span>
+                                    <span data-i18n="pref.color.purple">Purple</span>
                                 </label>
                                 <label class="swatch-label">
-                                    <span class="swatch swatch-green"><i class="fa-solid fa-check"></i></span> Green
+                                    <span class="swatch swatch-green" data-color="green"><i class="fa-solid fa-check"></i></span>
+                                    <span data-i18n="pref.color.green">Green</span>
                                 </label>
                                 <label class="swatch-label">
-                                    <span class="swatch swatch-yellow"><i class="fa-solid fa-check"></i></span> Yellow
+                                    <span class="swatch swatch-yellow" data-color="yellow"><i class="fa-solid fa-check"></i></span>
+                                    <span data-i18n="pref.color.yellow">Yellow</span>
                                 </label>
                                 <label class="swatch-label">
-                                    <span class="swatch swatch-red"><i class="fa-solid fa-check"></i></span> Red
+                                    <span class="swatch swatch-red" data-color="red"><i class="fa-solid fa-check"></i></span>
+                                    <span data-i18n="pref.color.red">Red</span>
                                 </label>
                             </div>
 
                             <div class="segmented" role="group" aria-label="Font size">
-                                <button type="button" class="seg-btn" data-size="small">Small</button>
-                                <button type="button" class="seg-btn active" data-size="medium">Medium</button>
-                                <button type="button" class="seg-btn" data-size="large">Large</button>
+                                <button type="button" class="seg-btn" data-size="small" data-i18n="pref.font.small">Small</button>
+                                <button type="button" class="seg-btn active" data-size="medium" data-i18n="pref.font.medium">Medium</button>
+                                <button type="button" class="seg-btn" data-size="large" data-i18n="pref.font.large">Large</button>
                             </div>
                         </div>
                     </div>
@@ -194,42 +170,7 @@
 
     <div class="toast-wrap" id="toast-wrap"></div>
 
-    <script>
-        function showToast(message) {
-            const wrap = document.getElementById('toast-wrap');
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.textContent = message;
-            wrap.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transition = 'opacity 0.3s';
-                setTimeout(() => toast.remove(), 300);
-            }, 2500);
-        }
-
-        document.querySelectorAll('#theme-cards .theme-card').forEach(card => {
-            card.addEventListener('click', () => {
-                document.querySelectorAll('#theme-cards .theme-card').forEach(c => c.classList.remove('selected'));
-                card.classList.add('selected');
-            });
-        });
-
-        document.querySelectorAll('.swatch-label .swatch').forEach(swatch => {
-            swatch.addEventListener('click', () => {
-                document.querySelectorAll('.swatch-label .swatch').forEach(s => s.classList.remove('selected'));
-                swatch.classList.add('selected');
-            });
-        });
-
-        document.querySelectorAll('.seg-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
-    </script>
-<script src="../../js/showToast.js"></script>
+    <script src="../../js/showToast.js"></script>
 <script src="../../js/copyToClipboard.js"></script>
 <script src="../../js/confirmAction.js"></script>
 <script src="../../js/avatarUpload.js"></script>

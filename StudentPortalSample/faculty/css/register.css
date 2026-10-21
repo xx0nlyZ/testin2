@@ -2,15 +2,15 @@
 
 .reg-title {
     margin: 0 0 6px;
-    color: #0B2C5E;
+    color: var(--text);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 22px;
+    font-size: 1.375rem;
     text-align: center;
 }
 
 .reg-sub {
     margin: 0 0 22px;
-    color: #60728B;
-    font-size: 13px;
+    color: var(--muted);
+    font-size: 0.8125rem;
     text-align: center;
 }

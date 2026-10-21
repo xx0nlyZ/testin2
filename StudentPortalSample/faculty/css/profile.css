@@ -9,9 +9,9 @@
 }
 
 .profile-card {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -20,17 +20,17 @@
     align-items: center;
     gap: 9px;
     padding: 15px 18px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .profile-card-head h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .profile-card-head i {
-    color: var(--blue);
-    font-size: 16px;
+    color: var(--accent-text);
+    font-size: 1rem;
 }
 
 /* Summar-top summary card */
@@ -47,23 +47,23 @@
     place-items: center;
     border: 3px solid #FFFFFF;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--blue);
+    box-shadow: 0 0 0 2px var(--primary);
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 42px;
+    background: var(--primary);
+    font-size: 2.625rem;
     font-weight: 700;
 }
 
 .profile-summary h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 1.25rem;
     letter-spacing: 0.2px;
 }
 
 .profile-summary .role-sub {
     margin: 5px 0 18px;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .btn {
@@ -74,15 +74,15 @@
     padding: 9px 18px;
     border: 1px solid transparent;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
 }
 
 .btn-primary {
-    border-color: var(--blue);
+    border-color: var(--primary);
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .btn-primary:hover {
@@ -91,8 +91,8 @@
 
 .btn-outline {
     border-color: var(--line);
-    color: var(--blue);
-    background: #FFFFFF;
+    color: var(--accent-text);
+    background: var(--card);
 }
 
 .btn-outline:hover {
@@ -114,7 +114,7 @@
     display: block;
     margin-bottom: 4px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.4px;
     text-transform: uppercase;
@@ -122,8 +122,8 @@
 
 .info-field p {
     margin: 0;
-    color: var(--navy);
-    font-size: 14px;
+    color: var(--text);
+    font-size: 0.875rem;
     line-height: 1.45;
 }
 
@@ -136,7 +136,7 @@
 
 .edu-item {
     padding: 13px 0;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .edu-item:last-child {
@@ -145,20 +145,20 @@
 
 .edu-item h4 {
     margin: 0;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .edu-item .edu-school {
     margin: 3px 0 2px;
-    color: var(--blue);
-    font-size: 13px;
+    color: var(--accent-text);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
 .edu-item .edu-years {
     margin: 0;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 /* Contact address */
@@ -168,8 +168,8 @@
 
 .address-body p {
     margin: 0;
-    color: var(--navy);
-    font-size: 14px;
+    color: var(--text);
+    font-size: 0.875rem;
     line-height: 1.6;
 }
 
@@ -188,17 +188,17 @@
     height: 38px;
     flex: 0 0 38px;
     place-items: center;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 50%;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 16px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 1rem;
 }
 
 .back-btn:hover {
-    border-color: var(--blue);
+    border-color: var(--primary);
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .edit-layout {
@@ -230,8 +230,8 @@
     place-items: center;
     border-radius: 50%;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 46px;
+    background: var(--primary);
+    font-size: 2.875rem;
     font-weight: 700;
 }
 
@@ -246,8 +246,8 @@
     border: 3px solid #FFFFFF;
     border-radius: 50%;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 14px;
+    background: var(--primary);
+    font-size: 0.875rem;
 }
 
 .photo-card .btn-outline {
@@ -263,8 +263,8 @@
     justify-content: space-between;
     gap: 14px;
     padding: 11px 0;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 13px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.8125rem;
 }
 
 .summary-row:last-child {
@@ -277,7 +277,7 @@
 }
 
 .summary-row .value {
-    color: var(--navy);
+    color: var(--text);
     text-align: right;
 }
 
@@ -292,8 +292,8 @@
 .form-section h4 {
     margin: 0 0 14px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 14px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.875rem;
     letter-spacing: 0.3px;
 }
 
@@ -306,13 +306,13 @@
 .form-field label {
     display: block;
     margin-bottom: 6px;
-    color: var(--navy);
-    font-size: 13px;
+    color: var(--text);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
 .form-field label .req {
-    color: #B3261E;
+    color: var(--danger-fg);
 }
 
 .form-field input,
@@ -323,14 +323,14 @@
     border: 1px solid var(--line);
     border-radius: 6px;
     outline: 0;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.8125rem;
 }
 
 .form-field input:focus,
 .form-field select:focus {
-    border-color: var(--blue);
+    border-color: var(--primary);
     box-shadow: 0 0 0 2px var(--pale-blue);
 }
 
@@ -340,7 +340,7 @@
     gap: 10px;
     margin-top: 26px;
     padding-top: 18px;
-    border-top: 1px solid #EEF2F8;
+    border-top: 1px solid var(--border-soft);
 }
 
 /* ==========================================================================

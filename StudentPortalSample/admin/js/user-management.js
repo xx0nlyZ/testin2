@@ -92,7 +92,9 @@
     }
 
     function fmtTs(date) {
-        var day = MONTHS[date.getMonth()] + ' ' + pad(date.getDate()) + ', ' + date.getFullYear();
+        var day = window.CECPrefs
+            ? window.CECPrefs.formatDate(date)
+            : MONTHS[date.getMonth()] + ' ' + pad(date.getDate()) + ', ' + date.getFullYear();
         var h = date.getHours();
         var ampm = h >= 12 ? 'PM' : 'AM';
         h = h % 12 || 12;
@@ -532,6 +534,9 @@
             });
         });
     }
+
+    /* redraw with the new date format as soon as the preference changes */
+    document.addEventListener('cec:prefs-changed', function () { loadUsers(); });
 
     document.addEventListener('DOMContentLoaded', function () {
         mergeAuthAccounts();

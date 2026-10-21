@@ -28,18 +28,18 @@
 
 .tab-pill {
     padding: 7px 15px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 20px;
     color: var(--muted);
-    background: #FFFFFF;
-    font-size: 12.5px;
+    background: var(--card);
+    font-size: 0.78125rem;
     font-weight: 700;
     cursor: pointer;
 }
 
 .tab-pill:hover {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--primary);
+    color: var(--accent-text);
 }
 
 .tab-pill.active {
@@ -58,17 +58,17 @@
 }
 
 .ann-row-head {
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
     color: var(--muted);
-    background: #F8FAFD;
-    font-size: 11px;
+    background: var(--surface);
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.4px;
     text-transform: uppercase;
 }
 
 .ann-item {
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
     padding-top: 14px;
     padding-bottom: 14px;
 }
@@ -78,7 +78,7 @@
 }
 
 .ann-item:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .ann-subject {
@@ -95,24 +95,24 @@
     flex: 0 0 42px;
     place-items: center;
     border-radius: 10px;
-    color: var(--blue);
+    color: var(--accent-text);
     background: var(--pale-blue);
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .ann-icon.live {
-    color: #177245;
-    background: #E3F4EA;
+    color: var(--success-fg);
+    background: var(--tint-green);
 }
 
 .ann-icon.scheduled {
-    color: #8A6D00;
-    background: #FFF2CC;
+    color: var(--amber-fg);
+    background: var(--tint-amber);
 }
 
 .ann-icon.expired {
-    color: #B3261E;
-    background: #FBE4E4;
+    color: var(--danger-fg);
+    background: var(--tint-red);
 }
 
 .ann-copy {
@@ -121,7 +121,7 @@
 
 .ann-copy strong {
     display: block;
-    font-size: 13.5px;
+    font-size: 0.84375rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -130,7 +130,7 @@
 .ann-copy p {
     margin: 3px 0 0;
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -147,12 +147,12 @@
     width: 30px;
     height: 30px;
     flex: 0 0 30px;
-    font-size: 11px;
+    font-size: 0.6875rem;
 }
 
 .ann-meta span:not(.mini-avatar) {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -160,7 +160,7 @@
 
 .ann-date {
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
     white-space: nowrap;
 }
 

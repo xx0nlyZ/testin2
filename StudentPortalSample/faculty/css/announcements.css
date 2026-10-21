@@ -13,19 +13,19 @@
 .category-filter {
     height: 40px;
     padding: 0 18px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
 }
 
 .category-filter.active {
-    border-color: var(--blue);
+    border-color: var(--primary);
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .btn-add {
@@ -37,8 +37,8 @@
     border: 0;
     border-radius: 6px;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 13px;
+    background: var(--primary);
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
 }
@@ -57,23 +57,23 @@
     height: 40px;
     margin-bottom: 20px;
     padding: 0 14px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .search-bar i {
-    color: var(--blue);
-    font-size: 13px;
+    color: var(--accent-text);
+    font-size: 0.8125rem;
 }
 
 .search-bar input {
     width: 100%;
     border: 0;
     outline: 0;
-    color: var(--navy);
+    color: var(--text);
     background: transparent;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 /* ==========================================================================
@@ -81,9 +81,9 @@
    ========================================================================== */
 .table-card {
     margin-bottom: 20px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -94,12 +94,12 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 15px 18px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .table-heading h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .table-wrap {
@@ -114,16 +114,16 @@
 .data-table th,
 .data-table td {
     padding: 13px 16px;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 13px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.8125rem;
     text-align: left;
     vertical-align: middle;
 }
 
 .data-table th {
     color: var(--muted);
-    background: #FBFCFE;
-    font-size: 11px;
+    background: var(--surface-2);
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -134,7 +134,7 @@
 }
 
 .data-table tbody tr:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .data-table .muted-cell {
@@ -149,7 +149,7 @@
     display: inline-block;
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -157,18 +157,18 @@
 }
 
 .priority-high {
-    color: #B3261E;
-    background: #FBE4E4;
+    color: var(--danger-fg);
+    background: var(--tint-red);
 }
 
 .priority-normal {
-    color: #177245;
-    background: #E3F4EA;
+    color: var(--success-fg);
+    background: var(--tint-green);
 }
 
 .priority-low {
-    color: #1D4E9B;
-    background: #E2ECFA;
+    color: var(--accent-text);
+    background: var(--tint-blue);
 }
 
 /* ==========================================================================
@@ -181,13 +181,13 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 13px 18px;
-    border-top: 1px solid #EEF2F8;
+    border-top: 1px solid var(--border-soft);
 }
 
 .pagination-info {
     margin: 0;
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
 }
 
 .pagination {
@@ -200,24 +200,24 @@
     width: 32px;
     height: 32px;
     place-items: center;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 5px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.8125rem;
     cursor: pointer;
 }
 
 .page-btn.active {
-    border-color: var(--blue);
+    border-color: var(--primary);
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
     font-weight: 700;
 }
 
 .page-btn:hover:not(.active) {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--primary);
+    color: var(--accent-text);
 }
 
 .back-link {
@@ -225,8 +225,8 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 10px;
-    color: var(--blue);
-    font-size: 13px;
+    color: var(--accent-text);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
@@ -238,9 +238,9 @@
    CREATE ANNOUNCEMENT FORM
    ========================================================================== */
 .form-card {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -256,13 +256,13 @@
 }
 
 .form-label {
-    color: var(--navy);
-    font-size: 13px;
+    color: var(--text);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
 .form-label .required {
-    color: #B3261E;
+    color: var(--danger-fg);
 }
 
 .form-input,
@@ -270,18 +270,18 @@
 .form-select {
     width: 100%;
     padding: 11px 13px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
+    color: var(--text);
+    background: var(--card);
     outline: none;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
-    border-color: var(--blue);
+    border-color: var(--primary);
 }
 
 .form-textarea {
@@ -305,22 +305,22 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
     cursor: pointer;
 }
 
 .checkbox-group input[type="checkbox"] {
     width: 16px;
     height: 16px;
-    accent-color: var(--blue);
+    accent-color: var(--primary);
     cursor: pointer;
 }
 
 .helper-text {
     margin: 0;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
 }
 
 .form-footer {
@@ -328,8 +328,8 @@
     justify-content: flex-end;
     gap: 10px;
     padding: 16px 24px;
-    border-top: 1px solid #EEF2F8;
-    background: #FBFCFE;
+    border-top: 1px solid var(--border-soft);
+    background: var(--surface-2);
 }
 
 .btn-outline {
@@ -338,18 +338,18 @@
     justify-content: center;
     height: 40px;
     padding: 0 22px;
-    border: 1.5px solid var(--blue);
+    border: 1.5px solid var(--primary);
     border-radius: 6px;
-    color: var(--blue);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--accent-text);
+    background: var(--card);
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
 }
 
 .btn-outline:hover {
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .btn-post {
@@ -358,8 +358,8 @@
     border: 0;
     border-radius: 6px;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 13px;
+    background: var(--primary);
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
 }
@@ -380,24 +380,24 @@
 .tab-btn {
     height: 34px;
     padding: 0 16px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 20px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 12.5px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.78125rem;
     font-weight: 700;
     cursor: pointer;
 }
 
 .tab-btn:hover {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--primary);
+    color: var(--accent-text);
 }
 
 .tab-btn.active {
-    border-color: var(--blue);
+    border-color: var(--primary);
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .actions-col {
@@ -420,25 +420,25 @@
     width: 32px;
     height: 32px;
     place-items: center;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--blue);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--accent-text);
+    background: var(--card);
+    font-size: 0.8125rem;
     text-decoration: none;
     cursor: pointer;
 }
 
 .action-btn:hover {
-    border-color: var(--blue);
-    background: #EEF4FF;
+    border-color: var(--primary);
+    background: var(--tint-blue-eef4ff);
 }
 
 .action-btn.danger {
-    color: #B3261E;
+    color: var(--danger-fg);
 }
 
 .action-btn.danger:hover {
-    border-color: #B3261E;
-    background: #FBE4E4;
+    border-color: var(--danger);
+    background: var(--tint-red);
 }

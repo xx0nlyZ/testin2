@@ -10,23 +10,23 @@
     gap: 10px;
     margin-bottom: 20px;
     padding: 14px 16px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .filter-select {
     height: 40px;
     padding: 0 10px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
+    color: var(--text);
+    background: var(--card);
     outline: none;
 }
 
 .filter-select:focus {
-    border-color: var(--blue);
+    border-color: var(--primary);
 }
 
 .date-range {
@@ -35,15 +35,15 @@
     gap: 8px;
     height: 40px;
     padding: 0 12px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.8125rem;
 }
 
 .date-range i {
-    color: var(--blue);
+    color: var(--accent-text);
 }
 
 .btn-search {
@@ -52,8 +52,8 @@
     border: 0;
     border-radius: 6px;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 13px;
+    background: var(--primary);
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
 }
@@ -66,15 +66,15 @@
    STAT CARDS (percent variants)
    ========================================================================== */
 .stat-card .stat-info small.percent-green {
-    color: #177245;
+    color: var(--success-fg);
 }
 
 .stat-card .stat-info small.percent-red {
-    color: #B3261E;
+    color: var(--danger-fg);
 }
 
 .stat-card .stat-info small.percent-amber {
-    color: #B26A00;
+    color: var(--amber-2);
 }
 
 /* ==========================================================================
@@ -82,9 +82,9 @@
    ========================================================================== */
 .table-card {
     margin-bottom: 20px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -95,17 +95,17 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 15px 18px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .table-heading h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .table-heading .panel-link {
-    color: var(--blue);
-    font-size: 12.5px;
+    color: var(--accent-text);
+    font-size: 0.78125rem;
     font-weight: 700;
 }
 
@@ -121,18 +121,18 @@
     align-items: center;
     gap: 7px;
     padding: 8px 16px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 12.5px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.78125rem;
     font-weight: 700;
     cursor: pointer;
 }
 
 .btn-export:hover {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--primary);
+    color: var(--accent-text);
 }
 
 .table-wrap {
@@ -147,15 +147,15 @@
 .data-table th,
 .data-table td {
     padding: 13px 16px;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 13px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.8125rem;
     text-align: left;
 }
 
 .data-table th {
     color: var(--muted);
-    background: #FBFCFE;
-    font-size: 11px;
+    background: var(--surface-2);
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -166,7 +166,7 @@
 }
 
 .data-table tbody tr:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .data-table .muted-cell {
@@ -176,17 +176,17 @@
 .btn-action {
     display: inline-block;
     padding: 6px 16px;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--primary);
     border-radius: 5px;
-    color: var(--blue);
-    background: #FFFFFF;
-    font-size: 12px;
+    color: var(--accent-text);
+    background: var(--card);
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
 .btn-action:hover {
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
     text-decoration: none;
 }
 
@@ -196,12 +196,12 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #177245;
+    color: var(--success-fg);
     font-weight: 700;
 }
 
 .check-count i {
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 /* ==========================================================================
@@ -234,13 +234,13 @@
 }
 
 .donut-value {
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 700;
 }
 
 .donut-label {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -248,9 +248,9 @@
 
 .remarks-panel {
     padding: 22px;
-    border: 1px solid #C9DCF3;
+    border: 1px solid var(--border-input-c9dcf3);
     border-radius: 8px;
-    background: #E8F0FB;
+    background: var(--tint-blue-e8f0fb);
     grid-row: span 1;
 }
 
@@ -259,15 +259,15 @@
     align-items: center;
     gap: 8px;
     margin: 0 0 10px;
-    color: var(--blue);
-    font-size: 13px;
+    color: var(--accent-text);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
 .remarks-panel p {
     margin: 0;
-    color: #2E4E7E;
-    font-size: 13px;
+    color: var(--navy-2);
+    font-size: 0.8125rem;
     line-height: 1.55;
 }
 

@@ -7,34 +7,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/grade-management.css">
     <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/faculty-theme.css">
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/preferences.js"></script>
 </head>
 <body class="dashboard-page" data-portal="faculty">
     <aside class="sidebar">
         <div class="sidebar-brand">
             <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
             <strong>CEC</strong>
-            <span>FACULTY PORTAL</span>
+            <span data-i18n="brand.portal">FACULTY PORTAL</span>
         </div>
 
         <nav class="sidebar-nav" aria-label="Faculty navigation">
-            <div class="nav-section">My Classes</div>
-            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
-            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span>My Schedule</span></a>
-            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span>Class List</span></a>
-            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span>Assignments</span></a>
+            <div class="nav-section" data-i18n="nav.section.classes">My Classes</div>
+            <a href="../dashboard/faculty-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+            <a href="../schedule/schedule-day.html"><i class="fa-regular fa-calendar-day"></i><span data-i18n="nav.schedule">My Schedule</span></a>
+            <a href="../classes/class-list.html"><i class="fa-solid fa-table-list"></i><span data-i18n="nav.classes">Class List</span></a>
+            <a href="../assignments/assignments.html"><i class="fa-solid fa-list-check"></i><span data-i18n="nav.assignments">Assignments</span></a>
 
-            <div class="nav-section">Students</div>
-            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
-            <a href="grade-management.html" class="active"><i class="fa-solid fa-file-pen"></i><span>Grades</span></a>
-            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+            <div class="nav-section" data-i18n="nav.section.students">Students</div>
+            <a href="../students/student-records.html"><i class="fa-solid fa-users"></i><span data-i18n="nav.students">Student List</span></a>
+            <a href="grade-management.html" class="active"><i class="fa-solid fa-file-pen"></i><span data-i18n="nav.grades">Grades</span></a>
+            <a href="../attendance/attendance-dashboard.html"><i class="fa-solid fa-clipboard-check"></i><span data-i18n="nav.attendance">Attendance</span></a>
 
-            <div class="nav-section">Academic</div>
-            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
-            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span>Upcoming Deadlines</span></a>
+            <div class="nav-section" data-i18n="nav.section.academic">Academic</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span data-i18n="nav.announcements">Announcements</span></a>
+            <a href="../dashboard/upcoming-deadlines.html"><i class="fa-regular fa-clock"></i><span data-i18n="nav.deadlines">Upcoming Deadlines</span></a>
 
-            <div class="nav-section">Personal</div>
-            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a>
-            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            <div class="nav-section" data-i18n="nav.section.personal">Personal</div>
+            <a href="../profile/profile.html"><i class="fa-regular fa-user"></i><span data-i18n="nav.profile">Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span data-i18n="nav.settings">Settings</span></a>
         </nav>
 
     </aside>
@@ -43,10 +46,10 @@
         <header class="dashboard-header">
             <label class="search-box">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input type="search" placeholder="Search anything...">
+                <input type="search" data-i18n-placeholder="header.search" aria-label="Search" data-i18n-aria="header.search" placeholder="Search anything...">
             </label>
 
-            <button class="header-icon" type="button" aria-label="Notifications">
+            <button class="header-icon" type="button" data-i18n-aria="header.notifications" aria-label="Notifications">
                 <i class="fa-regular fa-bell" aria-hidden="true"></i>
                 <span class="notif-dot"></span>
             </button>
@@ -55,7 +58,7 @@
                 <span class="profile-avatar">CB</span>
                 <span class="profile-info">
                     <strong>Mr. Charles Bacus</strong>
-                    <small>Faculty</small>
+                    <small data-i18n="header.role">Faculty</small>
                 </span>
             </button>
         </header>
@@ -63,8 +66,8 @@
         <section class="dashboard-content">
             <div class="page-head head-row">
                 <div>
-                    <h1>Grade</h1>
-                    <p class="page-desc">Record and manage grades for your classes.</p>
+                    <h1><span data-i18n="page.grades">Grade</span></h1>
+                    <p class="page-desc"><span data-i18n="page.grades.desc">Record and manage grades for your classes.</span></p>
                 </div>
                 <span class="semester-badge"><i class="fa-solid fa-calendar-days"></i> 1st Semester AY 2025-2026</span>
             </div>
@@ -92,7 +95,7 @@
                 <button class="btn-search" type="button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
             </div>
 
-            <h2 style="margin:0 0 12px;font-size:16px;"><i class="fa-solid fa-table-list" style="color:var(--blue);margin-right:8px;"></i>My Classes</h2>
+            <h2 style="margin:0 0 12px;font-size:16px;"><i class="fa-solid fa-table-list" style="color:var(--accent-text);margin-right:8px;"></i>My Classes</h2>
             <div class="classes-grid">
                 <article class="class-card">
                     <div class="class-top">
@@ -200,7 +203,7 @@
 
             <section class="panel">
                 <div class="panel-head">
-                    <h3><i class="fa-solid fa-chart-column" style="color:var(--blue);margin-right:8px;"></i>Grade Distribution Analytics</h3>
+                    <h3><i class="fa-solid fa-chart-column" style="color:var(--accent-text);margin-right:8px;"></i>Grade Distribution Analytics</h3>
                     <select class="filter-select" aria-label="Choose class">
                         <option>BSIT 1A - Web Development (Section 1A)</option>
                         <option>BSIT 2A - Data Structures (Section 2A)</option>
@@ -219,7 +222,7 @@
                         <div class="bar-col"><span class="bar-value">1</span><div class="bar" style="height:5%;"></div><span class="bar-label">Below 65</span></div>
                     </div>
                     <div class="chart-legend">
-                        <span><i class="fa-solid fa-square" style="color:var(--navy);"></i> Units / Students Count</span>
+                        <span><i class="fa-solid fa-square" style="color:var(--text);"></i> Units / Students Count</span>
                     </div>
                 </div>
             </section>

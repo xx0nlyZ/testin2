@@ -87,6 +87,8 @@
     }
 
     function fmtDate(date) {
+        /* the shared portal preference decides the order of the numbers */
+        if (window.CECPrefs) { return window.CECPrefs.formatDate(date); }
         return MONTHS[date.getMonth()] + ' ' + pad(date.getDate()) + ', ' + date.getFullYear();
     }
 
@@ -298,6 +300,13 @@
         if (excelBtn) excelBtn.addEventListener('click', function () { downloadSimulation('Excel', 'excel-btn'); });
         if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
     }
+
+    /* redraw with the new date format as soon as the preference changes */
+    document.addEventListener('cec:prefs-changed', function () {
+        renderMeta();
+        renderSummary();
+        loadReport();
+    });
 
     document.addEventListener('DOMContentLoaded', function () {
         renderMeta();

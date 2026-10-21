@@ -18,8 +18,8 @@
 
 .form-field > label,
 .field-label {
-    color: var(--navy);
-    font-size: 13px;
+    color: var(--text);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
@@ -29,7 +29,7 @@
 
 .form-hint {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .form-input,
@@ -37,43 +37,43 @@
     height: 40px;
     width: 100%;
     padding: 0 12px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
     outline: 0;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.8125rem;
 }
 
 .form-input:focus,
 .form-select:focus {
-    border-color: var(--blue);
+    border-color: var(--primary);
     box-shadow: 0 0 0 2px var(--pale-blue);
 }
 
 .form-input:disabled,
 .form-input[readonly] {
-    color: #8A97A8;
-    background: #F3F6FA;
+    color: var(--muted-5);
+    background: var(--surface-f3f6fa);
     cursor: not-allowed;
 }
 
 .status-select.status-active {
     border-color: #Afdcc0;
-    color: #1E7A4E;
-    background: #F0FBF4;
+    color: var(--success-3);
+    background: var(--tint-green-f0fbf4);
 }
 
 .status-select.status-inactive {
     border-color: #E5B4B4;
-    color: #B33939;
-    background: #FFF5F5;
+    color: var(--danger-2);
+    background: var(--tint-red-fff5f5);
 }
 
 .status-select.status-suspended {
     border-color: #EBD9A9;
-    color: #9A6C06;
-    background: #FFFBF0;
+    color: var(--amber-3);
+    background: var(--tint-amber-fffbf0);
 }
 
 .input-icon {
@@ -86,7 +86,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .input-icon .form-input {
@@ -99,9 +99,9 @@
     flex-wrap: wrap;
     gap: 16px;
     padding: 16px;
-    border: 1px dashed #CBD6E4;
+    border: 1px dashed var(--border-strong-cbd6e4);
     border-radius: 8px;
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .avatar-thumb {
@@ -111,9 +111,9 @@
     flex: 0 0 auto;
     place-items: center;
     border-radius: 50%;
-    color: var(--blue);
+    color: var(--accent-text);
     background: #E4ECF6;
-    font-size: 26px;
+    font-size: 1.625rem;
     overflow: hidden;
 }
 
@@ -139,15 +139,15 @@
 .link-btn {
     padding: 0;
     border: 0;
-    color: var(--blue);
+    color: var(--accent-text);
     background: transparent;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
 }
 
 .link-btn.danger {
-    color: #B33939;
+    color: var(--danger-2);
 }
 
 .form-actions {

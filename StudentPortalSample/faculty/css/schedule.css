@@ -5,9 +5,9 @@
    ========================================================================== */
 .schedule-card {
     margin-bottom: 20px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -18,12 +18,12 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 15px 18px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .card-heading h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .date-badge {
@@ -31,16 +31,16 @@
     align-items: center;
     gap: 8px;
     padding: 7px 14px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 20px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 12.5px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.78125rem;
     font-weight: 700;
 }
 
 .date-badge i {
-    color: var(--blue);
+    color: var(--accent-text);
 }
 
 /* ---------- Today list ---------- */
@@ -58,7 +58,7 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 14px 0;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .today-item:last-child {
@@ -72,16 +72,16 @@
 
 .today-main .times {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .today-main strong {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .today-main .room {
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
 }
 
 /* ---------- Weekly table ---------- */
@@ -98,15 +98,15 @@
 .data-table th,
 .data-table td {
     padding: 13px 16px;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 13px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.8125rem;
     text-align: left;
 }
 
 .data-table th {
     color: var(--muted);
-    background: #FBFCFE;
-    font-size: 11px;
+    background: var(--surface-2);
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -117,7 +117,7 @@
 }
 
 .data-table tbody tr:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .data-table .muted-cell {
@@ -152,25 +152,25 @@
     width: 34px;
     height: 34px;
     place-items: center;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.8125rem;
     cursor: pointer;
 }
 
 .date-nav-btn:hover {
-    border-color: var(--blue);
+    border-color: var(--primary);
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .date-nav-label {
     min-width: 220px;
     padding: 0 6px;
-    color: var(--navy);
-    font-size: 14px;
+    color: var(--text);
+    font-size: 0.875rem;
     font-weight: 700;
     text-align: center;
 }
@@ -178,9 +178,9 @@
 .view-toggle {
     display: inline-flex;
     overflow: hidden;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .view-toggle a {
@@ -189,53 +189,53 @@
     justify-content: center;
     padding: 8px 18px;
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
     font-weight: 700;
 }
 
 .view-toggle a + a {
-    border-left: 1px solid #E3E9F2;
+    border-left: 1px solid var(--border);
 }
 
 .view-toggle a:hover {
-    color: var(--navy);
-    background: #F0F4FA;
+    color: var(--text);
+    background: var(--surface-f0f4fa);
 }
 
 .view-toggle a.active {
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 /* ---------- Theme color tags ---------- */
 
 .theme-blue {
-    color: #1D4E9B;
-    background: #E2ECFA;
+    color: var(--accent-text);
+    background: var(--tint-blue);
 }
 
 .theme-green {
-    color: #177245;
-    background: #E3F4EA;
+    color: var(--success-fg);
+    background: var(--tint-green);
 }
 
 .theme-orange {
-    color: #B26A00;
-    background: #FFF2CC;
+    color: var(--amber-2);
+    background: var(--tint-amber);
 }
 
 .theme-pink {
-    color: #A4205C;
-    background: #FBE4F0;
+    color: var(--pink-fg);
+    background: var(--tint-pink);
 }
 
 /* ==========================================================================
    MONTH CALENDAR GRID
    ========================================================================== */
 .calendar-card {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -247,9 +247,9 @@
 .calendar-day-head {
     padding: 12px 8px;
     color: var(--muted);
-    background: #FBFCFE;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 11px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-align: center;
@@ -260,9 +260,9 @@
     position: relative;
     min-height: 104px;
     padding: 8px;
-    border-right: 1px solid #EEF2F8;
-    border-bottom: 1px solid #EEF2F8;
-    background: #FFFFFF;
+    border-right: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--card);
 }
 
 .calendar-cell:nth-child(7n) {
@@ -270,7 +270,7 @@
 }
 
 .calendar-cell.other-month {
-    background: #FAFBFD;
+    background: var(--surface-2-fafbfd);
 }
 
 .calendar-cell .day-num {
@@ -279,22 +279,22 @@
     height: 24px;
     place-items: center;
     border-radius: 50%;
-    color: var(--navy);
-    font-size: 12px;
+    color: var(--text);
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
 .calendar-cell.other-month .day-num {
-    color: #AEB9C9;
+    color: var(--muted-7);
 }
 
 .calendar-cell.today .day-num {
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .calendar-cell.today {
-    box-shadow: inset 0 0 0 2px var(--blue);
+    box-shadow: inset 0 0 0 2px var(--primary);
 }
 
 .today-tag {
@@ -304,8 +304,8 @@
     padding: 2px 8px;
     border-radius: 20px;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 9px;
+    background: var(--primary);
+    font-size: 0.5625rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -316,7 +316,7 @@
     margin-top: 5px;
     padding: 3px 7px;
     border-radius: 4px;
-    font-size: 10.5px;
+    font-size: 0.65625rem;
     font-weight: 700;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -331,9 +331,9 @@
    WEEK TIMETABLE
    ========================================================================== */
 .table-card-slim {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -346,8 +346,8 @@
 .timetable th,
 .timetable td {
     padding: 0;
-    border-right: 1px solid #EEF2F8;
-    border-bottom: 1px solid #EEF2F8;
+    border-right: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
     vertical-align: top;
     text-align: center;
 }
@@ -355,8 +355,8 @@
 .timetable th {
     padding: 12px 8px;
     color: var(--muted);
-    background: #FBFCFE;
-    font-size: 11px;
+    background: var(--surface-2);
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.4px;
     text-transform: uppercase;
@@ -366,8 +366,8 @@
 .timetable th small {
     display: block;
     margin-top: 2px;
-    color: var(--blue);
-    font-size: 10.5px;
+    color: var(--accent-text);
+    font-size: 0.65625rem;
 }
 
 .timetable th.time-head {
@@ -377,14 +377,14 @@
 .timetable .time-col {
     padding: 12px 10px;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
     font-weight: 700;
     text-align: left;
     white-space: nowrap;
 }
 
 .timetable td.empty-slot {
-    background: #FCFDFE;
+    background: var(--surface-2-fcfdfe);
 }
 
 .week-event {
@@ -393,7 +393,7 @@
     margin: 5px 6px;
     padding: 9px 11px;
     border-radius: 6px;
-    font-size: 11.5px;
+    font-size: 0.71875rem;
     text-align: left;
 }
 
@@ -401,16 +401,16 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 12.5px;
+    font-size: 0.78125rem;
 }
 
 .week-event strong i {
-    font-size: 11px;
+    font-size: 0.6875rem;
 }
 
 .week-event .sub,
 .week-event .room {
-    font-size: 11px;
+    font-size: 0.6875rem;
     opacity: 0.85;
 }
 
@@ -429,15 +429,15 @@
 .agenda-table th,
 .agenda-table td {
     padding: 13px 16px;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 13px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.8125rem;
     text-align: left;
 }
 
 .agenda-table th {
     color: var(--muted);
-    background: #FBFCFE;
-    font-size: 11px;
+    background: var(--surface-2);
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -448,17 +448,17 @@
 }
 
 .agenda-table tbody tr:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .agenda-table td:first-child {
-    color: var(--blue);
+    color: var(--accent-text);
     font-weight: 700;
     white-space: nowrap;
 }
 
 .accent-blue td:first-child {
-    box-shadow: inset 4px 0 0 #1D4E9B;
+    box-shadow: inset 4px 0 0 var(--primary);
 }
 
 .accent-green td:first-child {
@@ -478,13 +478,13 @@
     margin-right: 8px;
     padding: 3px 10px;
     border-radius: 20px;
-    font-size: 11.5px;
+    font-size: 0.71875rem;
     font-weight: 700;
 }
 
 .status-gray {
-    color: #5A6B7E;
-    background: #E7EBF0;
+    color: var(--tint-gray-fg);
+    background: var(--border-e7ebf0);
 }
 
 /* ==========================================================================
@@ -498,7 +498,7 @@
 
     .event-pill {
         padding: 2px 4px;
-        font-size: 9px;
+        font-size: 0.5625rem;
     }
 
     .view-toggle a {
@@ -507,6 +507,6 @@
 
     .date-nav-label {
         min-width: 170px;
-        font-size: 12.5px;
+        font-size: 0.78125rem;
     }
 }

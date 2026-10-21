@@ -26,6 +26,8 @@
     function formatOn(iso) {
         var d = new Date(iso);
         if (isNaN(d.getTime())) { return ''; }
+        /* the shared portal preference decides the order of the numbers */
+        if (window.CECPrefs) { return window.CECPrefs.formatDate(d); }
         return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     }
 
@@ -205,6 +207,9 @@
             if (!e.target.closest('.split')) { closeMenus(); }
         });
     }
+
+    /* redraw with the new date format as soon as the preference changes */
+    document.addEventListener('cec:prefs-changed', function () { render(); });
 
     document.addEventListener('DOMContentLoaded', function () {
         bindUi();

@@ -5,15 +5,15 @@
     padding: 7px 14px;
     border: 1px solid #C9E5D2;
     border-radius: 20px;
-    color: #177245;
-    background: #E3F4EA;
-    font-size: 12.5px;
+    color: var(--success-fg);
+    background: var(--tint-green);
+    font-size: 0.78125rem;
     font-weight: 700;
     white-space: nowrap;
 }
 
 .sys-status i {
-    font-size: 9px;
+    font-size: 0.5625rem;
 }
 
 .split-layout {
@@ -40,7 +40,7 @@
     align-items: center;
     gap: 12px;
     padding: 13px 0;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .health-metric:last-child {
@@ -49,8 +49,8 @@
 
 .health-metric .hm-label {
     display: block;
-    color: var(--navy);
-    font-size: 13px;
+    color: var(--text);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
@@ -58,11 +58,11 @@
     display: block;
     margin-top: 2px;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
 }
 
 .health-metric .hm-value {
-    font-size: 14.5px;
+    font-size: 0.90625rem;
     font-weight: 700;
     white-space: nowrap;
 }
@@ -71,7 +71,7 @@
     width: 120px;
     height: 7px;
     border-radius: 4px;
-    background: #EAF0F7;
+    background: var(--surface-eaf0f7);
     overflow: hidden;
 }
 
@@ -81,9 +81,9 @@
     border-radius: 4px;
 }
 
-.health-meter.normal > span { background: #2E9E63; }
-.health-meter.warning > span { background: #E8A33D; }
-.health-meter.critical > span { background: #B3261E; }
+.health-meter.normal > span { background: var(--success-2); }
+.health-meter.warning > span { background: var(--amber-6); }
+.health-meter.critical > span { background: var(--danger); }
 
 .health-summary {
     display: flex;
@@ -91,12 +91,12 @@
     gap: 10px;
     padding: 12px 0 4px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .health-summary i {
-    color: #2E9E63;
-    font-size: 13px;
+    color: var(--success-2-fg);
+    font-size: 0.8125rem;
 }
 
 /* ==========================================================================
@@ -118,7 +118,7 @@
     display: flex;
     width: min(540px, 100%);
     flex-direction: column;
-    background: #FFFFFF;
+    background: var(--card);
     box-shadow: -12px 0 34px rgba(11, 44, 94, 0.28);
     transform: translateX(105%);
     transition: transform 0.3s ease;
@@ -133,12 +133,12 @@
     align-items: center;
     gap: 14px;
     padding: 14px 18px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .drawer-head h2 {
     margin: 0;
-    font-size: 17px;
+    font-size: 1.0625rem;
 }
 
 .drawer-head .page-desc {
@@ -164,10 +164,10 @@
     gap: 1px;
     padding: 18px 16px 16px;
     border-radius: 10px;
-    background: #1E1E1E;
-    color: #D6E3F0;
+    background: var(--ink-2);
+    color: var(--muted-9);
     font-family: Consolas, "Courier New", monospace;
-    font-size: 12.5px;
+    font-size: 0.78125rem;
     line-height: 1.7;
     overflow: hidden;
 }
@@ -178,16 +178,16 @@
 }
 
 .term-ts {
-    color: #8A9BB0;
+    color: var(--muted-6);
 }
 
 .term-info {
-    color: #9CDCFE;
+    color: var(--teal-2);
     font-weight: 700;
 }
 
 .term-warn {
-    color: #E8A33D;
+    color: var(--amber-6-fg);
     font-weight: 700;
 }
 
@@ -197,13 +197,13 @@
 }
 
 .term-ok {
-    color: #4EC9A5;
+    color: var(--teal-3);
 }
 
 .terminal-skel {
     height: 14px;
     margin: 7px 0;
-    background: #333F4E;
+    background: var(--ink-3);
 }
 
 .copy-btn {
@@ -219,7 +219,7 @@
     justify-content: flex-end;
     gap: 8px;
     padding: 14px 18px;
-    border-top: 1px solid #EEF2F8;
+    border-top: 1px solid var(--border-soft);
 }
 
 .badge-type-full,
@@ -228,13 +228,13 @@
     display: inline-block;
     padding: 2px 9px;
     border-radius: 12px;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 700;
 }
 
-.badge-type-full { color: #0B2C5E; background: #DDE6F5; }
-.badge-type-incr { color: #1D4E9B; background: #E2ECFA; }
-.badge-type-db   { color: #8A6D00; background: #FFF2CC; }
+.badge-type-full { color: var(--text); background: var(--border-input-dde6f5); }
+.badge-type-incr { color: var(--accent-text); background: var(--tint-blue); }
+.badge-type-db   { color: var(--amber-fg); background: var(--tint-amber); }
 
 @media (max-width: 1050px) {
     .split-layout {

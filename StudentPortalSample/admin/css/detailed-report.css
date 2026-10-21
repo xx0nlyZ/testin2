@@ -19,7 +19,7 @@
     display: block;
     margin-bottom: 5px;
     color: var(--muted);
-    font-size: 10.5px;
+    font-size: 0.65625rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -27,7 +27,7 @@
 
 .meta-item strong {
     display: block;
-    font-size: 14.5px;
+    font-size: 0.90625rem;
 }
 
 .meta-skel {
@@ -61,7 +61,7 @@
 
 @media print {
     body {
-        background: #FFFFFF;
+        background: var(--card);
     }
 
     .sidebar,
@@ -84,7 +84,7 @@
     }
 
     .card {
-        border: 1px solid #CCCCCC;
+        border: 1px solid var(--border-strong-cccccc);
     }
 
     .summary-section .stats-grid {
@@ -94,6 +94,6 @@
     .audit-table th,
     .audit-table td {
         padding: 6px 10px;
-        font-size: 11px;
+        font-size: 0.6875rem;
     }
 }
