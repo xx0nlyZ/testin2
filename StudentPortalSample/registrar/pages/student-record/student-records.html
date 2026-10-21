@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../css/reg-dashboard.css">
     <link rel="stylesheet" href="../../css/reg-analytics.css">
     <link rel="stylesheet" href="../../css/reg-enrollment.css">
+    <link rel="stylesheet" href="../../css/reg-edit.css">
+    <link rel="stylesheet" href="../../css/reg-modal.css">
     <style>
         .table-head { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:16px; border-bottom:1px solid #E3E9F2; }
         .table-head-left { display:flex; align-items:center; gap:10px; }
@@ -23,8 +25,6 @@
         .bulk-bar.active { display:flex; }
         .bulk-bar strong { color:var(--navy); }
         .bulk-bar .btn { height:32px; font-size:12px; padding:0 12px; }
-        .btn-add { display:inline-flex; align-items:center; gap:6px; height:36px; padding:0 16px; border:0; border-radius:7px; color:#FFFFFF; background:var(--blue); font-size:13px; font-weight:700; cursor:pointer; white-space:nowrap; }
-        .btn-add:hover { background:#163E7A; }
         .btn-sm { height:30px; padding:0 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; border:0; }
         .btn-sm.red { color:#B3261E; background:#FBE4E4; }
         .btn-sm.red:hover { color:#FFFFFF; background:#B3261E; }
@@ -39,15 +39,6 @@
         .toast.error { background:#B3261E; }
         .toast.info { background:#1D4E9B; }
         @keyframes toastIn { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:translateX(0)} }
-        .modal-overlay { display:none; position:fixed; inset:0; z-index:9990; background:rgba(0,0,0,0.45); align-items:center; justify-content:center; }
-        .modal-overlay.active { display:flex; }
-        .modal { width:min(520px,90vw); max-height:85vh; overflow-y:auto; border-radius:12px; background:#FFFFFF; box-shadow:0 12px 40px rgba(0,0,0,0.2); }
-        .modal-head { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid #E3E9F2; }
-        .modal-head h3 { margin:0; font-size:16px; }
-        .modal-close { width:30px; height:30px; border:0; border-radius:6px; color:var(--muted); background:transparent; cursor:pointer; font-size:16px; }
-        .modal-close:hover { background:#F0F4FA; }
-        .modal-body { padding:20px; }
-        .modal-foot { display:flex; justify-content:flex-end; gap:8px; padding:14px 20px; border-top:1px solid #E3E9F2; }
         .filter-bar .clear-filters { display:none; height:36px; padding:0 14px; border:1px solid #D5DEE9; border-radius:6px; color:var(--navy); background:#FFFFFF; font-size:12.5px; font-weight:600; cursor:pointer; white-space:nowrap; }
         .filter-bar.has-filters .clear-filters { display:inline-flex; }
         .pagination button.page-btn { min-width:32px; }
@@ -157,7 +148,7 @@
                         <i class="fa-solid fa-users"></i>
                         <h3>Student List</h3>
                     </div>
-                    <button class="btn-add" id="btn-add-student"><i class="fa-solid fa-plus"></i> Add Student</button>
+                    <button type="button" class="btn btn-primary" id="btn-add-student"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add Student</button>
                 </div>
                 <div class="filter-bar" id="filter-bar">
                     <label class="search-input">
@@ -232,86 +223,143 @@
     <div class="toast-wrap" id="toast-wrap"></div>
 
     <div class="modal-overlay" id="modal-add">
-        <div class="modal">
+        <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="modal-add-title">
             <div class="modal-head">
-                <h3><i class="fa-solid fa-user-plus" style="color:var(--blue);margin-right:8px;"></i> Add New Student</h3>
-                <button class="modal-close" data-close="modal-add"><i class="fa-solid fa-xmark"></i></button>
+                <span class="modal-badge"><i class="fa-solid fa-user-plus"></i></span>
+                <h3 id="modal-add-title">Add New Student</h3>
+                <button class="modal-close" type="button" data-close="modal-add" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
-            <div class="modal-body">
-                <p class="modal-note" style="margin:0 0 16px;color:var(--muted);font-size:12.5px;">Adding a student also creates their portal login account (role: Student).</p>
-                <div class="form-grid">
-                    <div class="field">
-                        <label for="new-name">Full Name <em>*</em></label>
-                        <input type="text" id="new-name" placeholder="Enter full name">
+
+            <form class="modal-body" id="add-student-form" novalidate>
+                <p class="modal-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Adding a student also creates their portal login account (role: Student).</span>
+                </p>
+
+                <section class="card" aria-label="Personal information">
+                    <h4 class="card-title"><i class="fa-solid fa-user"></i> Personal Information</h4>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="new-name">Full Name <em>*</em></label>
+                            <div class="input-icon">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="new-name" placeholder="Enter full name" autocomplete="off">
+                            </div>
+                            <div class="field-error" id="err-new-name">Please enter the student's first and last name.</div>
+                        </div>
+                        <div class="field">
+                            <label for="new-id">Student ID <em>*</em></label>
+                            <div class="input-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                                <input type="text" id="new-id" placeholder="e.g. 2026-0001" autocomplete="off">
+                            </div>
+                            <div class="field-error" id="err-new-id">Please enter a student ID.</div>
+                        </div>
+                        <div class="field full">
+                            <label for="new-email">Email <em>*</em></label>
+                            <div class="input-icon">
+                                <i class="fa-solid fa-at"></i>
+                                <input type="email" id="new-email" placeholder="student@cec.edu.ph" autocomplete="off">
+                            </div>
+                            <div class="field-error" id="err-new-email">Please enter a valid email address.</div>
+                        </div>
                     </div>
-                    <div class="field">
-                        <label for="new-id">Student ID <em>*</em></label>
-                        <input type="text" id="new-id" placeholder="Enter Student ID">
+                </section>
+
+                <section class="card" aria-label="Academic information">
+                    <h4 class="card-title"><i class="fa-regular fa-file-lines"></i> Academic Information</h4>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="new-course">Course <em>*</em></label>
+                            <select id="new-course">
+                                <option value="">Select course</option>
+                                <option>BS Information Technology</option>
+                                <option>BS Hospitality Management</option>
+                                <option>BS Tourism Management</option>
+                                <option>BS Secondary Education</option>
+                                <option>BS Criminology</option>
+                                <option>Bachelor of Elementary Education</option>
+                            </select>
+                            <div class="field-error" id="err-new-course">Please select a course.</div>
+                        </div>
+                        <div class="field">
+                            <label for="new-year">Year Level <em>*</em></label>
+                            <select id="new-year">
+                                <option value="">Select year</option>
+                                <option>1st Year</option>
+                                <option>2nd Year</option>
+                                <option>3rd Year</option>
+                                <option>4th Year</option>
+                            </select>
+                            <div class="field-error" id="err-new-year">Please select a year level.</div>
+                        </div>
+                        <div class="field">
+                            <label for="new-section">Section <em>*</em></label>
+                            <div class="input-icon">
+                                <i class="fa-solid fa-hashtag"></i>
+                                <input type="text" id="new-section" placeholder="e.g. BSIT-1A" autocomplete="off">
+                            </div>
+                            <div class="field-error" id="err-new-section">Please enter the section.</div>
+                        </div>
+                        <div class="field">
+                            <label for="new-status">Status <em>*</em></label>
+                            <select id="new-status">
+                                <option value="">Select status</option>
+                                <option>Active</option>
+                                <option>On Leave</option>
+                                <option>Inactive</option>
+                            </select>
+                            <div class="field-error" id="err-new-status">Please select a status.</div>
+                        </div>
                     </div>
-                    <div class="field">
-                        <label for="new-course">Course <em>*</em></label>
-                        <select id="new-course">
-                            <option value="">Select course</option>
-                            <option>BS Information Technology</option>
-                            <option>BS Hospitality Management</option>
-                            <option>BS Tourism Management</option>
-                            <option>BS Secondary Education</option>
-                            <option>BS Criminology</option>
-                            <option>Bachelor of Elementary Education</option>
-                        </select>
+                </section>
+
+                <section class="card" aria-label="Portal account">
+                    <h4 class="card-title"><i class="fa-solid fa-key"></i> Portal Account</h4>
+
+                    <div class="form-grid">
+                        <div class="field full">
+                            <label for="new-password">Temporary Password <em>*</em></label>
+                            <div class="input-icon">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="text" id="new-password" placeholder="At least 6 characters" autocomplete="off">
+                            </div>
+                            <div class="field-error" id="err-new-password">The temporary password must be at least 6 characters.</div>
+                        </div>
                     </div>
-                    <div class="field">
-                        <label for="new-year">Year Level <em>*</em></label>
-                        <select id="new-year">
-                            <option value="">Select year</option>
-                            <option>1st Year</option>
-                            <option>2nd Year</option>
-                            <option>3rd Year</option>
-                            <option>4th Year</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label for="new-section">Section <em>*</em></label>
-                        <input type="text" id="new-section" placeholder="e.g. BSIT-1A">
-                    </div>
-                    <div class="field">
-                        <label for="new-status">Status <em>*</em></label>
-                        <select id="new-status">
-                            <option value="">Select status</option>
-                            <option>Active</option>
-                            <option>On Leave</option>
-                            <option>Inactive</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label for="new-email">Email <em>*</em></label>
-                        <input type="email" id="new-email" placeholder="student@cec.edu.ph">
-                    </div>
-                    <div class="field">
-                        <label for="new-password">Temporary Password <em>*</em></label>
-                        <input type="text" id="new-password" placeholder="At least 6 characters" autocomplete="off">
-                    </div>
-                </div>
-            </div>
+                </section>
+            </form>
+
             <div class="modal-foot">
-                <button class="btn btn-outline" data-close="modal-add">Cancel</button>
-                <button class="btn btn-primary" id="btn-save-student"><i class="fa-solid fa-check"></i> Add Student</button>
+                <button type="button" class="btn btn-outline" data-close="modal-add">Cancel</button>
+                <button type="submit" class="btn btn-primary" id="btn-save-student" form="add-student-form">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i> Add Student
+                </button>
             </div>
         </div>
     </div>
 
     <div class="modal-overlay" id="modal-delete">
-        <div class="modal" style="max-width:400px;">
+        <div class="modal modal-narrow" role="dialog" aria-modal="true" aria-labelledby="modal-delete-title">
             <div class="modal-head">
-                <h3><i class="fa-solid fa-triangle-exclamation" style="color:#B3261E;margin-right:8px;"></i> Confirm Deletion</h3>
-                <button class="modal-close" data-close="modal-delete"><i class="fa-solid fa-xmark"></i></button>
+                <span class="modal-badge danger"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                <h3 id="modal-delete-title">Confirm Deletion</h3>
+                <button class="modal-close" type="button" data-close="modal-delete" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
             <div class="modal-body">
-                <p style="margin:0;color:var(--navy);font-size:13.5px;">Are you sure you want to delete <strong id="delete-name"></strong>? This action cannot be undone.</p>
+                <p class="modal-copy">Are you sure you want to delete <strong id="delete-name"></strong>? This action cannot be undone.</p>
             </div>
             <div class="modal-foot">
-                <button class="btn btn-outline" data-close="modal-delete">Cancel</button>
-                <button class="btn btn-primary" id="btn-confirm-delete" style="background:#B3261E;"><i class="fa-solid fa-trash"></i> Delete</button>
+                <button type="button" class="btn btn-outline" data-close="modal-delete">Cancel</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-delete">
+                    <i class="fa-solid fa-trash" aria-hidden="true"></i> Delete
+                </button>
             </div>
         </div>
     </div>
@@ -491,8 +539,19 @@
             setTimeout(function () { t.style.opacity = '0'; t.style.transition = 'opacity 0.3s'; setTimeout(function () { t.remove(); }, 300); }, 3000);
         }
 
-        function openModal(id) { document.getElementById(id).classList.add('active'); }
-        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+        function openModal(id) {
+            var modal = document.getElementById(id);
+            modal.classList.add('active');
+            var target = modal.querySelector('.modal-body input, .modal-body select, .modal-body textarea')
+                || modal.querySelector('.modal-foot .btn');
+            if (target) { setTimeout(function () { target.focus(); }, 30); }
+        }
+
+        function closeModal(id) {
+            var modal = document.getElementById(id);
+            modal.classList.remove('active');
+            if (id === 'modal-add') { clearFieldErrors(); }
+        }
 
         searchEl.addEventListener('input', function () { currentPage = 1; renderTable(); });
         filterProg.addEventListener('change', function () { currentPage = 1; renderTable(); });
@@ -579,6 +638,44 @@
             }
         });
 
+        /* ---- Add Student dialog: validation, then account creation ---- */
+        var ADD_FIELDS = ['new-name', 'new-id', 'new-course', 'new-year', 'new-section', 'new-status', 'new-email', 'new-password'];
+
+        function setFieldError(id, on) {
+            var input = document.getElementById(id);
+            var err = document.getElementById('err-' + id);
+            if (input) { input.classList.toggle('invalid', on); }
+            if (err) { err.classList.toggle('visible', on); }
+        }
+
+        function clearFieldErrors() {
+            ADD_FIELDS.forEach(function (id) { setFieldError(id, false); });
+        }
+
+        function validateAddForm() {
+            var errors = {};
+            var name = document.getElementById('new-name').value.trim();
+            var email = document.getElementById('new-email').value.trim();
+            var password = document.getElementById('new-password').value.trim();
+
+            if (name.split(/\s+/).filter(Boolean).length < 2) { errors['new-name'] = true; }
+            if (!document.getElementById('new-id').value.trim()) { errors['new-id'] = true; }
+            if (!document.getElementById('new-course').value) { errors['new-course'] = true; }
+            if (!document.getElementById('new-year').value) { errors['new-year'] = true; }
+            if (!document.getElementById('new-section').value.trim()) { errors['new-section'] = true; }
+            if (!document.getElementById('new-status').value) { errors['new-status'] = true; }
+            if (!/^\S+@\S+\.\S+$/.test(email)) { errors['new-email'] = true; }
+            if (password.length < 6) { errors['new-password'] = true; }
+
+            return errors;
+        }
+
+        var addForm = document.getElementById('add-student-form');
+        addForm.querySelectorAll('input, select').forEach(function (el) {
+            el.addEventListener('input', function () { setFieldError(el.id, false); });
+            el.addEventListener('change', function () { setFieldError(el.id, false); });
+        });
+
         document.getElementById('btn-add-student').addEventListener('click', function () {
             document.getElementById('new-name').value = '';
             document.getElementById('new-id').value = '';
@@ -588,10 +685,24 @@
             document.getElementById('new-status').value = '';
             document.getElementById('new-email').value = '';
             document.getElementById('new-password').value = 'Student123!';
+            clearFieldErrors();
             openModal('modal-add');
         });
 
-        document.getElementById('btn-save-student').addEventListener('click', function () {
+        addForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var errors = validateAddForm();
+            clearFieldErrors();
+            Object.keys(errors).forEach(function (id) { setFieldError(id, true); });
+
+            if (Object.keys(errors).length) {
+                showToast('Please fix the highlighted fields.', 'error');
+                var firstInvalid = addForm.querySelector('.invalid');
+                if (firstInvalid) { firstInvalid.focus(); }
+                return;
+            }
+
             var name = document.getElementById('new-name').value.trim();
             var id = document.getElementById('new-id').value.trim();
             var course = document.getElementById('new-course').value;
@@ -600,19 +711,6 @@
             var status = document.getElementById('new-status').value;
             var email = document.getElementById('new-email').value.trim();
             var password = document.getElementById('new-password').value.trim();
-
-            if (!name || !id || !course || !year || !section || !status || !email || !password) {
-                showToast('Please fill in all required fields.', 'error');
-                return;
-            }
-            if (!/^\S+@\S+\.\S+$/.test(email)) {
-                showToast('Enter a valid email address.', 'error');
-                return;
-            }
-            if (password.length < 6) {
-                showToast('The temporary password must be at least 6 characters.', 'error');
-                return;
-            }
 
             var session = window.CECAuth ? window.CECAuth.getSession() : null;
             var actorRole = session ? session.role : null;
@@ -671,7 +769,15 @@
         });
 
         document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
-            overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.classList.remove('active'); });
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) { closeModal(overlay.id); }
+            });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape') { return; }
+            var open = document.querySelector('.modal-overlay.active');
+            if (open) { closeModal(open.id); }
         });
 
         document.getElementById('menu-toggle').addEventListener('click', function () {

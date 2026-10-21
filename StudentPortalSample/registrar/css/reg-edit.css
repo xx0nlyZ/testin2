@@ -236,6 +236,36 @@
 }
 
 /* ==========================================================================
+   FIELD FEEDBACK
+   Shared by the Edit Student Record form and the Add Student dialog.
+   ========================================================================== */
+.field input.invalid,
+.field select.invalid,
+.field textarea.invalid {
+    border-color: #B3261E;
+    background: #FDF3F2;
+}
+
+.field input.invalid:focus,
+.field select.invalid:focus,
+.field textarea.invalid:focus {
+    border-color: #B3261E;
+    box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.12);
+}
+
+.field-error {
+    display: none;
+    margin-top: 5px;
+    color: #B3261E;
+    font-size: 11.5px;
+    line-height: 1.4;
+}
+
+.field-error.visible {
+    display: block;
+}
+
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 900px) {
