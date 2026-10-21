@@ -65,6 +65,8 @@
         var parts = iso.split('-');
         if (parts.length !== 3) return iso;
         var d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+        /* the shared portal preference decides the order of the numbers */
+        if (window.CECPrefs) { return window.CECPrefs.formatDate(d); }
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         return months[d.getMonth()] + ' ' + pad2(d.getDate()) + ', ' + d.getFullYear();
     }
@@ -614,6 +616,11 @@
 
     statusFilter && render();
     render();
+
+    /* redraw the request dates when the date-format preference changes */
+    document.addEventListener('cec:prefs-changed', function (event) {
+        if (!event.detail || event.detail.name === 'dateFormat') { render(); }
+    });
 
     if (window.location.hash === '#request') {
         openRequestModal();

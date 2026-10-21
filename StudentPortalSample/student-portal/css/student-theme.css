@@ -1,0 +1,587 @@
+/* ==========================================================================
+   THEME & APPEARANCE  |  STUDENT PORTAL
+   --------------------------------------------------------------------------
+   Portal-wide appearance layer. Loaded LAST in the <head> of every student
+   page so the Preferences (light/dark, accent colour, font size) apply
+   everywhere and not only inside the Settings folder.
+
+   It is deliberately loaded after css/responsive.css so that:
+     * the light tokens below win over the shared :root fallback, and
+     * the dark rules can outrank the literal light colours that the shared
+       stylesheet still uses for the app shell.
+
+   Tokens are the same family used across the portal:
+     --navy #0B2C5E | --blue #1D4E9B | --pale-blue #DCE7F5 | --canvas #F5F7FA
+     --line #AFC5E2 | --muted #60728B | Arial font | 6px/8px/10px radii.
+
+   The appearance runtime (student-portal/js/preferences.js) writes the active
+   values onto <html> so they are in effect before first paint.
+   ========================================================================== */
+
+:root {
+    /* surfaces */
+    --card: #FFFFFF;
+    --surface: #F8FAFD;
+    --surface-2: #FBFCFE;
+    --canvas: #F5F7FA;
+    --fill-soft: #E4E4E4;
+
+    /* borders */
+    --border: #E3E9F2;
+    --border-soft: #EEF2F8;
+    --border-input: #D5DEE9;
+    --border-strong: #C7D4E6;
+    --radio-ring: #B9C7DA;
+    --border-e1e5eb: #E1E5EB;
+    --border-input-cbd5e1: #CBD5E1;
+    --navy-border: #0B2C5E;
+
+    /* brand */
+    --navy: #0B2C5E;
+    --navy-2: #2E4E7E;
+    --primary: var(--blue);
+    --accent-text: var(--primary);
+    --pale-blue: #DCE7F5;
+    --line: #AFC5E2;
+
+    /* text */
+    --text: var(--navy);
+    --ink: #222222;
+    --muted: #60728B;
+    --muted-3: #5B6B80;
+
+    /* semantic status - the "-fg" twins are the text-safe variants */
+    --success: #177245;
+    --success-fg: #177245;
+    --success-2: #2E9E4F;
+    --success-2-fg: #2E9E4F;
+    --success-3: #1D9E5B;
+    --success-3-fg: #7BC29A;
+    --danger: #B3261E;
+    --danger-fg: #B3261E;
+    --danger-2: #94200F;
+    --danger-2-fg: #94200F;
+    --danger-3: #C0392B;
+    --danger-3-fg: #C0392B;
+    --danger-4: #E04A4A;
+    --danger-4-fg: #E04A4A;
+    --amber: #8A6D00;
+    --amber-fg: #8A6D00;
+    --amber-2: #D9A400;
+    --amber-2-fg: #D9A400;
+    --purple: #6B4FA0;
+    --purple-fg: #6B4FA0;
+
+    /* tints */
+    --tint-blue: #E2ECFA;
+    --tint-gray: #EEF2F8;
+    --tint-green: #E3F4EA;
+    --tint-amber: #FFF2CC;
+    --tint-red: #FBE4E4;
+
+    /* exact light values kept from the original pages */
+    --surface-f4f8fd: #F4F8FD;
+    --surface-f2f5fa: #F2F5FA;
+    --surface-f1f6fd: #F1F6FD;
+    --surface-f1f5fb: #F1F5FB;
+    --surface-eaeef4: #EAEEF4;
+    --surface-e3e9f2: #E3E9F2;
+    --surface-cbd5e1: #CBD5E1;
+    --tint-blue-e8f0fb: #E8F0FB;
+    --tint-blue-e8f1fd: #E8F1FD;
+    --tint-blue-f0f5fc: #F0F5FC;
+    --tint-red-fff5f5: #FFF5F5;
+
+    --font: 16px;
+}
+
+/* The font-size preference scales the whole portal: every font-size in the
+   student stylesheets is declared in rem, and rem resolves against this. */
+html {
+    font-size: var(--font);
+}
+
+body {
+    font-size: 1rem;
+    color: var(--text);
+    background: var(--canvas);
+}
+
+/* ==========================================================================
+   APP SHELL
+   The shared css/responsive.css still paints the shell with literal light
+   colours. These rules restate them with tokens so both themes work.
+   ========================================================================== */
+.dashboard-header,
+.app-header {
+    background: var(--card);
+    border-bottom-color: var(--border);
+}
+
+.search-box {
+    background: var(--fill-soft);
+}
+
+.search-box input {
+    color: var(--text);
+}
+
+.search-box i {
+    color: var(--ink);
+}
+
+.header-icon,
+.profile-button {
+    color: var(--text);
+}
+
+.semester-select {
+    color: var(--text);
+    background: var(--card);
+    border-color: var(--border-input);
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: var(--primary);
+}
+
+/* ==========================================================================
+   DARK THEME
+   Overrides are toggled via .theme-dark on <html>.
+   The selector is html.theme-dark (not .theme-dark) so it outranks the
+   shared :root fallback in css/responsive.css, which is loaded earlier.
+   ========================================================================== */
+html.theme-dark {
+    --canvas: #16213A;
+    --card: #1B2740;
+    --surface: #22314F;
+    --surface-2: #1F2C48;
+    --fill-soft: #22314F;
+
+    --border: #2E3E5C;
+    --border-soft: #293854;
+    --border-input: #33456A;
+    --border-strong: #6B7C99;
+    --radio-ring: #4A5D80;
+    --border-e1e5eb: #2E3E5C;
+    --border-input-cbd5e1: #33456A;
+    --navy-border: #33456A;
+
+    --navy: #14203A;
+    --navy-2: #A9C0E4;
+    --pale-blue: #22314F;
+    --line: #33456A;
+
+    --text: #DCE7F5;
+    --ink: #DCE7F5;
+    --muted: #9FB0C7;
+    --muted-3: #A8B7CB;
+
+    --success: #177245;
+    --success-fg: #7ED9A2;
+    --success-2: #2E9E4F;
+    --success-2-fg: #5FCB92;
+    --success-3: #1D9E5B;
+    --success-3-fg: #7ED9A2;
+    --danger: #B3261E;
+    --danger-fg: #F0938C;
+    --danger-2: #F0938C;
+    --danger-2-fg: #F0938C;
+    --danger-3: #F0938C;
+    --danger-3-fg: #F0938C;
+    --danger-4: #E04A4A;
+    --danger-4-fg: #F0938C;
+    --amber: #8A6D00;
+    --amber-fg: #E8C15A;
+    --amber-2: #E8B478;
+    --amber-2-fg: #E8B478;
+    --purple: #6B4FA0;
+    --purple-fg: #C3A0F0;
+
+    --tint-blue: #16294A;
+    --tint-gray: #22314F;
+    --tint-green: #14361F;
+    --tint-amber: #3A2F0C;
+    --tint-red: #3A1512;
+
+    /* exact light values kept from the original pages */
+    --surface-f4f8fd: #22314F;
+    --surface-f2f5fa: #22314F;
+    --surface-f1f6fd: #22314F;
+    --surface-f1f5fb: #22314F;
+    --surface-eaeef4: #22314F;
+    --surface-e3e9f2: #22314F;
+    --surface-cbd5e1: #33456A;
+    --tint-blue-e8f0fb: #16294A;
+    --tint-blue-e8f1fd: #16294A;
+    --tint-blue-f0f5fc: #16294A;
+    --tint-red-fff5f5: #3A1512;
+}
+
+/* Sidebar keeps the navy rail, slightly deeper so it separates from the
+   canvas without turning into a black hole. */
+.theme-dark .sidebar {
+    background: #14203A;
+    border-right-color: #2E3E5C;
+}
+
+.theme-dark .sidebar-brand span {
+    color: #9FB0C7;
+}
+
+.theme-dark .sidebar-nav a,
+.theme-dark .sidebar-bottom a {
+    color: #C6D3E6;
+}
+
+.theme-dark .sidebar-nav a:hover,
+.theme-dark .sidebar-nav a.active,
+.theme-dark .sidebar-bottom a:hover {
+    background: var(--surface);
+    color: var(--accent-text);
+}
+
+.theme-dark .nav-section {
+    color: rgba(200, 214, 235, 0.75);
+}
+
+/* Cards, panels and tables keep reading well on the dark canvas */
+.theme-dark .card,
+.theme-dark .table-card,
+.theme-dark .form-card,
+.theme-dark .stat-card,
+.theme-dark .data-table,
+.theme-dark .panel,
+.theme-dark .setting-card,
+.theme-dark .settings-nav,
+.theme-dark .settings-content,
+.theme-dark .empty-panel,
+.theme-dark .summary-item,
+.theme-dark .detail-hero,
+.theme-dark .doc-panel,
+.theme-dark .session-block,
+.theme-dark .security-list,
+.theme-dark .timeline,
+.theme-dark .news-item,
+.theme-dark .class-item,
+.theme-dark .deadline-item {
+    background: var(--card);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.theme-dark .card-head,
+.theme-dark .card-body,
+.theme-dark .table-card td,
+.theme-dark .table-card th,
+.theme-dark .table-heading,
+.theme-dark .table-footer {
+    border-color: var(--border);
+}
+
+.theme-dark .card-foot {
+    background: var(--surface-2);
+    border-top-color: var(--border);
+}
+
+.theme-dark .card-head h1,
+.theme-dark .card-head h2,
+.theme-dark .card-head h3,
+.theme-dark .setting-card > .setting-title h3,
+.theme-dark .page-head h1,
+.theme-dark .page-desc,
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3 {
+    color: var(--text);
+}
+
+.theme-dark .page-desc,
+.theme-dark .muted-cell,
+.theme-dark .meta-helper,
+.theme-dark .form-hint,
+.theme-dark .row-text small {
+    color: var(--muted);
+}
+
+.theme-dark .data-table th,
+.theme-dark .table-card th {
+    color: var(--muted);
+    background: var(--card);
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .data-table td,
+.theme-dark .table-card td {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .data-table tfoot td {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.theme-dark .data-table tbody tr:hover,
+.theme-dark .table-card tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.theme-dark .table-footer {
+    border-top-color: var(--border);
+}
+
+.theme-dark .filter-box select,
+.theme-dark .filter-select,
+.theme-dark .form-select,
+.theme-dark .form-input,
+.theme-dark .form-control,
+.theme-dark .field input,
+.theme-dark .field select,
+.theme-dark .field textarea,
+.theme-dark .input-icon input,
+.theme-dark .pref-select,
+.theme-dark .semester-select,
+.theme-dark textarea,
+.theme-dark .search-box input {
+    color: var(--text);
+    background: var(--card);
+    border-color: var(--border-input);
+}
+
+.theme-dark .filter-box select:focus,
+.theme-dark .form-select:focus,
+.theme-dark .form-input:focus,
+.theme-dark .form-control:focus,
+.theme-dark .field input:focus,
+.theme-dark .field select:focus,
+.theme-dark .field textarea:focus {
+    border-color: var(--primary);
+}
+
+.theme-dark .btn-outline,
+.theme-dark .pagination button,
+.theme-dark .page-btn,
+.theme-dark .segmented button,
+.theme-dark .btn-ghost,
+.theme-dark .btn-full {
+    color: var(--text);
+    background: var(--card);
+    border-color: var(--border);
+}
+
+.theme-dark .btn-outline:hover,
+.theme-dark .page-btn:hover:not(.active),
+.theme-dark .segmented button:hover {
+    background: var(--pale-blue);
+    color: var(--accent-text);
+}
+
+.theme-dark .segmented button.active {
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+.theme-dark .modal-overlay {
+    background: rgba(6, 16, 38, 0.62);
+}
+
+.theme-dark .modal,
+.theme-dark .modal-card,
+.theme-dark .modal-content {
+    background: var(--card);
+    color: var(--text);
+}
+
+.theme-dark .modal-head,
+.theme-dark .modal-foot {
+    border-color: var(--border);
+}
+
+.theme-dark .modal-head .modal-heading,
+.theme-dark .modal-heading {
+    color: var(--text);
+}
+
+.theme-dark .toast {
+    color: #FFFFFF;
+}
+
+/* Settings navigation */
+.theme-dark .settings-nav a {
+    color: var(--text);
+}
+
+.theme-dark .settings-nav a.active {
+    background: var(--pale-blue);
+    color: var(--accent-text);
+}
+
+/* Appearance controls on the preferences page (registrar parity) */
+.theme-dark .setting-card > .setting-title h3 i {
+    color: var(--accent-text);
+}
+
+.theme-dark .settings-subhead {
+    color: var(--text);
+}
+
+.theme-dark .row-text strong {
+    color: var(--text);
+}
+
+.theme-dark .row-icon {
+    background: var(--pale-blue);
+    color: var(--accent-text);
+}
+
+.theme-dark .theme-card {
+    background: var(--card);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.theme-dark .theme-card.active {
+    border-color: var(--accent-text);
+    background: var(--pale-blue);
+}
+
+.theme-dark .caption-note {
+    color: var(--muted);
+}
+
+/* Status pills, chips and tags */
+.theme-dark .status-badge,
+.theme-dark .chip,
+.theme-dark .tag,
+.theme-dark .count-pill,
+.theme-dark .pill-green,
+.theme-dark .date-badge,
+.theme-dark .location-tag {
+    border-color: var(--border);
+}
+
+.theme-dark .strength-bar {
+    background: var(--surface);
+}
+
+.theme-dark .note-bar {
+    color: var(--navy-2);
+    background: var(--tint-blue);
+    border-color: var(--line);
+}
+
+/* Dropdowns that the header scripts inject at runtime (profile menu and
+   notification panel) bring their own light colours, so they need an
+   explicit dark treatment here. */
+.theme-dark .profile-menu,
+.theme-dark .notif-panel {
+    background: var(--card);
+    border-color: var(--border);
+    box-shadow: 0 18px 44px rgba(4, 10, 24, 0.55);
+}
+
+.theme-dark .profile-menu-head,
+.theme-dark .notif-head {
+    background: var(--surface);
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .profile-menu-head strong,
+.theme-dark .notif-head strong,
+.theme-dark .notif-body strong,
+.theme-dark .profile-menu-item,
+.theme-dark .notif-foot {
+    color: var(--text);
+}
+
+.theme-dark .profile-menu-head small,
+.theme-dark .notif-body p,
+.theme-dark .notif-body small {
+    color: var(--muted);
+}
+
+.theme-dark .profile-menu-item i {
+    color: var(--muted);
+}
+
+.theme-dark .profile-menu-item:hover,
+.theme-dark .notif-item:hover {
+    background: var(--pale-blue);
+}
+
+.theme-dark .profile-menu-item.is-danger {
+    color: var(--danger-fg);
+}
+
+.theme-dark .profile-menu-item.is-danger i {
+    color: var(--danger-fg);
+}
+
+.theme-dark .profile-menu-item.is-danger:hover {
+    background: var(--tint-red);
+}
+
+.theme-dark .profile-menu-divider {
+    background: var(--border);
+}
+
+.theme-dark .profile-menu-avatar {
+    background: var(--primary);
+}
+
+.theme-dark .notif-item {
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .notif-icon {
+    background: var(--tint-blue);
+    color: #8FB4EE;
+}
+
+.theme-dark .notif-item.tone-success .notif-icon {
+    background: var(--tint-green);
+    color: #7ED9A2;
+}
+
+.theme-dark .notif-item.tone-warning .notif-icon {
+    background: var(--tint-amber);
+    color: #E8C15A;
+}
+
+.theme-dark .notif-item.tone-muted .notif-icon {
+    background: var(--tint-gray);
+    color: var(--muted);
+}
+
+.theme-dark .notif-clear {
+    color: var(--amber-2-fg);
+}
+
+.theme-dark .notif-foot {
+    background: var(--surface);
+    border-top-color: var(--border);
+}
+
+.theme-dark .notif-foot:hover {
+    background: var(--pale-blue);
+}
+
+/* The shared toast helper injects its own light styles at runtime. */
+.theme-dark .cec-copy-btn {
+    color: var(--accent-text);
+}
+
+.theme-dark .cec-copy-btn:hover {
+    background: var(--pale-blue);
+}
+
+.theme-dark .cec-field-error {
+    background: var(--tint-red) !important;
+    border-color: var(--danger) !important;
+}
+
+.theme-dark .cec-error-msg {
+    color: var(--danger-fg);
+}

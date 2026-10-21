@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preferences | Cebu Eastern College</title>
+    <title>Preferences | CEC Student Portal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/settings.css">
     <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/student-theme.css">
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/preferences.js"></script>
 </head>
 <body class="dashboard-page" data-portal="student">
     <aside class="sidebar">
         <div class="sidebar-brand">
             <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
             <strong>CEC</strong>
-            <span>STUDENT PORTAL</span>
+            <span data-i18n="brand.portal">STUDENT PORTAL</span>
         </div>
 
         <nav class="sidebar-nav" aria-label="Student navigation">
-            <div class="nav-section">Overview</div>
-            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <div class="nav-section" data-i18n="nav.section.overview">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
 
-            <div class="nav-section">Academics</div>
-            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
-            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
-            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
-            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+            <div class="nav-section" data-i18n="nav.section.academics">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span data-i18n="nav.schedule">Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span data-i18n="nav.curriculum">Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span data-i18n="nav.grades">Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span data-i18n="nav.enrollment">Enrollment</span></a>
 
-            <div class="nav-section">Records</div>
-            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
-            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
-            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+            <div class="nav-section" data-i18n="nav.section.records">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span data-i18n="nav.profile">My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span data-i18n="nav.financial">Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span data-i18n="nav.documents">Documents</span></a>
 
-            <div class="nav-section">Campus</div>
-            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <div class="nav-section" data-i18n="nav.section.campus">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span data-i18n="nav.announcements">Announcements</span></a>
 
-            <div class="nav-section">Personal</div>
-            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            <div class="nav-section" data-i18n="nav.section.personal">Personal</div>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span data-i18n="nav.settings">Settings</span></a>
         </nav>
 
     </aside>
@@ -44,10 +47,10 @@
         <header class="dashboard-header">
             <label class="search-box">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input type="search" placeholder="Search subjects, records, or anything...">
+                <input type="search" data-i18n-placeholder="header.search" data-i18n-aria="header.search" aria-label="Search" placeholder="Search subjects, records, or anything...">
 </label>
 
-            <button class="header-icon" type="button" aria-label="Notifications">
+            <button class="header-icon" type="button" data-i18n-aria="header.notifications" aria-label="Notifications">
                 <i class="fa-regular fa-bell" aria-hidden="true"></i>
                 <span class="notif-dot"></span>
             </button>
@@ -56,229 +59,127 @@
                 <span class="profile-avatar">JD</span>
                 <span class="profile-info">
                     <strong>Juan Dela Cruz</strong>
-                    <small>Student</small>
+                    <small data-i18n="header.role">Student</small>
                 </span>
             </button>
         </header>
 
         <section class="dashboard-content">
             <div class="page-head">
-                <span class="crumb"><a href="settings.html">Settings</a> &rsaquo; Preferences</span>
-                <div class="head-row">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../dashboard/student-dashboard.html"><span data-i18n="breadcrumb.dashboard">Dashboard</span></a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="settings.html"><span data-i18n="breadcrumb.settings">Settings</span></a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span><span data-i18n="breadcrumb.preferences">Preferences</span></span>
+                </nav>
+                <div class="page-title">
+                    <span class="page-title-icon"><i class="fa-solid fa-sliders"></i></span>
                     <div>
-                        <h1>Preferences</h1>
-                        <p class="page-desc">Tune how the portal looks and behaves for you.</p>
+                        <h1><span data-i18n="page.settings.preferences">Preferences</span></h1>
+                        <p class="page-desc"><span data-i18n="page.settings.preferences.desc">Set your language, date format, and portal appearance.</span></p>
                     </div>
                 </div>
             </div>
 
             <div class="settings-layout">
-                <nav class="settings-nav" aria-label="Settings">
-                    <a href="settings.html"><i class="fa-solid fa-user"></i> Account Settings</a>
-                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
-                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
-                    <a href="preferences.html" class="active"><i class="fa-solid fa-sliders"></i> Preferences</a>
-                    <a href="sessions.html"><i class="fa-solid fa-desktop"></i> Session Management</a>
-                    <a href="login-history.html"><i class="fa-solid fa-list"></i> Login History</a>
+                <nav class="settings-nav" aria-label="Settings categories">
+                    <a href="settings.html"><i class="fa-regular fa-user"></i><span data-i18n="settings.nav.account">Account Settings</span></a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i><span data-i18n="settings.nav.security">Security</span></a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i><span data-i18n="settings.nav.notifications">Notifications</span></a>
+                    <a href="preferences.html" class="active"><i class="fa-solid fa-sliders"></i><span data-i18n="settings.nav.preferences">Preferences</span></a>
+                    <a href="sessions.html"><i class="fa-solid fa-laptop"></i><span data-i18n="settings.nav.sessions">Session Management</span></a>
+                    <a href="login-history.html"><i class="fa-solid fa-clock-rotate-left"></i><span data-i18n="settings.nav.history">Login History</span></a>
                 </nav>
 
-                <div class="settings-content">
-                    <div class="card spaced-bottom">
-                        <div class="card-head">
-                            <h2>Display &amp; Regional</h2>
+                <div class="settings-panel active">
+                    <section class="setting-card" aria-label="Regional preferences">
+                        <div class="setting-title">
+                            <h3><i class="fa-solid fa-sliders" aria-hidden="true"></i> <span data-i18n="pref.section">Preferences</span></h3>
                         </div>
-                        <div class="card-body">
-                            <div class="pref-list">
-                                <div class="pref-row">
-                                    <span class="pref-icon"><i class="fa-solid fa-globe"></i></span>
-                                    <div class="pref-info">
-                                        <strong>Language</strong>
-                                        <span>Language used across the portal interface</span>
-                                    </div>
-                                    <select class="pref-select" data-persist="cec:prefs:language">
-                                        <option selected>English</option>
-                                        <option>Tagalog</option>
-                                        <option>Chinese</option>
+
+                        <div class="pref-list">
+                            <div class="pref-row">
+                                <span class="row-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+                                <div class="row-text">
+                                    <strong data-i18n="pref.language">Language</strong>
+                                    <small data-i18n="pref.language.hint">Choose your preferred language.</small>
+                                </div>
+                                <div class="pref-control">
+                                    <select class="filter-select" id="language" aria-label="Select language">
+                                        <option value="en">English</option>
+                                        <option value="fil">Tagalog</option>
+                                        <option value="zh">Chinese</option>
                                     </select>
                                 </div>
-                                <div class="pref-row">
-                                    <span class="pref-icon"><i class="fa-solid fa-money-bill"></i></span>
-                                    <div class="pref-info">
-                                        <strong>Currency</strong>
-                                        <span>Currency used for financial records and assessments</span>
-                                    </div>
-                                    <select class="pref-select" data-persist="cec:prefs:currency">
-                                        <option selected>PHP (&#8369;)</option>
-                                        <option>USD ($)</option>
-                                    </select>
+                            </div>
+                            <div class="pref-row">
+                                <span class="row-icon"><i class="fa-regular fa-calendar" aria-hidden="true"></i></span>
+                                <div class="row-text">
+                                    <strong data-i18n="pref.date">Date Format</strong>
+                                    <small data-i18n="pref.date.hint">Choose your preferred date format.</small>
                                 </div>
-                                <div class="pref-row">
-                                    <span class="pref-icon"><i class="fa-regular fa-clock"></i></span>
-                                    <div class="pref-info">
-                                        <strong>Time Format</strong>
-                                        <span>How dates and times are displayed</span>
-                                    </div>
-                                    <select class="pref-select" data-persist="cec:prefs:time">
-                                        <option selected>12-hour (AM / PM)</option>
-                                        <option>24-hour</option>
-                                    </select>
-                                </div>
-                                <div class="pref-row">
-                                    <span class="pref-icon"><i class="fa-regular fa-calendar"></i></span>
-                                    <div class="pref-info">
-                                        <strong>Academic Year</strong>
-                                        <span>Default academic year loaded when you sign in</span>
-                                    </div>
-                                    <select class="pref-select" data-persist="cec:prefs:year">
-                                        <option selected>A.Y. 2026 &ndash; 2027</option>
-                                        <option>A.Y. 2025 &ndash; 2026</option>
-                                    </select>
-                                </div>
-                                <div class="pref-row">
-                                    <span class="pref-icon"><i class="fa-solid fa-gauge"></i></span>
-                                    <div class="pref-info">
-                                        <strong>Records per Page</strong>
-                                        <span>Number of rows shown in tables</span>
-                                    </div>
-                                    <select class="pref-select" data-persist="cec:prefs:rows">
-                                        <option>10</option>
-                                        <option selected>25</option>
-                                        <option>50</option>
+                                <div class="pref-control">
+                                    <select class="filter-select" id="date-format" aria-label="Select date format">
+                                        <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                        <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="card spaced-bottom">
-                        <div class="card-head">
-                            <h2>Appearance</h2>
+                    <section class="setting-card" aria-label="Appearance">
+                        <div class="setting-title">
+                            <h3><i class="fa-solid fa-palette" aria-hidden="true"></i> <span data-i18n="pref.appearance">Appearance</span></h3>
                         </div>
-                        <div class="card-body">
-                            <div class="appearance-head">
-                                <strong>Theme</strong>
-                                <span>The CEC student portal uses the light academic theme for official records.</span>
-                            </div>
 
-                            <div class="theme-cards">
-                                <div class="theme-card selected">
-                                    <i class="fa-regular fa-sun"></i>
-                                    <span>Light (CEC Standard)</span>
-                                </div>
-                                <div class="theme-card" data-toast-onclick="Dark theme is coming in a future release" data-toast-type="info">
-                                    <i class="fa-regular fa-moon"></i>
-                                    <span>Dark</span>
-                                </div>
-                            </div>
+                        <div class="settings-subhead" style="margin-top:0"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="pref.appearance">Appearance</span></div>
+                        <small data-i18n="pref.appearance.hint">Customize the look and feel of your portal.</small>
 
-                            <div class="appearance-head">
-                                <strong>Accent Color</strong>
-                                <span>Used for buttons, links, and active navigation items.</span>
+                        <div class="settings-subhead" data-i18n="pref.theme">Theme Selection</div>
+                        <div class="theme-choices" id="theme-choices">
+                            <div class="theme-card active" data-theme="light" role="button" tabindex="0">
+                                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                                <strong data-i18n="pref.theme.light">Light Mode</strong>
+                                <span class="radio-dot"></span>
                             </div>
-                            <div class="swatch-list">
-                                <label class="swatch-label">
-                                    <span class="swatch swatch-blue selected" data-swatch="blue" role="button" tabindex="0" aria-label="CEC Blue">
-                                        <i class="fa-solid fa-check"></i>
-                                    </span>
-                                    CEC Blue
-                                </label>
-                                <label class="swatch-label">
-                                    <span class="swatch swatch-purple" data-swatch="purple" role="button" tabindex="0" aria-label="Purple"><i class="fa-solid fa-check"></i></span>
-                                    Purple
-                                </label>
-                                <label class="swatch-label">
-                                    <span class="swatch swatch-green" data-swatch="green" role="button" tabindex="0" aria-label="Green"><i class="fa-solid fa-check"></i></span>
-                                    Green
-                                </label>
-                                <label class="swatch-label">
-                                    <span class="swatch swatch-yellow" data-swatch="yellow" role="button" tabindex="0" aria-label="Yellow"><i class="fa-solid fa-check"></i></span>
-                                    Yellow
-                                </label>
-                                <label class="swatch-label">
-                                    <span class="swatch swatch-red" data-swatch="red" role="button" tabindex="0" aria-label="Red"><i class="fa-solid fa-check"></i></span>
-                                    Red
-                                </label>
-                            </div>
-
-                            <div class="segmented" role="group" aria-label="Table density">
-                                <button type="button" class="seg-btn" data-density="compact">Compact</button>
-                                <button type="button" class="seg-btn active" data-density="comfortable">Comfortable</button>
+                            <div class="theme-card" data-theme="dark" role="button" tabindex="0">
+                                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                                <strong data-i18n="pref.theme.dark">Dark Mode</strong>
+                                <span class="radio-dot"></span>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card">
-                        <div class="card-head">
-                            <h2>Accessibility</h2>
+                        <div class="settings-subhead" data-i18n="pref.color">Color Scheme</div>
+                        <div class="color-dot-row" id="color-scheme">
+                            <button type="button" class="color-dot blue selected" data-color="blue" aria-label="Blue"></button>
+                            <button type="button" class="color-dot purple" data-color="purple" aria-label="Purple"></button>
+                            <button type="button" class="color-dot green" data-color="green" aria-label="Green"></button>
+                            <button type="button" class="color-dot yellow" data-color="yellow" aria-label="Yellow"></button>
+                            <button type="button" class="color-dot red" data-color="red" aria-label="Red"></button>
                         </div>
-                        <div class="card-body">
-                            <div class="checkbox-list">
-                                <label><input type="checkbox" checked> Increase text size for readability</label>
-                                <label><input type="checkbox"> Reduce motion and animations</label>
-                                <label><input type="checkbox" checked> High contrast on tables and panels</label>
-                                <label><input type="checkbox"> Always show full subject and file names</label>
-                            </div>
-                            <p class="caption-note">
-                                Appearance and accessibility settings are stored on this device only.
-                            </p>
+
+                        <div class="settings-subhead" data-i18n="pref.font">Font Size</div>
+                        <div class="segmented" id="font-size-group">
+                            <button type="button" data-font="14" data-i18n="pref.font.small">Small</button>
+                            <button type="button" data-font="16" class="active" data-i18n="pref.font.medium">Medium</button>
+                            <button type="button" data-font="18" data-i18n="pref.font.large">Large</button>
                         </div>
-                        <div class="card-foot card-foot-actions">
-                            <button type="button" class="btn-outline" data-toast-onclick="Preferences reset to defaults" data-toast-type="info">
-                                Reset to Default
-                            </button>
-                            <button type="button" class="btn-primary" data-toast-onclick="Your preferences have been saved">
-                                <i class="fa-solid fa-floppy-disk"></i> Save Preferences
-                            </button>
-                        </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </section>
     </main>
 
-<script>
-    (function () {
-        var swatches = document.querySelectorAll('.swatch[data-swatch]');
-        Array.prototype.forEach.call(swatches, function (swatch) {
-            function select() {
-                Array.prototype.forEach.call(swatches, function (item) {
-                    item.classList.remove('selected');
-                });
-                swatch.classList.add('selected');
-                if (window.showToast) {
-                    window.showToast(swatch.getAttribute('aria-label') + ' accent applied', 'info');
-                }
-            }
-            swatch.addEventListener('click', select);
-            swatch.addEventListener('keydown', function (event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    select();
-                }
-            });
-        });
-
-        var densityButtons = document.querySelectorAll('.seg-btn[data-density]');
-        Array.prototype.forEach.call(densityButtons, function (button) {
-            button.addEventListener('click', function () {
-                Array.prototype.forEach.call(densityButtons, function (item) {
-                    item.classList.remove('active');
-                });
-                button.classList.add('active');
-                if (window.showToast) {
-                    window.showToast('Table density set to ' + button.textContent.trim().toLowerCase(), 'info');
-                }
-            });
-        });
-    })();
-</script>
-<script src="../../js/showToast.js"></script>
-<script src="../../js/copyToClipboard.js"></script>
-<script src="../../js/confirmAction.js"></script>
-<script src="../../js/avatarUpload.js"></script>
-<script src="../../js/validateForm.js"></script>
-<script src="../../js/persistSelect.js"></script>
-<script src="../../js/setYear.js"></script>
+    <script src="../../js/showToast.js"></script>
+    <script src="../../js/copyToClipboard.js"></script>
+    <script src="../../js/confirmAction.js"></script>
+    <script src="../../js/avatarUpload.js"></script>
+    <script src="../../js/validateForm.js"></script>
+    <script src="../../js/persistSelect.js"></script>
+    <script src="../../js/setYear.js"></script>
 
     <script src="../../js/notificationMenu.js"></script>
     <script src="../../js/profileMenu.js"></script>

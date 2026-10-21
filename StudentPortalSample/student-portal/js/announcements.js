@@ -29,7 +29,10 @@
         if (hrs < 24) { return hrs + (hrs === 1 ? ' hour' : ' hours') + ' ago'; }
         var days = Math.round(hrs / 24);
         if (days < 30) { return days + (days === 1 ? ' day' : ' days') + ' ago'; }
-        return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        var d = new Date(iso);
+        /* the shared portal preference decides the order of the numbers */
+        if (window.CECPrefs) { return window.CECPrefs.formatDate(d); }
+        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     }
 
     function readSet() {
@@ -186,4 +189,9 @@
     bindFilters();
     bindMarkAllRead();
     bindCardRead();
+
+    /* redraw the dates when the date-format preference changes */
+    document.addEventListener('cec:prefs-changed', function (event) {
+        if (!event.detail || event.detail.name === 'dateFormat') { renderCards(); }
+    });
 })();

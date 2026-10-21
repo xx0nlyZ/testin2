@@ -7,35 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/settings.css">
     <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/student-theme.css">
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/preferences.js"></script>
 </head>
 <body class="dashboard-page" data-portal="student">
     <aside class="sidebar">
         <div class="sidebar-brand">
             <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
             <strong>CEC</strong>
-            <span>STUDENT PORTAL</span>
+            <span data-i18n="brand.portal">STUDENT PORTAL</span>
         </div>
 
         <nav class="sidebar-nav" aria-label="Student navigation">
-            <div class="nav-section">Overview</div>
-            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+            <div class="nav-section" data-i18n="nav.section.overview">Overview</div>
+            <a href="../dashboard/student-dashboard.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
 
-            <div class="nav-section">Academics</div>
-            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span>Class Schedule</span></a>
-            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span>Curriculum</span></a>
-            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span>Grades</span></a>
-            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment</span></a>
+            <div class="nav-section" data-i18n="nav.section.academics">Academics</div>
+            <a href="../classes/class-schedule.html"><i class="fa-regular fa-calendar-day"></i><span data-i18n="nav.schedule">Class Schedule</span></a>
+            <a href="../classes/curriculum.html"><i class="fa-solid fa-pen-ruler"></i><span data-i18n="nav.curriculum">Curriculum</span></a>
+            <a href="../grades/grades.html"><i class="fa-solid fa-chart-simple"></i><span data-i18n="nav.grades">Grades</span></a>
+            <a href="../records/enrollment.html"><i class="fa-regular fa-file-lines"></i><span data-i18n="nav.enrollment">Enrollment</span></a>
 
-            <div class="nav-section">Records</div>
-            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
-            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span>Financial</span></a>
-            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span>Documents</span></a>
+            <div class="nav-section" data-i18n="nav.section.records">Records</div>
+            <a href="../records/student-profile.html"><i class="fa-regular fa-user"></i><span data-i18n="nav.profile">My Profile</span></a>
+            <a href="../records/financial.html"><i class="fa-regular fa-credit-card"></i><span data-i18n="nav.financial">Financial</span></a>
+            <a href="../records/documents.html"><i class="fa-regular fa-folder-open"></i><span data-i18n="nav.documents">Documents</span></a>
 
-            <div class="nav-section">Campus</div>
-            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <div class="nav-section" data-i18n="nav.section.campus">Campus</div>
+            <a href="../announcements/announcements.html"><i class="fa-solid fa-bullhorn"></i><span data-i18n="nav.announcements">Announcements</span></a>
 
-            <div class="nav-section">Personal</div>
-            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            <div class="nav-section" data-i18n="nav.section.personal">Personal</div>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span data-i18n="nav.settings">Settings</span></a>
         </nav>
 
     </aside>
@@ -44,10 +47,10 @@
         <header class="dashboard-header">
             <label class="search-box">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input type="search" placeholder="Search subjects, records, or anything...">
+                <input type="search" data-i18n-placeholder="header.search" data-i18n-aria="header.search" aria-label="Search" placeholder="Search subjects, records, or anything...">
 </label>
 
-            <button class="header-icon" type="button" aria-label="Notifications">
+            <button class="header-icon" type="button" data-i18n-aria="header.notifications" aria-label="Notifications">
                 <i class="fa-regular fa-bell" aria-hidden="true"></i>
                 <span class="notif-dot"></span>
             </button>
@@ -56,7 +59,7 @@
                 <span class="profile-avatar">JD</span>
                 <span class="profile-info">
                     <strong>Juan Dela Cruz</strong>
-                    <small>Student</small>
+                    <small data-i18n="header.role">Student</small>
                 </span>
             </button>
         </header>
@@ -66,8 +69,8 @@
                 <span class="crumb"><a href="settings.html">Settings</a> &rsaquo; Session Management</span>
                 <div class="head-row">
                     <div>
-                        <h1>Session Management</h1>
-                        <p class="page-desc">Review the devices currently signed in to your CEC student account.</p>
+                        <h1 data-i18n="page.settings.sessions">Session Management</h1>
+                        <p class="page-desc" data-i18n="page.settings.sessions.desc">Review the devices currently signed in to your CEC student account.</p>
                     </div>
                     <div class="head-actions">
                         <button class="btn-outline" type="button" data-confirm="Sign out every device except this one? You will stay signed in here." data-confirm-success="All other sessions have been signed out">
@@ -79,12 +82,12 @@
 
             <div class="settings-layout">
                 <nav class="settings-nav" aria-label="Settings">
-                    <a href="settings.html"><i class="fa-solid fa-user"></i> Account Settings</a>
-                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> Security</a>
-                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> Notifications</a>
-                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> Preferences</a>
-                    <a href="sessions.html" class="active"><i class="fa-solid fa-desktop"></i> Session Management</a>
-                    <a href="login-history.html"><i class="fa-solid fa-list"></i> Login History</a>
+                    <a href="settings.html"><i class="fa-solid fa-user"></i> <span data-i18n="settings.nav.account">Account Settings</span></a>
+                    <a href="security.html"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="settings.nav.security">Security</span></a>
+                    <a href="notifications.html"><i class="fa-regular fa-bell"></i> <span data-i18n="settings.nav.notifications">Notifications</span></a>
+                    <a href="preferences.html"><i class="fa-solid fa-sliders"></i> <span data-i18n="settings.nav.preferences">Preferences</span></a>
+                    <a href="sessions.html" class="active"><i class="fa-solid fa-desktop"></i> <span data-i18n="settings.nav.sessions">Session Management</span></a>
+                    <a href="login-history.html"><i class="fa-solid fa-list"></i> <span data-i18n="settings.nav.history">Login History</span></a>
                 </nav>
 
                 <div class="settings-content">
