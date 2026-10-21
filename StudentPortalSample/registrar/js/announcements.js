@@ -37,6 +37,13 @@
     function formatDate(iso) {
         var d = new Date(iso);
         if (isNaN(d.getTime())) { return { date: '', time: '' }; }
+        /* the registrar preference decides the order of the numbers */
+        if (window.CECPrefs) {
+            return {
+                date: window.CECPrefs.formatDate(d),
+                time: window.CECPrefs.formatTime(d)
+            };
+        }
         return {
             date: d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
             time: d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
@@ -255,4 +262,7 @@
     initAllFilters();
     initTabs();
     initDeleteActions();
+
+    /* redraw with the new date format as soon as the preference changes */
+    document.addEventListener('cec:prefs-changed', refresh);
 })();

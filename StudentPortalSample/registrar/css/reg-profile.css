@@ -19,14 +19,14 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 8px;
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
     font-weight: 600;
     text-decoration: none;
 }
 
 .back-link:hover {
-    color: var(--blue);
+    color: var(--accent-text);
 }
 
 .record-title {
@@ -37,7 +37,7 @@
 
 .record-title h1 {
     margin: 0;
-    font-size: 26px;
+    font-size: 1.625rem;
     letter-spacing: 0.3px;
 }
 
@@ -55,9 +55,9 @@
     gap: 18px;
     margin-bottom: 20px;
     padding: 20px 22px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .hero-avatar {
@@ -68,8 +68,8 @@
     place-items: center;
     border-radius: 50%;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 30px;
+    background: var(--primary);
+    font-size: 1.875rem;
     font-weight: 700;
 }
 
@@ -79,23 +79,23 @@
     flex-wrap: wrap;
     gap: 8px;
     margin: 0 0 6px;
-    font-size: 22px;
+    font-size: 1.375rem;
 }
 
 .hero-info .hero-id {
     margin: 2px 0;
     color: var(--muted);
-    font-size: 13.5px;
+    font-size: 0.84375rem;
 }
 
 .hero-info .hero-id strong {
-    color: var(--navy);
+    color: var(--text);
 }
 
 .hero-info .hero-program {
     margin: 2px 0 0;
     color: var(--muted);
-    font-size: 13.5px;
+    font-size: 0.84375rem;
 }
 
 .hero-meta {
@@ -108,24 +108,24 @@
 .meta-chip {
     min-width: 150px;
     padding: 9px 14px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .meta-chip span {
     display: block;
     margin-bottom: 3px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4px;
 }
 
 .meta-chip strong {
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
 }
 
 /* ==========================================================================
@@ -140,23 +140,23 @@
 
 .tab-btn {
     padding: 9px 20px;
-    border: 1px solid #D5E0EE;
+    border: 1px solid var(--border-input);
     border-radius: 999px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13.5px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.84375rem;
     font-weight: 600;
     cursor: pointer;
 }
 
 .tab-btn:hover {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--accent-text);
+    color: var(--accent-text);
 }
 
 .tab-btn.active {
     color: #FFFFFF;
-    border-color: var(--navy);
+    border-color: var(--text);
     background: var(--navy);
 }
 
@@ -170,9 +170,9 @@
 .card {
     margin-bottom: 16px;
     padding: 20px 22px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .card-title {
@@ -180,12 +180,12 @@
     align-items: center;
     gap: 9px;
     margin: 0 0 16px;
-    font-size: 17px;
+    font-size: 1.0625rem;
 }
 
 .card-title i {
-    color: var(--blue);
-    font-size: 15px;
+    color: var(--accent-text);
+    font-size: 0.9375rem;
 }
 
 /* ==========================================================================
@@ -206,8 +206,8 @@
     grid-template-columns: 160px 1fr;
     gap: 12px;
     padding: 11px 0;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 13.5px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.84375rem;
 }
 
 .detail-item:last-child {
@@ -219,7 +219,7 @@
 }
 
 .detail-item strong {
-    color: var(--navy);
+    color: var(--text);
     font-weight: 600;
 }
 
@@ -230,9 +230,9 @@
     align-items: center;
     align-self: start;
     padding: 26px 18px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #F8FAFD;
+    background: var(--surface);
     text-align: center;
 }
 
@@ -244,8 +244,8 @@
     place-items: center;
     border-radius: 50%;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 34px;
+    background: var(--primary);
+    font-size: 2.125rem;
     font-weight: 700;
 }
 
@@ -262,8 +262,8 @@
     border: 0;
     border-radius: 7px;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 13px;
+    background: var(--primary);
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
     text-decoration: none;
@@ -284,22 +284,22 @@
 .grade-table th {
     padding: 10px 14px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     white-space: nowrap;
-    border-bottom: 1px solid #EEF2F8;
-    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--card);
 }
 
 .grade-table td {
     padding: 11px 14px;
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
     white-space: nowrap;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .grade-table tbody tr:last-child td {
@@ -311,7 +311,7 @@
 }
 
 .grade-num.excellent {
-    color: #177245;
+    color: var(--tint-green-fg);
 }
 
 /* ==========================================================================
@@ -329,9 +329,9 @@
     align-items: center;
     gap: 13px;
     padding: 16px 18px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .metric-icon {
@@ -341,34 +341,34 @@
     flex: 0 0 46px;
     place-items: center;
     border-radius: 9px;
-    color: var(--blue);
+    color: var(--accent-text);
     background: var(--pale-blue);
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 .metric-icon.good {
-    color: #177245;
-    background: #E3F4EA;
+    color: var(--tint-green-fg);
+    background: var(--tint-green);
 }
 
 .metric-text span {
     display: block;
     margin-bottom: 3px;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4px;
 }
 
 .metric-text strong {
-    color: var(--navy);
-    font-size: 22px;
+    color: var(--text);
+    font-size: 1.375rem;
     line-height: 1;
 }
 
 .metric-text strong.good {
-    color: #177245;
+    color: var(--tint-green-fg);
 }
 
 /* ==========================================================================
@@ -376,9 +376,9 @@
    ========================================================================== */
 .semester-card {
     margin-bottom: 16px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -389,18 +389,18 @@
     flex-wrap: wrap;
     gap: 8px;
     padding: 14px 18px;
-    border-bottom: 1px solid #EEF2F8;
-    background: #F8FAFD;
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--surface);
 }
 
 .sem-head h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .sem-head .sem-tag {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 /* Enrollment timeline */
@@ -409,7 +409,7 @@
     grid-template-columns: 16px 220px 1fr;
     gap: 16px;
     padding: 16px 6px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .tl-item:last-child {
@@ -421,26 +421,26 @@
     height: 12px;
     margin-top: 5px;
     border-radius: 50%;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .tl-item.past .tl-dot {
-    background: #AFC5E2;
+    background: var(--line);
 }
 
 .tl-term strong {
     display: block;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .tl-term small {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .tl-detail {
-    color: var(--navy);
-    font-size: 13px;
+    color: var(--text);
+    font-size: 0.8125rem;
     line-height: 1.55;
 }
 
@@ -456,8 +456,8 @@
     justify-content: space-between;
     gap: 10px;
     padding: 10px 0;
-    border-bottom: 1px solid #EEF2F8;
-    font-size: 14px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.875rem;
 }
 
 .balance-line:last-of-type {
@@ -469,11 +469,11 @@
 }
 
 .balance-line strong {
-    color: var(--navy);
+    color: var(--text);
 }
 
 .balance-line.overall strong {
-    color: #B3261E;
+    color: var(--tint-red-fg);
 }
 
 /* ==========================================================================
@@ -490,11 +490,11 @@
 
 .record-footer .updated {
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
 }
 
 .record-footer .updated strong {
-    color: var(--navy);
+    color: var(--text);
 }
 
 /* ==========================================================================
@@ -520,14 +520,14 @@
     }
 
     .record-title h1 {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .hero-avatar {
         width: 72px;
         height: 72px;
         flex-basis: 72px;
-        font-size: 26px;
+        font-size: 1.625rem;
     }
 
     .detail-item {
@@ -558,14 +558,14 @@
 
 .panel-head h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .year-card {
     margin-bottom: 14px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -576,7 +576,7 @@
     gap: 12px;
     padding: 14px 18px;
     cursor: pointer;
-    background: #F8FAFD;
+    background: var(--surface);
     list-style: none;
 }
 
@@ -592,7 +592,7 @@
 
 .year-head h3 {
     margin: 0;
-    font-size: 15.5px;
+    font-size: 0.96875rem;
 }
 
 .sem-pill {
@@ -600,19 +600,19 @@
     border-radius: 999px;
     color: #FFFFFF;
     background: var(--navy);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
     font-weight: 700;
 }
 
 .sem-pill.amber {
-    color: #8A6D00;
-    background: #FFF2CC;
+    color: var(--tint-amber-fg);
+    background: var(--tint-amber);
 }
 
 .chevron {
     margin-left: auto;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
     transition: transform 0.2s ease;
 }
 
@@ -626,8 +626,8 @@
     gap: 8px;
     padding: 18px;
     color: var(--muted);
-    background: #FAFCFF;
-    font-size: 13px;
+    background: var(--surface-2);
+    font-size: 0.8125rem;
 }
 
 .term-summary {
@@ -635,9 +635,9 @@
     flex-wrap: wrap;
     gap: 8px 22px;
     padding: 12px 18px;
-    border-top: 1px solid #EEF2F8;
-    background: #F8FAFD;
-    font-size: 13px;
+    border-top: 1px solid var(--border-soft);
+    background: var(--surface);
+    font-size: 0.8125rem;
 }
 
 .term-summary span {
@@ -645,11 +645,11 @@
 }
 
 .term-summary strong {
-    color: var(--navy);
+    color: var(--text);
 }
 
 .term-summary .green strong {
-    color: #177245;
+    color: var(--tint-green-fg);
 }
 
 /* Info / alert banners */
@@ -661,21 +661,21 @@
     padding: 12px 16px;
     border: 1px solid #C6DCF5;
     border-radius: 8px;
-    color: #1D4E9B;
-    background: #E8F1FD;
-    font-size: 13px;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
+    font-size: 0.8125rem;
     line-height: 1.5;
 }
 
 .info-banner i {
     margin-top: 2px;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 /* Blue status badge */
 .status-blue {
-    color: #1D4E9B;
-    background: #E8EFFB;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
 }
 
 /* Enrollment grid */
@@ -688,24 +688,24 @@
 
 .enroll-item {
     padding: 14px 16px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .enroll-item span {
     display: block;
     margin-bottom: 5px;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4px;
 }
 
 .enroll-item strong {
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
 }
 
 .enroll-item .dot {
@@ -732,33 +732,33 @@
 
 .stat-tile p {
     margin: 0 0 5px;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
 .stat-tile strong {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1;
 }
 
 .tile-green {
     border: 1px solid #C9E5D2;
-    background: #E3F4EA;
+    background: var(--tint-green);
 }
 
 .tile-green p,
 .tile-green strong {
-    color: #177245;
+    color: var(--tint-green-fg);
 }
 
 .tile-blue {
     border: 1px solid #C8D9F0;
-    background: #E8EFFB;
+    background: var(--tint-blue);
 }
 
 .tile-blue p,
 .tile-blue strong {
-    color: #1D4E9B;
+    color: var(--tint-blue-fg);
 }
 
 .tile-purple {
@@ -768,17 +768,17 @@
 
 .tile-purple p,
 .tile-purple strong {
-    color: #6B48B8;
+    color: var(--tint-purple-fg);
 }
 
 .tile-orange {
     border: 1px solid #F5DDBE;
-    background: #FDF0E1;
+    background: var(--tint-orange);
 }
 
 .tile-orange p,
 .tile-orange strong {
-    color: #B05E10;
+    color: var(--tint-orange-fg);
 }
 
 /* Grades filters */
@@ -796,7 +796,7 @@
 /* Metric card with green background */
 .metric-card.good-card {
     border-color: #C9E5D2;
-    background: #F0FAF4;
+    background: var(--tint-green);
 }
 
 @media (max-width: 650px) {

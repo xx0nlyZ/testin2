@@ -12,9 +12,9 @@
     gap: 10px;
     margin-bottom: 18px;
     padding: 14px 16px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .reports-filter-bar .search-input {
@@ -28,12 +28,12 @@
 .btn-export {
     margin-left: auto;
     border: 1px solid #93C5FD;
-    color: #1D4E9B;
-    background: #FFFFFF;
+    color: var(--tint-blue-fg);
+    background: var(--card);
 }
 
 .btn-export:hover {
-    background: #EFF6FF;
+    background: var(--tint-blue);
 }
 
 /* ==========================================================================
@@ -43,54 +43,54 @@
     display: inline-block;
     padding: 3px 10px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     white-space: nowrap;
 }
 
 .cat-enrollment {
-    color: #6D28D9;
-    background: #F3EEFF;
+    color: var(--tint-purple-fg);
+    background: var(--tint-purple);
 }
 
 .cat-student-records {
-    color: #1D4E9B;
-    background: #E2ECFA;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
 }
 
 .cat-document-request {
-    color: #16A34A;
-    background: #DCFCE7;
+    color: var(--tint-green-fg);
+    background: var(--tint-green);
 }
 
 .cat-grades {
-    color: #C2410C;
-    background: #FFF7ED;
+    color: var(--tint-orange-fg);
+    background: var(--tint-orange);
 }
 
 .cat-curriculum {
-    color: #DC2626;
-    background: #FEF2F2;
+    color: var(--tint-red-fg);
+    background: var(--tint-red);
 }
 
 .cat-curriculum-teal {
-    color: #0E7490;
-    background: #ECFEFF;
+    color: var(--tint-teal-fg);
+    background: var(--tint-teal);
 }
 
 .cat-academic {
-    color: #0284C7;
-    background: #E0F2FE;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
 }
 
 .cat-faculty {
-    color: #DB2777;
-    background: #FCE7F3;
+    color: var(--tint-pink-fg);
+    background: var(--tint-pink);
 }
 
 .cat-finance {
-    color: #1D4E9B;
-    background: #DBEAFE;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
 }
 
 /* ==========================================================================
@@ -102,18 +102,18 @@
     justify-content: center;
     width: 34px;
     height: 34px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--blue);
-    background: #FFFFFF;
+    color: var(--accent-text);
+    background: var(--card);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .download-btn:hover {
     color: #FFFFFF;
-    background: var(--blue);
-    border-color: var(--blue);
+    background: var(--primary);
+    border-color: var(--accent-text);
 }
 
 /* ==========================================================================
@@ -121,7 +121,7 @@
    ========================================================================== */
 .desc-cell {
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
     white-space: normal;
     max-width: 280px;
     line-height: 1.4;
@@ -131,9 +131,9 @@
    QUICK LINKS VIEW
    ========================================================================== */
 .quick-card {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -142,7 +142,7 @@
     align-items: center;
     gap: 16px;
     padding: 18px 22px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
     cursor: pointer;
     transition: background 0.15s;
 }
@@ -152,7 +152,7 @@
 }
 
 .quick-link-item:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .ql-icon {
@@ -162,7 +162,7 @@
     flex: 0 0 44px;
     place-items: center;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #FFFFFF;
 }
 
@@ -173,20 +173,20 @@
 
 .ql-info h4 {
     margin: 0;
-    color: var(--navy);
-    font-size: 14.5px;
+    color: var(--text);
+    font-size: 0.90625rem;
 }
 
 .ql-info p {
     margin: 3px 0 0;
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
 }
 
 .ql-arrow {
     margin-left: auto;
-    color: #B0BEC9;
-    font-size: 14px;
+    color: var(--muted);
+    font-size: 0.875rem;
 }
 
 .view-all-link {
@@ -195,16 +195,16 @@
     justify-content: flex-end;
     gap: 6px;
     padding: 16px 22px;
-    border-top: 1px solid #E3E9F2;
-    color: var(--blue);
-    font-size: 13.5px;
+    border-top: 1px solid var(--border);
+    color: var(--accent-text);
+    font-size: 0.84375rem;
     font-weight: 700;
     cursor: pointer;
     text-decoration: none;
 }
 
 .view-all-link:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 /* ==========================================================================

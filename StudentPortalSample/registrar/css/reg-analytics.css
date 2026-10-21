@@ -1,5 +1,5 @@
 .sidebar-brand span {
-    font-size: 10px;
+    font-size: 0.625rem;
     letter-spacing: 0.4px;
 }
 
@@ -13,8 +13,8 @@
     gap: 16px;
     height: 76px;
     padding: 0 26px;
-    border-bottom: 1px solid #E1E5EB;
-    background: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
 }
 
 .menu-toggle {
@@ -26,14 +26,14 @@
     margin-right: auto;
     border: 0;
     border-radius: 8px;
-    color: var(--navy);
+    color: var(--text);
     background: transparent;
-    font-size: 18px;
+    font-size: 1.125rem;
     cursor: pointer;
 }
 
 .menu-toggle:hover {
-    background: #F0F4FA;
+    background: var(--surface);
 }
 
 .search-box {
@@ -44,34 +44,34 @@
     gap: 8px;
     padding: 0 13px;
     border-radius: 15px;
-    background: #E4E4E4;
+    background: var(--surface);
 }
 
 .search-box input {
     width: 100%;
     border: 0;
     outline: 0;
-    color: var(--navy);
-    font-size: 13px;
+    color: var(--text);
+    font-size: 0.8125rem;
     background: transparent;
 }
 
 .search-box i {
-    color: #222222;
-    font-size: 13px;
+    color: var(--muted);
+    font-size: 0.8125rem;
 }
 
 .header-icon,
 .profile-button {
     border: 0;
-    color: var(--navy);
+    color: var(--text);
     background: transparent;
     cursor: pointer;
 }
 
 .header-icon {
     position: relative;
-    font-size: 23px;
+    font-size: 1.4375rem;
 }
 
 .header-icon .notif-dot {
@@ -91,7 +91,7 @@
     gap: 10px;
     padding: 0;
     margin-left: 0;
-    font-size: 13px;
+    font-size: 0.8125rem;
     text-align: left;
 }
 
@@ -102,8 +102,8 @@
     place-items: center;
     border-radius: 50%;
     color: #FFFFFF;
-    background: var(--blue);
-    font-size: 15px;
+    background: var(--primary);
+    font-size: 0.9375rem;
     font-weight: 700;
 }
 
@@ -113,12 +113,12 @@
 }
 
 .profile-info strong {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .profile-info small {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .sidebar-collapsed .sidebar {
@@ -140,21 +140,21 @@
     padding: 28px 32px;
     border-radius: 12px;
     color: #FFFFFF;
-    background: linear-gradient(135deg, #0B2C5E 0%, #1D4E9B 100%);
+    background: linear-gradient(135deg, #0B2C5E 0%, var(--primary) 100%);
 }
 
 .welcome-banner h2,
 .welcome-banner h1 {
     margin: 0 0 6px;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
 }
 
 .welcome-banner p {
     margin: 0;
     color: #DCE7F5;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 /* ==========================================================================
@@ -172,9 +172,9 @@
     align-items: center;
     gap: 14px;
     padding: 18px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .kpi-icon {
@@ -184,31 +184,31 @@
     flex: 0 0 46px;
     place-items: center;
     border-radius: 10px;
-    color: var(--blue);
+    color: var(--accent-text);
     background: var(--pale-blue);
-    font-size: 19px;
+    font-size: 1.1875rem;
 }
 
 .kpi-icon.green {
-    color: #177245;
-    background: #E3F4EA;
+    color: var(--tint-green-fg);
+    background: var(--tint-green);
 }
 
 .kpi-icon.amber {
-    color: #8A6D00;
-    background: #FFF2CC;
+    color: var(--tint-amber-fg);
+    background: var(--tint-amber);
 }
 
 .kpi-icon.red {
-    color: #B3261E;
-    background: #FBE4E4;
+    color: var(--tint-red-fg);
+    background: var(--tint-red);
 }
 
 .kpi-card .kpi-label {
     display: block;
     margin-bottom: 3px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4px;
@@ -216,8 +216,8 @@
 
 .kpi-card .kpi-value {
     display: block;
-    color: var(--navy);
-    font-size: 26px;
+    color: var(--text);
+    font-size: 1.625rem;
     font-weight: 700;
     line-height: 1;
 }
@@ -226,12 +226,12 @@
     display: block;
     margin-top: 6px;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
 }
 
 .kpi-card .kpi-sub .stat-badge {
     margin-right: 4px;
-    font-size: 10.5px;
+    font-size: 0.65625rem;
 }
 
 /* ==========================================================================
@@ -257,14 +257,14 @@
 
 .chart-card {
     padding: 20px 22px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .chart-card h3 {
     margin: 0 0 16px;
-    font-size: 15px;
+    font-size: 0.9375rem;
     letter-spacing: 0.2px;
 }
 
@@ -287,7 +287,7 @@
     position: absolute;
     inset: 20px;
     border-radius: 50%;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .donut-center {
@@ -301,8 +301,8 @@
 
 .donut-center strong {
     display: block;
-    color: var(--navy);
-    font-size: 24px;
+    color: var(--text);
+    font-size: 1.5rem;
     line-height: 1;
 }
 
@@ -310,7 +310,7 @@
     display: block;
     margin-top: 4px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 0.6875rem;
 }
 
 .legend {
@@ -321,7 +321,7 @@
     margin: 16px 0 0;
     padding: 0;
     list-style: none;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .legend li {
@@ -339,7 +339,7 @@
 }
 
 .legend b {
-    color: var(--navy);
+    color: var(--text);
     font-weight: 700;
 }
 
@@ -364,21 +364,21 @@
 
 .bar-col small {
     margin-bottom: 6px;
-    color: var(--navy);
-    font-size: 12px;
+    color: var(--text);
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
 .bar-col .bar {
     width: 42px;
     border-radius: 6px 6px 0 0;
-    background: linear-gradient(180deg, #1D4E9B, #0B2C5E);
+    background: linear-gradient(180deg, var(--primary), #0B2C5E);
 }
 
 .bar-col span {
     margin-top: 10px;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
 }
 
 /* Right rail */
@@ -404,7 +404,7 @@
     color: var(--muted);
     background: transparent;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .calendar {
@@ -416,7 +416,7 @@
 .calendar .dow {
     padding: 4px 0;
     color: var(--muted);
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
@@ -427,8 +427,8 @@
     height: 30px;
     place-items: center;
     border-radius: 6px;
-    color: var(--navy);
-    font-size: 12px;
+    color: var(--text);
+    font-size: 0.75rem;
 }
 
 .calendar .day.empty {
@@ -437,12 +437,12 @@
 
 .calendar .day.active {
     color: #FFFFFF;
-    background: var(--blue);
+    background: var(--primary);
     font-weight: 700;
 }
 
 .calendar .day.today {
-    border: 2px solid var(--blue);
+    border: 2px solid var(--primary);
     font-weight: 700;
 }
 
@@ -460,9 +460,9 @@
     align-items: center;
     gap: 12px;
     padding: 10px 12px;
-    border: 1px solid #EEF2F8;
+    border: 1px solid var(--border-soft);
     border-radius: 8px;
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .event-date {
@@ -474,14 +474,14 @@
     border-radius: 8px;
     color: #FFFFFF;
     background: var(--navy);
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 700;
 }
 
 .event-info strong {
     display: block;
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
     line-height: 1.25;
 }
 
@@ -489,14 +489,14 @@
     display: block;
     margin-top: 2px;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 0.71875rem;
 }
 
 /* Footer */
 .app-footer {
     padding: 20px 6px 10px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 /* ==========================================================================
@@ -555,6 +555,6 @@
 
     .welcome-banner h2,
     .welcome-banner h1 {
-        font-size: 21px;
+        font-size: 1.3125rem;
     }
 }

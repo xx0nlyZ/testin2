@@ -7,48 +7,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/reg-dashboard.css">
     <link rel="stylesheet" href="../../css/reg-edit.css">
+    <link rel="stylesheet" href="../../css/reg-theme.css">
     <style>
         .toast-wrap { position:fixed; top:20px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:8px; pointer-events:none; }
-        .toast { display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:8px; color:#FFFFFF; background:#177245; font-size:13px; font-weight:600; box-shadow:0 4px 16px rgba(0,0,0,0.15); animation:toastIn 0.3s ease; pointer-events:auto; }
+        .toast { display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:8px; color:#FFFFFF; background:#177245; font-size: 0.8125rem; font-weight:600; box-shadow:0 4px 16px rgba(0,0,0,0.15); animation:toastIn 0.3s ease; pointer-events:auto; }
         .toast.error { background:#B3261E; }
         .toast.info { background:#1D4E9B; }
         @keyframes toastIn { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:translateX(0)} }
         .field input.invalid, .field select.invalid, .field textarea.invalid { border-color:#B3261E; background:#FDF3F2; }
         .field input.invalid:focus, .field select.invalid:focus, .field textarea.invalid:focus { box-shadow:0 0 0 3px rgba(179,38,30,0.12); }
-        .field-error { color:#B3261E; font-size:11px; margin-top:4px; display:none; }
+        .field-error { color:#B3261E; font-size: 0.6875rem; margin-top:4px; display:none; }
         .field-error.visible { display:block; }
-        .char-count { color:var(--muted); font-size:11px; margin-top:4px; text-align:right; }
-        .dropzone.dragover { border-color:var(--blue); background:#E8F1FD; }
+        .char-count { color:var(--muted); font-size: 0.6875rem; margin-top:4px; text-align:right; }
+        .dropzone.dragover { border-color: var(--accent-text); background:#E8F1FD; }
         .dropzone.has-file { border-color:#7BC29A; background:#E3F4EA; }
-        .unsaved-banner { display:none; position:fixed; bottom:0; left:0; right:0; z-index:9995; padding:12px 24px; color:#8A6D00; background:#FFF2CC; border-top:1px solid #E9B84B; font-size:13px; font-weight:600; justify-content:center; gap:10px; align-items:center; }
+        .unsaved-banner { display:none; position:fixed; bottom:0; left:0; right:0; z-index:9995; padding:12px 24px; color:#8A6D00; background:#FFF2CC; border-top:1px solid #E9B84B; font-size: 0.8125rem; font-weight:600; justify-content:center; gap:10px; align-items:center; }
         .unsaved-banner.active { display:flex; }
-        .unsaved-banner button { height:28px; padding:0 12px; border:1px solid #8A6D00; border-radius:6px; color:#8A6D00; background:transparent; font-size:12px; font-weight:700; cursor:pointer; }
+        .unsaved-banner button { height:28px; padding:0 12px; border:1px solid #8A6D00; border-radius:6px; color:#8A6D00; background:transparent; font-size: 0.75rem; font-weight:700; cursor:pointer; }
         .unsaved-banner button:hover { color:#FFFFFF; background:#8A6D00; }
-        .photo-upload-avatar { display:grid; width:88px; height:88px; flex:0 0 88px; place-items:center; border-radius:50%; color:#FFFFFF; background:var(--blue); font-size:30px; font-weight:700; overflow:hidden; }
+        .photo-upload-avatar { display:grid; width:88px; height:88px; flex:0 0 88px; place-items:center; border-radius:50%; color:#FFFFFF; background: var(--primary); font-size: 1.875rem; font-weight:700; overflow:hidden; }
         .photo-upload-avatar img { width:100%; height:100%; object-fit:cover; }
     </style>
     <link rel="stylesheet" href="../../../css/responsive.css">
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/preferences.js"></script>
 </head>
 <body class="dashboard-page" data-portal="registrar">
     <aside class="sidebar">
         <div class="sidebar-brand">
             <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
             <strong>CEC</strong>
-            <span>REGISTRAR PORTAL SYSTEM</span>
+            <span data-i18n="brand.portal">REGISTRAR PORTAL SYSTEM</span>
         </div>
 
         <nav class="sidebar-nav" aria-label="Registrar navigation">
-            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
-            <a href="student-records.html" class="active"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
-            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
-            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
-            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
-            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
-            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+            <a href="student-records.html" class="active"><i class="fa-solid fa-users"></i><span data-i18n="nav.records">Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span data-i18n="nav.enrollment">Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span data-i18n="nav.enrollment.application">Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span data-i18n="nav.reports">Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span data-i18n="nav.documents">Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span data-i18n="nav.announcements">Announcements</span></a>
         </nav>
 
         <div class="sidebar-bottom">
-            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span data-i18n="nav.settings">Settings</span></a>
         </div>
     </aside>
 
@@ -58,8 +61,8 @@
                 <a class="back-link" href="student-profile.html"><i class="fa-solid fa-arrow-left"></i> Back to View Student Record</a>
                 <div class="record-title">
                     <div>
-                        <h1>Edit Student Record</h1>
-                        <p class="page-desc">Update student information and academic details.</p>
+                        <h1><span data-i18n="page.records.edit">Edit Student Record</span></h1>
+                        <p class="page-desc"><span data-i18n="page.records.edit.desc">Update student information and academic details.</span></p>
                     </div>
                 </div>
             </div>
@@ -198,7 +201,7 @@
                 </section>
 
                 <div class="action-footer">
-                    <h3><i class="fa-solid fa-floppy-disk" style="color:var(--blue);margin-right:6px;"></i> Save Changes</h3>
+                    <h3><i class="fa-solid fa-floppy-disk" style="color: var(--accent-text);margin-right:6px;"></i> Save Changes</h3>
                     <div class="action-buttons">
                         <button type="submit" class="btn btn-primary" id="btn-save"><i class="fa-solid fa-check"></i> Save</button>
                         <button type="button" class="btn btn-outline" id="btn-cancel"><i class="fa-solid fa-xmark"></i> Cancel</button>

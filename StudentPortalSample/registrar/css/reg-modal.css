@@ -42,7 +42,7 @@
     flex-direction: column;
     overflow: hidden;
     border-radius: 14px;
-    background: #FFFFFF;
+    background: var(--card);
     box-shadow: 0 24px 60px rgba(11, 44, 94, 0.3);
 }
 
@@ -62,8 +62,8 @@
     align-items: center;
     gap: 12px;
     padding: 16px 20px;
-    border-bottom: 1px solid #E3E9F2;
-    background: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
 }
 
 .modal-badge {
@@ -73,20 +73,20 @@
     flex: 0 0 38px;
     place-items: center;
     border-radius: 10px;
-    color: var(--blue);
+    color: var(--accent-text);
     background: var(--pale-blue);
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .modal-badge.danger {
-    color: #B3261E;
-    background: #FBE4E4;
+    color: var(--tint-red-fg);
+    background: var(--tint-red);
 }
 
 .modal-head h3 {
     margin: 0;
-    color: var(--navy);
-    font-size: 16px;
+    color: var(--text);
+    font-size: 1rem;
     letter-spacing: 0.2px;
 }
 
@@ -100,13 +100,13 @@
     border-radius: 6px;
     color: var(--muted);
     background: transparent;
-    font-size: 15px;
+    font-size: 0.9375rem;
     cursor: pointer;
 }
 
 .modal-close:hover {
-    color: var(--navy);
-    background: #F0F4FA;
+    color: var(--text);
+    background: var(--surface);
 }
 
 /* --------------------------------------------------------------------------
@@ -122,7 +122,7 @@
 
 /* A short confirmation dialog has nothing to separate, so it stays white. */
 .modal-narrow .modal-body {
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .modal-note {
@@ -133,15 +133,15 @@
     padding: 11px 14px;
     border: 1px solid #C6DCF5;
     border-radius: 8px;
-    color: #1D4E9B;
-    background: #E8F1FD;
-    font-size: 12.5px;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
+    font-size: 0.78125rem;
     line-height: 1.5;
 }
 
 .modal-note i {
     margin-top: 2px;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 /* Cards inside a modal body sit on the canvas, so they need tighter padding. */
@@ -157,17 +157,17 @@
 .modal-body .card-title {
     gap: 8px;
     margin-bottom: 14px;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .modal-body .card-title i {
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .modal-copy {
     margin: 0;
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
     line-height: 1.6;
 }
 
@@ -179,8 +179,8 @@
     justify-content: flex-end;
     gap: 10px;
     padding: 14px 20px;
-    border-top: 1px solid #E3E9F2;
-    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+    background: var(--card);
 }
 
 .modal-foot .btn {

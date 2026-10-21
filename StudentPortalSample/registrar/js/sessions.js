@@ -47,6 +47,10 @@
         lastActive.textContent = 'Just now';
         window.setInterval(function () {
             var d = new Date();
+            if (window.CECPrefs) {
+                lastActive.textContent = 'Just now (' + window.CECPrefs.formatTime(d) + ')';
+                return;
+            }
             var h = d.getHours() % 12 || 12;
             var m = d.getMinutes();
             var ampm = d.getHours() >= 12 ? 'PM' : 'AM';

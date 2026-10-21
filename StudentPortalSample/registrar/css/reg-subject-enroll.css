@@ -12,9 +12,9 @@
     gap: 16px;
     margin-bottom: 20px;
     padding: 18px 22px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .student-card .avatar-lg {
@@ -24,16 +24,16 @@
     flex: 0 0 60px;
     place-items: center;
     border-radius: 50%;
-    color: var(--blue);
+    color: var(--accent-text);
     background: var(--pale-blue);
-    font-size: 21px;
+    font-size: 1.3125rem;
     font-weight: 800;
 }
 
 .student-card h3 {
     margin: 0;
-    color: var(--navy);
-    font-size: 17px;
+    color: var(--text);
+    font-size: 1.0625rem;
 }
 
 .sc-meta {
@@ -42,11 +42,11 @@
     gap: 4px 16px;
     margin-top: 4px;
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
 }
 
 .sc-meta b {
-    color: var(--navy);
+    color: var(--text);
 }
 
 .sc-back {
@@ -68,9 +68,9 @@
 }
 
 .pane {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -81,18 +81,18 @@
     flex-wrap: wrap;
     gap: 8px;
     padding: 14px 18px;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .pane-head h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .pane-head .pane-sub {
     margin-top: 2px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .pane-search {
@@ -102,7 +102,7 @@
 .data-table input[type="checkbox"] {
     width: 15px;
     height: 15px;
-    accent-color: var(--blue);
+    accent-color: var(--accent-text);
 }
 
 /* Selected subjects */
@@ -117,32 +117,32 @@
     justify-content: space-between;
     margin: 6px 16px 0;
     padding: 14px 0;
-    border-top: 1px solid #EEF2F8;
-    color: var(--navy);
-    font-size: 14px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--text);
+    font-size: 0.875rem;
     font-weight: 700;
 }
 
 .total-units em {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-style: normal;
     font-weight: 600;
 }
 
 .total-units span.count {
-    color: var(--blue);
-    font-size: 20px;
+    color: var(--accent-text);
+    font-size: 1.25rem;
 }
 
 .pane-actions {
     padding: 16px;
-    border-top: 1px solid #EEF2F8;
+    border-top: 1px solid var(--border-soft);
 }
 
 .pane-actions .btn {
     width: 100%;
-    background: var(--blue);
+    background: var(--primary);
 }
 
 /* ==========================================================================

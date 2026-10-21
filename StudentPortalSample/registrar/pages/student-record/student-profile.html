@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/reg-dashboard.css">
     <link rel="stylesheet" href="../../css/reg-profile.css">
+    <link rel="stylesheet" href="../../css/reg-theme.css">
     <style>
         .toast-wrap { position:fixed; top:20px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:8px; pointer-events:none; }
-        .toast { display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:8px; color:#FFFFFF; background:#177245; font-size:13px; font-weight:600; box-shadow:0 4px 16px rgba(0,0,0,0.15); animation:toastIn 0.3s ease; pointer-events:auto; }
+        .toast { display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:8px; color:#FFFFFF; background:#177245; font-size: 0.8125rem; font-weight:600; box-shadow:0 4px 16px rgba(0,0,0,0.15); animation:toastIn 0.3s ease; pointer-events:auto; }
         .toast.info { background:#1D4E9B; }
         .toast.error { background:#B3261E; }
         @keyframes toastIn { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:translateX(0)} }
@@ -17,40 +18,42 @@
         .modal-overlay.active { display:flex; }
         .modal { width:min(480px,90vw); border-radius:12px; background:#FFFFFF; box-shadow:0 12px 40px rgba(0,0,0,0.2); overflow:hidden; }
         .modal-head { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid #E3E9F2; }
-        .modal-head h3 { margin:0; font-size:16px; }
-        .modal-close { width:30px; height:30px; border:0; border-radius:6px; color:var(--muted); background:transparent; cursor:pointer; font-size:16px; }
+        .modal-head h3 { margin:0; font-size: 1rem; }
+        .modal-close { width:30px; height:30px; border:0; border-radius:6px; color:var(--muted); background:transparent; cursor:pointer; font-size: 1rem; }
         .modal-close:hover { background:#F0F4FA; }
         .modal-body { padding:22px; text-align:center; }
         .modal-foot { display:flex; justify-content:flex-end; gap:8px; padding:14px 20px; border-top:1px solid #E3E9F2; }
-        .no-records-note { display:none; padding:18px; margin-bottom:14px; border:1px dashed #C3D1E4; border-radius:10px; color:var(--muted); background:#FAFCFF; font-size:13px; text-align:center; }
+        .no-records-note { display:none; padding:18px; margin-bottom:14px; border:1px dashed #C3D1E4; border-radius:10px; color:var(--muted); background:#FAFCFF; font-size: 0.8125rem; text-align:center; }
         .no-records-note.visible { display:block; }
-        .photo-preview { width:96px; height:96px; margin:0 auto 14px; border-radius:50%; color:#FFFFFF; background:var(--blue); display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:700; overflow:hidden; }
+        .photo-preview { width:96px; height:96px; margin:0 auto 14px; border-radius:50%; color:#FFFFFF; background: var(--primary); display:flex; align-items:center; justify-content:center; font-size: 2.125rem; font-weight:700; overflow:hidden; }
         .photo-preview img { width:100%; height:100%; object-fit:cover; }
         .grade-table tbody.sem-a tr.b { display:none; }
         .grade-table tbody.sem-b tr.a { display:none; }
     </style>
     <link rel="stylesheet" href="../../../css/responsive.css">
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/preferences.js"></script>
 </head>
 <body class="dashboard-page" data-portal="registrar">
     <aside class="sidebar">
         <div class="sidebar-brand">
             <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
             <strong>CEC</strong>
-            <span>REGISTRAR PORTAL SYSTEM</span>
+            <span data-i18n="brand.portal">REGISTRAR PORTAL SYSTEM</span>
         </div>
 
         <nav class="sidebar-nav" aria-label="Registrar navigation">
-            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
-            <a href="student-records.html" class="active"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
-            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
-            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
-            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
-            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
-            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+            <a href="student-records.html" class="active"><i class="fa-solid fa-users"></i><span data-i18n="nav.records">Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span data-i18n="nav.enrollment">Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span data-i18n="nav.enrollment.application">Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span data-i18n="nav.reports">Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span data-i18n="nav.documents">Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span data-i18n="nav.announcements">Announcements</span></a>
         </nav>
 
         <div class="sidebar-bottom">
-            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span data-i18n="nav.settings">Settings</span></a>
         </div>
     </aside>
 
@@ -61,8 +64,8 @@
                     <a class="back-link" href="student-records.html"><i class="fa-solid fa-arrow-left"></i> Back to Student Records</a>
                     <div class="record-title">
                         <div>
-                            <h1>View Student Record</h1>
-                            <p class="page-desc">Review student information, academic records, and enrollment details.</p>
+                            <h1><span data-i18n="page.records.profile">View Student Record</span></h1>
+                            <p class="page-desc"><span data-i18n="page.records.profile.desc">Review student information, academic records, and enrollment details.</span></p>
                         </div>
                     </div>
                 </div>
@@ -348,7 +351,7 @@
     <div class="modal-overlay" id="modal-photo">
         <div class="modal">
             <div class="modal-head">
-                <h3><i class="fa-solid fa-camera" style="color:var(--blue);margin-right:8px;"></i> Change Profile Photo</h3>
+                <h3><i class="fa-solid fa-camera" style="color: var(--accent-text);margin-right:8px;"></i> Change Profile Photo</h3>
                 <button class="modal-close" data-close="modal-photo"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="modal-body">
@@ -358,7 +361,7 @@
                     <i class="fa-solid fa-cloud-arrow-up"></i> Choose File
                     <input type="file" id="photo-file" accept="image/*" style="display:none;">
                 </label>
-                <small style="display:block;margin-top:10px;color:var(--muted);font-size:12px;">PNG or JPG, max 5MB</small>
+                <small style="display:block;margin-top:10px;color:var(--muted);font-size: 0.75rem;">PNG or JPG, max 5MB</small>
             </div>
             <div class="modal-foot">
                 <button class="btn btn-outline" data-close="modal-photo">Cancel</button>

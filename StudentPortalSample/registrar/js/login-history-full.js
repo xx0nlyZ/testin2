@@ -4,18 +4,18 @@
     'use strict';
 
     var HISTORY = [
-        { date: 'Sept. 06, 2026 11:11 AM', device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    },
-        { date: 'Sept. 07, 2026 6:00 PM',  device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    },
-        { date: 'Sept. 07, 2026 6:30 PM',  device: 'MacOS - Safari',      ip: '192.168.1.23', status: 'success', location: 'Cebu, Philippines'    },
-        { date: 'Sept. 08, 2026 11:30 PM', device: 'Android - Chrome',    ip: '10.0.0.8',     status: 'failed',  location: 'Busay, Cebu, Phil'    },
-        { date: 'Sept. 09, 2026 1:30 AM',  device: 'Android - Chrome',    ip: '10.0.0.8',     status: 'success', location: 'Busay, Cebu, Phil'    },
-        { date: 'Sept. 10, 2026 2:30 AM',  device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Busay, Cebu, Phil'    },
-        { date: 'Sept. 11, 2026 7:15 AM',  device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    },
-        { date: 'Sept. 12, 2026 8:00 AM',  device: 'Android - Chrome',    ip: '10.0.0.15',    status: 'failed',  location: 'Talamban, Cebu, Phil' },
-        { date: 'Sept. 12, 2026 8:05 AM',  device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    },
-        { date: 'Sept. 14, 2026 9:40 AM',  device: 'Windows - Edge',      ip: '192.168.1.23', status: 'success', location: 'Cebu, Philippines'    },
-        { date: 'Sept. 15, 2026 10:12 AM', device: 'MacOS - Safari',      ip: '192.168.1.44', status: 'failed',  location: 'Cebu, Philippines'    },
-        { date: 'Sept. 16, 2026 12:33 PM', device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    }
+        { date: '2026-09-06T11:11:00', device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    },
+        { date: '2026-09-07T18:00:00',  device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    },
+        { date: '2026-09-07T18:30:00',  device: 'MacOS - Safari',      ip: '192.168.1.23', status: 'success', location: 'Cebu, Philippines'    },
+        { date: '2026-09-08T23:30:00', device: 'Android - Chrome',    ip: '10.0.0.8',     status: 'failed',  location: 'Busay, Cebu, Phil'    },
+        { date: '2026-09-09T01:30:00',  device: 'Android - Chrome',    ip: '10.0.0.8',     status: 'success', location: 'Busay, Cebu, Phil'    },
+        { date: '2026-09-10T02:30:00',  device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Busay, Cebu, Phil'    },
+        { date: '2026-09-11T07:15:00',  device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    },
+        { date: '2026-09-12T08:00:00',  device: 'Android - Chrome',    ip: '10.0.0.15',    status: 'failed',  location: 'Talamban, Cebu, Phil' },
+        { date: '2026-09-12T08:05:00',  device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    },
+        { date: '2026-09-14T09:40:00',  device: 'Windows - Edge',      ip: '192.168.1.23', status: 'success', location: 'Cebu, Philippines'    },
+        { date: '2026-09-15T10:12:00', device: 'MacOS - Safari',      ip: '192.168.1.44', status: 'failed',  location: 'Cebu, Philippines'    },
+        { date: '2026-09-16T12:33:00', device: 'Windows - Chrome',    ip: '192.168.1.10', status: 'success', location: 'Cebu, Philippines'    }
     ];
 
     var PAGE_SIZE = 5;
@@ -40,11 +40,16 @@
         return div.innerHTML;
     }
 
+    function showDate(value) {
+        if (window.CECPrefs) { return window.CECPrefs.formatDateTime(value); }
+        return String(value);
+    }
+
     function filteredHistory() {
         var term = state.filter.toLowerCase();
         return HISTORY.filter(function (row) {
             var matchTerm = !term ||
-                row.date.toLowerCase().indexOf(term) !== -1 ||
+                showDate(row.date).toLowerCase().indexOf(term) !== -1 ||
                 row.device.toLowerCase().indexOf(term) !== -1 ||
                 row.ip.toLowerCase().indexOf(term) !== -1 ||
                 row.status.toLowerCase().indexOf(term) !== -1 ||
@@ -76,7 +81,7 @@
                 var statusText = row.status === 'success' ? 'Success' : 'Failed';
                 return '<tr>' +
                     '<td class="muted-cell">' + (start + i + 1) + '</td>' +
-                    '<td class="muted-cell">' + escText(row.date) + '</td>' +
+                    '<td class="muted-cell">' + escText(showDate(row.date)) + '</td>' +
                     '<td>' + escText(row.device) + '</td>' +
                     '<td class="muted-cell">' + escText(row.ip) + '</td>' +
                     '<td><span class="status-badge ' + statusCls + '">' + statusText + '</span></td>' +
@@ -150,7 +155,7 @@
             }
             var csv = ['#,Date & Time,Device,IP Address,Status,Location'];
             rows.forEach(function (row, i) {
-                csv.push((i + 1) + ',"' + row.date + '","' + row.device + '","' + row.ip + '","' + row.status.charAt(0).toUpperCase() + row.status.slice(1) + '","' + row.location + '"');
+                csv.push((i + 1) + ',"' + showDate(row.date) + '","' + row.device + '","' + row.ip + '","' + row.status.charAt(0).toUpperCase() + row.status.slice(1) + '","' + row.location + '"');
             });
             var blob = new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8;' });
             var link = document.createElement('a');
@@ -165,4 +170,7 @@
     }
 
     renderHistory();
+
+    /* redraw with the new date format as soon as the preference changes */
+    document.addEventListener('cec:prefs-changed', renderHistory);
 })();

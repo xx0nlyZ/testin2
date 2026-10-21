@@ -19,7 +19,7 @@
 
 .doc-head-row h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 1.5rem;
     letter-spacing: 0.3px;
 }
 
@@ -27,8 +27,8 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    color: var(--blue);
-    font-size: 13px;
+    color: var(--accent-text);
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
@@ -48,23 +48,23 @@
 
 .doc-sub-head h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 1.5rem;
     letter-spacing: 0.3px;
 }
 
 .doc-sub-head p {
     margin: 6px 0 0;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 /* --------------------------------------------------------------------------
    SUMMARY TABLE CARD
    -------------------------------------------------------------------------- */
 .summary-card {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -75,7 +75,7 @@
     flex-wrap: wrap;
     gap: 12px;
     padding: 16px 18px;
-    border-bottom: 1px solid #E3E9F2;
+    border-bottom: 1px solid var(--border);
 }
 
 .summary-head h3 {
@@ -83,12 +83,12 @@
     align-items: center;
     gap: 9px;
     margin: 0;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .summary-head h3 i {
-    color: var(--blue);
-    font-size: 16px;
+    color: var(--accent-text);
+    font-size: 1rem;
 }
 
 .count-pill {
@@ -96,14 +96,14 @@
     min-width: 22px;
     padding: 2px 8px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     text-align: center;
 }
 
 .count-pill.blue {
-    color: #1D4E9B;
-    background: #E2ECFA;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
 }
 
 .doc-type {
@@ -120,13 +120,13 @@
     flex: 0 0 30px;
     place-items: center;
     border-radius: 7px;
-    color: var(--blue);
+    color: var(--accent-text);
     background: var(--pale-blue);
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .students-count {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 700;
 }
 
@@ -140,9 +140,9 @@
     gap: 10px;
     margin-bottom: 18px;
     padding: 14px 16px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .doc-filters .search-input {
@@ -162,20 +162,20 @@
    -------------------------------------------------------------------------- */
 .row-action.view {
     border: 1px solid #9DB9DE;
-    color: #1D4E9B;
-    background: #FFFFFF;
+    color: var(--tint-blue-fg);
+    background: var(--card);
 }
 
 .row-action.view:hover {
     color: #FFFFFF;
-    background: var(--blue);
-    border-color: var(--blue);
+    background: var(--primary);
+    border-color: var(--accent-text);
 }
 
 .row-action.cancel {
     border: 1px solid #E3A29D;
-    color: #B3261E;
-    background: #FFFFFF;
+    color: var(--tint-red-fg);
+    background: var(--card);
 }
 
 .row-action.cancel:hover {
@@ -193,9 +193,9 @@
     flex-wrap: wrap;
     gap: 16px;
     padding: 20px 22px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .detail-hero-left {
@@ -214,12 +214,12 @@
     border-radius: 12px;
     color: #FFFFFF;
     background: var(--navy);
-    font-size: 23px;
+    font-size: 1.4375rem;
 }
 
 .detail-hero-title {
     margin: 0;
-    font-size: 21px;
+    font-size: 1.3125rem;
     letter-spacing: 0.2px;
 }
 
@@ -230,11 +230,11 @@
     gap: 10px;
     margin-top: 6px;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .detail-hero-sub .ref-no {
-    color: var(--blue);
+    color: var(--accent-text);
     font-weight: 700;
 }
 
@@ -243,20 +243,20 @@
     align-items: center;
     gap: 9px;
     padding: 9px 14px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .date-chip i {
-    color: var(--blue);
-    font-size: 14px;
+    color: var(--accent-text);
+    font-size: 0.875rem;
 }
 
 .date-chip .chip-label {
     display: block;
     color: var(--muted);
-    font-size: 10.5px;
+    font-size: 0.65625rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4px;
@@ -266,8 +266,8 @@
 .date-chip .chip-value {
     display: block;
     margin-top: 2px;
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
     font-weight: 700;
     line-height: 1.1;
 }
@@ -284,9 +284,9 @@
 }
 
 .detail-card {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -295,17 +295,17 @@
     align-items: center;
     gap: 9px;
     padding: 16px 18px;
-    border-bottom: 1px solid #E3E9F2;
+    border-bottom: 1px solid var(--border);
 }
 
 .detail-card-head i {
-    color: var(--blue);
-    font-size: 15px;
+    color: var(--accent-text);
+    font-size: 0.9375rem;
 }
 
 .detail-card-head h3 {
     margin: 0;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 /* Key-value list */
@@ -319,7 +319,7 @@
     display: flex;
     gap: 14px;
     padding: 13px 18px;
-    border-bottom: 1px dashed #E9EEF5;
+    border-bottom: 1px dashed var(--border-soft);
 }
 
 .kv-list li:last-child {
@@ -330,14 +330,14 @@
     width: 128px;
     flex: 0 0 128px;
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
     font-weight: 700;
 }
 
 .kv-list dd {
     margin: 0;
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
     font-weight: 600;
     text-align: right;
 }
@@ -369,7 +369,7 @@
     bottom: -18px;
     left: 11px;
     width: 2px;
-    background: #E2E9F3;
+    background: var(--border);
 }
 
 .timeline-item:last-child::before {
@@ -384,11 +384,11 @@
     height: 24px;
     border: 3px solid #FFFFFF;
     border-radius: 50%;
-    box-shadow: 0 0 0 1px #DFE6F0;
+    box-shadow: 0 0 0 1px var(--border);
 }
 
 .timeline-dot.blue {
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .timeline-dot.amber {
@@ -405,20 +405,20 @@
 
 .timeline-title {
     margin: 0;
-    color: var(--navy);
-    font-size: 14px;
+    color: var(--text);
+    font-size: 0.875rem;
     font-weight: 700;
 }
 
 .timeline-date {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .timeline-desc {
     margin: 4px 0 0;
     color: var(--muted);
-    font-size: 12.5px;
+    font-size: 0.78125rem;
     line-height: 1.5;
 }
 
@@ -433,7 +433,7 @@
     gap: 12px;
     margin-top: 16px;
     padding-top: 16px;
-    border-top: 1px solid #E3E9F2;
+    border-top: 1px solid var(--border);
 }
 
 /* --------------------------------------------------------------------------
@@ -453,7 +453,7 @@
 .modal {
     width: min(440px, 92vw);
     border-radius: 14px;
-    background: #FFFFFF;
+    background: var(--card);
     box-shadow: 0 24px 60px rgba(11, 44, 94, 0.3);
     overflow: hidden;
 }
@@ -470,29 +470,29 @@
     margin: 0 auto 18px;
     place-items: center;
     border-radius: 50%;
-    color: #D97706;
-    background: #FEF0DA;
-    font-size: 34px;
+    color: var(--tint-amber-fg);
+    background: var(--tint-amber);
+    font-size: 2.125rem;
 }
 
 .modal-heading {
     margin: 0;
-    color: var(--navy);
-    font-size: 20px;
+    color: var(--text);
+    font-size: 1.25rem;
     letter-spacing: 0.2px;
 }
 
 .modal-text {
     margin: 10px 0 0;
     color: var(--muted);
-    font-size: 13.5px;
+    font-size: 0.84375rem;
     line-height: 1.55;
 }
 
 .modal-details {
     margin: 22px 0 0;
     padding: 2px 28px;
-    border-top: 1px solid #E9EEF5;
+    border-top: 1px solid var(--border-soft);
 }
 
 .modal-detail-row {
@@ -501,7 +501,7 @@
     justify-content: space-between;
     gap: 14px;
     padding: 13px 0;
-    border-bottom: 1px dashed #E9EEF5;
+    border-bottom: 1px dashed var(--border-soft);
 }
 
 .modal-detail-row:last-child {
@@ -510,20 +510,20 @@
 
 .modal-detail-row span {
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
 }
 
 .modal-detail-row strong {
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
 }
 
 .modal-actions {
     display: flex;
     gap: 10px;
     padding: 16px 28px 22px;
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .modal-actions .btn {
@@ -532,12 +532,12 @@
 
 .btn-outline.blue {
     border: 1px solid #9DB9DE;
-    color: var(--blue);
-    background: #FFFFFF;
+    color: var(--accent-text);
+    background: var(--card);
 }
 
 .btn-outline.blue:hover {
-    background: #E2ECFA;
+    background: var(--tint-blue);
 }
 
 /* --------------------------------------------------------------------------
@@ -560,7 +560,7 @@
 
     .doc-head-row h1,
     .doc-sub-head h1 {
-        font-size: 21px;
+        font-size: 1.3125rem;
     }
 
     .doc-filters .btn-refresh {

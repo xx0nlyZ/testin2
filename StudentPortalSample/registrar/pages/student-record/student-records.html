@@ -8,76 +8,79 @@
     <link rel="stylesheet" href="../../css/reg-dashboard.css">
     <link rel="stylesheet" href="../../css/reg-analytics.css">
     <link rel="stylesheet" href="../../css/reg-enrollment.css">
+    <link rel="stylesheet" href="../../css/reg-theme.css">
     <link rel="stylesheet" href="../../css/reg-edit.css">
     <link rel="stylesheet" href="../../css/reg-modal.css">
     <style>
         .table-head { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:16px; border-bottom:1px solid #E3E9F2; }
         .table-head-left { display:flex; align-items:center; gap:10px; }
-        .table-head i { color:var(--blue); font-size:16px; }
-        .table-head h3 { margin:0; font-size:16px; }
+        .table-head i { color: var(--accent-text); font-size: 1rem; }
+        .table-head h3 { margin:0; font-size: 1rem; }
         .data-table th.sortable { cursor:pointer; user-select:none; }
-        .data-table th.sortable:hover { color:var(--navy); }
-        .data-table th .sort-icon { margin-left:4px; font-size:10px; opacity:0.4; }
+        .data-table th.sortable:hover { color: var(--text); }
+        .data-table th .sort-icon { margin-left:4px; font-size: 0.625rem; opacity:0.4; }
         .data-table th.sortable.asc .sort-icon,
-        .data-table th.sortable.desc .sort-icon { opacity:1; color:var(--blue); }
-        .data-table input[type="checkbox"] { width:15px; height:15px; accent-color:var(--blue); cursor:pointer; }
-        .bulk-bar { display:none; align-items:center; gap:10px; padding:10px 16px; border-bottom:1px solid #E3E9F2; background:#F0F4FA; font-size:13px; }
+        .data-table th.sortable.desc .sort-icon { opacity:1; color: var(--accent-text); }
+        .data-table input[type="checkbox"] { width:15px; height:15px; accent-color: var(--accent-text); cursor:pointer; }
+        .bulk-bar { display:none; align-items:center; gap:10px; padding:10px 16px; border-bottom:1px solid #E3E9F2; background:#F0F4FA; font-size: 0.8125rem; }
         .bulk-bar.active { display:flex; }
-        .bulk-bar strong { color:var(--navy); }
-        .bulk-bar .btn { height:32px; font-size:12px; padding:0 12px; }
-        .btn-sm { height:30px; padding:0 12px; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer; border:0; }
+        .bulk-bar strong { color: var(--text); }
+        .bulk-bar .btn { height:32px; font-size: 0.75rem; padding:0 12px; }
+        .btn-sm { height:30px; padding:0 12px; border-radius:6px; font-size: 0.75rem; font-weight:700; cursor:pointer; border:0; }
         .btn-sm.red { color:#B3261E; background:#FBE4E4; }
         .btn-sm.red:hover { color:#FFFFFF; background:#B3261E; }
-        .btn-sm.blue { color:#1D4E9B; background:#E8EFFB; }
-        .btn-sm.blue:hover { color:#FFFFFF; background:#1D4E9B; }
-        .empty-state { display:none; flex-direction:column; align-items:center; gap:8px; padding:40px 20px; color:var(--muted); font-size:14px; text-align:center; }
+        .btn-sm.blue { color:var(--primary); background:var(--tint-blue); }
+        .btn-sm.blue:hover { color:#FFFFFF; background:var(--primary); }
+        .empty-state { display:none; flex-direction:column; align-items:center; gap:8px; padding:40px 20px; color:var(--muted); font-size: 0.875rem; text-align:center; }
         .empty-state.visible { display:flex; }
-        .empty-state i { font-size:32px; color:#C3D1E4; }
-        .empty-state button { margin-top:6px; height:34px; padding:0 16px; border:1px solid var(--blue); border-radius:6px; color:var(--blue); background:#FFFFFF; font-size:12.5px; font-weight:700; cursor:pointer; }
+        .empty-state i { font-size: 2rem; color:#C3D1E4; }
+        .empty-state button { margin-top:6px; height:34px; padding:0 16px; border: 1px solid var(--primary); border-radius:6px; color: var(--accent-text); background:#FFFFFF; font-size: 0.78125rem; font-weight:700; cursor:pointer; }
         .toast-wrap { position:fixed; top:20px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:8px; pointer-events:none; }
-        .toast { display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:8px; color:#FFFFFF; background:#177245; font-size:13px; font-weight:600; box-shadow:0 4px 16px rgba(0,0,0,0.15); animation:toastIn 0.3s ease; pointer-events:auto; }
+        .toast { display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:8px; color:#FFFFFF; background:#177245; font-size: 0.8125rem; font-weight:600; box-shadow:0 4px 16px rgba(0,0,0,0.15); animation:toastIn 0.3s ease; pointer-events:auto; }
         .toast.error { background:#B3261E; }
-        .toast.info { background:#1D4E9B; }
+        .toast.info { background:var(--primary); }
         @keyframes toastIn { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:translateX(0)} }
-        .filter-bar .clear-filters { display:none; height:36px; padding:0 14px; border:1px solid #D5DEE9; border-radius:6px; color:var(--navy); background:#FFFFFF; font-size:12.5px; font-weight:600; cursor:pointer; white-space:nowrap; }
+        .filter-bar .clear-filters { display:none; height:36px; padding:0 14px; border:1px solid #D5DEE9; border-radius:6px; color: var(--text); background:#FFFFFF; font-size: 0.78125rem; font-weight:600; cursor:pointer; white-space:nowrap; }
         .filter-bar.has-filters .clear-filters { display:inline-flex; }
         .pagination button.page-btn { min-width:32px; }
     </style>
     <link rel="stylesheet" href="../../../css/responsive.css">
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/preferences.js"></script>
 </head>
 <body class="dashboard-page" data-portal="registrar">
     <aside class="sidebar">
         <div class="sidebar-brand">
             <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
             <strong>CEC</strong>
-            <span>REGISTRAR PORTAL SYSTEM</span>
+            <span data-i18n="brand.portal">REGISTRAR PORTAL SYSTEM</span>
         </div>
 
         <nav class="sidebar-nav" aria-label="Registrar navigation">
-            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
-            <a href="student-records.html" class="active"><i class="fa-solid fa-users"></i><span>Student Records</span></a>
-            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span>Enrollment Management</span></a>
-            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span>Enrollment Application</span></a>
-            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span>Reports</span></a>
-            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span>Document Requests</span></a>
-            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span>Announcements</span></a>
+            <a href="../../pages/dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+            <a href="student-records.html" class="active"><i class="fa-solid fa-users"></i><span data-i18n="nav.records">Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span data-i18n="nav.enrollment">Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span data-i18n="nav.enrollment.application">Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span data-i18n="nav.reports">Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span data-i18n="nav.documents">Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span data-i18n="nav.announcements">Announcements</span></a>
         </nav>
 
         <div class="sidebar-bottom">
-            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span data-i18n="nav.settings">Settings</span></a>
         </div>
     </aside>
 
     <main class="dashboard-main">
         <header class="app-header">
-            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar" data-i18n-aria="header.toggle.sidebar"><i class="fa-solid fa-bars"></i></button>
 
             <label class="search-box">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search">
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search" data-i18n-placeholder="header.search">
             </label>
 
-            <button class="header-icon" type="button" aria-label="Notifications">
+            <button class="header-icon" type="button" aria-label="Notifications" data-i18n-aria="header.notifications">
                 <i class="fa-regular fa-bell" aria-hidden="true"></i>
                 <span class="notif-dot"></span>
             </button>
@@ -86,7 +89,7 @@
                 <span class="profile-avatar">&mdash;</span>
                 <span class="profile-info">
                     <strong></strong>
-                    <small>Registrar</small>
+                    <small data-i18n="header.role">Registrar</small>
                 </span>
             </button>
         </header>
@@ -94,12 +97,12 @@
         <section class="dashboard-content">
             <div class="page-head">
                 <nav class="breadcrumb" aria-label="Breadcrumb">
-                    <a href="../../pages/dashboard/registrar.html">Dashboard</a>
+                    <a href="../../pages/dashboard/registrar.html"><span data-i18n="breadcrumb.dashboard">Dashboard</span></a>
                     <i class="fa-solid fa-chevron-right"></i>
                     <span>Student Records</span>
                 </nav>
-                <h1>Student Records</h1>
-                <p class="page-desc">Manage and view student information, records, and academic status.</p>
+                <h1><span data-i18n="page.records">Student Records</span></h1>
+                <p class="page-desc"><span data-i18n="page.records.desc">Manage and view student information, records, and academic status.</span></p>
             </div>
 
             <section class="kpis" aria-label="Student summary">

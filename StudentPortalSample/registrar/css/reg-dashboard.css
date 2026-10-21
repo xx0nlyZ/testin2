@@ -18,7 +18,7 @@ body {
 }
 
 body {
-    color: var(--navy);
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     background: var(--canvas);
 }
@@ -80,14 +80,14 @@ a {
 
 .sidebar-brand strong {
     font-family: Georgia, serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     letter-spacing: 0.5px;
 }
 
 .sidebar-brand span {
     flex-basis: 100%;
     margin-top: 4px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -108,19 +108,19 @@ a {
     padding: 8px 6px;
     border-radius: 4px;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .sidebar-nav a:hover,
 .sidebar-nav a.active,
 .sidebar-bottom a:hover {
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .sidebar-nav i,
 .sidebar-bottom i {
     width: 22px;
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: center;
 }
 
@@ -145,8 +145,8 @@ a {
     justify-content: flex-end;
     gap: 20px;
     padding: 0 34px;
-    border-bottom: 1px solid #E1E5EB;
-    background: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
 }
 
 .search-box {
@@ -156,33 +156,33 @@ a {
     align-items: center;
     padding: 0 13px;
     border-radius: 15px;
-    background: #E4E4E4;
+    background: var(--surface);
 }
 
 .search-box input {
     width: 100%;
     border: 0;
     outline: 0;
-    color: var(--navy);
-    font-size: 13px;
+    color: var(--text);
+    font-size: 0.8125rem;
     background: transparent;
 }
 
 .search-box i {
-    color: #222222;
-    font-size: 13px;
+    color: var(--muted);
+    font-size: 0.8125rem;
 }
 
 .header-icon,
 .profile-button {
     border: 0;
-    color: var(--navy);
+    color: var(--text);
     background: transparent;
     cursor: pointer;
 }
 
 .header-icon {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .profile-button {
@@ -191,7 +191,7 @@ a {
     gap: 5px;
     padding: 0;
     margin-left: -16px;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .profile-icon {
@@ -201,7 +201,7 @@ a {
     place-items: center;
     border: 1px solid var(--navy);
     border-radius: 50%;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 /* ==========================================================================
@@ -221,16 +221,16 @@ a {
     gap: 6px;
     margin: 0 0 6px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .breadcrumb i {
-    font-size: 9px;
+    font-size: 0.5625rem;
     align-self: center;
 }
 
 .breadcrumb a {
-    color: var(--blue);
+    color: var(--accent-text);
 }
 
 .breadcrumb a:hover {
@@ -239,14 +239,14 @@ a {
 
 .page-head h1 {
     margin: 0;
-    font-size: 26px;
+    font-size: 1.625rem;
     letter-spacing: 0.3px;
 }
 
 .page-desc {
     margin: 6px 0 0;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 /* ==========================================================================
@@ -265,22 +265,22 @@ a {
     justify-content: space-between;
     gap: 12px;
     padding: 20px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .stat-card .stat-info p {
     margin: 0 0 4px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4px;
 }
 
 .stat-card .stat-info strong {
-    font-size: 27px;
+    font-size: 1.6875rem;
     line-height: 1;
 }
 
@@ -288,35 +288,35 @@ a {
     display: block;
     margin-top: 8px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .stat-badge {
     display: inline-block;
     padding: 3px 10px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
 }
 
 .stat-badge.green {
-    color: #177245;
-    background: #E3F4EA;
+    color: var(--tint-green-fg);
+    background: var(--tint-green);
 }
 
 .stat-badge.amber {
-    color: #8A6D00;
-    background: #FFF2CC;
+    color: var(--tint-amber-fg);
+    background: var(--tint-amber);
 }
 
 .stat-badge.red {
-    color: #B3261E;
-    background: #FBE4E4;
+    color: var(--tint-red-fg);
+    background: var(--tint-red);
 }
 
 .stat-badge.blue {
-    color: #1D4E9B;
-    background: #E2ECFA;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
 }
 
 .stat-card > .stat-icon {
@@ -326,9 +326,9 @@ a {
     height: 48px;
     flex: 0 0 48px;
     border-radius: 8px;
-    color: var(--blue);
+    color: var(--accent-text);
     background: var(--pale-blue);
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 /* ==========================================================================
@@ -341,9 +341,9 @@ a {
     gap: 10px;
     margin-bottom: 18px;
     padding: 14px 16px;
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
 }
 
 .search-input {
@@ -356,32 +356,32 @@ a {
     top: 50%;
     left: 13px;
     transform: translateY(-50%);
-    color: #8190A5;
-    font-size: 13px;
+    color: var(--muted);
+    font-size: 0.8125rem;
 }
 
 .search-input input {
     width: 100%;
     height: 40px;
     padding: 0 12px 0 36px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
     outline: none;
-    color: var(--navy);
+    color: var(--text);
 }
 
 .search-input input:focus {
-    border-color: var(--blue);
+    border-color: var(--accent-text);
     box-shadow: 0 0 0 3px rgba(29, 78, 155, 0.12);
 }
 
 .filter-select {
     height: 40px;
     padding: 0 10px;
-    border: 1px solid #D5DEE9;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
+    color: var(--text);
+    background: var(--card);
     outline: none;
 }
 
@@ -399,19 +399,19 @@ a {
     height: 40px;
     padding: 0 16px;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
     cursor: pointer;
 }
 
 .btn-outline {
-    border: 1px solid #D5DEE9;
-    color: var(--navy);
-    background: #FFFFFF;
+    border: 1px solid var(--border-input);
+    color: var(--text);
+    background: var(--card);
 }
 
 .btn-outline:hover {
-    background: #F0F4FA;
+    background: var(--surface);
 }
 
 .btn-primary {
@@ -421,16 +421,16 @@ a {
 }
 
 .btn-primary:hover {
-    background: var(--blue);
+    background: var(--primary);
 }
 
 /* ==========================================================================
    DATA TABLE
    ========================================================================== */
 .table-card {
-    border: 1px solid #E3E9F2;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
+    background: var(--card);
     overflow: hidden;
 }
 
@@ -446,22 +446,22 @@ a {
 .data-table th {
     padding: 12px 16px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     white-space: nowrap;
-    border-bottom: 1px solid #E3E9F2;
-    background: #F8FAFD;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
 }
 
 .data-table td {
     padding: 13px 16px;
-    color: var(--navy);
-    font-size: 13.5px;
+    color: var(--text);
+    font-size: 0.84375rem;
     white-space: nowrap;
-    border-bottom: 1px solid #EEF2F8;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .data-table tbody tr:last-child td {
@@ -469,7 +469,7 @@ a {
 }
 
 .data-table tbody tr:hover {
-    background: #F8FAFD;
+    background: var(--surface);
 }
 
 .data-table .muted-cell {
@@ -478,7 +478,7 @@ a {
 
 .student-link,
 .data-table a {
-    color: var(--blue);
+    color: var(--accent-text);
     font-weight: 600;
 }
 
@@ -490,28 +490,28 @@ a {
     display: inline-block;
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: 11.5px;
+    font-size: 0.71875rem;
     font-weight: 700;
 }
 
 .status-green {
-    color: #177245;
-    background: #E3F4EA;
+    color: var(--tint-green-fg);
+    background: var(--tint-green);
 }
 
 .status-amber {
-    color: #8A6D00;
-    background: #FFF2CC;
+    color: var(--tint-amber-fg);
+    background: var(--tint-amber);
 }
 
 .status-red {
-    color: #B3261E;
-    background: #FBE4E4;
+    color: var(--tint-red-fg);
+    background: var(--tint-red);
 }
 
 .status-blue {
-    color: #1D4E9B;
-    background: #E2ECFA;
+    color: var(--tint-blue-fg);
+    background: var(--tint-blue);
 }
 
 .actions-cell {
@@ -525,18 +525,18 @@ a {
     justify-content: center;
     width: 30px;
     height: 30px;
-    border: 1px solid #DFE6F0;
+    border: 1px solid var(--border);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
+    color: var(--text);
+    background: var(--card);
     cursor: pointer;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .icon-btn:hover {
     color: #FFFFFF;
-    background: var(--blue);
-    border-color: var(--blue);
+    background: var(--primary);
+    border-color: var(--accent-text);
 }
 
 .icon-btn.danger:hover {
@@ -554,12 +554,12 @@ a {
     flex-wrap: wrap;
     gap: 12px;
     padding: 12px 16px;
-    border-top: 1px solid #E3E9F2;
+    border-top: 1px solid var(--border);
 }
 
 .pagination-info {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .pagination {
@@ -571,18 +571,18 @@ a {
     min-width: 32px;
     height: 32px;
     padding: 0 8px;
-    border: 1px solid #DFE6F0;
+    border: 1px solid var(--border);
     border-radius: 6px;
-    color: var(--navy);
-    background: #FFFFFF;
-    font-size: 13px;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.8125rem;
     cursor: pointer;
 }
 
 .pagination button.active {
     color: #FFFFFF;
-    background: var(--blue);
-    border-color: var(--blue);
+    background: var(--primary);
+    border-color: var(--accent-text);
 }
 
 .pagination button:disabled {
@@ -601,7 +601,7 @@ a {
 
     .sidebar-nav a,
     .sidebar-bottom a {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 
     .dashboard-content {
@@ -643,7 +643,7 @@ a {
         justify-content: center;
         min-height: 30px;
         padding: 4px;
-        font-size: 9px;
+        font-size: 0.5625rem;
     }
 
     .sidebar-nav i,
@@ -661,7 +661,7 @@ a {
     }
 
     .page-head h1 {
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 
     .stats-grid {
@@ -676,7 +676,7 @@ a {
         width: 40px;
         height: 40px;
         flex-basis: 40px;
-        font-size: 17px;
+        font-size: 1.0625rem;
     }
 
     .filter-actions {

@@ -114,14 +114,14 @@ table {
 
 .sidebar-brand strong {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     letter-spacing: 0.5px;
 }
 
 .sidebar-brand span {
     flex-basis: 100%;
     margin-top: 4px;
-    font-size: 11px;
+    font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -142,7 +142,7 @@ table {
     padding: 8px 6px;
     border-radius: 4px;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .sidebar-nav a:hover,
@@ -154,14 +154,14 @@ table {
 .sidebar-nav i,
 .sidebar-bottom i {
     width: 22px;
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: center;
 }
 
 .nav-section {
     margin: 16px 8px 5px;
     color: rgba(220, 231, 245, 0.75);
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -196,7 +196,7 @@ table {
 
 .page-title {
     margin-right: auto;
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 700;
     letter-spacing: 0.2px;
 }
@@ -217,13 +217,13 @@ table {
     border: 0;
     outline: 0;
     color: var(--navy);
-    font-size: 13px;
+    font-size: 0.8125rem;
     background: transparent;
 }
 
 .search-box i {
     color: #222222;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .header-icon,
@@ -236,7 +236,7 @@ table {
 
 .header-icon {
     position: relative;
-    font-size: 23px;
+    font-size: 1.4375rem;
 }
 
 .header-icon .notif-dot {
@@ -266,7 +266,7 @@ table {
     border-radius: 50%;
     color: #FFFFFF;
     background: var(--blue);
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .semester-select {
@@ -277,7 +277,7 @@ table {
     outline: none;
     color: var(--navy);
     background: #FFFFFF;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .dashboard-content {
@@ -322,7 +322,7 @@ table {
 
     .sidebar-nav a,
     .sidebar-bottom a {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 
     .dashboard-content {
@@ -358,11 +358,11 @@ table {
     .page-head h1,
     .page-title,
     .form-title {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .page-desc {
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     .stats-grid,
@@ -463,7 +463,7 @@ table {
     }
 
     .sidebar-brand strong {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .sidebar-nav,
@@ -484,7 +484,7 @@ table {
         min-height: 40px;
         gap: 6px;
         padding: 6px 4px;
-        font-size: 11px;
+        font-size: 0.6875rem;
         line-height: 1.2;
         text-align: center;
     }
@@ -497,7 +497,7 @@ table {
     .sidebar-nav i,
     .sidebar-bottom i {
         width: auto;
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     .sidebar-bottom {
@@ -543,7 +543,7 @@ table {
 
     .page-head h1,
     .page-title {
-        font-size: 19px;
+        font-size: 1.1875rem;
     }
 
     .stats-grid,
@@ -652,7 +652,7 @@ table {
     .crumb {
         flex-wrap: wrap;
         gap: 6px;
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 
     .photo-panel,
@@ -682,13 +682,13 @@ table {
     }
 
     .sidebar-brand span {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
 
     .page-head h1,
     .page-title,
     .form-title {
-        font-size: 17px;
+        font-size: 1.0625rem;
     }
 
     .table-wrap > table {
@@ -711,7 +711,7 @@ table {
     }
 
     .auth-header h1 {
-        font-size: 18px;
+        font-size: 1.125rem;
         letter-spacing: 1.5px;
     }
 }

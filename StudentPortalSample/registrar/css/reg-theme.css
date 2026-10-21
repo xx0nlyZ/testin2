@@ -1,0 +1,509 @@
+/* ==========================================================================
+   THEME & APPEARANCE  |  REGISTRAR PORTAL
+   --------------------------------------------------------------------------
+   Portal-wide appearance layer. Loaded on EVERY registrar page so that the
+   Preferences (light/dark, accent colour, font size) apply everywhere and
+   not only inside the Settings folder.
+
+   Tokens are the same family used across the portal:
+   --navy #0B2C5E | --blue #1D4E9B | --pale-blue #DCE7F5 | --canvas #F5F7FA
+   --line #AFC5E2 | --muted #60728B  | Arial font | 6px/8px/10px radii.
+
+   The appearance runtime (registrar/js/preferences.js) writes the active
+   values onto <html> so they are in effect before first paint.
+   ========================================================================== */
+
+:root {
+    --text: var(--navy);
+    --card: #FFFFFF;
+    --surface: #F8FAFD;
+    --surface-2: #FBFCFE;
+    --border: #E3E9F2;
+    --border-soft: #EEF2F8;
+    --border-input: #D5DEE9;
+    --border-field: #CDD9E8;
+    --border-strong: #B9C7DA;
+    --success: #177245;
+    --success-bg: #E3F4EA;
+    --danger: #B3261E;
+    --danger-bg: #FBE4E4;
+    --amber: #8A6D00;
+    --amber-bg: #FFF2CC;
+    --font: 16px;
+    --primary: var(--blue);
+    --accent-text: var(--primary);
+
+    /* Soft tinted pairs: every pill, badge, avatar and notice uses one of
+       these so the dark theme can flip them as a set. */
+    --tint-blue: #E2ECFA;
+    --tint-blue-fg: #1D4E9B;
+    --tint-gray: #EEF2F7;
+    --tint-gray-fg: #5B6B80;
+    --tint-green: #E3F4EA;
+    --tint-green-fg: #177245;
+    --tint-amber: #FFF2CC;
+    --tint-amber-fg: #8A6D00;
+    --tint-red: #FBE4E4;
+    --tint-red-fg: #B3261E;
+    --tint-purple: #F0E7FB;
+    --tint-purple-fg: #6A2FB4;
+    --tint-teal: #E1F4F4;
+    --tint-teal-fg: #0E6E6E;
+    --tint-pink: #FCE4F0;
+    --tint-pink-fg: #B01E6F;
+    --tint-orange: #FDF0E1;
+    --tint-orange-fg: #B05E10;
+}
+
+/* The font-size preference scales the whole portal: every font-size in the
+   registrar stylesheets is declared in rem, and rem resolves against this. */
+html {
+    font-size: var(--font);
+}
+
+body {
+    background: var(--canvas);
+    color: var(--text);
+}
+
+/* ==========================================================================
+   DARK THEME
+   Overrides are toggled via .theme-dark on <html>.
+   The selector is html.theme-dark (not .theme-dark) so it outranks the
+   shared :root fallback in css/responsive.css, which is loaded last.
+   ========================================================================== */
+html.theme-dark {
+    --canvas: #16213A;
+    --card: #1B2740;
+    --surface: #22314F;
+    --surface-2: #1F2C48;
+    --text: #DCE7F5;
+    --border: #2E3E5C;
+    --border-soft: #293854;
+    --border-input: #33456A;
+    --border-field: #33456A;
+    --border-strong: #4A5D80;
+    --pale-blue: #22314F;
+    --muted: #9FB0C7;
+    --line: #33456A;
+
+    --tint-blue: #16294A;
+    --tint-blue-fg: #8FB4EE;
+    --tint-gray: #22314F;
+    --tint-gray-fg: #9FB0C7;
+    --tint-green: #14361F;
+    --tint-green-fg: #7ED9A2;
+    --tint-amber: #3A2F0C;
+    --tint-amber-fg: #E8C15A;
+    --tint-red: #3A1512;
+    --tint-red-fg: #F0938C;
+    --tint-purple: #2A1B45;
+    --tint-purple-fg: #C3A0F0;
+    --tint-teal: #0F2C2C;
+    --tint-teal-fg: #7EE3A0;
+    --tint-pink: #3A1027;
+    --tint-pink-fg: #F093C6;
+    --tint-orange: #3A2310;
+    --tint-orange-fg: #E8B478;
+}
+
+.theme-dark .sidebar {
+    background: #14203A;
+    border-right-color: #2E3E5C;
+}
+
+.theme-dark .sidebar-brand strong {
+    color: #FFFFFF;
+}
+
+.theme-dark .sidebar-brand span {
+    color: #9FB0C7;
+}
+
+.theme-dark .sidebar-nav a {
+    color: #C6D3E6;
+}
+
+.theme-dark .sidebar-nav a:hover {
+    background: #22314F;
+    color: var(--accent-text);
+}
+
+.theme-dark .sidebar-nav a.active {
+    background: #22314F;
+    color: var(--accent-text);
+}
+
+.theme-dark .sidebar-bottom {
+    border-top-color: #2E3E5C;
+}
+
+.theme-dark .sidebar-bottom a {
+    color: #C6D3E6;
+}
+
+.theme-dark .sidebar-bottom a:hover {
+    background: #22314F;
+    color: var(--accent-text);
+}
+
+.theme-dark .app-header {
+    background: var(--card);
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .menu-toggle {
+    color: var(--text);
+}
+
+.theme-dark .menu-toggle:hover {
+    background: var(--pale-blue);
+}
+
+.theme-dark .search-box {
+    background: var(--pale-blue);
+}
+
+.theme-dark .search-box input {
+    color: var(--text);
+}
+
+.theme-dark .search-box i {
+    color: var(--muted);
+}
+
+.theme-dark .header-icon,
+.theme-dark .profile-button {
+    color: var(--text);
+}
+
+.theme-dark .profile-info strong,
+.theme-dark .profile-info small {
+    color: var(--text);
+}
+
+/* Cards, panels and tables keep reading well on the dark canvas */
+.theme-dark .card,
+.theme-dark .setting-card,
+.theme-dark .data-table,
+.theme-dark .stat-card,
+.theme-dark .panel {
+    background: var(--card);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.theme-dark .card-title,
+.theme-dark .setting-card > .setting-title h3,
+.theme-dark .setting-card > .setting-title h1 {
+    color: var(--text);
+}
+
+.theme-dark .page-title h1,
+.theme-dark .page-title .page-desc,
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3 {
+    color: var(--text);
+}
+
+.theme-dark .page-desc,
+.theme-dark .muted-cell,
+.theme-dark .row-text small {
+    color: var(--muted);
+}
+
+.theme-dark .search-input input,
+.theme-dark .filter-select,
+.theme-dark .field input,
+.theme-dark .field select,
+.theme-dark .field textarea {
+    color: var(--text);
+    background: var(--card);
+    border-color: var(--border);
+}
+
+.theme-dark .search-input input:focus,
+.theme-dark .field input:focus,
+.theme-dark .field select:focus,
+.theme-dark .field textarea:focus {
+    background: var(--card);
+    border-color: var(--primary);
+}
+
+.theme-dark .data-table th {
+    color: var(--muted);
+    background: var(--card);
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .data-table td {
+    color: var(--text);
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .data-table .muted-cell {
+    color: var(--muted);
+}
+
+.theme-dark .data-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.theme-dark .table-footer {
+    border-top-color: var(--border);
+}
+
+.theme-dark .pagination button,
+.theme-dark .segmented button,
+.theme-dark .btn-outline {
+    color: var(--text);
+    background: var(--card);
+    border-color: var(--border);
+}
+
+.theme-dark .pagination button:hover,
+.theme-dark .segmented button:hover,
+.theme-dark .btn-outline:hover {
+    background: var(--pale-blue);
+    color: #FFFFFF;
+}
+
+.theme-dark .setting-card > .setting-title h3 i,
+.theme-dark .setting-card > .setting-title h1 i {
+    color: var(--accent-text);
+}
+
+.theme-dark .settings-subhead {
+    color: var(--text);
+}
+
+.theme-dark .row-text strong {
+    color: var(--text);
+}
+
+.theme-dark .row-icon {
+    background: var(--pale-blue);
+    color: var(--accent-text);
+}
+
+.theme-dark .toggle-track {
+    background: var(--pale-blue);
+    border-color: var(--border);
+}
+
+.theme-dark .modal-overlay {
+    background: rgba(6, 16, 38, 0.62);
+}
+
+.theme-dark .modal {
+    background: var(--card);
+    color: var(--text);
+}
+
+.theme-dark .modal-head,
+.theme-dark .modal-foot {
+    border-color: var(--border);
+}
+
+.theme-dark .modal-head h3 {
+    color: var(--text);
+}
+
+.theme-dark .modal-close {
+    color: var(--muted);
+}
+
+.theme-dark .modal-close:hover {
+    background: var(--pale-blue);
+}
+
+.theme-dark .toast {
+    color: #FFFFFF;
+}
+
+/* Dropdowns that the header scripts inject at runtime (profile menu and
+   notification panel) bring their own light colours, so they need an
+   explicit dark treatment here. */
+.theme-dark .profile-menu,
+.theme-dark .notif-panel {
+    background: var(--card);
+    border-color: var(--border);
+    box-shadow: 0 18px 44px rgba(4, 10, 24, 0.55);
+}
+
+.theme-dark .profile-menu-head,
+.theme-dark .notif-head {
+    background: var(--surface);
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .profile-menu-head strong,
+.theme-dark .notif-head strong,
+.theme-dark .notif-body strong,
+.theme-dark .profile-menu-item,
+.theme-dark .notif-foot {
+    color: var(--text);
+}
+
+.theme-dark .profile-menu-head small,
+.theme-dark .notif-body p {
+    color: var(--muted);
+}
+
+.theme-dark .profile-menu-item i {
+    color: var(--muted);
+}
+
+.theme-dark .profile-menu-item:hover,
+.theme-dark .notif-item:hover {
+    background: var(--pale-blue);
+}
+
+.theme-dark .profile-menu-item.is-danger {
+    color: var(--tint-red-fg);
+}
+
+.theme-dark .profile-menu-item.is-danger:hover {
+    background: var(--tint-red);
+}
+
+.theme-dark .profile-menu-divider {
+    background: var(--border);
+}
+
+.theme-dark .profile-menu-avatar {
+    background: var(--primary);
+}
+
+.theme-dark .notif-item {
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .notif-icon {
+    background: var(--tint-blue);
+    color: var(--tint-blue-fg);
+}
+
+.theme-dark .notif-item.tone-success .notif-icon {
+    background: var(--tint-green);
+    color: var(--tint-green-fg);
+}
+
+.theme-dark .notif-item.tone-warning .notif-icon {
+    background: var(--tint-amber);
+    color: var(--tint-amber-fg);
+}
+
+.theme-dark .notif-item.tone-muted .notif-icon {
+    background: var(--tint-gray);
+    color: var(--tint-gray-fg);
+}
+
+.theme-dark .notif-clear {
+    color: var(--tint-orange-fg);
+}
+
+.theme-dark .notif-foot {
+    background: var(--surface);
+    border-top-color: var(--border);
+}
+
+.theme-dark .notif-foot:hover {
+    background: var(--pale-blue);
+}
+
+/* Student record surfaces that the pages style inline */
+.theme-dark .bulk-bar {
+    background: var(--surface);
+    border-bottom-color: var(--border);
+}
+
+.theme-dark .empty-state button,
+.theme-dark .filter-bar .clear-filters {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+.theme-dark .empty-state i {
+    color: var(--muted);
+}
+
+.theme-dark .no-records-note {
+    background: var(--surface-2);
+    border-color: var(--border-strong);
+}
+
+.theme-dark .field input.invalid,
+.theme-dark .field select.invalid,
+.theme-dark .field textarea.invalid {
+    border-color: var(--tint-red-fg);
+    background: var(--tint-red);
+}
+
+.theme-dark .dropzone.dragover {
+    background: var(--tint-blue);
+}
+
+.theme-dark .dropzone.has-file {
+    background: var(--tint-green);
+}
+
+.theme-dark .unsaved-banner {
+    color: var(--tint-amber-fg);
+    background: var(--tint-amber);
+    border-top-color: var(--tint-amber-fg);
+}
+
+.theme-dark .unsaved-banner button {
+    color: var(--tint-amber-fg);
+    border-color: var(--tint-amber-fg);
+}
+
+.theme-dark .unsaved-banner button:hover {
+    color: #16213A;
+    background: var(--tint-amber-fg);
+}
+
+/* ==========================================================================
+   TOASTS
+   Portal-wide so the Preferences page can confirm every change.
+   ========================================================================== */
+.toast-wrap {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    background: #177245;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    animation: toastIn 0.3s ease;
+    pointer-events: auto;
+}
+
+.toast.error {
+    background: #B3261E;
+}
+
+.toast.info {
+    background: var(--primary);
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
