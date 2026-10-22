@@ -104,41 +104,23 @@
         });
     }
 
-    /* ---- Logout button in the portal navigation ---- */
+    /* ---- Guard styles (notice toast) ---- */
     function injectStyles() {
         if (document.getElementById('cec-guard-style')) return;
         var style = document.createElement('style');
         style.id = 'cec-guard-style';
         style.textContent =
-            '.cec-logout-link { color: #B3261E; }\n' +
-            '.cec-logout-link i { color: #B3261E; }\n' +
-            '.cec-logout-link:hover { background: #FBE4E4; color: #8E1D1D; }\n' +
-            '.cec-logout-link:hover i { color: #8E1D1D; }\n' +
             '.cec-guard-toast { position: fixed; right: 20px; bottom: 20px; z-index: 99999; display: flex; align-items: center; gap: 9px; max-width: min(360px, calc(100vw - 40px)); padding: 12px 16px; border-radius: 8px; color: #8E1D1D; background: #FBE4E4; border: 1px solid #F0C2C2; box-shadow: 0 8px 24px rgba(15, 30, 60, 0.18); font-size: 13px; font-weight: 600; line-height: 1.45; opacity: 0; transform: translateY(10px); transition: opacity 0.25s ease, transform 0.25s ease; }\n' +
             '.cec-guard-toast.show { opacity: 1; transform: translateY(0); }\n' +
             '@media (prefers-reduced-motion: reduce) { .cec-guard-toast { transition: none; transform: none; } }';
         document.head.appendChild(style);
     }
 
-    function injectLogoutLink() {
-        var nav = document.querySelector('.sidebar-nav');
-        if (!nav || nav.querySelector('.cec-logout-link')) return;
-        var section = document.createElement('div');
-        section.className = 'nav-section';
-        section.textContent = 'Session';
-        var link = document.createElement('a');
-        link.href = LOGIN_URL;
-        link.className = 'cec-logout-link';
-        link.innerHTML = '<i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Log out</span>';
-        nav.appendChild(section);
-        nav.appendChild(link);
-    }
-
-    /* ---- Logout click handling (sidebar link + profile menu item) ---- */
+    /* ---- Logout click handling (profile menu item) ---- */
     document.addEventListener('click', function (event) {
         var target = event.target;
         if (!target || !target.closest) return;
-        var link = target.closest('.cec-logout-link, .profile-menu-item.is-danger');
+        var link = target.closest('.profile-menu-item.is-danger');
         if (!link) return;
         event.preventDefault();
         if (Auth) Auth.logout();
@@ -148,7 +130,6 @@
     function init() {
         injectStyles();
         paintIdentity();
-        injectLogoutLink();
         consumeNotice();
     }
 
