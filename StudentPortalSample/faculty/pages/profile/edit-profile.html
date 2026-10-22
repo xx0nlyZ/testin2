@@ -47,7 +47,7 @@
         <header class="dashboard-header">
             <label class="search-box">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input type="search" data-i18n-placeholder="header.search" aria-label="Search" data-i18n-aria="header.search" placeholder="Search anything...">
+                <input type="search" data-i18n-placeholder="header.search" data-i18n-aria="header.search" aria-label="Search" placeholder="Search anything...">
             </label>
 
             <button class="header-icon" type="button" data-i18n-aria="header.notifications" aria-label="Notifications">
@@ -65,140 +65,131 @@
         </header>
 
         <section class="dashboard-content">
-            <div class="page-head profile-head-row">
-                <a class="back-btn" href="profile.html" aria-label="Back to Profile"><i class="fa-solid fa-arrow-left"></i></a>
-                <div>
-                    <h1><span data-i18n="page.profile.edit">Edit Profile</span></h1>
-                    <p class="page-desc"><span data-i18n="page.profile.edit.desc">Update your personal information and account details.</span></p>
+            <div class="page-head head-row">
+                <div class="profile-head-row">
+                    <a class="back-btn" href="profile.html" aria-label="Back to Faculty Profile"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>
+                    <div>
+                        <h1><span data-i18n="page.profile.edit">Edit Profile Information</span></h1>
+                        <p class="crumb">
+                            <a href="profile.html">Faculty Profile</a>
+                            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            <span>Edit Profile Information - <strong>Prof. Maria Santos</strong></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="head-actions">
+                    <button class="btn btn-primary" type="submit" form="edit-profile-form"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Save Changes</button>
                 </div>
             </div>
 
-            <section class="edit-layout" aria-label="Edit profile form">
-                <aside class="edit-left">
-                    <article class="profile-card photo-card">
-                        <div class="photo-upload">
-                            <span class="photo-img" data-avatar-preview>MS</span>
-                            <span class="camera-badge"><i class="fa-solid fa-camera"></i></span>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-outline" data-avatar-trigger data-avatar-target="#photo-input">Change Photo</button>
-                            <input type="file" id="photo-input" data-avatar-input accept="image/*" hidden>
-                        </div>
-                    </article>
+            <article class="hero-card" aria-label="Faculty avatar">
+                <div class="avatar-wrap">
+                    <span class="hero-avatar" id="hero-avatar">
+                        <img id="avatar-img" alt="Faculty avatar" hidden>
+                        <span class="avatar-initials" id="avatar-initials">MS</span>
+                    </span>
+                    <button class="btn btn-outline avatar-trigger" type="button" aria-label="Upload new picture"><i class="fa-solid fa-upload" aria-hidden="true"></i> Upload New Picture</button>
+                    <input type="file" id="avatar-input" accept="image/*" hidden>
+                </div>
 
-                    <article class="profile-card">
-                        <div class="profile-card-head">
-                            <i class="fa-regular fa-user"></i>
-                            <h3>Account Summary</h3>
-                        </div>
-                        <div class="summary-rows">
-                            <div class="summary-row">
-                                <span class="label">Full Name</span>
-                                <span class="value">Prof. Maria Santos</span>
-                            </div>
-                            <div class="summary-row">
-                                <span class="label">Role</span>
-                                <span class="value">Faculty</span>
-                            </div>
-                            <div class="summary-row">
-                                <span class="label">Email</span>
-                                <span class="value">mariasantos@gmail.com</span>
-                            </div>
-                            <div class="summary-row">
-                                <span class="label">Employee ID</span>
-                                <span class="value">FAC - 0013</span>
-                            </div>
-                        </div>
-                    </article>
-                </aside>
+                <div class="hero-info">
+                    <h2 class="hero-name">Prof. Maria Santos</h2>
+                    <p class="hero-role"><i class="fa-solid fa-id-card" aria-hidden="true"></i> Faculty Account</p>
+                </div>
+            </article>
 
-                <form class="profile-card form-card" action="#" method="post" id="edit-profile-form" data-faculty-form data-success-message="Profile updated successfully" novalidate>
-                    <div class="form-section">
-                        <h4>Personal Information</h4>
+            <form id="edit-profile-form" class="form-layout" action="#" method="post" enctype="multipart/form-data" novalidate>
+                <article class="card form-card">
+                    <div class="card-head">
+                        <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                        <h3>Work Information</h3>
+                    </div>
+                    <div class="card-body">
                         <div class="form-grid">
                             <div class="form-field">
-                                <label for="first-name">Name <span class="req">*</span></label>
-                                <input type="text" id="first-name" name="first-name" value="Maria" required>
+                                <label for="work-email">Work Email</label>
+                                <input type="email" id="work-email" name="workEmail" value="maria.santos@cec.edu.com.ph" disabled>
                             </div>
+
                             <div class="form-field">
-                                <label for="middle-name">Middle Name <span class="req">*</span></label>
-                                <input type="text" id="middle-name" name="middle-name" value="Clara" required>
+                                <label for="assign-user-id">Assign User ID</label>
+                                <input type="text" id="assign-user-id" name="assignUserId" value="FAC - 0013" disabled>
                             </div>
+
                             <div class="form-field">
-                                <label for="last-name">Last Name <span class="req">*</span></label>
-                                <input type="text" id="last-name" name="last-name" value="Santos" required>
+                                <label for="contact-number">Contact Number <span class="req">*</span></label>
+                                <input type="tel" id="contact-number" name="contactNumber" value="0917 123 4567" required>
+                                <span class="error-msg" data-error-for="contactNumber" hidden>Contact number is required.</span>
                             </div>
+
                             <div class="form-field">
-                                <label for="gender">Gender <span class="req">*</span></label>
-                                <select id="gender" name="gender">
-                                    <option>Male</option>
-                                    <option selected>Female</option>
-                                    <option>Prefer not to say</option>
+                                <label for="role-permissions">Role &amp; Permissions <span class="req">*</span></label>
+                                <select id="role-permissions" name="rolePermissions" required>
+                                    <option value="Academic Staff, Faculty" selected>Academic Staff, Faculty</option>
+                                    <option value="Academic Staff">Academic Staff</option>
+                                    <option value="Faculty">Faculty</option>
+                                </select>
+                                <span class="field-hint"><a class="text-link" href="#">[EDIT SECURITY ACCESS LEVEL]</a></span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="department">Department <span class="req">*</span></label>
+                                <select id="department" name="department" required>
+                                    <option value="Information Technology" selected>Information Technology</option>
+                                    <option value="Computer Engineering">Computer Engineering</option>
+                                    <option value="Business Administration">Business Administration</option>
+                                    <option value="Nursing">Nursing</option>
+                                    <option value="Teacher Education">Teacher Education</option>
                                 </select>
                             </div>
-                            <div class="form-field">
-                                <label for="birth-date">Date of Birth <span class="req">*</span></label>
-                                <input type="date" id="birth-date" name="birth-date" value="1990-05-14" required>
-                            </div>
                         </div>
                     </div>
+                </article>
 
-                    <div class="form-section">
-                        <h4>Contact Information</h4>
+                <article class="card form-card">
+                    <div class="card-head">
+                        <i class="fa-regular fa-user" aria-hidden="true"></i>
+                        <h3>Personal Details</h3>
+                    </div>
+                    <div class="card-body">
                         <div class="form-grid">
                             <div class="form-field">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" value="0952 575 6789">
+                                <label for="full-name">Full Name <span class="req">*</span></label>
+                                <input type="text" id="full-name" name="fullName" value="Maria Clara Santos" required>
+                                <span class="error-msg" data-error-for="fullName" hidden>Full name is required.</span>
                             </div>
+
                             <div class="form-field">
-                                <label for="username">Username <span class="req">*</span></label>
-                                <input type="text" id="username" name="username" value="maria.santos" required>
+                                <label for="join-date">Join Date <span class="req">*</span></label>
+                                <input type="date" id="join-date" name="joinDate" value="2017-08-21" required>
+                                <span class="error-msg" data-error-for="joinDate" hidden>Join date is required.</span>
                             </div>
+
                             <div class="form-field">
-                                <label for="email">Email Address <span class="req">*</span></label>
-                                <input type="email" id="email" name="email" value="mariasantos@gmail.com" required>
+                                <label for="address">Address <span class="req">*</span></label>
+                                <input type="text" id="address" name="address" value="123 San Vicente St., Cebu City" required>
+                                <span class="error-msg" data-error-for="address" hidden>Address is required.</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="birth-date">Birth Date <span class="req">*</span></label>
+                                <input type="date" id="birth-date" name="birthDate" value="1990-05-14" required>
+                                <span class="error-msg" data-error-for="birthDate" hidden>Birth date is required.</span>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <h4>Address</h4>
-                        <div class="form-grid">
-                            <div class="form-field">
-                                <label for="street">Street Address <span class="req">*</span></label>
-                                <input type="text" id="street" name="street" value="123 San Vicente St.," required>
-                            </div>
-                            <div class="form-field">
-                                <label for="province">Province <span class="req">*</span></label>
-                                <input type="text" id="province" name="province" value="Cebu" required>
-                            </div>
-                            <div class="form-field">
-                                <label for="city">City <span class="req">*</span></label>
-                                <input type="text" id="city" name="city" value="Cebu City" required>
-                            </div>
-                            <div class="form-field">
-                                <label for="zip">Zip Code <span class="req">*</span></label>
-                                <input type="text" id="zip" name="zip" value="6000" required>
-                            </div>
+                        <div class="form-footer-links">
+                            <a class="text-link danger" href="#">[Deactivate Account]</a>
+                            <a class="text-link" href="#">[View Activity Audit Log]</a>
                         </div>
                     </div>
-
-                    <div class="form-actions">
-                        <a href="profile.html" class="btn btn-outline">Cancel</a>
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
-                    </div>
-                </form>
-            </section>
+                </article>
+            </form>
         </section>
     </main>
-<script src="../../js/showToast.js"></script>
-<script src="../../js/copyToClipboard.js"></script>
-<script src="../../js/confirmAction.js"></script>
-<script src="../../js/avatarUpload.js"></script>
-<script src="../../js/validateForm.js"></script>
-<script src="../../js/persistSelect.js"></script>
-<script src="../../js/setYear.js"></script>
 
+    <script src="../../js/faculty-profile.js"></script>
     <script src="../../js/notificationMenu.js"></script>
     <script src="../../js/profileMenu.js"></script>
     <script src="../../../js/auth.js"></script>

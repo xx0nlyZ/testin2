@@ -113,6 +113,7 @@
             '    </span>',
             '</div>',
             '<div class="profile-menu-list">',
+            '    <a class="profile-menu-item" role="menuitem" href="../profile/profile.html"><i class="fa-regular fa-user" aria-hidden="true"></i> Profile</a>',
             '    <a class="profile-menu-item" role="menuitem" href="../student-record/student-records.html"><i class="fa-solid fa-users" aria-hidden="true"></i> Student Records</a>',
             '    <a class="profile-menu-item" role="menuitem" href="../report/reports.html"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i> Reports</a>',
             '    <a class="profile-menu-item" role="menuitem" href="../settings/settings.html"><i class="fa-solid fa-gear" aria-hidden="true"></i> Settings</a>',

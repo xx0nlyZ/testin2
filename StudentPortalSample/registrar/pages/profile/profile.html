@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Profile | CEC Registrar Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../../css/reg-dashboard.css">
+    <link rel="stylesheet" href="../../css/reg-analytics.css">
+    <link rel="stylesheet" href="../../css/reg-theme.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/preferences.js"></script>
+</head>
+<body class="dashboard-page" data-portal="registrar">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../../../images/cec-logo.png" alt="Cebu Eastern College logo">
+            <strong>CEC</strong>
+            <span data-i18n="brand.portal">REGISTRAR PORTAL SYSTEM</span>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Registrar navigation">
+            <a href="../dashboard/registrar.html"><i class="fa-solid fa-gauge-high"></i><span data-i18n="nav.dashboard">Dashboard</span></a>
+            <a href="../student-record/student-records.html"><i class="fa-solid fa-users"></i><span data-i18n="nav.records">Student Records</span></a>
+            <a href="../enrollment-management/enrollment-management.html"><i class="fa-regular fa-file-lines"></i><span data-i18n="nav.enrollment">Enrollment Management</span></a>
+            <a href="../enrollment-management/enrollment-application.html"><i class="fa-regular fa-square-plus"></i><span data-i18n="nav.enrollment.application">Enrollment Application</span></a>
+            <a href="../report/reports.html"><i class="fa-solid fa-chart-simple"></i><span data-i18n="nav.reports">Reports</span></a>
+            <a href="../document-request/index.html"><i class="fa-regular fa-folder-open"></i><span data-i18n="nav.documents">Document Requests</span></a>
+            <a href="../announcement/index.html"><i class="fa-solid fa-bullhorn"></i><span data-i18n="nav.announcements">Announcements</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="profile.html" class="active"><i class="fa-regular fa-user"></i><span data-i18n="nav.profile">Profile</span></a>
+            <a href="../settings/settings.html"><i class="fa-solid fa-gear"></i><span data-i18n="nav.settings">Settings</span></a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="app-header">
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-label="Toggle sidebar" data-i18n-aria="header.toggle.sidebar"><i class="fa-solid fa-bars"></i></button>
+
+            <label class="search-box">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Search subjects, records, or anything..." aria-label="Search" data-i18n-placeholder="header.search">
+            </label>
+
+            <button class="header-icon" type="button" aria-label="Notifications" data-i18n-aria="header.notifications">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="notif-dot"></span>
+            </button>
+
+            <button class="profile-button" type="button">
+                <span class="profile-avatar">&mdash;</span>
+                <span class="profile-info">
+                    <strong></strong>
+                    <small data-i18n="header.role">Registrar</small>
+                </span>
+            </button>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-head">
+                <h1><span data-i18n="page.profile">Registrar Profile Details</span></h1>
+                <p class="page-desc"><span data-i18n="page.profile.desc">View your registrar work information and personal details.</span></p>
+            </div>
+
+            <article class="hero-card" aria-label="Registrar summary">
+                <div class="avatar-wrap">
+                    <span class="hero-avatar" id="hero-avatar">
+                        <img id="avatar-img" alt="Registrar avatar" hidden>
+                        <span class="avatar-initials" id="avatar-initials">RM</span>
+                    </span>
+                    <button class="btn btn-outline avatar-trigger" type="button" aria-label="Change picture"><i class="fa-solid fa-camera" aria-hidden="true"></i> Change Picture</button>
+                    <input type="file" id="avatar-input" accept="image/*" hidden>
+                </div>
+
+                <div class="hero-info">
+                    <h2 class="hero-name">Rosa Manalo</h2>
+                    <p class="hero-role"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Cebu Eastern College Registrar</p>
+                    <span class="status-badge status-green"><i class="fa-solid fa-circle" aria-hidden="true"></i> Active</span>
+                </div>
+            </article>
+
+            <section class="profile-grid" aria-label="Profile information">
+                <article class="card">
+                    <div class="card-head">
+                        <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                        <h3>Work Information</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="field-block">
+                            <label class="field-label" for="copy-email">Work Email</label>
+                            <div class="copy-row" id="copy-email">
+                                <span class="copy-value">rosa.manalo@cec.edu.ph</span>
+                                <button class="copy-btn" type="button" data-copy="rosa.manalo@cec.edu.ph" aria-label="Copy work email"><i class="fa-regular fa-copy" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="field-block">
+                            <span class="field-label">Assign User ID</span>
+                            <div class="copy-row">
+                                <span class="copy-value">REG-12345</span>
+                                <button class="copy-btn" type="button" data-copy="REG-12345" aria-label="Copy registrar user ID"><i class="fa-regular fa-copy" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="field-block">
+                            <span class="field-label">Contact Number</span>
+                            <div class="value-row"><span>+63 917 555 0142</span></div>
+                        </div>
+
+                        <div class="field-block">
+                            <span class="field-label">Role &amp; Permissions</span>
+                            <div class="value-row">
+                                <span>Academic Staff, Registrar</span>
+                                <a class="text-link" href="#">[FULL SECURITY ACCESS LEVEL]</a>
+                            </div>
+                        </div>
+
+                        <div class="field-block">
+                            <span class="field-label">Department</span>
+                            <div class="value-row"><span>Registrar's Office</span></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-head">
+                        <i class="fa-regular fa-user" aria-hidden="true"></i>
+                        <h3>Personal Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <dl class="detail-list">
+                            <div class="detail-item">
+                                <span>Full Name</span>
+                                <strong>Rosa Manalo</strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Join Date</span>
+                                <strong>January 15, 2019</strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Address</span>
+                                <strong>88 Colon St., Cebu City</strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Birth Date</span>
+                                <strong>September 8, 1986</strong>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="quick-actions">
+                        <h4>Quick Actions</h4>
+                        <a class="btn btn-primary" href="edit-profile.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit Profile Info</a>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <script src="../../js/registrar-profile.js"></script>
+    <script>
+        (function () {
+            var toggle = document.getElementById('menu-toggle');
+            toggle.addEventListener('click', function () {
+                document.body.classList.toggle('sidebar-collapsed');
+            });
+        })();
+    </script>
+    <script src="../../js/notificationMenu.js"></script>
+    <script src="../../js/profileMenu.js"></script>
+    <script src="../../../js/auth.js"></script>
+    <script src="../../../js/session-guard.js"></script>
+    </body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | CEC Faculty Portal</title>
+    <title>Faculty Profile | CEC Faculty Portal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/dashboard.css">
     <link rel="stylesheet" href="../../css/profile.css">
@@ -47,7 +47,7 @@
         <header class="dashboard-header">
             <label class="search-box">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input type="search" data-i18n-placeholder="header.search" aria-label="Search" data-i18n-aria="header.search" placeholder="Search anything...">
+                <input type="search" data-i18n-placeholder="header.search" data-i18n-aria="header.search" aria-label="Search" placeholder="Search anything...">
             </label>
 
             <button class="header-icon" type="button" data-i18n-aria="header.notifications" aria-label="Notifications">
@@ -66,97 +66,110 @@
 
         <section class="dashboard-content">
             <div class="page-head">
-                <h1><span data-i18n="page.profile">Profile</span></h1>
-                <p class="page-desc"><span data-i18n="page.profile.desc">View and manage your faculty information.</span></p>
+                <h1><span data-i18n="page.profile">Faculty Profile Details</span></h1>
+                <p class="page-desc"><span data-i18n="page.profile.desc">View your faculty work information and personal details.</span></p>
             </div>
 
-            <section class="profile-grid" aria-label="Profile information">
-                <div class="profile-column">
-                    <article class="profile-card profile-summary">
-                        <span class="summary-avatar">MS</span>
-                        <h2>Prof. Maria Santos</h2>
-                        <p class="role-sub">Faculty</p>
-                        <a href="edit-profile.html" class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit Profile</a>
-                    </article>
+            <article class="hero-card" aria-label="Faculty summary">
+                <div class="avatar-wrap">
+                    <span class="hero-avatar" id="hero-avatar">
+                        <img id="avatar-img" alt="Faculty avatar" hidden>
+                        <span class="avatar-initials" id="avatar-initials">MS</span>
+                    </span>
+                    <button class="btn btn-outline avatar-trigger" type="button" aria-label="Change picture"><i class="fa-solid fa-camera" aria-hidden="true"></i> Change Picture</button>
+                    <input type="file" id="avatar-input" accept="image/*" hidden>
+                </div>
 
-                    <article class="profile-card">
-                        <div class="profile-card-head">
-                            <i class="fa-solid fa-id-card"></i>
-                            <h3>Personal Information</h3>
-                        </div>
-                        <div class="info-body">
-                            <div class="info-grid">
-                                <div class="info-field">
-                                    <label>Full Name</label>
-                                    <p>Maria Clara Santos</p>
-                                </div>
-                                <div class="info-field">
-                                    <label>Employee ID</label>
-                                    <p>FAC - 0013 <button class="cec-copy-btn" type="button" data-copy="FAC - 0013" aria-label="Copy employee ID" title="Copy"><i class="fa-solid fa-copy"></i></button></p>
-                                </div>
-                                <div class="info-field">
-                                    <label>Email</label>
-                                    <p>maria.santos@cec.edu.com.ph <button class="cec-copy-btn" type="button" data-copy="maria.santos@cec.edu.com.ph" aria-label="Copy email" title="Copy"><i class="fa-solid fa-copy"></i></button></p>
-                                </div>
-                                <div class="info-field">
-                                    <label>Phone</label>
-                                    <p>0917 123 4567 <button class="cec-copy-btn" type="button" data-copy="0917 123 4567" aria-label="Copy phone number" title="Copy"><i class="fa-solid fa-copy"></i></button></p>
-                                </div>
-                                <div class="info-field">
-                                    <label>Department</label>
-                                    <p>Information Technology</p>
-                                </div>
-                                <div class="info-field">
-                                    <label>Designation</label>
-                                    <p>Faculty</p>
-                                </div>
+                <div class="hero-info">
+                    <h2 class="hero-name">Prof. Maria Santos</h2>
+                    <p class="hero-role"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Cebu Eastern College Faculty</p>
+                    <span class="status-badge status-green"><i class="fa-solid fa-circle" aria-hidden="true"></i> Active</span>
+                </div>
+            </article>
+
+            <section class="profile-grid" aria-label="Profile information">
+                <article class="card">
+                    <div class="card-head">
+                        <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                        <h3>Work Information</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="field-block">
+                            <label class="field-label" for="copy-email">Work Email</label>
+                            <div class="copy-row" id="copy-email">
+                                <span class="copy-value">maria.santos@cec.edu.com.ph</span>
+                                <button class="copy-btn" type="button" data-copy="maria.santos@cec.edu.com.ph" aria-label="Copy work email"><i class="fa-regular fa-copy" aria-hidden="true"></i></button>
                             </div>
                         </div>
-                    </article>
-                </div>
 
-                <div class="profile-column">
-                    <article class="profile-card">
-                        <div class="profile-card-head">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <h3>Education</h3>
+                        <div class="field-block">
+                            <span class="field-label">Assign User ID</span>
+                            <div class="copy-row">
+                                <span class="copy-value">FAC - 0013</span>
+                                <button class="copy-btn" type="button" data-copy="FAC - 0013" aria-label="Copy faculty user ID"><i class="fa-regular fa-copy" aria-hidden="true"></i></button>
+                            </div>
                         </div>
-                        <ul class="edu-list">
-                            <li class="edu-item">
-                                <h4>Master of Science in Computer Science</h4>
-                                <p class="edu-school">University of Cebu</p>
-                                <p class="edu-years">2018 - 2020</p>
-                            </li>
-                            <li class="edu-item">
-                                <h4>Bachelor of Science in Information Technology</h4>
-                                <p class="edu-school">Cebu Normal University</p>
-                                <p class="edu-years">2014 - 2018</p>
-                            </li>
-                        </ul>
-                    </article>
 
-                    <article class="profile-card">
-                        <div class="profile-card-head">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <h3>Contact Address</h3>
+                        <div class="field-block">
+                            <span class="field-label">Contact Number</span>
+                            <div class="value-row"><span>0917 123 4567</span></div>
                         </div>
-                        <div class="address-body">
-                            <p>123 San Vicente St., Cebu City</p>
-                            <p>Cebu, Philippines 6000</p>
+
+                        <div class="field-block">
+                            <span class="field-label">Role &amp; Permissions</span>
+                            <div class="value-row">
+                                <span>Academic Staff, Faculty</span>
+                                <a class="text-link" href="#">[FULL SECURITY ACCESS LEVEL]</a>
+                            </div>
                         </div>
-                    </article>
-                </div>
+
+                        <div class="field-block">
+                            <span class="field-label">Department</span>
+                            <div class="value-row"><span>Information Technology</span></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-head">
+                        <i class="fa-regular fa-user" aria-hidden="true"></i>
+                        <h3>Personal Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <dl class="detail-list">
+                            <div class="detail-item">
+                                <span>Full Name</span>
+                                <strong>Maria Clara Santos</strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Join Date</span>
+                                <strong>August 21, 2017</strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Address</span>
+                                <strong>123 San Vicente St., Cebu City</strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Birth Date</span>
+                                <strong>May 14, 1990</strong>
+                            </div>
+                            <div class="detail-item">
+                                <span>Education</span>
+                                <strong>M.S. Computer Science, University of Cebu</strong>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="quick-actions">
+                        <h4>Quick Actions</h4>
+                        <a class="btn btn-primary" href="edit-profile.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit Profile Info</a>
+                    </div>
+                </article>
             </section>
         </section>
     </main>
-<script src="../../js/showToast.js"></script>
-<script src="../../js/copyToClipboard.js"></script>
-<script src="../../js/confirmAction.js"></script>
-<script src="../../js/avatarUpload.js"></script>
-<script src="../../js/validateForm.js"></script>
-<script src="../../js/persistSelect.js"></script>
-<script src="../../js/setYear.js"></script>
 
+    <script src="../../js/faculty-profile.js"></script>
     <script src="../../js/notificationMenu.js"></script>
     <script src="../../js/profileMenu.js"></script>
     <script src="../../../js/auth.js"></script>

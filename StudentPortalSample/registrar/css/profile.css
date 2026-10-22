@@ -1,0 +1,516 @@
+/* ==========================================================================
+   CEC REGISTRAR PORTAL - ACCOUNT PROFILE VIEWS
+   Profile details and edit profile form (shared design with the admin portal)
+   ========================================================================== */
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    border-color: var(--primary);
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--navy);
+}
+
+.btn-primary:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.btn-outline {
+    border-color: var(--line);
+    color: var(--accent-text);
+    background: var(--card);
+}
+
+.btn-outline:hover {
+    background: var(--pale-blue);
+}
+
+/* ==========================================================================
+   BREADCRUMB
+   ========================================================================== */
+.crumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.78125rem;
+}
+
+.crumb a:hover {
+    color: var(--accent-text);
+    text-decoration: underline;
+}
+
+.crumb i {
+    font-size: 0.625rem;
+}
+
+/* ==========================================================================
+   TOP HEADER SUMMARY CARD (hero)
+   ========================================================================== */
+.hero-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 20px;
+    padding: 26px 28px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+}
+
+.avatar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.hero-avatar {
+    display: grid;
+    width: 112px;
+    height: 112px;
+    place-items: center;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--primary);
+    color: #FFFFFF;
+    background: var(--primary);
+    background-size: cover;
+    background-position: center;
+    font-size: 2.625rem;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.hero-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-avatar .avatar-initials[hidden] {
+    display: none;
+}
+
+.hero-info {
+    flex: 1;
+    min-width: 220px;
+}
+
+.hero-name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 6px;
+    font-size: 1.5rem;
+}
+
+.hero-role {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 0.84375rem;
+}
+
+.hero-role i {
+    color: var(--accent-text);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-green {
+    color: var(--tint-green-fg);
+    background: var(--tint-green);
+}
+
+.status-badge i {
+    font-size: 0.5rem;
+}
+
+/* ==========================================================================
+   TWO-COLUMN GRID CARDS
+   ========================================================================== */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    overflow: hidden;
+}
+
+.card-head {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 15px 18px;
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--surface);
+}
+
+.card-head h3 {
+    margin: 0;
+    font-size: 0.9375rem;
+}
+
+.card-head i {
+    color: var(--accent-text);
+    font-size: 1rem;
+}
+
+.card-body {
+    padding: 6px 18px 16px;
+}
+
+/* ---------- Work information (read-only) ---------- */
+.field-block {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.field-block:last-child {
+    border-bottom: 0;
+}
+
+.field-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.copy-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+}
+
+.copy-value {
+    color: var(--text);
+    font-size: 0.84375rem;
+    word-break: break-all;
+}
+
+.copy-btn {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    place-items: center;
+    border: 0;
+    border-radius: 6px;
+    color: var(--accent-text);
+    background: var(--pale-blue);
+    font-size: 0.8125rem;
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+.copy-btn.copied {
+    color: var(--tint-green-fg);
+    background: var(--tint-green);
+}
+
+.value-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: var(--text);
+    font-size: 0.84375rem;
+}
+
+.text-link {
+    color: var(--accent-text);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Personal details ---------- */
+.detail-list {
+    margin: 0;
+    padding: 4px 0;
+}
+
+.detail-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.84375rem;
+}
+
+.detail-item:last-child {
+    border-bottom: 0;
+}
+
+.detail-item span {
+    color: var(--muted);
+}
+
+.detail-item strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* ---------- Quick actions ---------- */
+.quick-actions {
+    margin: 6px 18px 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-soft);
+}
+
+.quick-actions h4 {
+    margin: 0 0 12px;
+    font-size: 0.875rem;
+}
+
+.quick-actions .btn {
+    width: 100%;
+}
+
+/* ==========================================================================
+   EDIT PROFILE FORM
+   ========================================================================== */
+.profile-head-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.back-btn {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    place-items: center;
+    border: 1px solid var(--border-input);
+    border-radius: 50%;
+    color: var(--text);
+    background: var(--card);
+    font-size: 1rem;
+}
+
+.back-btn:hover {
+    border-color: var(--primary);
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+.head-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.form-card .card-body {
+    padding: 18px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text);
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+.form-field label .req {
+    color: var(--tint-red-fg);
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    outline: 0;
+    color: var(--text);
+    background: var(--card);
+    font-size: 0.84375rem;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--pale-blue);
+}
+
+.form-field input:disabled {
+    color: var(--muted);
+    background: var(--tint-gray);
+    cursor: not-allowed;
+}
+
+.form-field input:invalid:not(:placeholder-shown),
+.form-field select:invalid,
+.form-field input.invalid,
+.form-field select.invalid {
+    border-color: var(--danger);
+}
+
+.field-hint {
+    display: block;
+    margin-top: 6px;
+}
+
+.error-msg {
+    display: block;
+    margin-top: 5px;
+    color: var(--tint-red-fg);
+    font-size: 0.71875rem;
+}
+
+.field-hint .text-link.danger,
+.text-link.danger {
+    color: var(--tint-red-fg);
+}
+
+.form-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-soft);
+}
+
+/* ==========================================================================
+   TOAST
+   ========================================================================== */
+.toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 340px;
+    padding: 13px 18px;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(11, 44, 94, 0.22);
+    color: #FFFFFF;
+    background: var(--navy);
+    font-size: 0.84375rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-success {
+    background: var(--success);
+}
+
+.toast-error {
+    background: var(--danger);
+}
+
+.toast i {
+    font-size: 0.9375rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1050px) {
+    .profile-grid,
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero-card {
+        padding: 20px 18px;
+    }
+
+    .detail-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+}
